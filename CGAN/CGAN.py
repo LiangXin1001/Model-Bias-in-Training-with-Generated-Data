@@ -24,9 +24,9 @@ torch.backends.cudnn.benchmark = False
 
 # 初始化 wandb
 wandb.init(
-    project="my-GAN-project",
+    project="CGAN-project",
     config={
-        "learning_rate_d": 1e-4,   #降低后17
+        "learning_rate_d": 1e-4,    
         "learning_rate_g": 1e-4,
         "epochs": 100,
         "batch_size": 32,
@@ -82,11 +82,17 @@ class CustomMNISTDataset(Dataset):
 
 
 # 路径设置
-base_dir = '/root/autodl-tmp/xin/datasets/MNIST'
-train_csv = "/root/autodl-tmp/xin/GAN/CGAN/data/mixed_images82firstgen.csv"
-train_img_dir =  "/root/autodl-tmp/xin/GAN/CGAN/data/mixed_images82firstgen"
-test_csv = os.path.join(base_dir, 'updated_test_labels_with_colors.csv')
-test_img_dir = os.path.join(base_dir, 'colored-test-images')
+# base_dir = '/root/autodl-tmp/xin/datasets/MNIST'
+# train_csv = "/root/autodl-tmp/xin/GAN/CGAN/data/mixed_images82firstgen.csv"
+# train_img_dir =  "/root/autodl-tmp/xin/GAN/CGAN/data/mixed_images82firstgen"
+# test_csv = os.path.join(base_dir, 'updated_test_labels_with_colors.csv')
+# test_img_dir = os.path.join(base_dir, 'colored-test-images')
+
+ 
+train_csv = '/root/autodl-tmp/xin/datasets/CMNIST/data/new_train.csv'
+train_img_dir =  "/root/autodl-tmp/xin/datasets/CMNIST/data/train_all"
+test_csv ='/root/autodl-tmp/xin/datasets/CMNIST/data/new_test.csv'
+test_img_dir = '/root/autodl-tmp/xin/datasets/CMNIST/data/test_all'
 
 # 创建数据集实例
 train_dataset = CustomMNISTDataset(csv_file=train_csv, img_dir=train_img_dir, transform=ToTensor())
@@ -342,10 +348,10 @@ for epoch in range(num_epochs):
 
  
 # 再次保存模型和优化器状态
-torch.save(generator.state_dict(), os.path.join(model_dir, 'generator_state_hun82_100epch.pt'))
-torch.save(d_optimizer.state_dict(), os.path.join(model_dir, 'g_optimizer_state_hun82_100epch.pt'))
-torch.save(discriminator.state_dict(), os.path.join(model_dir, 'discriminator_state_hun82_100epch.pt'))
-torch.save(d_optimizer.state_dict(), os.path.join(model_dir, 'd_optimizer_state_hun82_100epch.pt'))
+torch.save(generator.state_dict(), os.path.join(model_dir, 'generator_state_100epch.pt'))
+torch.save(d_optimizer.state_dict(), os.path.join(model_dir, 'g_optimizer_state_100epch.pt'))
+torch.save(discriminator.state_dict(), os.path.join(model_dir, 'discriminator_state_100epch.pt'))
+torch.save(d_optimizer.state_dict(), os.path.join(model_dir, 'd_optimizer_state_100epch.pt'))
 
 z = Variable(torch.randn(100, 100)).cuda()
 labels = torch.LongTensor([i for i in range(10) for _ in range(10)]).cuda()
