@@ -1,4 +1,6 @@
 Dataset/Colored_MNIST_Bais
+CrossDatasetTraining/data
+
 
 # Ignore all image files
 *.jpg
@@ -10,6 +12,7 @@ Dataset/Colored_MNIST_Bais
 *.idea
 __pycache__
 *.zip
+*.gz
 
 # Ignore dataset files
 *.csv

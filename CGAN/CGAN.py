@@ -44,7 +44,7 @@ wandb.init(
 
 transform = transforms.Compose([
     transforms.ToTensor(),
-    transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5])  # 对三个通道使用相同的均值和标准差
+    transforms.Normalize([0.0926, 0.0793, 0.0775], [0.1854, 0.1746, 0.1583])  # 对三个通道使用相同的均值和标准差
 ])
 
 import os
