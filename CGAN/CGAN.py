@@ -82,17 +82,17 @@ class CustomMNISTDataset(Dataset):
 
 
 # 路径设置
-# base_dir = '/root/autodl-tmp/xin/datasets/MNIST'
-# train_csv = "/root/autodl-tmp/xin/GAN/CGAN/data/mixed_images82firstgen.csv"
-# train_img_dir =  "/root/autodl-tmp/xin/GAN/CGAN/data/mixed_images82firstgen"
-# test_csv = os.path.join(base_dir, 'updated_test_labels_with_colors.csv')
-# test_img_dir = os.path.join(base_dir, 'colored-test-images')
+base_dir = '/root/autodl-tmp/xin/datasets/MNIST'
+train_csv = "/root/autodl-tmp/xin/GAN/CGAN/data/mixed_images82firstgen.csv"
+train_img_dir =  "/root/autodl-tmp/xin/GAN/CGAN/data/mixed_images82firstgen"
+test_csv = os.path.join(base_dir, 'updated_test_labels_with_colors.csv')
+test_img_dir = os.path.join(base_dir, 'colored-test-images')
 
  
-train_csv = '/root/autodl-tmp/xin/datasets/CMNIST/data/new_train.csv'
-train_img_dir =  "/root/autodl-tmp/xin/datasets/CMNIST/data/train_all"
-test_csv ='/root/autodl-tmp/xin/datasets/CMNIST/data/new_test.csv'
-test_img_dir = '/root/autodl-tmp/xin/datasets/CMNIST/data/test_all'
+# train_csv = '/root/autodl-tmp/xin/datasets/CMNIST/data/new_train.csv'
+# train_img_dir =  "/root/autodl-tmp/xin/datasets/CMNIST/data/train_all"
+# test_csv ='/root/autodl-tmp/xin/datasets/CMNIST/data/new_test.csv'
+# test_img_dir = '/root/autodl-tmp/xin/datasets/CMNIST/data/test_all'
 
 # 创建数据集实例
 train_dataset = CustomMNISTDataset(csv_file=train_csv, img_dir=train_img_dir, transform=ToTensor())
@@ -126,9 +126,9 @@ class Discriminator(nn.Module):
     
     def forward(self, x, labels,colors):
         x = x.view(x.size(0), -1)  # 改为自动计算输入张量的维度
-        c = self.label_emb(labels)
-        color_c = self.color_emb(colors)
-        x = torch.cat([x, c, color_c], 1)
+        clabel = self.label_emb(labels)
+        color_clabel = self.color_emb(colors)
+        x = torch.cat([x, clabel, color_clabel], 1)
        
         out = self.model(x)
        
@@ -158,15 +158,15 @@ class Generator(nn.Module):
     
     def forward(self, z, labels,colors):
         z = z.view(z.size(0), 100)  # 确保输入向量正确展开
-        c = self.label_emb(labels)
-        color_c = self.color_emb(colors)
-        x = torch.cat([z, c, color_c], 1)    
+        clabel = self.label_emb(labels)
+        color_clabel = self.color_emb(colors)
+    
+        # 调试信息
+        print(f"z shape: {z.shape}")
+        print(f"label embedding shape: {clabel.shape}")
+        print(f"color embedding shape: {color_clabel.shape}")
+        x = torch.cat([z, clabel, color_clabel], 1)    
          
-        # # 调试信息
-        # print(f"z shape: {z.shape}")
-        # print(f"label embedding shape: {c.shape}")
-        # print(f"color embedding shape: {color_c.shape}")
-
         out = self.model(x)      
         return out.view(x.size(0), 3, 28, 28)  # 调整输出维度以匹配三通道彩色图像
 
@@ -179,10 +179,7 @@ criterion = nn.BCELoss()
 # 调整优化器的学习率
 d_optimizer = torch.optim.Adam(discriminator.parameters(), lr=1e-4)   
 g_optimizer = torch.optim.Adam(generator.parameters(), lr=1e-4)   
-
-# g_scheduler = StepLR(g_optimizer, step_size=50, gamma=0.5)
-# d_scheduler = StepLR(d_optimizer, step_size=50, gamma=0.5)
-
+ 
 
 # 检查是否有保存的模型和优化器状态，如果有则加载
 model_dir = '/root/autodl-tmp/xin/GAN/CGAN/model'  # 设定模型保存的目录
@@ -337,12 +334,7 @@ for epoch in range(num_epochs):
             save_path = f'/root/autodl-tmp/xin/GAN/CGAN/saved-imageshun82/step_{step}.png'
             save_image(grid, save_path)
             print(f'Saved sample images to {save_path}')
-        
-            # 记录生成的图片到 WandB
-            # wandb.log({"Generated Images": [wandb.Image(grid, caption=f"Step {step}")]})
-        
-    # g_scheduler.step()
-    # d_scheduler.step()   
+         
     print('Done!')
 
 
