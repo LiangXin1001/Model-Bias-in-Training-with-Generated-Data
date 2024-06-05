@@ -1,6 +1,6 @@
 Dataset/Colored_MNIST_Bais
 CrossDatasetTraining/data
-
+CGAN/output.log
 
 # Ignore all image files
 *.jpg
@@ -22,5 +22,5 @@ __pycache__
 
 # Ignore pickle files
 *.pkl
-
+ 
 *.log
