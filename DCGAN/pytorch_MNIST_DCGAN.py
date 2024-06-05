@@ -150,9 +150,10 @@ img_size = 64
 transform = transforms.Compose([
         transforms.Resize(img_size),
         transforms.ToTensor(),
-        transforms.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))
+        transforms.Normalize(mean=(0.0926, 0.0793, 0.0775), std=(0.1854, 0.1746, 0.1583))
 ])
 # transforms.Normalize(mean=(0.0458, 0.0428, 0.0421), std=(0.1059, 0.0982, 0.0974))
+# ([0.0926, 0.0793, 0.0775], [0.1854, 0.1746, 0.1583])
 # 将 root 路径设置为你的数据集路径
 dataset = datasets.ImageFolder(root='/root/autodl-tmp/xin/Model-Bias-in-Training-with-Generated-Data/Dataset/Colored_MNIST_Bais_Organized', transform=transform)
 train_loader = torch.utils.data.DataLoader(
