@@ -27,7 +27,7 @@ wandb.init(
     project="CGAN-project",
     config={
         "learning_rate_d": 1e-4,    
-        "learning_rate_g": 1e-4,
+        "learning_rate_g": 2e-4,
         "epochs": 100,
         "batch_size": 32,
         "n_critic": 5,
@@ -82,17 +82,17 @@ class CustomMNISTDataset(Dataset):
 
 
 # 路径设置
-base_dir = '/root/autodl-tmp/xin/datasets/MNIST'
-train_csv = "/root/autodl-tmp/xin/GAN/CGAN/data/mixed_images82firstgen.csv"
-train_img_dir =  "/root/autodl-tmp/xin/GAN/CGAN/data/mixed_images82firstgen"
-test_csv = os.path.join(base_dir, 'updated_test_labels_with_colors.csv')
-test_img_dir = os.path.join(base_dir, 'colored-test-images')
+# base_dir = '/root/autodl-tmp/xin/datasets/MNIST'
+# train_csv = "/root/autodl-tmp/xin/GAN/CGAN/data/mixed_images82firstgen.csv"
+# train_img_dir =  "/root/autodl-tmp/xin/GAN/CGAN/data/mixed_images82firstgen"
+# test_csv = os.path.join(base_dir, 'updated_test_labels_with_colors.csv')
+# test_img_dir = os.path.join(base_dir, 'colored-test-images')
 
- 
-# train_csv = '/root/autodl-tmp/xin/datasets/CMNIST/data/new_train.csv'
-# train_img_dir =  "/root/autodl-tmp/xin/datasets/CMNIST/data/train_all"
-# test_csv ='/root/autodl-tmp/xin/datasets/CMNIST/data/new_test.csv'
-# test_img_dir = '/root/autodl-tmp/xin/datasets/CMNIST/data/test_all'
+base_dir = '/root/autodl-tmp/xin/datasets/CMNIST/data'
+train_csv =os.path.join(base_dir, 'new_train.csv')
+train_img_dir =  os.path.join(base_dir, "train_all")
+test_csv = os.path.join(base_dir, 'new_test.csv')
+test_img_dir = os.path.join(base_dir, 'test_all')
 
 # 创建数据集实例
 train_dataset = CustomMNISTDataset(csv_file=train_csv, img_dir=train_img_dir, transform=ToTensor())
@@ -108,7 +108,7 @@ class Discriminator(nn.Module):
         super().__init__()
         
         self.label_emb = nn.Embedding(10, 10)
-        self.color_emb = nn.Embedding(3, 10)  # 假设有4种颜色
+        self.color_emb = nn.Embedding(10, 10)  # 假设有10种颜色
 
         self.model = nn.Sequential(
             nn.Linear(2352 + 10 +10, 1024),  # 调整输入大小为图像大小加上标签和颜色嵌入
@@ -129,9 +129,7 @@ class Discriminator(nn.Module):
         clabel = self.label_emb(labels)
         color_clabel = self.color_emb(colors)
         x = torch.cat([x, clabel, color_clabel], 1)
-       
         out = self.model(x)
-       
         return out.squeeze()
  
 
@@ -140,7 +138,7 @@ class Generator(nn.Module):
         super().__init__()
         
         self.label_emb = nn.Embedding(10, 10)
-        self.color_emb = nn.Embedding(3,10)
+        self.color_emb = nn.Embedding(10,10)
         
         self.model = nn.Sequential(
             nn.Linear(110 +10, 256), 
@@ -178,11 +176,11 @@ discriminator = Discriminator().cuda()
 criterion = nn.BCELoss()
 # 调整优化器的学习率
 d_optimizer = torch.optim.Adam(discriminator.parameters(), lr=1e-4)   
-g_optimizer = torch.optim.Adam(generator.parameters(), lr=1e-4)   
+g_optimizer = torch.optim.Adam(generator.parameters(), lr=2e-4)   
  
 
 # 检查是否有保存的模型和优化器状态，如果有则加载
-model_dir = '/root/autodl-tmp/xin/GAN/CGAN/model'  # 设定模型保存的目录
+model_dir = '/root/autodl-tmp/xin/Model-Bias-in-Training-with-Generated-Data/CGAN/model'  # 设定模型保存的目录
 # if os.path.exists(os.path.join(model_dir, 'generator_state2.pt')):
 #     generator.load_state_dict(torch.load(os.path.join(model_dir, 'generator_state2.pt')))
 # if os.path.exists(os.path.join(model_dir, 'discriminator_state2.pt')):
@@ -200,7 +198,7 @@ def generator_train_step(batch_size, discriminator, generator, g_optimizer, crit
     z = Variable(torch.randn(batch_size, 100)).cuda()
     fake_labels = Variable(torch.LongTensor(np.random.randint(0, 10, batch_size))).cuda()
     # 根据实际颜色标签数量随机生成颜色标签
-    fake_colors = Variable(torch.LongTensor(np.random.randint(0, 3, batch_size))).cuda()  # 颜色标签是0, 1, 2
+    fake_colors = Variable(torch.LongTensor(np.random.randint(0, 10, batch_size))).cuda()  # 颜色标签是0, 1, 2......9
     fake_images = generator(z, fake_labels,fake_colors)
     validity = discriminator(fake_images, fake_labels,fake_colors)
     gan_loss = criterion(validity, Variable(torch.ones(batch_size)).cuda())
@@ -331,7 +329,7 @@ for epoch in range(num_epochs):
             sample_images = generator(z, labels,colors)
             # sample_images = generator(z, labels).unsqueeze(1)
             grid = make_grid(sample_images, nrow=3, normalize=True)
-            save_path = f'/root/autodl-tmp/xin/GAN/CGAN/saved-imageshun82/step_{step}.png'
+            save_path = f'/root/autodl-tmp/xin/GAN/CGAN/saved_images/step_{step}.png'
             save_image(grid, save_path)
             print(f'Saved sample images to {save_path}')
          
