@@ -56,12 +56,7 @@ parser.add_argument('--genmodel', type=str, default=100, help='Interval of epoch
 args = parser.parse_args()
  
 
-# # 配置文件和图像路径
-# csv_file = '/local/scratch/hcui25/Project/xin/CS/GAN/datasets/top_10_percent_images.csv'  # 更新CSV文件路径
-# image_folder = '/local/scratch/hcui25/Project/xin/CS/GAN/datasets/Colored_MNIST_Bais'  # 更新图像文件夹路径
-# 路径设置 
-# base_dir = '/local/scratch/hcui25/Project/xin/CS/GAN/CGAN/generation'
-# train_csv = os.path.join(base_dir, 'train_labels.csv') 
+ 
 train_csv = os.path.join(args.base_dir, 'train.csv') 
 train_img_dir = args.images_dir
 
@@ -127,10 +122,9 @@ class Discriminator(nn.Module):
         super().__init__()
         
         self.label_emb = nn.Embedding(10, 10)
-        self.color_emb = nn.Embedding(3, 10)  # 假设有4种颜色
-
+       
         self.model = nn.Sequential(
-            nn.Linear(2352 + 10 +10, 1024),  # 调整输入大小为图像大小加上标签和颜色嵌入
+            nn.Linear(2352 +10, 1024),  # 调整输入大小为图像大小加上标签和颜色嵌入
             nn.LeakyReLU(0.2, inplace=True),
             nn.Dropout(0.3),
             nn.Linear(1024, 512),
@@ -143,11 +137,11 @@ class Discriminator(nn.Module):
             nn.Sigmoid()
         )
     
-    def forward(self, x, labels,colors):
+    def forward(self, x, labels):
         x = x.view(x.size(0), -1)  # 改为自动计算输入张量的维度
         c = self.label_emb(labels)
-        color_c = self.color_emb(colors)
-        x = torch.cat([x, c, color_c], 1)
+  
+        x = torch.cat([x, c], 1)
        
         out = self.model(x)
        
@@ -159,10 +153,9 @@ class Generator(nn.Module):
         super().__init__()
         
         self.label_emb = nn.Embedding(10, 10)
-        self.color_emb = nn.Embedding(3,10)
-        
+     
         self.model = nn.Sequential(
-            nn.Linear(110 +10, 256), 
+            nn.Linear(110, 256), 
             nn.LeakyReLU(0.2, inplace=True),
             nn.BatchNorm1d(256),  # 添加BatchNorm层
             nn.Linear(256, 512),
@@ -175,17 +168,16 @@ class Generator(nn.Module):
             nn.Tanh()  # 保持 Tanh 作为最后一层，确保输出值在 [-1, 1] 范围内
         )
     
-    def forward(self, z, labels,colors):
+    def forward(self, z, labels):
         z = z.view(z.size(0), 100)  # 确保输入向量正确展开
         c = self.label_emb(labels)
-        color_c = self.color_emb(colors)
-        x = torch.cat([z, c, color_c], 1)    
+     
+        x = torch.cat([z, c], 1)    
          
         # # 调试信息
         # print(f"z shape: {z.shape}")
         # print(f"label embedding shape: {c.shape}")
-        # print(f"color embedding shape: {color_c.shape}")
-
+ 
         out = self.model(x)      
         return out.view(x.size(0), 3, 28, 28)  # 调整输出维度以匹配三通道彩色图像
 
@@ -196,7 +188,7 @@ discriminator = Discriminator().cuda()
 
 criterion = nn.BCELoss()
 # 调整优化器的学习率
-d_optimizer = torch.optim.Adam(discriminator.parameters(), lr=1e-4)   
+d_optimizer = torch.optim.Adam(discriminator.parameters(), lr=1e-5)   
 g_optimizer = torch.optim.Adam(generator.parameters(), lr=1e-4)   
 
 
@@ -206,28 +198,17 @@ def generator_train_step(batch_size, discriminator, generator, g_optimizer, crit
     g_optimizer.zero_grad()
     z = Variable(torch.randn(batch_size, 100)).cuda()
     fake_labels = Variable(torch.LongTensor(np.random.randint(0, 10, batch_size))).cuda()
-    # 根据实际颜色标签数量随机生成颜色标签
-    fake_colors = Variable(torch.LongTensor(np.random.randint(0, 3, batch_size))).cuda()  # 颜色标签是0, 1, 2
-    fake_images = generator(z, fake_labels,fake_colors)
-    validity = discriminator(fake_images, fake_labels,fake_colors)
+   
+    fake_images = generator(z, fake_labels)
+    validity = discriminator(fake_images, fake_labels)
     gan_loss = criterion(validity, Variable(torch.ones(batch_size)).cuda())
     
-    # 计算前景和背景掩码
-    foreground_mask, background_mask = calculate_foreground_background_mask(fake_images[0])
-    # 计算背景损失
-    bg_loss = background_loss(fake_images, background_mask)
-    # 计算颜色损失
-    col_loss = color_loss(fake_images, foreground_mask)
-
-    
-    #总损失 + 1 * bg_loss + 1 * col_loss
-    g_loss =  gan_loss  
-    g_loss.backward()
+    gan_loss.backward()
     g_optimizer.step()
-    return g_loss.item()
+    return gan_loss.item()
 
 
-def discriminator_train_step(batch_size, discriminator, generator, d_optimizer, criterion, real_images, labels,colors):
+def discriminator_train_step(batch_size, discriminator, generator, d_optimizer, criterion, real_images, labels):
     d_optimizer.zero_grad()
     # # 使用标签平滑，真实标签从1改为0.9
     # real_labels = Variable(torch.ones(batch_size) * 0.9).cuda()
@@ -235,16 +216,16 @@ def discriminator_train_step(batch_size, discriminator, generator, d_optimizer, 
    
 
     # train with real images
-    real_validity = discriminator(real_images, labels,colors)
+    real_validity = discriminator(real_images, labels )
     real_loss = criterion(real_validity, Variable(torch.ones(batch_size) ).cuda())
     
     # train with fake images
     z = Variable(torch.randn(batch_size, 100)).cuda()
     fake_labels_input = Variable(torch.LongTensor(np.random.randint(0, 10, batch_size))).cuda()
-    fake_colors = Variable(torch.LongTensor(np.random.randint(0, 3, batch_size))).cuda()  # 同上，颜色标签是0, 1, 2
-    fake_images = generator(z, fake_labels_input,fake_colors)
     
-    fake_validity = discriminator(fake_images, fake_labels_input,fake_colors)
+    fake_images = generator(z, fake_labels_input )
+    
+    fake_validity = discriminator(fake_images, fake_labels_input )
     fake_loss = criterion(fake_validity, fake_labels)
     
     d_loss = real_loss + fake_loss
@@ -301,14 +282,14 @@ for epoch in range(args.num_epochs):
         step = epoch * len(train_loader) + i + 1
         real_images = Variable(images).cuda()
         labels = Variable(labels).cuda()
-        colors = Variable(colors).cuda()  # 确保颜色标签也传给模型
+       
         generator.train()
         
         d_loss = 0
         for _ in range(args.n_critic):
             d_loss = discriminator_train_step(len(real_images), discriminator,
                                               generator, d_optimizer, criterion,
-                                              real_images, labels,colors)
+                                              real_images, labels)
         # # 生成器训练，增加训练次数
         for _ in range(args.n_generator):
             g_loss = generator_train_step(batch_size, discriminator, generator, g_optimizer, criterion)
@@ -329,8 +310,8 @@ for epoch in range(args.num_epochs):
             # labels = Variable(torch.LongTensor(np.arange(9))).cuda()
             z = torch.randn(9, 100).cuda()
             labels = torch.LongTensor(np.arange(9)).cuda()
-            colors = torch.LongTensor(np.random.randint(0, 3, 9)).cuda()
-            sample_images = generator(z, labels,colors)
+ 
+            sample_images = generator(z, labels)
             # sample_images = generator(z, labels).unsqueeze(1)
             grid = make_grid(sample_images, nrow=3, normalize=True)
             save_path = f'/local/scratch/hcui25/Project/xin/CS/GAN/datasets/CGANtmpimages3470/step_{step}.png'
@@ -350,7 +331,4 @@ torch.save(generator.state_dict(), os.path.join(args.model_dir, args.genmodel))
 torch.save(d_optimizer.state_dict(), os.path.join(args.model_dir, 'g_optimizer_state1gen50epoch123.pt'))
 torch.save(discriminator.state_dict(), os.path.join(args.model_dir, 'discriminator_state1gen50epoch123.pt'))
 torch.save(d_optimizer.state_dict(), os.path.join(args.model_dir, 'd_optimizer_state1gen50epoch123.pt'))
-
-z = Variable(torch.randn(100, 100)).cuda()
-labels = torch.LongTensor([i for i in range(10) for _ in range(10)]).cuda()
  

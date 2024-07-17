@@ -40,15 +40,15 @@ os.makedirs(csv_dir, exist_ok=True)
 data = pd.read_csv(args.traincsv)
 
 
+ 
 class Generator(nn.Module):
     def __init__(self):
         super().__init__()
         
         self.label_emb = nn.Embedding(10, 10)
-        self.color_emb = nn.Embedding(3,10)
-        
+     
         self.model = nn.Sequential(
-            nn.Linear(110 +10, 256), 
+            nn.Linear(110, 256), 
             nn.LeakyReLU(0.2, inplace=True),
             nn.BatchNorm1d(256),  # 添加BatchNorm层
             nn.Linear(256, 512),
@@ -61,22 +61,19 @@ class Generator(nn.Module):
             nn.Tanh()  # 保持 Tanh 作为最后一层，确保输出值在 [-1, 1] 范围内
         )
     
-    def forward(self, z, labels,colors):
+    def forward(self, z, labels):
         z = z.view(z.size(0), 100)  # 确保输入向量正确展开
         c = self.label_emb(labels)
-        color_c = self.color_emb(colors)
-        x = torch.cat([z, c, color_c], 1)    
+     
+        x = torch.cat([z, c], 1)    
          
         # # 调试信息
         # print(f"z shape: {z.shape}")
         # print(f"label embedding shape: {c.shape}")
-        # print(f"color embedding shape: {color_c.shape}")
-
+ 
         out = self.model(x)      
         return out.view(x.size(0), 3, 28, 28)  # 调整输出维度以匹配三通道彩色图像
-
-
-
+ 
 # 加载模型
 generator = Generator().cuda()
 generator.load_state_dict(torch.load(os.path.join(args.model_dir, args.genmodel)))
@@ -84,26 +81,22 @@ generator.eval()
  
 # 计算每个label和颜色的组合数量
 counts = data.groupby(['label', 'color']).size().reset_index(name='count')
+labels = range(10)  # Labels from 0 to 9
+print("last images " )
+print(counts)
 
-#初始化csv文件
-
-with open(args.synthetizedtraincsv, 'x', newline='') as csvfile:
+# Initialize CSV file
+with open(args.synthetizedtraincsv, 'w', newline='') as csvfile:
     csvwriter = csv.writer(csvfile)
-    csvwriter.writerow(['image_name','label','color'])
-    # 生成图像
-    for _,row in counts.iterrows():
-        num_images = row['count']
-        label = row['label']
-        color = row['color']
-        z = torch.randn(num_images, 100).cuda() 
-        labels = torch.LongTensor([label] * num_images).cuda()  # 为每个数字生成10个相同的标签
-        colors = torch.LongTensor([color] * num_images).cuda()  # 随机颜色标签
-        images = generator(z, labels, colors)
-        folder_path = args.images_dir
-        os.makedirs(folder_path, exist_ok=True)
-        for i , img in enumerate(images):
-            save_image(img,os.path.join(folder_path,f'image_{label}_{color}_{i}_gen{args.gen_num}.png'),normalize = True)
-            csvwriter.writerow([f'image_{label}_{color}_{i}_gen{args.gen_num}.png', label, color])
-
+    csvwriter.writerow(['image_name', 'label'])
+    for label in labels:
+        z = torch.randn(1000, 100).cuda()  # Generate 1000 latent vectors
+        labels_tensor = torch.LongTensor([label] * 1000).cuda()
+        images = generator(z, labels_tensor)
+        for i, img in enumerate(images):
+            image_name = f'image_{label}_{i}.png'
+            save_image(img, os.path.join(args.images_dir, image_name), normalize=True)
+            csvwriter.writerow([image_name, label])
+             
 
 print("generate image , done.")
