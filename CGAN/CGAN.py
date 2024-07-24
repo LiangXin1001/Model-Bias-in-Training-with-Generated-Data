@@ -10,7 +10,7 @@ from torch.autograd import Variable
 from torchvision.utils import make_grid,save_image
 import wandb
 from torch.optim.lr_scheduler import StepLR
-import torch.nn.functional as F
+ 
 import torch.optim as optim
 import argparse
 from utils import utils
@@ -29,9 +29,9 @@ torch.backends.cudnn.benchmark = False
 wandb.init(
     project="DCGAN-project_turing",
     config={
-        "learning_rate_d": 1e-4,    
-        "learning_rate_g": 1e-4,
-        "epochs": 50,
+        "learning_rate_d": 0.0001,    
+        "learning_rate_g": 0.0004,
+        "epochs": 10 ,
         "batch_size": 32,
         "n_critic": 5,
         "n_generator":5,
@@ -43,8 +43,8 @@ wandb.init(
 # 设置命令行参数解析
 parser = argparse.ArgumentParser(description='Train a Conditional GAN with MNIST')
  
-parser.add_argument('--base_dir', type=str, required=True, help='Base directory for saving csv files and images')
-parser.add_argument('--images_dir', type=str, required=True, help='Base directory for saving csv files and images')
+parser.add_argument('--train_csv', type=str, required=True, help='Base directory for saving csv files and images')
+parser.add_argument('--images_dirs', type=str, required=True, help='Base directory for saving csv files and images')
 parser.add_argument('--model_dir', type=str, required=True, help='Base directory for saving models ')
 parser.add_argument('--num_epochs', type=int, default=50, help='Number of epochs to train the model')
 parser.add_argument('--n_critic', type=int, default=5, help='Number of training steps for the critic per epoch')
@@ -57,14 +57,14 @@ args = parser.parse_args()
  
 
  
-train_csv = os.path.join(args.base_dir, 'train.csv') 
-train_img_dir = args.images_dir
+train_csv =  args.train_csv 
+image_dirs = args.images_dirs.split(',')
 
 test_csv = '/local/scratch/hcui25/Project/xin/CS/GAN/CGAN/generation0/test.csv'
 test_img_dir = '/local/scratch/hcui25/Project/xin/CS/GAN/CGAN/generation0/mnist_test'
  
 
-mean_rgb , std_rgb = utils.get_mean_std(train_csv, train_img_dir)
+mean_rgb , std_rgb = utils.get_mean_std(train_csv, image_dirs)
 
 transform = transforms.Compose([
     transforms.ToTensor(),
@@ -80,23 +80,32 @@ from torchvision.transforms import ToTensor
 from torch.utils.data import Dataset, DataLoader
 
 class CustomMNISTDataset(Dataset):
-    def __init__(self, csv_file, img_dir, transform=None):
+    def __init__(self, csv_file, img_dirs, transform=None):
         """
         Args:
             csv_file (string): CSV文件的路径,包含图片名称和标签。
-            img_dir (string): 包含所有图片的目录路径。
+            img_dirs (string): 包含所有图片的目录路径。
             transform (callable, optional): 可选的转换函数，应用于样本。
         """
         self.img_labels = pd.read_csv(csv_file)
-        self.img_dir = img_dir
+        self.img_dirs = img_dirs
         self.transform = transform
 
     def __len__(self):
         return len(self.img_labels)
 
     def __getitem__(self, idx):
-        img_path = os.path.join(self.img_dir, self.img_labels.iloc[idx, 0])
-        image = Image.open(img_path).convert('RGB')   
+        img_name = self.img_labels.iloc[idx, 0]
+        image = None
+        # 在所有目录中查找图像
+        for img_dir in self.img_dirs:
+            img_path = os.path.join(img_dir, img_name)
+            if os.path.exists(img_path):
+                image = Image.open(img_path).convert('RGB')
+                break
+        if image is None:
+            raise FileNotFoundError(f"Image {img_name} not found in any of the directories.")
+        
         label = self.img_labels.iloc[idx, 1]
         color = self.img_labels.iloc[idx, 2]  # 加载颜色标签
         if self.transform:
@@ -109,8 +118,8 @@ class CustomMNISTDataset(Dataset):
 
 
 # 创建数据集实例
-train_dataset = CustomMNISTDataset(csv_file=train_csv, img_dir=train_img_dir, transform=ToTensor())
-test_dataset = CustomMNISTDataset(csv_file=test_csv, img_dir=test_img_dir, transform=ToTensor())
+train_dataset = CustomMNISTDataset(csv_file=train_csv, img_dirs=image_dirs, transform=ToTensor())
+test_dataset = CustomMNISTDataset(csv_file=test_csv, img_dirs=[test_img_dir], transform=ToTensor())
 
 batch_size = 32
 # 创建数据加载器
@@ -138,10 +147,10 @@ class Discriminator(nn.Module):
         )
     
     def forward(self, x, labels):
-        x = x.view(x.size(0), -1)  # 改为自动计算输入张量的维度
+        x = torch.flatten(x, 1)
         c = self.label_emb(labels)
   
-        x = torch.cat([x, c], 1)
+        x = torch.cat([x, c], dim=-1)
        
         out = self.model(x)
        
@@ -187,9 +196,9 @@ discriminator = Discriminator().cuda()
 
 
 criterion = nn.BCELoss()
-# 调整优化器的学习率
-d_optimizer = torch.optim.Adam(discriminator.parameters(), lr=1e-5)   
-g_optimizer = torch.optim.Adam(generator.parameters(), lr=1e-4)   
+ 
+d_optimizer = torch.optim.Adam(discriminator.parameters(), lr=0.00001)   
+g_optimizer = torch.optim.Adam(generator.parameters(), lr=0.0001)   
 
 
 
@@ -295,13 +304,8 @@ for epoch in range(args.num_epochs):
             g_loss = generator_train_step(batch_size, discriminator, generator, g_optimizer, criterion)
             print(f'Step {step}: Generator Loss: {g_loss}, Discriminator Loss: {d_loss}')
             wandb.log({"Generator Loss": g_loss, "Discriminator Loss": d_loss / args.n_critic, "Epoch": epoch, "Step": step})
-        # g_loss = generator_train_step(batch_size, discriminator, generator, g_optimizer, criterion)
-
-        # # 使用 WandB 记录损失
-        # wandb.log({"Generator Loss": g_loss, "Discriminator Loss": d_loss / args.n_critic, "Epoch": epoch, "Step": step})
-
-        # g_loss = generator_train_step(batch_size, discriminator, generator, g_optimizer, criterion)
-        
+       
+       
         print(f'i {i} , Step {step}: Generator Loss: {g_loss}, Discriminator Loss: {d_loss / args.n_critic}')
         if step % args.display_step == 0:
             print("hello")
