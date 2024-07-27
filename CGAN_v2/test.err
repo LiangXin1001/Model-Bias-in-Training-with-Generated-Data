@@ -1,0 +1,16 @@
+[ WARNING ] Directory `/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/tests` already exists!
+[ INFO ] TestEngine:
+[ INFO ] Creating model `cgan`.
+[ INFO ] You loaded the specified weight. Load weights from `/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/weights_b16/GAN-last.pth`.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Test single image performance evaluation completed successfully.
+
