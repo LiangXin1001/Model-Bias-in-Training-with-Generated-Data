@@ -18,7 +18,7 @@ __pycache__
 *.csv
 
 # Ignore checkpoints
-*.pth
+ 
 
 # Ignore pickle files
 *.pkl
