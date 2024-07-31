@@ -7,7 +7,7 @@ from torchvision import transforms
 from torch.utils.data import DataLoader, Dataset
 from torchvision.models import resnet50
 from sklearn.metrics import confusion_matrix, precision_score, recall_score
-import wandb
+ 
 from utils import utils
 import numpy as np
 import matplotlib.pyplot as plt
@@ -15,16 +15,7 @@ import seaborn as sns
 import argparse
 
 
-
-# 初始化 wandb
-wandb.init(
-    project="my-ResNet50-project",
-    config={
-        "learning_rate": 0.001,
-        "epochs": 1,
-        "batch_size": 8,
-    }
-)
+ 
 
 # Set up command line arguments
 parser = argparse.ArgumentParser(description='Train a model with configurable datasets')
@@ -47,7 +38,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model_weight_name = 'resnet50'
 # 配置文件和图像路径
 csv_file =  args.train_csv
-image_folder =  args.train_images_dir
+image_folder = args.train_images_dir.split(',')
 
 mean_rgb , std_rgb = utils.get_mean_std(csv_file, image_folder)
 
@@ -60,33 +51,50 @@ transform = transforms.Compose([
       transforms.Normalize(mean = mean_rgb, std = std_rgb)  
 ])
 
-
-# 定义自定义数据集类
 class CustomDataset(Dataset):
-    def __init__(self, csv_file, root_dir, transform=None):
-        self.annotations = pd.read_csv(csv_file)
-        self.root_dir = root_dir
+    def __init__(self, csv_file, img_dirs, transform=None):
+        """
+        Args:
+            csv_file (string): CSV文件的路径,包含图片名称和标签。
+            img_dirs (string): 包含所有图片的目录路径。
+            transform (callable, optional): 可选的转换函数，应用于样本。
+        """
+        self.img_labels = pd.read_csv(csv_file)
+        self.img_dirs = img_dirs
         self.transform = transform
 
     def __len__(self):
-        return len(self.annotations)
+        return len(self.img_labels)
 
     def __getitem__(self, idx):
-        img_name = os.path.join(self.root_dir, self.annotations.iloc[idx, 0])
-        image = Image.open(img_name).convert('RGB')
-        label = self.annotations.iloc[idx, 1]
-        color = self.annotations.iloc[idx, 2]
+        img_name = self.img_labels.iloc[idx, 0]
+        image = None
+       
+        # 在所有目录中查找图像
+        for img_dir in self.img_dirs:
+            img_path = os.path.join(img_dir, img_name)
+            if os.path.exists(img_path):
+                image = Image.open(img_path).convert('RGB')
+                break
+        if image is None:
+            raise FileNotFoundError(f"Image {img_name} not found in any of the directories.")
+        
+        label = self.img_labels.iloc[idx, 1]
+        color = self.img_labels.iloc[idx, 2]  # 加载颜色标签
         if self.transform:
             image = self.transform(image)
-        return image, label, color
+        else:
+            image = ToTensor()(image)  # 默认转换为张量
+        return image, label, color  # 返回图像、数值标签和颜色标签
+
 
 # 加载数据集
 train_csv  = args.train_csv
 test_csv =  args.test_csv
-dataset_path =  args.train_images_dir
+dataset_path =  args.train_images_dir.split(',')
 testdatapath =  args.test_images_dir
-train_dataset = CustomDataset(csv_file=train_csv, root_dir=dataset_path, transform=transform)
-test_dataset = CustomDataset(csv_file=test_csv, root_dir=testdatapath, transform=transform)
+train_dataset = CustomDataset(csv_file=train_csv, img_dirs=dataset_path, transform=transform)
+test_dataset = CustomDataset(csv_file=test_csv, img_dirs=[testdatapath], transform=transform)
 
 train_loader = DataLoader(train_dataset, batch_size=8, shuffle=True, num_workers=4)
 test_loader = DataLoader(test_dataset, batch_size=8, shuffle=False, num_workers=4)
@@ -111,16 +119,22 @@ def train(epochs):
         loss = criterion(output, target)
         loss.backward()
         optimizer.step()
-
-        # Logging to wandb
-        wandb.log({"Train Loss": loss.item()})
+ 
+   
         if batch_idx % 100 == 0:
             print(f'Train Epoch: {args.epochs} [{batch_idx * len(data)}/{len(train_loader.dataset)} ({100. * batch_idx / len(train_loader):.0f}%)]\tLoss: {loss.item():.6f}')
         torch.cuda.empty_cache()  # 尝试在这里清理CUDA缓存
 
 # 测试函数
 def test():
-    model.eval()
+    # model_path = os.path.join(args.model_save_path, f"{args.model_name}_epoch{args.epochs}.pth")
+ 
+    # model = resnet50(weights=None)  # 如果你修改了模型，请确保这里也做相应的修改
+    # num_features = model.fc.in_features
+    # model.fc = nn.Linear(num_features, 10)  # 假设你的模型输出10个类别
+    # model.load_state_dict(torch.load(model_path))
+    # model = model.to(device)
+    model.eval()  # 设置为评估模式
     test_loss = 0
     correct = 0
     all_preds = []
@@ -146,9 +160,7 @@ def test():
 
     accuracy = 100. * correct / len(test_loader.dataset)
     
-    # Logging to wandb
-    wandb.log({"Test Loss": test_loss, "Accuracy": accuracy, "Precision": precision, "Recall": recall})
-    
+   
     print(f'\nTest set: Average loss: {test_loss:.4f}, Accuracy: {correct}/{len(test_loader.dataset)} ({accuracy:.0f}%)\n')
     print(f'Precision: {precision:.4f}, Recall: {recall:.4f}')
     print('Confusion Matrix:\n', cm)
@@ -162,22 +174,6 @@ def test():
     all_targets = np.array(all_targets)
     all_colors = np.array(all_colors)
 
-    color_distribution = {
-        0: [0.05, 0.9, 0.05],
-        1: [0.05, 0.05, 0.9],
-        2: [0.05, 0.9, 0.05],
-        3: [0.9, 0.05, 0.05],
-        4: [0.05, 0.9, 0.05],
-        5: [0.05, 0.05, 0.9],
-        6: [0.9, 0.05, 0.05],
-        7: [0.05, 0.05, 0.9],
-        8: [0.05, 0.9, 0.05],
-        9: [0.9, 0.05, 0.05],
-    }
-    # 计算差异指标
-    # 分类主色调和非主色调的索引
-    indices_main = [i for i in range(len(all_colors)) if color_distribution[all_targets[i]][all_colors[i]] == 0.9]
-    indices_not_main = [i for i in range(len(all_colors)) if color_distribution[all_targets[i]][all_colors[i]] == 0.05]
     
     # Difference in Means
     correct_main = np.sum([all_preds[i] == all_targets[i] for i in indices_main])
@@ -327,22 +323,15 @@ def test():
 
 
 
-
-
-
-
-
-
-
 # 保存模型函数
 def save_model(model, model_name,  epochs, path):
+    os.makedirs(path, exist_ok=True)
     torch.save(model.state_dict(), os.path.join(path, f"{model_name}_epoch{args.epochs}.pth"))
- 
-
+  
 # 训练和测试模型
-for epoch in range(1, wandb.config.epochs + 1):
+for epoch in range(1, args.epochs + 1):
     train(args.epochs)
-    test()
+     
     save_model(model, args.model_name, args.epochs, args.model_save_path)
 
 
