@@ -29,7 +29,7 @@ pivot_df = combined_df.pivot_table(index='Digit', columns='Gen', values='Dispara
 pivot_df.plot(kind='bar', figsize=(15, 6))
  
 plt.xlabel('Digit')
-plt.ylim(0.95, 1.05)
+plt.ylim(0.85, 1)
 plt.ylabel('Disparate Impact Value')
 plt.title('Disparate Impact Values for Different Digits Across Generations')
 plt.legend(title='Generation')

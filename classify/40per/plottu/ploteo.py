@@ -26,7 +26,7 @@ pivot_df = combined_df.pivot(index='Digit', columns='Gen', values='EO')
 
 # Plotting
 pivot_df.plot(kind='bar', figsize=(15, 6))
-plt.ylim(0.85, 1.0)
+plt.ylim(0.98, 1.0)
 plt.xlabel('Digit')
 plt.ylabel('EO Value')
 plt.title('EO Values for Different Digits Across Generations')
