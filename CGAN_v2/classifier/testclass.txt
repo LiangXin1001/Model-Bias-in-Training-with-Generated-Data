@@ -1,0 +1,5 @@
+/home/hcui25/anaconda3/envs/llava-med/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+  warnings.warn(msg)
+Mean: [0.04405352 0.04311765 0.04534344]
+Std: [0.18952053 0.18775864 0.19217412]
+Accuracy of the untrained model on the test images: 11.26%

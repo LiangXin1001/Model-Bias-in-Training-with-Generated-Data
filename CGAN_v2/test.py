@@ -33,7 +33,7 @@ logger = logging.getLogger(__name__)
 logging.basicConfig(format="[ %(levelname)s ] %(message)s", level=logging.INFO)
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-def generate_images_and_csv(model, device, num_images_per_class=1000, num_classes=10):
+def generate_images_and_csv(model, device, num_images_per_class, num_classes=10):
     model.eval()  
     image_path = args.image_path
     os.makedirs(image_path, exist_ok=True)  
@@ -60,7 +60,7 @@ def generate_images_and_csv(model, device, num_images_per_class=1000, num_classe
             os.makedirs(class_dir, exist_ok=True)  # 创建类别文件夹
 
             for j, image in enumerate(images):
-                image_filename = f"{class_folder}_image_{j:04d}.png"
+                image_filename = f"{class_folder}_image_{j:04d}_gen{args.gen_num}.png"
                 save_path = os.path.join(class_dir, image_filename)
  
                 vutils.save_image(image, save_path, normalize=True)
@@ -96,33 +96,32 @@ def main(args):
     # If the GPU is available, load the model into the GPU memory. This speed.
   
     model = model.cuda()
-    generate_images_and_csv(model, device)
+    generate_images_and_csv(model, device,args.num_images)
 
  
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--test_img_dir', type=str, required=True)
+    
     parser.add_argument('--image_path', type=str, required=True)
-    parser.add_argument('--test_csv', type=str, required=True)
+    parser.add_argument('--gen_num', type=str, required=True)
+    
     parser.add_argument('--output_csv', type=str, required=True)
     parser.add_argument("--arch", default="cgan", type=str, choices=model_names,
                         help="model architecture: " +
                              " | ".join(model_names) +
                              ". (Default: `cgan`)")
-    parser.add_argument("--conditional", default=1, type=int, choices=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                        help="Specifies the generated conditional. (Default: 1)")
-    parser.add_argument("--num-images", default=64, type=int,
+     
+    parser.add_argument("--num_images", default=64, type=int,
                         help="How many samples are generated at one time. (Default: 64)")
-    parser.add_argument("--model-path", default="weights/GAN-last.pth", type=str,
-                        help="Path to latest checkpoint for model. (Default: `weights/GAN-last.pth`)")
+    parser.add_argument("--model-path", default=None, type=str,
+                        help="Path to latest checkpoint for model.  ")
     parser.add_argument("--pretrained", dest="pretrained", action="store_true",
                         help="Use pre-trained model.")
     parser.add_argument("--seed", default=None, type=int,
                         help="Seed for initializing testing.")
-    parser.add_argument("--gpu", default=None, type=int,
-                        help="GPU id to use.")
+ 
     args = parser.parse_args()
 
     print("##################################################\n")

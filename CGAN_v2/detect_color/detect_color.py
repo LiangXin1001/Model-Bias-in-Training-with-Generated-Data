@@ -3,13 +3,18 @@ import pandas as pd
 from collections import Counter
 from PIL import Image, ImageFilter
 import os
-# Define the path to your CSV and images directory
+import argparse
+parser = argparse.ArgumentParser()
+
+parser.add_argument('--base_image_dir', type=str, required=True)
+parser.add_argument('--csv_filename', type=str, required=True)
+
+args = parser.parse_args()
+
  
-# Define the base path for images
-base_image_dir = '/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/generated_images_gen2'
 
 # Load the CSV file
-csv_path = os.path.join(base_image_dir, 'gen2_test.csv')
+csv_path = os.path.join(args.base_image_dir, args.csv_filename)
 df = pd.read_csv(csv_path)
  
  
@@ -19,7 +24,7 @@ df = pd.read_csv(csv_path)
 def detect_color(image_name):
    # Extract class from image name
     class_folder = image_name.split('_')[0]+'_'+image_name.split('_')[1]
-    image_path = os.path.join(base_image_dir, class_folder, image_name)
+    image_path = os.path.join(args.base_image_dir, class_folder, image_name)
 
 
     with Image.open(image_path) as img:

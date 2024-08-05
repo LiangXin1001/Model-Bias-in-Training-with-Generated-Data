@@ -1,0 +1,1199 @@
+gen0
+             Filename  True Label  Predicted Label  Color
+0   image_6_1_130.png           6                6      1
+1  image_3_0_7690.png           3                3      0
+2  image_8_2_2600.png           8                8      2
+3  image_7_0_7504.png           7                7      0
+4  image_1_1_9946.png           1                1      1
+For digit 0, color 0: TP=329, FN=6, FP=10, TN=2980
+For digit 0, color 1: TP=331, FN=3, FP=22, TN=3063
+For digit 0, color 2: TP=305, FN=6, FP=18, TN=2927
+For digit 1, color 0: TP=375, FN=2, FP=11, TN=2937
+For digit 1, color 1: TP=358, FN=2, FP=5, TN=3054
+For digit 1, color 2: TP=391, FN=7, FP=1, TN=2857
+For digit 2, color 0: TP=329, FN=40, FP=16, TN=2940
+For digit 2, color 1: TP=318, FN=21, FP=23, TN=3057
+For digit 2, color 2: TP=299, FN=25, FP=23, TN=2909
+For digit 3, color 0: TP=321, FN=15, FP=37, TN=2952
+For digit 3, color 1: TP=308, FN=21, FP=24, TN=3066
+For digit 3, color 2: TP=319, FN=26, FP=16, TN=2895
+For digit 4, color 0: TP=303, FN=8, FP=9, TN=3005
+For digit 4, color 1: TP=336, FN=6, FP=23, TN=3054
+For digit 4, color 2: TP=312, FN=17, FP=6, TN=2921
+For digit 5, color 0: TP=260, FN=33, FP=21, TN=3011
+For digit 5, color 1: TP=283, FN=25, FP=17, TN=3094
+For digit 5, color 2: TP=263, FN=28, FP=15, TN=2950
+For digit 6, color 0: TP=303, FN=8, FP=16, TN=2998
+For digit 6, color 1: TP=331, FN=37, FP=10, TN=3041
+For digit 6, color 2: TP=272, FN=7, FP=19, TN=2958
+For digit 7, color 0: TP=312, FN=10, FP=32, TN=2971
+For digit 7, color 1: TP=349, FN=12, FP=16, TN=3042
+For digit 7, color 2: TP=327, FN=18, FP=22, TN=2889
+For digit 8, color 0: TP=309, FN=28, FP=13, TN=2975
+For digit 8, color 1: TP=305, FN=32, FP=15, TN=3067
+For digit 8, color 2: TP=287, FN=13, FP=30, TN=2926
+For digit 9, color 0: TP=307, FN=27, FP=12, TN=2979
+For digit 9, color 1: TP=322, FN=19, FP=23, TN=3055
+For digit 9, color 2: TP=312, FN=22, FP=19, TN=2903
+Difference in Means by Color:
+Digit 0 Color Difference: 0.010310568573464018
+Digit 1 Color Difference: 0.01228289991069409
+Digit 2 Color Difference: 0.0464541813559729
+Digit 3 Color Difference: 0.03071946169772266
+Digit 4 Color Difference: 0.03412787287367347
+Digit 5 Color Difference: 0.031459155179291654
+Digit 6 Color Difference: 0.07545387252610247
+Digit 7 Color Difference: 0.021118012422360333
+Digit 8 Color Difference: 0.05162215628090994
+Digit 9 Color Difference: 0.025119848279979706
+
+Difference in Means by Digit:
+Color 0 Digit Difference: 0.10732294656032448
+Color 1 Digit Difference: 0.09498792270531398
+Color 2 Digit Difference: 0.07863199157298517
+TPR and FPR by digit and color:
+Digit 0.0 - Color 0.0: TPR = 0.982089552238806, FPR = 0.0033444816053511705
+Digit 0.0 - Color 1.0: TPR = 0.9910179640718563, FPR = 0.00713128038897893
+Digit 0.0 - Color 2.0: TPR = 0.9807073954983923, FPR = 0.006112054329371817
+Digit 1.0 - Color 0.0: TPR = 0.9946949602122016, FPR = 0.0037313432835820895
+Digit 1.0 - Color 1.0: TPR = 0.9944444444444445, FPR = 0.0016345210853220007
+Digit 1.0 - Color 2.0: TPR = 0.9824120603015075, FPR = 0.0003498950314905528
+Digit 2.0 - Color 0.0: TPR = 0.8915989159891599, FPR = 0.005412719891745603
+Digit 2.0 - Color 1.0: TPR = 0.9380530973451328, FPR = 0.007467532467532467
+Digit 2.0 - Color 2.0: TPR = 0.9228395061728395, FPR = 0.007844474761255117
+Digit 3.0 - Color 0.0: TPR = 0.9553571428571429, FPR = 0.012378721980595517
+Digit 3.0 - Color 1.0: TPR = 0.9361702127659575, FPR = 0.007766990291262136
+Digit 3.0 - Color 2.0: TPR = 0.9246376811594202, FPR = 0.005496392992098935
+Digit 4.0 - Color 0.0: TPR = 0.9742765273311897, FPR = 0.0029860650298606504
+Digit 4.0 - Color 1.0: TPR = 0.9824561403508771, FPR = 0.007474813129671758
+Digit 4.0 - Color 2.0: TPR = 0.9483282674772037, FPR = 0.0020498804236419544
+Digit 5.0 - Color 0.0: TPR = 0.8873720136518771, FPR = 0.006926121372031662
+Digit 5.0 - Color 1.0: TPR = 0.9188311688311688, FPR = 0.00546448087431694
+Digit 5.0 - Color 2.0: TPR = 0.9037800687285223, FPR = 0.00505902192242833
+Digit 6.0 - Color 0.0: TPR = 0.9742765273311897, FPR = 0.0053085600530856005
+Digit 6.0 - Color 1.0: TPR = 0.8994565217391305, FPR = 0.0032776138970829235
+Digit 6.0 - Color 2.0: TPR = 0.974910394265233, FPR = 0.006382264024185421
+Digit 7.0 - Color 0.0: TPR = 0.968944099378882, FPR = 0.010656010656010656
+Digit 7.0 - Color 1.0: TPR = 0.9667590027700831, FPR = 0.005232177894048398
+Digit 7.0 - Color 2.0: TPR = 0.9478260869565217, FPR = 0.007557540364136035
+Digit 8.0 - Color 0.0: TPR = 0.9169139465875371, FPR = 0.004350736278447122
+Digit 8.0 - Color 1.0: TPR = 0.9050445103857567, FPR = 0.004866969500324465
+Digit 8.0 - Color 2.0: TPR = 0.9566666666666667, FPR = 0.010148849797023005
+Digit 9.0 - Color 0.0: TPR = 0.9191616766467066, FPR = 0.004012036108324975
+Digit 9.0 - Color 1.0: TPR = 0.9442815249266863, FPR = 0.007472384665367121
+Digit 9.0 - Color 2.0: TPR = 0.9341317365269461, FPR = 0.006502395619438741
+             Filename  True Label  Predicted Label  Color
+0   image_6_1_130.png           6                6      1
+1  image_3_0_7690.png           3                3      0
+2  image_8_2_2600.png           8                8      2
+3  image_7_0_7504.png           7                7      0
+4  image_1_1_9946.png           1                1      1
+Difference between Color 1 and Others: 0.0005135899792888532
+Difference between Color 0 and Others: 0.0012480639801751847
+Difference between Color 2 and Others: 0.0007352062512204771
+             Filename  True Label  Predicted Label  Color
+0   image_6_1_130.png           6                6      1
+1  image_3_0_7690.png           3                3      0
+2  image_8_2_2600.png           8                8      2
+3  image_7_0_7504.png           7                7      0
+4  image_1_1_9946.png           1                1      1
+Digit 0: EO = 0.9974754674775814
+Digit 1: EO = 0.9977457011652723
+Digit 2: EO = 0.9983788300869937
+Digit 3: EO = 0.9954117806743356
+Digit 4: EO = 0.9963833781959801
+Digit 5: EO = 0.9987552670335978
+Digit 6: EO = 0.9979302332485983
+Digit 7: EO = 0.9963841114920251
+Digit 8: EO = 0.996134590987616
+Digit 9: EO = 0.9976931009619718
+gen1
+             Filename  True Label  Predicted Label  Color
+0   image_6_1_130.png           6                6      1
+1  image_3_0_7690.png           3                3      0
+2  image_8_2_2600.png           8                8      2
+3  image_7_0_7504.png           7                7      0
+4  image_1_1_9946.png           1                1      1
+For digit 0, color 0: TP=328, FN=7, FP=5, TN=2985
+For digit 0, color 1: TP=328, FN=6, FP=15, TN=3070
+For digit 0, color 2: TP=304, FN=7, FP=11, TN=2934
+For digit 1, color 0: TP=373, FN=4, FP=4, TN=2944
+For digit 1, color 1: TP=357, FN=3, FP=7, TN=3052
+For digit 1, color 2: TP=389, FN=9, FP=1, TN=2857
+For digit 2, color 0: TP=339, FN=30, FP=12, TN=2944
+For digit 2, color 1: TP=322, FN=17, FP=28, TN=3052
+For digit 2, color 2: TP=312, FN=12, FP=30, TN=2902
+For digit 3, color 0: TP=326, FN=10, FP=37, TN=2952
+For digit 3, color 1: TP=308, FN=21, FP=21, TN=3069
+For digit 3, color 2: TP=320, FN=25, FP=32, TN=2879
+For digit 4, color 0: TP=281, FN=30, FP=6, TN=3008
+For digit 4, color 1: TP=329, FN=13, FP=9, TN=3068
+For digit 4, color 2: TP=323, FN=6, FP=14, TN=2913
+For digit 5, color 0: TP=281, FN=12, FP=19, TN=3013
+For digit 5, color 1: TP=289, FN=19, FP=28, TN=3083
+For digit 5, color 2: TP=251, FN=40, FP=15, TN=2950
+For digit 6, color 0: TP=306, FN=5, FP=19, TN=2995
+For digit 6, color 1: TP=342, FN=26, FP=9, TN=3042
+For digit 6, color 2: TP=263, FN=16, FP=11, TN=2966
+For digit 7, color 0: TP=307, FN=15, FP=12, TN=2991
+For digit 7, color 1: TP=346, FN=15, FP=16, TN=3042
+For digit 7, color 2: TP=334, FN=11, FP=28, TN=2883
+For digit 8, color 0: TP=310, FN=27, FP=9, TN=2979
+For digit 8, color 1: TP=312, FN=25, FP=9, TN=3073
+For digit 8, color 2: TP=285, FN=15, FP=18, TN=2938
+For digit 9, color 0: TP=318, FN=16, FP=33, TN=2958
+For digit 9, color 1: TP=322, FN=19, FP=22, TN=3056
+For digit 9, color 2: TP=301, FN=33, FP=14, TN=2908
+Difference in Means by Color:
+Digit 0 Color Difference: 0.004543966728921545
+Digit 1 Color Difference: 0.014279731993299905
+Digit 2 Color Difference: 0.04426377597109299
+Digit 3 Color Difference: 0.04270186335403725
+Digit 4 Color Difference: 0.07822594044116937
+Digit 5 Color Difference: 0.09650141327422201
+Digit 6 Color Difference: 0.05457500349503708
+Digit 7 Color Difference: 0.014699792960662594
+Digit 8 Color Difference: 0.03011869436201775
+Digit 9 Color Difference: 0.05089820359281427
+
+Difference in Means by Digit:
+Color 0 Digit Difference: 0.08585294293244183
+Color 1 Digit Difference: 0.0658506429277943
+Color 2 Digit Difference: 0.11921996260667023
+TPR and FPR by digit and color:
+Digit 0.0 - Color 0.0: TPR = 0.9791044776119403, FPR = 0.0016722408026755853
+Digit 0.0 - Color 1.0: TPR = 0.9820359281437125, FPR = 0.004862236628849271
+Digit 0.0 - Color 2.0: TPR = 0.977491961414791, FPR = 0.003735144312393888
+Digit 1.0 - Color 0.0: TPR = 0.9893899204244032, FPR = 0.0013568521031207597
+Digit 1.0 - Color 1.0: TPR = 0.9916666666666667, FPR = 0.002288329519450801
+Digit 1.0 - Color 2.0: TPR = 0.9773869346733668, FPR = 0.0003498950314905528
+Digit 2.0 - Color 0.0: TPR = 0.9186991869918699, FPR = 0.0040595399188092015
+Digit 2.0 - Color 1.0: TPR = 0.9498525073746312, FPR = 0.00909090909090909
+Digit 2.0 - Color 2.0: TPR = 0.9629629629629629, FPR = 0.010231923601637109
+Digit 3.0 - Color 0.0: TPR = 0.9702380952380952, FPR = 0.012378721980595517
+Digit 3.0 - Color 1.0: TPR = 0.9361702127659575, FPR = 0.006796116504854369
+Digit 3.0 - Color 2.0: TPR = 0.927536231884058, FPR = 0.01099278598419787
+Digit 4.0 - Color 0.0: TPR = 0.9035369774919614, FPR = 0.0019907100199071004
+Digit 4.0 - Color 1.0: TPR = 0.9619883040935673, FPR = 0.0029249268768280793
+Digit 4.0 - Color 2.0: TPR = 0.9817629179331308, FPR = 0.004783054321831227
+Digit 5.0 - Color 0.0: TPR = 0.9590443686006825, FPR = 0.006266490765171504
+Digit 5.0 - Color 1.0: TPR = 0.9383116883116883, FPR = 0.00900032144005143
+Digit 5.0 - Color 2.0: TPR = 0.8625429553264605, FPR = 0.00505902192242833
+Digit 6.0 - Color 0.0: TPR = 0.9839228295819936, FPR = 0.0063039150630391505
+Digit 6.0 - Color 1.0: TPR = 0.9293478260869565, FPR = 0.0029498525073746312
+Digit 6.0 - Color 2.0: TPR = 0.942652329749104, FPR = 0.003694994961370507
+Digit 7.0 - Color 0.0: TPR = 0.953416149068323, FPR = 0.003996003996003996
+Digit 7.0 - Color 1.0: TPR = 0.9584487534626038, FPR = 0.005232177894048398
+Digit 7.0 - Color 2.0: TPR = 0.9681159420289855, FPR = 0.009618687736173137
+Digit 8.0 - Color 0.0: TPR = 0.9198813056379822, FPR = 0.0030120481927710845
+Digit 8.0 - Color 1.0: TPR = 0.9258160237388724, FPR = 0.0029201817001946787
+Digit 8.0 - Color 2.0: TPR = 0.95, FPR = 0.006089309878213802
+Digit 9.0 - Color 0.0: TPR = 0.9520958083832335, FPR = 0.011033099297893681
+Digit 9.0 - Color 1.0: TPR = 0.9442815249266863, FPR = 0.007147498375568551
+Digit 9.0 - Color 2.0: TPR = 0.9011976047904192, FPR = 0.004791238877481177
+             Filename  True Label  Predicted Label  Color
+0   image_6_1_130.png           6                6      1
+1  image_3_0_7690.png           3                3      0
+2  image_8_2_2600.png           8                8      2
+3  image_7_0_7504.png           7                7      0
+4  image_1_1_9946.png           1                1      1
+Difference between Color 1 and Others: 0.002177113077660442
+Difference between Color 0 and Others: 0.003719410886767527
+Difference between Color 2 and Others: 0.005990218623670662
+             Filename  True Label  Predicted Label  Color
+0   image_6_1_130.png           6                6      1
+1  image_3_0_7690.png           3                3      0
+2  image_8_2_2600.png           8                8      2
+3  image_7_0_7504.png           7                7      0
+4  image_1_1_9946.png           1                1      1
+Digit 0: EO = 0.9978733361158842
+Digit 1: EO = 0.9987077103413597
+Digit 2: EO = 0.9958850775447814
+Digit 3: EO = 0.9962782630161725
+Digit 4: EO = 0.9981384371320506
+Digit 5: EO = 0.9973724669882512
+Digit 6: EO = 0.9977639582962237
+Digit 7: EO = 0.9962515441732205
+Digit 8: EO = 0.9978872478813205
+Digit 9: EO = 0.995838759719725
+gen2
+             Filename  True Label  Predicted Label  Color
+0   image_6_1_130.png           6                6      1
+1  image_3_0_7690.png           3                3      0
+2  image_8_2_2600.png           8                8      2
+3  image_7_0_7504.png           7                7      0
+4  image_1_1_9946.png           1                1      1
+For digit 0, color 0: TP=329, FN=6, FP=10, TN=2980
+For digit 0, color 1: TP=329, FN=5, FP=27, TN=3058
+For digit 0, color 2: TP=303, FN=8, FP=9, TN=2936
+For digit 1, color 0: TP=375, FN=2, FP=5, TN=2943
+For digit 1, color 1: TP=358, FN=2, FP=6, TN=3053
+For digit 1, color 2: TP=389, FN=9, FP=2, TN=2856
+For digit 2, color 0: TP=352, FN=17, FP=24, TN=2932
+For digit 2, color 1: TP=318, FN=21, FP=22, TN=3058
+For digit 2, color 2: TP=307, FN=17, FP=23, TN=2909
+For digit 3, color 0: TP=322, FN=14, FP=17, TN=2972
+For digit 3, color 1: TP=306, FN=23, FP=14, TN=3076
+For digit 3, color 2: TP=311, FN=34, FP=13, TN=2898
+For digit 4, color 0: TP=297, FN=14, FP=8, TN=3006
+For digit 4, color 1: TP=338, FN=4, FP=23, TN=3054
+For digit 4, color 2: TP=321, FN=8, FP=15, TN=2912
+For digit 5, color 0: TP=273, FN=20, FP=15, TN=3017
+For digit 5, color 1: TP=290, FN=18, FP=24, TN=3087
+For digit 5, color 2: TP=275, FN=16, FP=37, TN=2928
+For digit 6, color 0: TP=303, FN=8, FP=5, TN=3009
+For digit 6, color 1: TP=352, FN=16, FP=13, TN=3038
+For digit 6, color 2: TP=268, FN=11, FP=9, TN=2968
+For digit 7, color 0: TP=305, FN=17, FP=9, TN=2994
+For digit 7, color 1: TP=346, FN=15, FP=13, TN=3045
+For digit 7, color 2: TP=315, FN=30, FP=13, TN=2898
+For digit 8, color 0: TP=311, FN=26, FP=6, TN=2982
+For digit 8, color 1: TP=307, FN=30, FP=8, TN=3074
+For digit 8, color 2: TP=286, FN=14, FP=19, TN=2937
+For digit 9, color 0: TP=323, FN=11, FP=36, TN=2955
+For digit 9, color 1: TP=311, FN=30, FP=14, TN=3064
+For digit 9, color 2: TP=315, FN=19, FP=26, TN=2896
+Difference in Means by Color:
+Digit 0 Color Difference: 0.010753412788570782
+Digit 1 Color Difference: 0.017308025538834815
+Digit 2 Color Difference: 0.015876441950260167
+Digit 3 Color Difference: 0.05688405797101448
+Digit 4 Color Difference: 0.03332017073766946
+Digit 5 Color Difference: 0.013276567796113192
+Digit 6 Color Difference: 0.017754788200754934
+Digit 7 Color Difference: 0.04540527520173432
+Digit 8 Color Difference: 0.04235410484668645
+Digit 9 Color Difference: 0.05504240785291592
+
+Difference in Means by Digit:
+Color 0 Digit Difference: 0.0718462955237743
+Color 1 Digit Difference: 0.08346521595779754
+Color 2 Digit Difference: 0.0759376593110479
+TPR and FPR by digit and color:
+Digit 0.0 - Color 0.0: TPR = 0.982089552238806, FPR = 0.0033444816053511705
+Digit 0.0 - Color 1.0: TPR = 0.9850299401197605, FPR = 0.008752025931928687
+Digit 0.0 - Color 2.0: TPR = 0.9742765273311897, FPR = 0.0030560271646859084
+Digit 1.0 - Color 0.0: TPR = 0.9946949602122016, FPR = 0.0016960651289009499
+Digit 1.0 - Color 1.0: TPR = 0.9944444444444445, FPR = 0.001961425302386401
+Digit 1.0 - Color 2.0: TPR = 0.9773869346733668, FPR = 0.0006997900629811056
+Digit 2.0 - Color 0.0: TPR = 0.9539295392953929, FPR = 0.008119079837618403
+Digit 2.0 - Color 1.0: TPR = 0.9380530973451328, FPR = 0.007142857142857143
+Digit 2.0 - Color 2.0: TPR = 0.9475308641975309, FPR = 0.007844474761255117
+Digit 3.0 - Color 0.0: TPR = 0.9583333333333334, FPR = 0.005687520910003346
+Digit 3.0 - Color 1.0: TPR = 0.9300911854103343, FPR = 0.004530744336569579
+Digit 3.0 - Color 2.0: TPR = 0.9014492753623189, FPR = 0.004465819306080384
+Digit 4.0 - Color 0.0: TPR = 0.954983922829582, FPR = 0.0026542800265428003
+Digit 4.0 - Color 1.0: TPR = 0.9883040935672515, FPR = 0.007474813129671758
+Digit 4.0 - Color 2.0: TPR = 0.9756838905775076, FPR = 0.005124701059104886
+Digit 5.0 - Color 0.0: TPR = 0.931740614334471, FPR = 0.004947229551451188
+Digit 5.0 - Color 1.0: TPR = 0.9415584415584416, FPR = 0.007714561234329798
+Digit 5.0 - Color 2.0: TPR = 0.9450171821305842, FPR = 0.012478920741989882
+Digit 6.0 - Color 0.0: TPR = 0.9742765273311897, FPR = 0.0016589250165892503
+Digit 6.0 - Color 1.0: TPR = 0.9565217391304348, FPR = 0.0042608980662078005
+Digit 6.0 - Color 2.0: TPR = 0.9605734767025089, FPR = 0.0030231776956667787
+Digit 7.0 - Color 0.0: TPR = 0.9472049689440993, FPR = 0.002997002997002997
+Digit 7.0 - Color 1.0: TPR = 0.9584487534626038, FPR = 0.004251144538914323
+Digit 7.0 - Color 2.0: TPR = 0.9130434782608695, FPR = 0.004465819306080384
+Digit 8.0 - Color 0.0: TPR = 0.9228486646884273, FPR = 0.002008032128514056
+Digit 8.0 - Color 1.0: TPR = 0.9109792284866469, FPR = 0.0025957170668397143
+Digit 8.0 - Color 2.0: TPR = 0.9533333333333334, FPR = 0.0064276048714479025
+Digit 9.0 - Color 0.0: TPR = 0.9670658682634731, FPR = 0.012036108324974924
+Digit 9.0 - Color 1.0: TPR = 0.9120234604105572, FPR = 0.004548408057179987
+Digit 9.0 - Color 2.0: TPR = 0.9431137724550899, FPR = 0.00889801505817933
+             Filename  True Label  Predicted Label  Color
+0   image_6_1_130.png           6                6      1
+1  image_3_0_7690.png           3                3      0
+2  image_8_2_2600.png           8                8      2
+3  image_7_0_7504.png           7                7      0
+4  image_1_1_9946.png           1                1      1
+Difference between Color 1 and Others: 0.0022295120552980885
+Difference between Color 0 and Others: 0.00883669848779245
+Difference between Color 2 and Others: 0.006647095170226769
+             Filename  True Label  Predicted Label  Color
+0   image_6_1_130.png           6                6      1
+1  image_3_0_7690.png           3                3      0
+2  image_8_2_2600.png           8                8      2
+3  image_7_0_7504.png           7                7      0
+4  image_1_1_9946.png           1                1      1
+Digit 0: EO = 0.9962026674885048
+Digit 1: EO = 0.9991589098403965
+Digit 2: EO = 0.9993491848701591
+Digit 3: EO = 0.9991855322640514
+Digit 4: EO = 0.9967863112645807
+Digit 5: EO = 0.9949788725396409
+Digit 6: EO = 0.9982653513002543
+Digit 7: EO = 0.9990207891272818
+Digit 8: EO = 0.9970536181713774
+Digit 9: EO = 0.99500819982147
+gen3
+             Filename  True Label  Predicted Label  Color
+0   image_6_1_130.png           6                6      1
+1  image_3_0_7690.png           3                3      0
+2  image_8_2_2600.png           8                8      2
+3  image_7_0_7504.png           7                7      0
+4  image_1_1_9946.png           1                1      1
+For digit 0, color 0: TP=331, FN=4, FP=19, TN=2971
+For digit 0, color 1: TP=332, FN=2, FP=20, TN=3065
+For digit 0, color 2: TP=305, FN=6, FP=15, TN=2930
+For digit 1, color 0: TP=375, FN=2, FP=4, TN=2944
+For digit 1, color 1: TP=354, FN=6, FP=6, TN=3053
+For digit 1, color 2: TP=392, FN=6, FP=3, TN=2855
+For digit 2, color 0: TP=350, FN=19, FP=11, TN=2945
+For digit 2, color 1: TP=313, FN=26, FP=15, TN=3065
+For digit 2, color 2: TP=297, FN=27, FP=13, TN=2919
+For digit 3, color 0: TP=325, FN=11, FP=14, TN=2975
+For digit 3, color 1: TP=306, FN=23, FP=13, TN=3077
+For digit 3, color 2: TP=328, FN=17, FP=14, TN=2897
+For digit 4, color 0: TP=296, FN=15, FP=16, TN=2998
+For digit 4, color 1: TP=336, FN=6, FP=22, TN=3055
+For digit 4, color 2: TP=318, FN=11, FP=13, TN=2914
+For digit 5, color 0: TP=276, FN=17, FP=7, TN=3025
+For digit 5, color 1: TP=286, FN=22, FP=19, TN=3092
+For digit 5, color 2: TP=276, FN=15, FP=14, TN=2951
+For digit 6, color 0: TP=302, FN=9, FP=13, TN=3001
+For digit 6, color 1: TP=354, FN=14, FP=13, TN=3038
+For digit 6, color 2: TP=268, FN=11, FP=18, TN=2959
+For digit 7, color 0: TP=304, FN=18, FP=11, TN=2992
+For digit 7, color 1: TP=350, FN=11, FP=14, TN=3044
+For digit 7, color 2: TP=333, FN=12, FP=22, TN=2889
+For digit 8, color 0: TP=313, FN=24, FP=10, TN=2978
+For digit 8, color 1: TP=318, FN=19, FP=17, TN=3065
+For digit 8, color 2: TP=280, FN=20, FP=11, TN=2945
+For digit 9, color 0: TP=317, FN=17, FP=31, TN=2960
+For digit 9, color 1: TP=311, FN=30, FP=20, TN=3058
+For digit 9, color 2: TP=317, FN=17, FP=19, TN=2903
+Difference in Means by Color:
+Digit 0 Color Difference: 0.01330458054951189
+Digit 1 Color Difference: 0.011361626878868325
+Digit 2 Color Difference: 0.03184281842818437
+Digit 3 Color Difference: 0.03717071935157046
+Digit 4 Color Difference: 0.030687651604896393
+Digit 5 Color Difference: 0.01988217967599404
+Digit 6 Color Difference: 0.010487616545079459
+Digit 7 Color Difference: 0.025429706990588552
+Digit 8 Color Difference: 0.014836795252225587
+Digit 9 Color Difference: 0.037078335996628464
+
+Difference in Means by Digit:
+Color 0 Digit Difference: 0.06591157742288412
+Color 1 Digit Difference: 0.08198851563734699
+Color 2 Digit Difference: 0.0682579564489113
+TPR and FPR by digit and color:
+Digit 0.0 - Color 0.0: TPR = 0.9880597014925373, FPR = 0.006354515050167224
+Digit 0.0 - Color 1.0: TPR = 0.9940119760479041, FPR = 0.006482982171799027
+Digit 0.0 - Color 2.0: TPR = 0.9807073954983923, FPR = 0.0050933786078098476
+Digit 1.0 - Color 0.0: TPR = 0.9946949602122016, FPR = 0.0013568521031207597
+Digit 1.0 - Color 1.0: TPR = 0.9833333333333333, FPR = 0.001961425302386401
+Digit 1.0 - Color 2.0: TPR = 0.9849246231155779, FPR = 0.0010496850944716584
+Digit 2.0 - Color 0.0: TPR = 0.948509485094851, FPR = 0.0037212449255751017
+Digit 2.0 - Color 1.0: TPR = 0.9233038348082596, FPR = 0.00487012987012987
+Digit 2.0 - Color 2.0: TPR = 0.9166666666666666, FPR = 0.004433833560709414
+Digit 3.0 - Color 0.0: TPR = 0.9672619047619048, FPR = 0.00468384074941452
+Digit 3.0 - Color 1.0: TPR = 0.9300911854103343, FPR = 0.004207119741100324
+Digit 3.0 - Color 2.0: TPR = 0.9507246376811594, FPR = 0.0048093438680865686
+Digit 4.0 - Color 0.0: TPR = 0.9517684887459807, FPR = 0.0053085600530856005
+Digit 4.0 - Color 1.0: TPR = 0.9824561403508771, FPR = 0.007149821254468639
+Digit 4.0 - Color 2.0: TPR = 0.9665653495440729, FPR = 0.004441407584557568
+Digit 5.0 - Color 0.0: TPR = 0.9419795221843004, FPR = 0.002308707124010554
+Digit 5.0 - Color 1.0: TPR = 0.9285714285714286, FPR = 0.006107360977177756
+Digit 5.0 - Color 2.0: TPR = 0.9484536082474226, FPR = 0.004721753794266442
+Digit 6.0 - Color 0.0: TPR = 0.9710610932475884, FPR = 0.0043132050431320505
+Digit 6.0 - Color 1.0: TPR = 0.9619565217391305, FPR = 0.0042608980662078005
+Digit 6.0 - Color 2.0: TPR = 0.9605734767025089, FPR = 0.006046355391333557
+Digit 7.0 - Color 0.0: TPR = 0.9440993788819876, FPR = 0.003663003663003663
+Digit 7.0 - Color 1.0: TPR = 0.9695290858725761, FPR = 0.004578155657292348
+Digit 7.0 - Color 2.0: TPR = 0.9652173913043478, FPR = 0.007557540364136035
+Digit 8.0 - Color 0.0: TPR = 0.9287833827893175, FPR = 0.0033467202141900937
+Digit 8.0 - Color 1.0: TPR = 0.9436201780415431, FPR = 0.0055158987670343934
+Digit 8.0 - Color 2.0: TPR = 0.9333333333333333, FPR = 0.0037212449255751017
+Digit 9.0 - Color 0.0: TPR = 0.9491017964071856, FPR = 0.010364426613172852
+Digit 9.0 - Color 1.0: TPR = 0.9120234604105572, FPR = 0.00649772579597141
+Digit 9.0 - Color 2.0: TPR = 0.9491017964071856, FPR = 0.006502395619438741
+             Filename  True Label  Predicted Label  Color
+0   image_6_1_130.png           6                6      1
+1  image_3_0_7690.png           3                3      0
+2  image_8_2_2600.png           8                8      2
+3  image_7_0_7504.png           7                7      0
+4  image_1_1_9946.png           1                1      1
+Difference between Color 1 and Others: 0.0042620057324215255
+Difference between Color 0 and Others: 0.00419137731970376
+Difference between Color 2 and Others: 0.00013079239057889325
+             Filename  True Label  Predicted Label  Color
+0   image_6_1_130.png           6                6      1
+1  image_3_0_7690.png           3                3      0
+2  image_8_2_2600.png           8                8      2
+3  image_7_0_7504.png           7                7      0
+4  image_1_1_9946.png           1                1      1
+Digit 0: EO = 0.9990735976240072
+Digit 1: EO = 0.9993921731947235
+Digit 2: EO = 0.9992340767036302
+Digit 3: EO = 0.9995985172486759
+Digit 4: EO = 0.9981943908867259
+Digit 5: EO = 0.9974675640978885
+Digit 6: EO = 0.9988096951165829
+Digit 7: EO = 0.997403642199245
+Digit 8: EO = 0.9985538809647705
+Digit 9: EO = 0.997422199455199
+gen4
+             Filename  True Label  Predicted Label  Color
+0   image_6_1_130.png           6                6      1
+1  image_3_0_7690.png           3                3      0
+2  image_8_2_2600.png           8                8      2
+3  image_7_0_7504.png           7                7      0
+4  image_1_1_9946.png           1                1      1
+For digit 0, color 0: TP=329, FN=6, FP=6, TN=2984
+For digit 0, color 1: TP=328, FN=6, FP=5, TN=3080
+For digit 0, color 2: TP=305, FN=6, FP=6, TN=2939
+For digit 1, color 0: TP=373, FN=4, FP=4, TN=2944
+For digit 1, color 1: TP=359, FN=1, FP=4, TN=3055
+For digit 1, color 2: TP=391, FN=7, FP=0, TN=2858
+For digit 2, color 0: TP=359, FN=10, FP=19, TN=2937
+For digit 2, color 1: TP=333, FN=6, FP=26, TN=3054
+For digit 2, color 2: TP=308, FN=16, FP=17, TN=2915
+For digit 3, color 0: TP=329, FN=7, FP=10, TN=2979
+For digit 3, color 1: TP=313, FN=16, FP=18, TN=3072
+For digit 3, color 2: TP=332, FN=13, FP=11, TN=2900
+For digit 4, color 0: TP=300, FN=11, FP=8, TN=3006
+For digit 4, color 1: TP=335, FN=7, FP=14, TN=3063
+For digit 4, color 2: TP=320, FN=9, FP=7, TN=2920
+For digit 5, color 0: TP=277, FN=16, FP=7, TN=3025
+For digit 5, color 1: TP=293, FN=15, FP=19, TN=3092
+For digit 5, color 2: TP=278, FN=13, FP=15, TN=2950
+For digit 6, color 0: TP=308, FN=3, FP=10, TN=3004
+For digit 6, color 1: TP=349, FN=19, FP=2, TN=3049
+For digit 6, color 2: TP=273, FN=6, FP=12, TN=2965
+For digit 7, color 0: TP=311, FN=11, FP=11, TN=2992
+For digit 7, color 1: TP=340, FN=21, FP=6, TN=3052
+For digit 7, color 2: TP=340, FN=5, FP=19, TN=2892
+For digit 8, color 0: TP=324, FN=13, FP=10, TN=2978
+For digit 8, color 1: TP=317, FN=20, FP=5, TN=3077
+For digit 8, color 2: TP=287, FN=13, FP=9, TN=2947
+For digit 9, color 0: TP=318, FN=16, FP=12, TN=2979
+For digit 9, color 1: TP=325, FN=16, FP=28, TN=3050
+For digit 9, color 2: TP=318, FN=16, FP=8, TN=2914
+Difference in Means by Color:
+Digit 0 Color Difference: 0.0013821567404137536
+Digit 1 Color Difference: 0.014810161920714715
+Digit 2 Color Difference: 0.0316836010051349
+Digit 3 Color Difference: 0.02779888551165144
+Digit 4 Color Difference: 0.01490193866230416
+Digit 5 Color Difference: 0.009933969013522947
+Digit 6 Color Difference: 0.041984132531804774
+Digit 7 Color Difference: 0.04367899152916621
+Digit 8 Color Difference: 0.020771513353115778
+Digit 9 Color Difference: 0.0009833705023970518
+
+Difference in Means by Digit:
+Color 0 Digit Difference: 0.04496120628161937
+Color 1 Digit Difference: 0.05656940323112436
+Color 2 Digit Difference: 0.034889962426194354
+TPR and FPR by digit and color:
+Digit 0.0 - Color 0.0: TPR = 0.982089552238806, FPR = 0.002006688963210702
+Digit 0.0 - Color 1.0: TPR = 0.9820359281437125, FPR = 0.0016207455429497568
+Digit 0.0 - Color 2.0: TPR = 0.9807073954983923, FPR = 0.0020373514431239388
+Digit 1.0 - Color 0.0: TPR = 0.9893899204244032, FPR = 0.0013568521031207597
+Digit 1.0 - Color 1.0: TPR = 0.9972222222222222, FPR = 0.0013076168682576005
+Digit 1.0 - Color 2.0: TPR = 0.9824120603015075, FPR = 0.0
+Digit 2.0 - Color 0.0: TPR = 0.9728997289972899, FPR = 0.0064276048714479025
+Digit 2.0 - Color 1.0: TPR = 0.9823008849557522, FPR = 0.008441558441558441
+Digit 2.0 - Color 2.0: TPR = 0.9506172839506173, FPR = 0.005798090040927694
+Digit 3.0 - Color 0.0: TPR = 0.9791666666666666, FPR = 0.0033456005352960855
+Digit 3.0 - Color 1.0: TPR = 0.9513677811550152, FPR = 0.005825242718446602
+Digit 3.0 - Color 2.0: TPR = 0.9623188405797102, FPR = 0.0037787701820680177
+Digit 4.0 - Color 0.0: TPR = 0.9646302250803859, FPR = 0.0026542800265428003
+Digit 4.0 - Color 1.0: TPR = 0.97953216374269, FPR = 0.004549886252843679
+Digit 4.0 - Color 2.0: TPR = 0.9726443768996961, FPR = 0.0023915271609156134
+Digit 5.0 - Color 0.0: TPR = 0.9453924914675768, FPR = 0.002308707124010554
+Digit 5.0 - Color 1.0: TPR = 0.9512987012987013, FPR = 0.006107360977177756
+Digit 5.0 - Color 2.0: TPR = 0.9553264604810997, FPR = 0.00505902192242833
+Digit 6.0 - Color 0.0: TPR = 0.9903536977491961, FPR = 0.0033178500331785005
+Digit 6.0 - Color 1.0: TPR = 0.9483695652173914, FPR = 0.0006555227794165847
+Digit 6.0 - Color 2.0: TPR = 0.978494623655914, FPR = 0.004030903594222372
+Digit 7.0 - Color 0.0: TPR = 0.9658385093167702, FPR = 0.003663003663003663
+Digit 7.0 - Color 1.0: TPR = 0.9418282548476454, FPR = 0.001962066710268149
+Digit 7.0 - Color 2.0: TPR = 0.9855072463768116, FPR = 0.006526966678117485
+Digit 8.0 - Color 0.0: TPR = 0.9614243323442137, FPR = 0.0033467202141900937
+Digit 8.0 - Color 1.0: TPR = 0.9406528189910979, FPR = 0.0016223231667748216
+Digit 8.0 - Color 2.0: TPR = 0.9566666666666667, FPR = 0.003044654939106901
+Digit 9.0 - Color 0.0: TPR = 0.9520958083832335, FPR = 0.004012036108324975
+Digit 9.0 - Color 1.0: TPR = 0.9530791788856305, FPR = 0.009096816114359974
+Digit 9.0 - Color 2.0: TPR = 0.9520958083832335, FPR = 0.0027378507871321013
+             Filename  True Label  Predicted Label  Color
+0   image_6_1_130.png           6                6      1
+1  image_3_0_7690.png           3                3      0
+2  image_8_2_2600.png           8                8      2
+3  image_7_0_7504.png           7                7      0
+4  image_1_1_9946.png           1                1      1
+Difference between Color 1 and Others: 0.006602893392435583
+Difference between Color 0 and Others: 0.0054338092422066
+Difference between Color 2 and Others: 0.0012736774302610776
+             Filename  True Label  Predicted Label  Color
+0   image_6_1_130.png           6                6      1
+1  image_3_0_7690.png           3                3      0
+2  image_8_2_2600.png           8                8      2
+3  image_7_0_7504.png           7                7      0
+4  image_1_1_9946.png           1                1      1
+Digit 0: EO = 0.9997222627332172
+Digit 1: EO = 0.9990954319312528
+Digit 2: EO = 0.9982376877329128
+Digit 3: EO = 0.9983469052112329
+Digit 4: EO = 0.9985610939387146
+Digit 5: EO = 0.9974675640978885
+Digit 6: EO = 0.9977497461234628
+Digit 7: EO = 0.9969567333547671
+Digit 8: EO = 0.9988504019683898
+Digit 9: EO = 0.9957606897818482
+gen5
+             Filename  True Label  Predicted Label  Color
+0   image_6_1_130.png           6                6      1
+1  image_3_0_7690.png           3                3      0
+2  image_8_2_2600.png           8                8      2
+3  image_7_0_7504.png           7                7      0
+4  image_1_1_9946.png           1                1      1
+For digit 0, color 0: TP=333, FN=2, FP=6, TN=2984
+For digit 0, color 1: TP=330, FN=4, FP=18, TN=3067
+For digit 0, color 2: TP=307, FN=4, FP=11, TN=2934
+For digit 1, color 0: TP=375, FN=2, FP=4, TN=2944
+For digit 1, color 1: TP=358, FN=2, FP=7, TN=3052
+For digit 1, color 2: TP=394, FN=4, FP=0, TN=2858
+For digit 2, color 0: TP=360, FN=9, FP=29, TN=2927
+For digit 2, color 1: TP=321, FN=18, FP=22, TN=3058
+For digit 2, color 2: TP=309, FN=15, FP=20, TN=2912
+For digit 3, color 0: TP=316, FN=20, FP=6, TN=2983
+For digit 3, color 1: TP=294, FN=35, FP=4, TN=3086
+For digit 3, color 2: TP=327, FN=18, FP=16, TN=2895
+For digit 4, color 0: TP=292, FN=19, FP=7, TN=3007
+For digit 4, color 1: TP=331, FN=11, FP=18, TN=3059
+For digit 4, color 2: TP=315, FN=14, FP=10, TN=2917
+For digit 5, color 0: TP=275, FN=18, FP=7, TN=3025
+For digit 5, color 1: TP=295, FN=13, FP=18, TN=3093
+For digit 5, color 2: TP=271, FN=20, FP=6, TN=2959
+For digit 6, color 0: TP=295, FN=16, FP=5, TN=3009
+For digit 6, color 1: TP=335, FN=33, FP=7, TN=3044
+For digit 6, color 2: TP=260, FN=19, FP=6, TN=2971
+For digit 7, color 0: TP=306, FN=16, FP=10, TN=2993
+For digit 7, color 1: TP=353, FN=8, FP=15, TN=3043
+For digit 7, color 2: TP=318, FN=27, FP=11, TN=2900
+For digit 8, color 0: TP=323, FN=14, FP=23, TN=2965
+For digit 8, color 1: TP=323, FN=14, FP=15, TN=3067
+For digit 8, color 2: TP=290, FN=10, FP=25, TN=2931
+For digit 9, color 0: TP=323, FN=11, FP=30, TN=2961
+For digit 9, color 1: TP=330, FN=11, FP=25, TN=3053
+For digit 9, color 2: TP=325, FN=9, FP=35, TN=2887
+Difference in Means by Color:
+Digit 0 Color Difference: 0.006891587080673833
+Digit 1 Color Difference: 0.004745211468483057
+Digit 2 Color Difference: 0.02870710123030429
+Digit 3 Color Difference: 0.054209065679926005
+Digit 4 Color Difference: 0.028929504898365876
+Digit 5 Color Difference: 0.026520730128977488
+Digit 6 Color Difference: 0.03822696770585765
+Digit 7 Color Difference: 0.056100204745272775
+Digit 8 Color Difference: 0.00820969337289812
+Digit 9 Color Difference: 0.0059880239520957446
+
+Difference in Means by Digit:
+Color 0 Digit Difference: 0.05612840731117774
+Color 1 Digit Difference: 0.10082742316784876
+Color 2 Digit Difference: 0.06821061830893593
+TPR and FPR by digit and color:
+Digit 0.0 - Color 0.0: TPR = 0.9940298507462687, FPR = 0.002006688963210702
+Digit 0.0 - Color 1.0: TPR = 0.9880239520958084, FPR = 0.005834683954619124
+Digit 0.0 - Color 2.0: TPR = 0.9871382636655949, FPR = 0.003735144312393888
+Digit 1.0 - Color 0.0: TPR = 0.9946949602122016, FPR = 0.0013568521031207597
+Digit 1.0 - Color 1.0: TPR = 0.9944444444444445, FPR = 0.002288329519450801
+Digit 1.0 - Color 2.0: TPR = 0.9899497487437185, FPR = 0.0
+Digit 2.0 - Color 0.0: TPR = 0.975609756097561, FPR = 0.009810554803788904
+Digit 2.0 - Color 1.0: TPR = 0.9469026548672567, FPR = 0.007142857142857143
+Digit 2.0 - Color 2.0: TPR = 0.9537037037037037, FPR = 0.0068212824010914054
+Digit 3.0 - Color 0.0: TPR = 0.9404761904761905, FPR = 0.0020073603211776514
+Digit 3.0 - Color 1.0: TPR = 0.8936170212765957, FPR = 0.0012944983818770227
+Digit 3.0 - Color 2.0: TPR = 0.9478260869565217, FPR = 0.005496392992098935
+Digit 4.0 - Color 0.0: TPR = 0.9389067524115756, FPR = 0.00232249502322495
+Digit 4.0 - Color 1.0: TPR = 0.9678362573099415, FPR = 0.005849853753656159
+Digit 4.0 - Color 2.0: TPR = 0.9574468085106383, FPR = 0.0034164673727365906
+Digit 5.0 - Color 0.0: TPR = 0.9385665529010239, FPR = 0.002308707124010554
+Digit 5.0 - Color 1.0: TPR = 0.9577922077922078, FPR = 0.0057859209257473485
+Digit 5.0 - Color 2.0: TPR = 0.9312714776632303, FPR = 0.002023608768971332
+Digit 6.0 - Color 0.0: TPR = 0.9485530546623794, FPR = 0.0016589250165892503
+Digit 6.0 - Color 1.0: TPR = 0.9103260869565217, FPR = 0.0022943297279580466
+Digit 6.0 - Color 2.0: TPR = 0.931899641577061, FPR = 0.002015451797111186
+Digit 7.0 - Color 0.0: TPR = 0.9503105590062112, FPR = 0.00333000333000333
+Digit 7.0 - Color 1.0: TPR = 0.9778393351800554, FPR = 0.004905166775670372
+Digit 7.0 - Color 2.0: TPR = 0.9217391304347826, FPR = 0.0037787701820680177
+Digit 8.0 - Color 0.0: TPR = 0.9584569732937686, FPR = 0.007697456492637216
+Digit 8.0 - Color 1.0: TPR = 0.9584569732937686, FPR = 0.004866969500324465
+Digit 8.0 - Color 2.0: TPR = 0.9666666666666667, FPR = 0.008457374830852503
+Digit 9.0 - Color 0.0: TPR = 0.9670658682634731, FPR = 0.010030090270812437
+Digit 9.0 - Color 1.0: TPR = 0.967741935483871, FPR = 0.008122157244964262
+Digit 9.0 - Color 2.0: TPR = 0.9730538922155688, FPR = 0.011978097193702943
+             Filename  True Label  Predicted Label  Color
+0   image_6_1_130.png           6                6      1
+1  image_3_0_7690.png           3                3      0
+2  image_8_2_2600.png           8                8      2
+3  image_7_0_7504.png           7                7      0
+4  image_1_1_9946.png           1                1      1
+Difference between Color 1 and Others: 0.0030086524089596445
+Difference between Color 0 and Others: 0.005100391428008222
+Difference between Color 2 and Others: 0.002072276093628367
+             Filename  True Label  Predicted Label  Color
+0   image_6_1_130.png           6                6      1
+1  image_3_0_7690.png           3                3      0
+2  image_8_2_2600.png           8                8      2
+3  image_7_0_7504.png           7                7      0
+4  image_1_1_9946.png           1                1      1
+Digit 0: EO = 0.997448003339061
+Digit 1: EO = 0.9984744469870328
+Digit 2: EO = 0.998007151731535
+Digit 3: EO = 0.9971987369265187
+Digit 4: EO = 0.9976484275130458
+Digit 5: EO = 0.9974917918954826
+Digit 6: EO = 0.9995763968590875
+Digit 7: EO = 0.998949891036222
+Digit 8: EO = 0.9976063964463145
+Digit 9: EO = 0.9974293733675076
+gen6
+             Filename  True Label  Predicted Label  Color
+0   image_6_1_130.png           6                6      1
+1  image_3_0_7690.png           3                3      0
+2  image_8_2_2600.png           8                8      2
+3  image_7_0_7504.png           7                7      0
+4  image_1_1_9946.png           1                1      1
+For digit 0, color 0: TP=334, FN=1, FP=10, TN=2980
+For digit 0, color 1: TP=331, FN=3, FP=10, TN=3075
+For digit 0, color 2: TP=302, FN=9, FP=8, TN=2937
+For digit 1, color 0: TP=375, FN=2, FP=4, TN=2944
+For digit 1, color 1: TP=359, FN=1, FP=11, TN=3048
+For digit 1, color 2: TP=391, FN=7, FP=1, TN=2857
+For digit 2, color 0: TP=347, FN=22, FP=19, TN=2937
+For digit 2, color 1: TP=326, FN=13, FP=42, TN=3038
+For digit 2, color 2: TP=301, FN=23, FP=19, TN=2913
+For digit 3, color 0: TP=326, FN=10, FP=18, TN=2971
+For digit 3, color 1: TP=307, FN=22, FP=18, TN=3072
+For digit 3, color 2: TP=335, FN=10, FP=35, TN=2876
+For digit 4, color 0: TP=292, FN=19, FP=8, TN=3006
+For digit 4, color 1: TP=333, FN=9, FP=7, TN=3070
+For digit 4, color 2: TP=309, FN=20, FP=7, TN=2920
+For digit 5, color 0: TP=267, FN=26, FP=15, TN=3017
+For digit 5, color 1: TP=286, FN=22, FP=14, TN=3097
+For digit 5, color 2: TP=249, FN=42, FP=13, TN=2952
+For digit 6, color 0: TP=297, FN=14, FP=8, TN=3006
+For digit 6, color 1: TP=332, FN=36, FP=16, TN=3035
+For digit 6, color 2: TP=267, FN=12, FP=17, TN=2960
+For digit 7, color 0: TP=311, FN=11, FP=18, TN=2985
+For digit 7, color 1: TP=338, FN=23, FP=5, TN=3053
+For digit 7, color 2: TP=318, FN=27, FP=14, TN=2897
+For digit 8, color 0: TP=322, FN=15, FP=11, TN=2977
+For digit 8, color 1: TP=316, FN=21, FP=11, TN=3071
+For digit 8, color 2: TP=287, FN=13, FP=27, TN=2929
+For digit 9, color 0: TP=320, FN=14, FP=23, TN=2968
+For digit 9, color 1: TP=331, FN=10, FP=26, TN=3052
+For digit 9, color 2: TP=320, FN=14, FP=36, TN=2886
+Difference in Means by Color:
+Digit 0 Color Difference: 0.025953832125545917
+Digit 1 Color Difference: 0.014810161920714715
+Digit 2 Color Difference: 0.032639571725117444
+Digit 3 Color Difference: 0.03788379366547723
+Digit 4 Color Difference: 0.0347774581147402
+Digit 5 Color Difference: 0.07290132547864514
+Digit 6 Color Difference: 0.054815334268349725
+Digit 7 Color Difference: 0.04409937888198756
+Digit 8 Color Difference: 0.01898120672601389
+Digit 9 Color Difference: 0.012590654468189744
+
+Difference in Means by Digit:
+Color 0 Digit Difference: 0.085752126738322
+Color 1 Digit Difference: 0.09504830917874396
+Color 2 Digit Difference: 0.12674195720872405
+TPR and FPR by digit and color:
+Digit 0.0 - Color 0.0: TPR = 0.9970149253731343, FPR = 0.0033444816053511705
+Digit 0.0 - Color 1.0: TPR = 0.9910179640718563, FPR = 0.0032414910858995136
+Digit 0.0 - Color 2.0: TPR = 0.9710610932475884, FPR = 0.0027164685908319186
+Digit 1.0 - Color 0.0: TPR = 0.9946949602122016, FPR = 0.0013568521031207597
+Digit 1.0 - Color 1.0: TPR = 0.9972222222222222, FPR = 0.0035959463877084014
+Digit 1.0 - Color 2.0: TPR = 0.9824120603015075, FPR = 0.0003498950314905528
+Digit 2.0 - Color 0.0: TPR = 0.940379403794038, FPR = 0.0064276048714479025
+Digit 2.0 - Color 1.0: TPR = 0.9616519174041298, FPR = 0.013636363636363636
+Digit 2.0 - Color 2.0: TPR = 0.9290123456790124, FPR = 0.006480218281036835
+Digit 3.0 - Color 0.0: TPR = 0.9702380952380952, FPR = 0.006022080963532954
+Digit 3.0 - Color 1.0: TPR = 0.9331306990881459, FPR = 0.005825242718446602
+Digit 3.0 - Color 2.0: TPR = 0.9710144927536232, FPR = 0.01202335967021642
+Digit 4.0 - Color 0.0: TPR = 0.9389067524115756, FPR = 0.0026542800265428003
+Digit 4.0 - Color 1.0: TPR = 0.9736842105263158, FPR = 0.0022749431264218393
+Digit 4.0 - Color 2.0: TPR = 0.939209726443769, FPR = 0.0023915271609156134
+Digit 5.0 - Color 0.0: TPR = 0.9112627986348123, FPR = 0.004947229551451188
+Digit 5.0 - Color 1.0: TPR = 0.9285714285714286, FPR = 0.004500160720025715
+Digit 5.0 - Color 2.0: TPR = 0.8556701030927835, FPR = 0.004384485666104553
+Digit 6.0 - Color 0.0: TPR = 0.954983922829582, FPR = 0.0026542800265428003
+Digit 6.0 - Color 1.0: TPR = 0.9021739130434783, FPR = 0.005244182235332678
+Digit 6.0 - Color 2.0: TPR = 0.956989247311828, FPR = 0.005710446758481693
+Digit 7.0 - Color 0.0: TPR = 0.9658385093167702, FPR = 0.005994005994005994
+Digit 7.0 - Color 1.0: TPR = 0.9362880886426593, FPR = 0.0016350555918901242
+Digit 7.0 - Color 2.0: TPR = 0.9217391304347826, FPR = 0.0048093438680865686
+Digit 8.0 - Color 0.0: TPR = 0.9554896142433235, FPR = 0.003681392235609103
+Digit 8.0 - Color 1.0: TPR = 0.9376854599406528, FPR = 0.0035691109669046075
+Digit 8.0 - Color 2.0: TPR = 0.9566666666666667, FPR = 0.009133964817320704
+Digit 9.0 - Color 0.0: TPR = 0.9580838323353293, FPR = 0.007689735874289535
+Digit 9.0 - Color 1.0: TPR = 0.9706744868035191, FPR = 0.008447043534762833
+Digit 9.0 - Color 2.0: TPR = 0.9580838323353293, FPR = 0.012320328542094456
+             Filename  True Label  Predicted Label  Color
+0   image_6_1_130.png           6                6      1
+1  image_3_0_7690.png           3                3      0
+2  image_8_2_2600.png           8                8      2
+3  image_7_0_7504.png           7                7      0
+4  image_1_1_9946.png           1                1      1
+Difference between Color 1 and Others: 0.0004599465814867365
+Difference between Color 0 and Others: 0.010186139506068503
+Difference between Color 2 and Others: 0.010766873311357283
+             Filename  True Label  Predicted Label  Color
+0   image_6_1_130.png           6                6      1
+1  image_3_0_7690.png           3                3      0
+2  image_8_2_2600.png           8                8      2
+3  image_7_0_7504.png           7                7      0
+4  image_1_1_9946.png           1                1      1
+Digit 0: EO = 0.9995813246569872
+Digit 1: EO = 0.9978359657625214
+Digit 2: EO = 0.9951941608233895
+Digit 3: EO = 0.9958679220321535
+Digit 4: EO = 0.9997471087332527
+Digit 5: EO = 0.9996248374097689
+Digit 6: EO = 0.9979625555120408
+Digit 7: EO = 0.9970940330652561
+Digit 8: EO = 0.996290097433056
+Digit 9: EO = 0.9969129382214634
+gen7
+             Filename  True Label  Predicted Label  Color
+0   image_6_1_130.png           6                6      1
+1  image_3_0_7690.png           3                3      0
+2  image_8_2_2600.png           8                8      2
+3  image_7_0_7504.png           7                7      0
+4  image_1_1_9946.png           1                1      1
+For digit 0, color 0: TP=331, FN=4, FP=9, TN=2981
+For digit 0, color 1: TP=326, FN=8, FP=11, TN=3074
+For digit 0, color 2: TP=299, FN=12, FP=8, TN=2937
+For digit 1, color 0: TP=376, FN=1, FP=7, TN=2941
+For digit 1, color 1: TP=355, FN=5, FP=5, TN=3054
+For digit 1, color 2: TP=392, FN=6, FP=1, TN=2857
+For digit 2, color 0: TP=355, FN=14, FP=16, TN=2940
+For digit 2, color 1: TP=324, FN=15, FP=27, TN=3053
+For digit 2, color 2: TP=304, FN=20, FP=17, TN=2915
+For digit 3, color 0: TP=328, FN=8, FP=9, TN=2980
+For digit 3, color 1: TP=307, FN=22, FP=18, TN=3072
+For digit 3, color 2: TP=336, FN=9, FP=12, TN=2899
+For digit 4, color 0: TP=297, FN=14, FP=5, TN=3009
+For digit 4, color 1: TP=334, FN=8, FP=3, TN=3074
+For digit 4, color 2: TP=309, FN=20, FP=6, TN=2921
+For digit 5, color 0: TP=279, FN=14, FP=7, TN=3025
+For digit 5, color 1: TP=297, FN=11, FP=19, TN=3092
+For digit 5, color 2: TP=277, FN=14, FP=9, TN=2956
+For digit 6, color 0: TP=304, FN=7, FP=2, TN=3012
+For digit 6, color 1: TP=342, FN=26, FP=3, TN=3048
+For digit 6, color 2: TP=266, FN=13, FP=10, TN=2967
+For digit 7, color 0: TP=310, FN=12, FP=13, TN=2990
+For digit 7, color 1: TP=348, FN=13, FP=12, TN=3046
+For digit 7, color 2: TP=333, FN=12, FP=16, TN=2895
+For digit 8, color 0: TP=328, FN=9, FP=19, TN=2969
+For digit 8, color 1: TP=324, FN=13, FP=16, TN=3066
+For digit 8, color 2: TP=291, FN=9, FP=24, TN=2932
+For digit 9, color 0: TP=314, FN=20, FP=16, TN=2975
+For digit 9, color 1: TP=329, FN=12, FP=19, TN=3059
+For digit 9, color 2: TP=320, FN=14, FP=26, TN=2896
+Difference in Means by Color:
+Digit 0 Color Difference: 0.026644910495752683
+Digit 1 Color Difference: 0.012422856990522813
+Digit 2 Color Difference: 0.023788015657934425
+Digit 3 Color Difference: 0.04305977710233022
+Digit 4 Color Difference: 0.03739846069073394
+Digit 5 Color Difference: 0.012395679921453184
+Digit 6 Color Difference: 0.04814413532783446
+Digit 7 Color Difference: 0.002484472049689379
+Digit 8 Color Difference: 0.011869436201780381
+Digit 9 Color Difference: 0.024689623685181017
+
+Difference in Means by Digit:
+Color 0 Digit Difference: 0.05722771962705886
+Color 1 Digit Difference: 0.05676328502415462
+Color 2 Digit Difference: 0.04665301817730638
+TPR and FPR by digit and color:
+Digit 0.0 - Color 0.0: TPR = 0.9880597014925373, FPR = 0.0030100334448160534
+Digit 0.0 - Color 1.0: TPR = 0.9760479041916168, FPR = 0.003565640194489465
+Digit 0.0 - Color 2.0: TPR = 0.9614147909967846, FPR = 0.0027164685908319186
+Digit 1.0 - Color 0.0: TPR = 0.9973474801061007, FPR = 0.0023744911804613297
+Digit 1.0 - Color 1.0: TPR = 0.9861111111111112, FPR = 0.0016345210853220007
+Digit 1.0 - Color 2.0: TPR = 0.9849246231155779, FPR = 0.0003498950314905528
+Digit 2.0 - Color 0.0: TPR = 0.962059620596206, FPR = 0.005412719891745603
+Digit 2.0 - Color 1.0: TPR = 0.9557522123893806, FPR = 0.008766233766233766
+Digit 2.0 - Color 2.0: TPR = 0.9382716049382716, FPR = 0.005798090040927694
+Digit 3.0 - Color 0.0: TPR = 0.9761904761904762, FPR = 0.003011040481766477
+Digit 3.0 - Color 1.0: TPR = 0.9331306990881459, FPR = 0.005825242718446602
+Digit 3.0 - Color 2.0: TPR = 0.9739130434782609, FPR = 0.004122294744074201
+Digit 4.0 - Color 0.0: TPR = 0.954983922829582, FPR = 0.0016589250165892503
+Digit 4.0 - Color 1.0: TPR = 0.9766081871345029, FPR = 0.0009749756256093598
+Digit 4.0 - Color 2.0: TPR = 0.939209726443769, FPR = 0.0020498804236419544
+Digit 5.0 - Color 0.0: TPR = 0.9522184300341296, FPR = 0.002308707124010554
+Digit 5.0 - Color 1.0: TPR = 0.9642857142857143, FPR = 0.006107360977177756
+Digit 5.0 - Color 2.0: TPR = 0.9518900343642611, FPR = 0.0030354131534569982
+Digit 6.0 - Color 0.0: TPR = 0.977491961414791, FPR = 0.0006635700066357001
+Digit 6.0 - Color 1.0: TPR = 0.9293478260869565, FPR = 0.0009832841691248771
+Digit 6.0 - Color 2.0: TPR = 0.953405017921147, FPR = 0.003359086328518643
+Digit 7.0 - Color 0.0: TPR = 0.9627329192546584, FPR = 0.004329004329004329
+Digit 7.0 - Color 1.0: TPR = 0.96398891966759, FPR = 0.003924133420536298
+Digit 7.0 - Color 2.0: TPR = 0.9652173913043478, FPR = 0.005496392992098935
+Digit 8.0 - Color 0.0: TPR = 0.973293768545994, FPR = 0.006358768406961178
+Digit 8.0 - Color 1.0: TPR = 0.9614243323442137, FPR = 0.005191434133679429
+Digit 8.0 - Color 2.0: TPR = 0.97, FPR = 0.008119079837618403
+Digit 9.0 - Color 0.0: TPR = 0.9401197604790419, FPR = 0.005349381477766633
+Digit 9.0 - Color 1.0: TPR = 0.9648093841642229, FPR = 0.006172839506172839
+Digit 9.0 - Color 2.0: TPR = 0.9580838323353293, FPR = 0.00889801505817933
+             Filename  True Label  Predicted Label  Color
+0   image_6_1_130.png           6                6      1
+1  image_3_0_7690.png           3                3      0
+2  image_8_2_2600.png           8                8      2
+3  image_7_0_7504.png           7                7      0
+4  image_1_1_9946.png           1                1      1
+Difference between Color 1 and Others: 0.0036472621711958197
+Difference between Color 0 and Others: 0.008273492720565434
+Difference between Color 2 and Others: 0.004625095817266556
+             Filename  True Label  Predicted Label  Color
+0   image_6_1_130.png           6                6      1
+1  image_3_0_7690.png           3                3      0
+2  image_8_2_2600.png           8                8      2
+3  image_7_0_7504.png           7                7      0
+4  image_1_1_9946.png           1                1      1
+Digit 0: EO = 0.9994338855975616
+Digit 1: EO = 0.9986502692340194
+Digit 2: EO = 0.9977643240836745
+Digit 3: EO = 0.9981238651755465
+Digit 4: EO = 0.9992833968013116
+Digit 5: EO = 0.9974675640978885
+Digit 6: EO = 0.9982029891187447
+Digit 7: EO = 0.9989518269522916
+Digit 8: EO = 0.998048236197374
+Digit 9: EO = 0.9976342442797249
+gen8
+             Filename  True Label  Predicted Label  Color
+0   image_6_1_130.png           6                6      1
+1  image_3_0_7690.png           3                3      0
+2  image_8_2_2600.png           8                8      2
+3  image_7_0_7504.png           7                7      0
+4  image_1_1_9946.png           1                1      1
+For digit 0, color 0: TP=332, FN=3, FP=8, TN=2982
+For digit 0, color 1: TP=328, FN=6, FP=8, TN=3077
+For digit 0, color 2: TP=305, FN=6, FP=10, TN=2935
+For digit 1, color 0: TP=371, FN=6, FP=3, TN=2945
+For digit 1, color 1: TP=357, FN=3, FP=4, TN=3055
+For digit 1, color 2: TP=389, FN=9, FP=1, TN=2857
+For digit 2, color 0: TP=351, FN=18, FP=14, TN=2942
+For digit 2, color 1: TP=328, FN=11, FP=27, TN=3053
+For digit 2, color 2: TP=306, FN=18, FP=13, TN=2919
+For digit 3, color 0: TP=324, FN=12, FP=8, TN=2981
+For digit 3, color 1: TP=312, FN=17, FP=14, TN=3076
+For digit 3, color 2: TP=336, FN=9, FP=17, TN=2894
+For digit 4, color 0: TP=305, FN=6, FP=8, TN=3006
+For digit 4, color 1: TP=335, FN=7, FP=21, TN=3056
+For digit 4, color 2: TP=318, FN=11, FP=4, TN=2923
+For digit 5, color 0: TP=281, FN=12, FP=16, TN=3016
+For digit 5, color 1: TP=289, FN=19, FP=21, TN=3090
+For digit 5, color 2: TP=278, FN=13, FP=16, TN=2949
+For digit 6, color 0: TP=305, FN=6, FP=8, TN=3006
+For digit 6, color 1: TP=335, FN=33, FP=11, TN=3040
+For digit 6, color 2: TP=268, FN=11, FP=9, TN=2968
+For digit 7, color 0: TP=313, FN=9, FP=15, TN=2988
+For digit 7, color 1: TP=351, FN=10, FP=14, TN=3044
+For digit 7, color 2: TP=333, FN=12, FP=10, TN=2901
+For digit 8, color 0: TP=324, FN=13, FP=16, TN=2972
+For digit 8, color 1: TP=318, FN=19, FP=15, TN=3067
+For digit 8, color 2: TP=294, FN=6, FP=17, TN=2939
+For digit 9, color 0: TP=315, FN=19, FP=8, TN=2983
+For digit 9, color 1: TP=317, FN=24, FP=14, TN=3064
+For digit 9, color 2: TP=318, FN=16, FP=14, TN=2908
+Difference in Means by Color:
+Digit 0 Color Difference: 0.01033738062101075
+Digit 1 Color Difference: 0.014279731993299905
+Digit 2 Color Difference: 0.023107177974434623
+Digit 3 Color Difference: 0.02558477600105724
+Digit 4 Color Difference: 0.014142045954319338
+Digit 5 Color Difference: 0.02073268028899422
+Digit 6 Color Difference: 0.07038130854187052
+Digit 7 Color Difference: 0.00708177767072149
+Digit 8 Color Difference: 0.036379821958456904
+Digit 9 Color Difference: 0.02247704005478779
+
+Difference in Means by Digit:
+Color 0 Digit Difference: 0.04793100366431313
+Color 1 Digit Difference: 0.08134057971014497
+Color 2 Digit Difference: 0.036262951053947834
+TPR and FPR by digit and color:
+Digit 0.0 - Color 0.0: TPR = 0.991044776119403, FPR = 0.0026755852842809363
+Digit 0.0 - Color 1.0: TPR = 0.9820359281437125, FPR = 0.002593192868719611
+Digit 0.0 - Color 2.0: TPR = 0.9807073954983923, FPR = 0.003395585738539898
+Digit 1.0 - Color 0.0: TPR = 0.9840848806366048, FPR = 0.0010176390773405698
+Digit 1.0 - Color 1.0: TPR = 0.9916666666666667, FPR = 0.0013076168682576005
+Digit 1.0 - Color 2.0: TPR = 0.9773869346733668, FPR = 0.0003498950314905528
+Digit 2.0 - Color 0.0: TPR = 0.9512195121951219, FPR = 0.004736129905277402
+Digit 2.0 - Color 1.0: TPR = 0.967551622418879, FPR = 0.008766233766233766
+Digit 2.0 - Color 2.0: TPR = 0.9444444444444444, FPR = 0.004433833560709414
+Digit 3.0 - Color 0.0: TPR = 0.9642857142857143, FPR = 0.0026764804282368685
+Digit 3.0 - Color 1.0: TPR = 0.9483282674772037, FPR = 0.004530744336569579
+Digit 3.0 - Color 2.0: TPR = 0.9739130434782609, FPR = 0.005839917554105119
+Digit 4.0 - Color 0.0: TPR = 0.9807073954983923, FPR = 0.0026542800265428003
+Digit 4.0 - Color 1.0: TPR = 0.97953216374269, FPR = 0.0068248293792655184
+Digit 4.0 - Color 2.0: TPR = 0.9665653495440729, FPR = 0.0013665869490946361
+Digit 5.0 - Color 0.0: TPR = 0.9590443686006825, FPR = 0.005277044854881266
+Digit 5.0 - Color 1.0: TPR = 0.9383116883116883, FPR = 0.006750241080038573
+Digit 5.0 - Color 2.0: TPR = 0.9553264604810997, FPR = 0.005396290050590219
+Digit 6.0 - Color 0.0: TPR = 0.9807073954983923, FPR = 0.0026542800265428003
+Digit 6.0 - Color 1.0: TPR = 0.9103260869565217, FPR = 0.003605375286791216
+Digit 6.0 - Color 2.0: TPR = 0.9605734767025089, FPR = 0.0030231776956667787
+Digit 7.0 - Color 0.0: TPR = 0.9720496894409938, FPR = 0.004995004995004995
+Digit 7.0 - Color 1.0: TPR = 0.9722991689750693, FPR = 0.004578155657292348
+Digit 7.0 - Color 2.0: TPR = 0.9652173913043478, FPR = 0.0034352456200618343
+Digit 8.0 - Color 0.0: TPR = 0.9614243323442137, FPR = 0.00535475234270415
+Digit 8.0 - Color 1.0: TPR = 0.9436201780415431, FPR = 0.004866969500324465
+Digit 8.0 - Color 2.0: TPR = 0.98, FPR = 0.005751014884979702
+Digit 9.0 - Color 0.0: TPR = 0.9431137724550899, FPR = 0.0026746907388833165
+Digit 9.0 - Color 1.0: TPR = 0.9296187683284457, FPR = 0.004548408057179987
+Digit 9.0 - Color 2.0: TPR = 0.9520958083832335, FPR = 0.004791238877481177
+             Filename  True Label  Predicted Label  Color
+0   image_6_1_130.png           6                6      1
+1  image_3_0_7690.png           3                3      0
+2  image_8_2_2600.png           8                8      2
+3  image_7_0_7504.png           7                7      0
+4  image_1_1_9946.png           1                1      1
+Difference between Color 1 and Others: 0.010910187130126592
+Difference between Color 0 and Others: 0.007673115372701433
+Difference between Color 2 and Others: 0.0034239189043460128
+             Filename  True Label  Predicted Label  Color
+0   image_6_1_130.png           6                6      1
+1  image_3_0_7690.png           3                3      0
+2  image_8_2_2600.png           8                8      2
+3  image_7_0_7504.png           7                7      0
+4  image_1_1_9946.png           1                1      1
+Digit 0: EO = 0.9994650714201199
+Digit 1: EO = 0.9993615187754886
+Digit 2: EO = 0.9971117331963172
+Digit 3: EO = 0.9978910419160878
+Digit 4: EO = 0.9963611717132194
+Digit 5: EO = 0.9990178691832284
+Digit 6: EO = 0.9993659364931677
+Digit 7: EO = 0.9989601604167045
+Digit 8: EO = 0.9994106364102298
+Digit 9: EO = 0.9985889679076014
+gen9
+             Filename  True Label  Predicted Label  Color
+0   image_6_1_130.png           6                6      1
+1  image_3_0_7690.png           3                3      0
+2  image_8_2_2600.png           8                8      2
+3  image_7_0_7504.png           7                7      0
+4  image_1_1_9946.png           1                1      1
+For digit 0, color 0: TP=329, FN=6, FP=6, TN=2984
+For digit 0, color 1: TP=329, FN=5, FP=26, TN=3059
+For digit 0, color 2: TP=304, FN=7, FP=15, TN=2930
+For digit 1, color 0: TP=373, FN=4, FP=3, TN=2945
+For digit 1, color 1: TP=356, FN=4, FP=9, TN=3050
+For digit 1, color 2: TP=386, FN=12, FP=0, TN=2858
+For digit 2, color 0: TP=359, FN=10, FP=18, TN=2938
+For digit 2, color 1: TP=314, FN=25, FP=14, TN=3066
+For digit 2, color 2: TP=304, FN=20, FP=15, TN=2917
+For digit 3, color 0: TP=323, FN=13, FP=8, TN=2981
+For digit 3, color 1: TP=308, FN=21, FP=10, TN=3080
+For digit 3, color 2: TP=328, FN=17, FP=14, TN=2897
+For digit 4, color 0: TP=305, FN=6, FP=10, TN=3004
+For digit 4, color 1: TP=339, FN=3, FP=18, TN=3059
+For digit 4, color 2: TP=325, FN=4, FP=16, TN=2911
+For digit 5, color 0: TP=282, FN=11, FP=18, TN=3014
+For digit 5, color 1: TP=292, FN=16, FP=13, TN=3098
+For digit 5, color 2: TP=274, FN=17, FP=20, TN=2945
+For digit 6, color 0: TP=307, FN=4, FP=10, TN=3004
+For digit 6, color 1: TP=347, FN=21, FP=12, TN=3039
+For digit 6, color 2: TP=266, FN=13, FP=11, TN=2966
+For digit 7, color 0: TP=305, FN=17, FP=8, TN=2995
+For digit 7, color 1: TP=343, FN=18, FP=10, TN=3048
+For digit 7, color 2: TP=328, FN=17, FP=10, TN=2901
+For digit 8, color 0: TP=318, FN=19, FP=7, TN=2981
+For digit 8, color 1: TP=329, FN=8, FP=27, TN=3055
+For digit 8, color 2: TP=292, FN=8, FP=22, TN=2934
+For digit 9, color 0: TP=317, FN=17, FP=19, TN=2972
+For digit 9, color 1: TP=312, FN=29, FP=11, TN=3067
+For digit 9, color 2: TP=314, FN=20, FP=12, TN=2910
+Difference in Means by Color:
+Digit 0 Color Difference: 0.007537978704969528
+Digit 1 Color Difference: 0.019540674193247454
+Digit 2 Color Difference: 0.04664604168165576
+Digit 3 Color Difference: 0.02513931104356637
+Digit 4 Color Difference: 0.010520674677046316
+Digit 5 Color Difference: 0.02087658187021335
+Digit 6 Color Difference: 0.044203481056899196
+Digit 7 Color Difference: 0.003519668737060111
+Digit 8 Color Difference: 0.03264094955489605
+Digit 9 Color Difference: 0.03414578467698037
+
+Difference in Means by Digit:
+Color 0 Digit Difference: 0.045769742382860135
+Color 1 Digit Difference: 0.07627205844523333
+Color 2 Digit Difference: 0.049570340350482245
+TPR and FPR by digit and color:
+Digit 0.0 - Color 0.0: TPR = 0.982089552238806, FPR = 0.002006688963210702
+Digit 0.0 - Color 1.0: TPR = 0.9850299401197605, FPR = 0.008427876823338737
+Digit 0.0 - Color 2.0: TPR = 0.977491961414791, FPR = 0.0050933786078098476
+Digit 1.0 - Color 0.0: TPR = 0.9893899204244032, FPR = 0.0010176390773405698
+Digit 1.0 - Color 1.0: TPR = 0.9888888888888889, FPR = 0.002942137953579601
+Digit 1.0 - Color 2.0: TPR = 0.9698492462311558, FPR = 0.0
+Digit 2.0 - Color 0.0: TPR = 0.9728997289972899, FPR = 0.006089309878213802
+Digit 2.0 - Color 1.0: TPR = 0.9262536873156342, FPR = 0.004545454545454545
+Digit 2.0 - Color 2.0: TPR = 0.9382716049382716, FPR = 0.005115961800818554
+Digit 3.0 - Color 0.0: TPR = 0.9613095238095238, FPR = 0.0026764804282368685
+Digit 3.0 - Color 1.0: TPR = 0.9361702127659575, FPR = 0.003236245954692557
+Digit 3.0 - Color 2.0: TPR = 0.9507246376811594, FPR = 0.0048093438680865686
+Digit 4.0 - Color 0.0: TPR = 0.9807073954983923, FPR = 0.0033178500331785005
+Digit 4.0 - Color 1.0: TPR = 0.9912280701754386, FPR = 0.005849853753656159
+Digit 4.0 - Color 2.0: TPR = 0.9878419452887538, FPR = 0.005466347796378545
+Digit 5.0 - Color 0.0: TPR = 0.962457337883959, FPR = 0.005936675461741424
+Digit 5.0 - Color 1.0: TPR = 0.948051948051948, FPR = 0.004178720668595307
+Digit 5.0 - Color 2.0: TPR = 0.9415807560137457, FPR = 0.006745362563237774
+Digit 6.0 - Color 0.0: TPR = 0.9871382636655949, FPR = 0.0033178500331785005
+Digit 6.0 - Color 1.0: TPR = 0.9429347826086957, FPR = 0.003933136676499509
+Digit 6.0 - Color 2.0: TPR = 0.953405017921147, FPR = 0.003694994961370507
+Digit 7.0 - Color 0.0: TPR = 0.9472049689440993, FPR = 0.002664002664002664
+Digit 7.0 - Color 1.0: TPR = 0.9501385041551247, FPR = 0.0032701111837802484
+Digit 7.0 - Color 2.0: TPR = 0.9507246376811594, FPR = 0.0034352456200618343
+Digit 8.0 - Color 0.0: TPR = 0.9436201780415431, FPR = 0.0023427041499330657
+Digit 8.0 - Color 1.0: TPR = 0.9762611275964391, FPR = 0.008760545100584036
+Digit 8.0 - Color 2.0: TPR = 0.9733333333333334, FPR = 0.007442489851150203
+Digit 9.0 - Color 0.0: TPR = 0.9491017964071856, FPR = 0.006352390504847877
+Digit 9.0 - Color 1.0: TPR = 0.9149560117302052, FPR = 0.0035737491877842753
+Digit 9.0 - Color 2.0: TPR = 0.9401197604790419, FPR = 0.004106776180698152
+             Filename  True Label  Predicted Label  Color
+0   image_6_1_130.png           6                6      1
+1  image_3_0_7690.png           3                3      0
+2  image_8_2_2600.png           8                8      2
+3  image_7_0_7504.png           7                7      0
+4  image_1_1_9946.png           1                1      1
+Difference between Color 1 and Others: 0.007099950360968554
+Difference between Color 0 and Others: 0.01051617808566363
+Difference between Color 2 and Others: 0.0033539686564597604
+             Filename  True Label  Predicted Label  Color
+0   image_6_1_130.png           6                6      1
+1  image_3_0_7690.png           3                3      0
+2  image_8_2_2600.png           8                8      2
+3  image_7_0_7504.png           7                7      0
+4  image_1_1_9946.png           1                1      1
+Digit 0: EO = 0.995719208093248
+Digit 1: EO = 0.9980385746976136
+Digit 2: EO = 0.9989707631114938
+Digit 3: EO = 0.9985780910401002
+Digit 4: EO = 0.9983119975196816
+Digit 5: EO = 0.9982889054035717
+Digit 6: EO = 0.9995898089044527
+Digit 7: EO = 0.9994858380292939
+Digit 8: EO = 0.9957214393662327
+Digit 9: EO = 0.998147572455291
+gen10
+             Filename  True Label  Predicted Label  Color
+0   image_6_1_130.png           6                6      1
+1  image_3_0_7690.png           3                3      0
+2  image_8_2_2600.png           8                8      2
+3  image_7_0_7504.png           7                7      0
+4  image_1_1_9946.png           1                1      1
+For digit 0, color 0: TP=330, FN=5, FP=6, TN=2984
+For digit 0, color 1: TP=324, FN=10, FP=4, TN=3081
+For digit 0, color 2: TP=306, FN=5, FP=13, TN=2932
+For digit 1, color 0: TP=376, FN=1, FP=6, TN=2942
+For digit 1, color 1: TP=358, FN=2, FP=10, TN=3049
+For digit 1, color 2: TP=393, FN=5, FP=1, TN=2857
+For digit 2, color 0: TP=346, FN=23, FP=15, TN=2941
+For digit 2, color 1: TP=321, FN=18, FP=8, TN=3072
+For digit 2, color 2: TP=297, FN=27, FP=15, TN=2917
+For digit 3, color 0: TP=323, FN=13, FP=19, TN=2970
+For digit 3, color 1: TP=313, FN=16, FP=14, TN=3076
+For digit 3, color 2: TP=331, FN=14, FP=13, TN=2898
+For digit 4, color 0: TP=301, FN=10, FP=9, TN=3005
+For digit 4, color 1: TP=333, FN=9, FP=4, TN=3073
+For digit 4, color 2: TP=321, FN=8, FP=12, TN=2915
+For digit 5, color 0: TP=276, FN=17, FP=23, TN=3009
+For digit 5, color 1: TP=300, FN=8, FP=20, TN=3091
+For digit 5, color 2: TP=274, FN=17, FP=13, TN=2952
+For digit 6, color 0: TP=306, FN=5, FP=4, TN=3010
+For digit 6, color 1: TP=361, FN=7, FP=25, TN=3026
+For digit 6, color 2: TP=266, FN=13, FP=14, TN=2963
+For digit 7, color 0: TP=292, FN=30, FP=3, TN=3000
+For digit 7, color 1: TP=351, FN=10, FP=7, TN=3051
+For digit 7, color 2: TP=328, FN=17, FP=15, TN=2896
+For digit 8, color 0: TP=325, FN=12, FP=21, TN=2967
+For digit 8, color 1: TP=325, FN=12, FP=4, TN=3078
+For digit 8, color 2: TP=295, FN=5, FP=20, TN=2936
+For digit 9, color 0: TP=319, FN=15, FP=25, TN=2966
+For digit 9, color 1: TP=326, FN=15, FP=11, TN=3067
+For digit 9, color 2: TP=314, FN=20, FP=15, TN=2907
+Difference in Means by Color:
+Digit 0 Color Difference: 0.015014746626150655
+Digit 1 Color Difference: 0.009910294176452505
+Digit 2 Color Difference: 0.030235988200590036
+Digit 3 Color Difference: 0.009941742654508645
+Digit 4 Color Difference: 0.007838231413520469
+Digit 5 Color Difference: 0.03244521801222833
+Digit 6 Color Difference: 0.03051781166084666
+Digit 7 Color Difference: 0.06546687083842329
+Digit 8 Color Difference: 0.018941641938674536
+Digit 9 Color Difference: 0.015891969726236743
+
+Difference in Means by Digit:
+Color 0 Digit Difference: 0.09051518196945474
+Color 1 Digit Difference: 0.0475417895771878
+Color 2 Digit Difference: 0.07077051926298161
+TPR and FPR by digit and color:
+Digit 0.0 - Color 0.0: TPR = 0.9850746268656716, FPR = 0.002006688963210702
+Digit 0.0 - Color 1.0: TPR = 0.9700598802395209, FPR = 0.0012965964343598054
+Digit 0.0 - Color 2.0: TPR = 0.9839228295819936, FPR = 0.004414261460101867
+Digit 1.0 - Color 0.0: TPR = 0.9973474801061007, FPR = 0.0020352781546811396
+Digit 1.0 - Color 1.0: TPR = 0.9944444444444445, FPR = 0.0032690421706440013
+Digit 1.0 - Color 2.0: TPR = 0.9874371859296482, FPR = 0.0003498950314905528
+Digit 2.0 - Color 0.0: TPR = 0.9376693766937669, FPR = 0.005074424898511502
+Digit 2.0 - Color 1.0: TPR = 0.9469026548672567, FPR = 0.0025974025974025974
+Digit 2.0 - Color 2.0: TPR = 0.9166666666666666, FPR = 0.005115961800818554
+Digit 3.0 - Color 0.0: TPR = 0.9613095238095238, FPR = 0.006356641017062563
+Digit 3.0 - Color 1.0: TPR = 0.9513677811550152, FPR = 0.004530744336569579
+Digit 3.0 - Color 2.0: TPR = 0.9594202898550724, FPR = 0.004465819306080384
+Digit 4.0 - Color 0.0: TPR = 0.9678456591639871, FPR = 0.0029860650298606504
+Digit 4.0 - Color 1.0: TPR = 0.9736842105263158, FPR = 0.0012999675008124798
+Digit 4.0 - Color 2.0: TPR = 0.9756838905775076, FPR = 0.004099760847283909
+Digit 5.0 - Color 0.0: TPR = 0.9419795221843004, FPR = 0.007585751978891821
+Digit 5.0 - Color 1.0: TPR = 0.974025974025974, FPR = 0.006428801028608165
+Digit 5.0 - Color 2.0: TPR = 0.9415807560137457, FPR = 0.004384485666104553
+Digit 6.0 - Color 0.0: TPR = 0.9839228295819936, FPR = 0.0013271400132714001
+Digit 6.0 - Color 1.0: TPR = 0.9809782608695652, FPR = 0.00819403474270731
+Digit 6.0 - Color 2.0: TPR = 0.953405017921147, FPR = 0.0047027208599261005
+Digit 7.0 - Color 0.0: TPR = 0.906832298136646, FPR = 0.000999000999000999
+Digit 7.0 - Color 1.0: TPR = 0.9722991689750693, FPR = 0.002289077828646174
+Digit 7.0 - Color 2.0: TPR = 0.9507246376811594, FPR = 0.005152868430092752
+Digit 8.0 - Color 0.0: TPR = 0.9643916913946587, FPR = 0.007028112449799197
+Digit 8.0 - Color 1.0: TPR = 0.9643916913946587, FPR = 0.0012978585334198572
+Digit 8.0 - Color 2.0: TPR = 0.9833333333333333, FPR = 0.006765899864682003
+Digit 9.0 - Color 0.0: TPR = 0.9550898203592815, FPR = 0.008358408559010365
+Digit 9.0 - Color 1.0: TPR = 0.9560117302052786, FPR = 0.0035737491877842753
+Digit 9.0 - Color 2.0: TPR = 0.9401197604790419, FPR = 0.00513347022587269
+             Filename  True Label  Predicted Label  Color
+0   image_6_1_130.png           6                6      1
+1  image_3_0_7690.png           3                3      0
+2  image_8_2_2600.png           8                8      2
+3  image_7_0_7504.png           7                7      0
+4  image_1_1_9946.png           1                1      1
+Difference between Color 1 and Others: 0.008515878290196954
+Difference between Color 0 and Others: 0.003743065528991063
+Difference between Color 2 and Others: 0.004942786526416443
+             Filename  True Label  Predicted Label  Color
+0   image_6_1_130.png           6                6      1
+1  image_3_0_7690.png           3                3      0
+2  image_8_2_2600.png           8                8      2
+3  image_7_0_7504.png           7                7      0
+4  image_1_1_9946.png           1                1      1
+Digit 0: EO = 0.9979215566495053
+Digit 1: EO = 0.998053901907231
+Digit 2: EO = 0.998320960531056
+Digit 3: EO = 0.9987394521926786
+Digit 4: EO = 0.9981334711023523
+Digit 5: EO = 0.9978658224581418
+Digit 6: EO = 0.9954220701803761
+Digit 7: EO = 0.9972307550459388
+Digit 8: EO = 0.9961798307224138
+Digit 9: EO = 0.9968102270858493

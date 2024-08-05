@@ -1,0 +1,16 @@
+Average accuracy curve plot saved as average_accuracy_curve.png
+Average accuracy scatter plot with linear regression saved as average_accuracy_scatter_linear.png
+Average EO values curve plot saved as average_eo_values_curve.png
+Traceback (most recent call last):
+  File "/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/classifier/plottu/ploteo.py", line 71, in <module>
+    er_gen.sort_index()
+NameError: name 'er_gen' is not defined
+Average Color Difference values curve plot saved as average_color_difference_values_curve.png
+Average Color Difference values scatter plot with linear regression saved as average_color_difference_values_scatter.png
+Average Disparate Impact values curve plot saved as average_disparate_impact_values_curve.png
+Average Disparate Impact values scatter plot with linear regression saved as average_disparate_impact_values_scatter_linear.png
+Average TPR values curve plot saved as average_tpr_values_curve.png
+Average FPR values curve plot saved as average_fpr_values_curve.png
+Average TPR values scatter plot with linear regression saved as average_tpr_values_scatter_linear.png
+Average FPR values scatter plot with linear regression saved as average_fpr_values_scatter_linear.png
+Average digit difference curve plot saved as average_digit_difference_curve.png

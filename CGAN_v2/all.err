@@ -1,0 +1,118 @@
+[ WARNING ] Directory `/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/tests` already exists!
+[ INFO ] TestEngine:
+[ INFO ] Creating model `cgan`.
+[ INFO ] You loaded the specified weight. Load weights from `/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/weights_gen5/GAN-last.pth`.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Test single image performance evaluation completed successfully.
+
+/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/augment/augment_dataset.py:42: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  additional_images = pd.concat([additional_images, sampled_images], ignore_index=True)
+[ WARNING ] Directory `/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/runs` already exists!
+[ WARNING ] Directory `/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/weights_gen6` already exists!
+[ INFO ] TrainingEngine:
+[ WARNING ] You have chosen a specific GPU. This will completely disable data parallelism.
+[ INFO ] Creating model `cgan`.
+[ INFO ] All training has been completed successfully.
+
+[ WARNING ] Directory `/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/tests` already exists!
+[ INFO ] TestEngine:
+[ INFO ] Creating model `cgan`.
+[ INFO ] You loaded the specified weight. Load weights from `/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/weights_gen6/GAN-last.pth`.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Test single image performance evaluation completed successfully.
+
+/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/augment/augment_dataset.py:42: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  additional_images = pd.concat([additional_images, sampled_images], ignore_index=True)
+[ WARNING ] Directory `/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/runs` already exists!
+[ WARNING ] Directory `/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/weights_gen7` already exists!
+[ INFO ] TrainingEngine:
+[ WARNING ] You have chosen a specific GPU. This will completely disable data parallelism.
+[ INFO ] Creating model `cgan`.
+[ INFO ] All training has been completed successfully.
+
+[ WARNING ] Directory `/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/tests` already exists!
+[ INFO ] TestEngine:
+[ INFO ] Creating model `cgan`.
+[ INFO ] You loaded the specified weight. Load weights from `/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/weights_gen7/GAN-last.pth`.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Test single image performance evaluation completed successfully.
+
+/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/augment/augment_dataset.py:42: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  additional_images = pd.concat([additional_images, sampled_images], ignore_index=True)
+[ WARNING ] Directory `/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/runs` already exists!
+[ WARNING ] Directory `/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/weights_gen8` already exists!
+[ INFO ] TrainingEngine:
+[ WARNING ] You have chosen a specific GPU. This will completely disable data parallelism.
+[ INFO ] Creating model `cgan`.
+[ INFO ] All training has been completed successfully.
+
+[ WARNING ] Directory `/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/tests` already exists!
+[ INFO ] TestEngine:
+[ INFO ] Creating model `cgan`.
+[ INFO ] You loaded the specified weight. Load weights from `/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/weights_gen8/GAN-last.pth`.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Test single image performance evaluation completed successfully.
+
+/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/augment/augment_dataset.py:42: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  additional_images = pd.concat([additional_images, sampled_images], ignore_index=True)
+[ WARNING ] Directory `/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/runs` already exists!
+[ WARNING ] Directory `/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/weights_gen9` already exists!
+[ INFO ] TrainingEngine:
+[ WARNING ] You have chosen a specific GPU. This will completely disable data parallelism.
+[ INFO ] Creating model `cgan`.
+[ INFO ] All training has been completed successfully.
+
+[ WARNING ] Directory `/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/tests` already exists!
+[ INFO ] TestEngine:
+[ INFO ] Creating model `cgan`.
+[ INFO ] You loaded the specified weight. Load weights from `/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/weights_gen9/GAN-last.pth`.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Randomly generate a Gaussian noise image.
+[ INFO ] Test single image performance evaluation completed successfully.
+
+/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/augment/augment_dataset.py:42: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  additional_images = pd.concat([additional_images, sampled_images], ignore_index=True)

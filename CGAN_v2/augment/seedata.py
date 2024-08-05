@@ -1,11 +1,16 @@
 import os
 import pandas as pd
 import numpy as np
- 
- 
+import argparse
+parser = argparse.ArgumentParser()
 
-train_origen = "/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/data/combined_train_gen1_gen2.csv"
-
+parser.add_argument('--csv_filename', type=str, required=True)
+ 
+args = parser.parse_args()
+ 
+  
+train_origen = os.path.join(  '/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/data',args.csv_filename)
+  
 train_df = pd.read_csv(train_origen)
 
 

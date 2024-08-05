@@ -1,0 +1,301 @@
+gen 4
+Mean: [0.04405352 0.04311765 0.04534344]
+Std: [0.18952053 0.18775864 0.19217412]
+results : 
+[{'Digit': 0, 'Color': 'Red', 'Accuracy': np.float64(0.982089552238806)}, {'Digit': 0, 'Color': 'Blue', 'Accuracy': np.float64(0.9820359281437125)}, {'Digit': 0, 'Color': 'Green', 'Accuracy': np.float64(0.9807073954983923)}, {'Digit': 1, 'Color': 'Red', 'Accuracy': np.float64(0.9893899204244032)}, {'Digit': 1, 'Color': 'Blue', 'Accuracy': np.float64(0.9972222222222222)}, {'Digit': 1, 'Color': 'Green', 'Accuracy': np.float64(0.9824120603015075)}, {'Digit': 2, 'Color': 'Red', 'Accuracy': np.float64(0.9728997289972899)}, {'Digit': 2, 'Color': 'Blue', 'Accuracy': np.float64(0.9823008849557522)}, {'Digit': 2, 'Color': 'Green', 'Accuracy': np.float64(0.9506172839506173)}, {'Digit': 3, 'Color': 'Red', 'Accuracy': np.float64(0.9791666666666666)}, {'Digit': 3, 'Color': 'Blue', 'Accuracy': np.float64(0.9513677811550152)}, {'Digit': 3, 'Color': 'Green', 'Accuracy': np.float64(0.9623188405797102)}, {'Digit': 4, 'Color': 'Red', 'Accuracy': np.float64(0.9646302250803859)}, {'Digit': 4, 'Color': 'Blue', 'Accuracy': np.float64(0.97953216374269)}, {'Digit': 4, 'Color': 'Green', 'Accuracy': np.float64(0.9726443768996961)}, {'Digit': 5, 'Color': 'Red', 'Accuracy': np.float64(0.9453924914675768)}, {'Digit': 5, 'Color': 'Blue', 'Accuracy': np.float64(0.9512987012987013)}, {'Digit': 5, 'Color': 'Green', 'Accuracy': np.float64(0.9553264604810997)}, {'Digit': 6, 'Color': 'Red', 'Accuracy': np.float64(0.9903536977491961)}, {'Digit': 6, 'Color': 'Blue', 'Accuracy': np.float64(0.9483695652173914)}, {'Digit': 6, 'Color': 'Green', 'Accuracy': np.float64(0.978494623655914)}, {'Digit': 7, 'Color': 'Red', 'Accuracy': np.float64(0.9658385093167702)}, {'Digit': 7, 'Color': 'Blue', 'Accuracy': np.float64(0.9418282548476454)}, {'Digit': 7, 'Color': 'Green', 'Accuracy': np.float64(0.9855072463768116)}, {'Digit': 8, 'Color': 'Red', 'Accuracy': np.float64(0.9614243323442137)}, {'Digit': 8, 'Color': 'Blue', 'Accuracy': np.float64(0.9406528189910979)}, {'Digit': 8, 'Color': 'Green', 'Accuracy': np.float64(0.9566666666666667)}, {'Digit': 9, 'Color': 'Red', 'Accuracy': np.float64(0.9520958083832335)}, {'Digit': 9, 'Color': 'Blue', 'Accuracy': np.float64(0.9530791788856305)}, {'Digit': 9, 'Color': 'Green', 'Accuracy': np.float64(0.9520958083832335)}]
+   Digit  Color  Accuracy
+0      0    Red  0.982090
+1      0   Blue  0.982036
+2      0  Green  0.980707
+3      1    Red  0.989390
+4      1   Blue  0.997222
+           Digit   Accuracy
+count  30.000000  30.000000
+mean    4.500000   0.966925
+std     2.921384   0.016360
+min     0.000000   0.940653
+25%     2.000000   0.952096
+50%     4.500000   0.965234
+75%     7.000000   0.981704
+max     9.000000   0.997222
+std_devs :  Digit
+0    0.000783
+1    0.007409
+2    0.016272
+3    0.014003
+4    0.007458
+5    0.004996
+6    0.021644
+7    0.021875
+8    0.010882
+9    0.000568
+Name: Accuracy, dtype: float64
+    Digit  Color  Accuracy
+0       0    Red  0.982090
+4       1   Blue  0.997222
+7       2   Blue  0.982301
+9       3    Red  0.979167
+13      4   Blue  0.979532
+17      5  Green  0.955326
+18      6    Red  0.990354
+23      7  Green  0.985507
+24      8    Red  0.961424
+28      9   Blue  0.953079
+gen 5
+Mean: [0.04405352 0.04311765 0.04534344]
+Std: [0.18952053 0.18775864 0.19217412]
+results : 
+[{'Digit': 0, 'Color': 'Red', 'Accuracy': np.float64(0.9940298507462687)}, {'Digit': 0, 'Color': 'Blue', 'Accuracy': np.float64(0.9880239520958084)}, {'Digit': 0, 'Color': 'Green', 'Accuracy': np.float64(0.9871382636655949)}, {'Digit': 1, 'Color': 'Red', 'Accuracy': np.float64(0.9946949602122016)}, {'Digit': 1, 'Color': 'Blue', 'Accuracy': np.float64(0.9944444444444445)}, {'Digit': 1, 'Color': 'Green', 'Accuracy': np.float64(0.9899497487437185)}, {'Digit': 2, 'Color': 'Red', 'Accuracy': np.float64(0.975609756097561)}, {'Digit': 2, 'Color': 'Blue', 'Accuracy': np.float64(0.9469026548672567)}, {'Digit': 2, 'Color': 'Green', 'Accuracy': np.float64(0.9537037037037037)}, {'Digit': 3, 'Color': 'Red', 'Accuracy': np.float64(0.9404761904761905)}, {'Digit': 3, 'Color': 'Blue', 'Accuracy': np.float64(0.8936170212765957)}, {'Digit': 3, 'Color': 'Green', 'Accuracy': np.float64(0.9478260869565217)}, {'Digit': 4, 'Color': 'Red', 'Accuracy': np.float64(0.9389067524115756)}, {'Digit': 4, 'Color': 'Blue', 'Accuracy': np.float64(0.9678362573099415)}, {'Digit': 4, 'Color': 'Green', 'Accuracy': np.float64(0.9574468085106383)}, {'Digit': 5, 'Color': 'Red', 'Accuracy': np.float64(0.9385665529010239)}, {'Digit': 5, 'Color': 'Blue', 'Accuracy': np.float64(0.9577922077922078)}, {'Digit': 5, 'Color': 'Green', 'Accuracy': np.float64(0.9312714776632303)}, {'Digit': 6, 'Color': 'Red', 'Accuracy': np.float64(0.9485530546623794)}, {'Digit': 6, 'Color': 'Blue', 'Accuracy': np.float64(0.9103260869565217)}, {'Digit': 6, 'Color': 'Green', 'Accuracy': np.float64(0.931899641577061)}, {'Digit': 7, 'Color': 'Red', 'Accuracy': np.float64(0.9503105590062112)}, {'Digit': 7, 'Color': 'Blue', 'Accuracy': np.float64(0.9778393351800554)}, {'Digit': 7, 'Color': 'Green', 'Accuracy': np.float64(0.9217391304347826)}, {'Digit': 8, 'Color': 'Red', 'Accuracy': np.float64(0.9584569732937686)}, {'Digit': 8, 'Color': 'Blue', 'Accuracy': np.float64(0.9584569732937686)}, {'Digit': 8, 'Color': 'Green', 'Accuracy': np.float64(0.9666666666666667)}, {'Digit': 9, 'Color': 'Red', 'Accuracy': np.float64(0.9670658682634731)}, {'Digit': 9, 'Color': 'Blue', 'Accuracy': np.float64(0.967741935483871)}, {'Digit': 9, 'Color': 'Green', 'Accuracy': np.float64(0.9730538922155688)}]
+   Digit  Color  Accuracy
+0      0    Red  0.994030
+1      0   Blue  0.988024
+2      0  Green  0.987138
+3      1    Red  0.994695
+4      1   Blue  0.994444
+           Digit   Accuracy
+count  30.000000  30.000000
+mean    4.500000   0.957678
+std     2.921384   0.025320
+min     0.000000   0.893617
+25%     2.000000   0.942083
+50%     4.500000   0.958125
+75%     7.000000   0.974971
+max     9.000000   0.994695
+std_devs :  Digit
+0    0.003749
+1    0.002670
+2    0.015001
+3    0.029406
+4    0.014655
+5    0.013700
+6    0.019166
+7    0.028052
+8    0.004740
+9    0.003279
+Name: Accuracy, dtype: float64
+    Digit  Color  Accuracy
+0       0    Red  0.994030
+3       1    Red  0.994695
+6       2    Red  0.975610
+11      3  Green  0.947826
+13      4   Blue  0.967836
+16      5   Blue  0.957792
+18      6    Red  0.948553
+22      7   Blue  0.977839
+26      8  Green  0.966667
+29      9  Green  0.973054
+gen 6
+Mean: [0.04405352 0.04311765 0.04534344]
+Std: [0.18952053 0.18775864 0.19217412]
+results : 
+[{'Digit': 0, 'Color': 'Red', 'Accuracy': np.float64(0.9970149253731343)}, {'Digit': 0, 'Color': 'Blue', 'Accuracy': np.float64(0.9910179640718563)}, {'Digit': 0, 'Color': 'Green', 'Accuracy': np.float64(0.9710610932475884)}, {'Digit': 1, 'Color': 'Red', 'Accuracy': np.float64(0.9946949602122016)}, {'Digit': 1, 'Color': 'Blue', 'Accuracy': np.float64(0.9972222222222222)}, {'Digit': 1, 'Color': 'Green', 'Accuracy': np.float64(0.9824120603015075)}, {'Digit': 2, 'Color': 'Red', 'Accuracy': np.float64(0.940379403794038)}, {'Digit': 2, 'Color': 'Blue', 'Accuracy': np.float64(0.9616519174041298)}, {'Digit': 2, 'Color': 'Green', 'Accuracy': np.float64(0.9290123456790124)}, {'Digit': 3, 'Color': 'Red', 'Accuracy': np.float64(0.9702380952380952)}, {'Digit': 3, 'Color': 'Blue', 'Accuracy': np.float64(0.9331306990881459)}, {'Digit': 3, 'Color': 'Green', 'Accuracy': np.float64(0.9710144927536232)}, {'Digit': 4, 'Color': 'Red', 'Accuracy': np.float64(0.9389067524115756)}, {'Digit': 4, 'Color': 'Blue', 'Accuracy': np.float64(0.9736842105263158)}, {'Digit': 4, 'Color': 'Green', 'Accuracy': np.float64(0.939209726443769)}, {'Digit': 5, 'Color': 'Red', 'Accuracy': np.float64(0.9112627986348123)}, {'Digit': 5, 'Color': 'Blue', 'Accuracy': np.float64(0.9285714285714286)}, {'Digit': 5, 'Color': 'Green', 'Accuracy': np.float64(0.8556701030927835)}, {'Digit': 6, 'Color': 'Red', 'Accuracy': np.float64(0.954983922829582)}, {'Digit': 6, 'Color': 'Blue', 'Accuracy': np.float64(0.9021739130434783)}, {'Digit': 6, 'Color': 'Green', 'Accuracy': np.float64(0.956989247311828)}, {'Digit': 7, 'Color': 'Red', 'Accuracy': np.float64(0.9658385093167702)}, {'Digit': 7, 'Color': 'Blue', 'Accuracy': np.float64(0.9362880886426593)}, {'Digit': 7, 'Color': 'Green', 'Accuracy': np.float64(0.9217391304347826)}, {'Digit': 8, 'Color': 'Red', 'Accuracy': np.float64(0.9554896142433235)}, {'Digit': 8, 'Color': 'Blue', 'Accuracy': np.float64(0.9376854599406528)}, {'Digit': 8, 'Color': 'Green', 'Accuracy': np.float64(0.9566666666666667)}, {'Digit': 9, 'Color': 'Red', 'Accuracy': np.float64(0.9580838323353293)}, {'Digit': 9, 'Color': 'Blue', 'Accuracy': np.float64(0.9706744868035191)}, {'Digit': 9, 'Color': 'Green', 'Accuracy': np.float64(0.9580838323353293)}]
+   Digit  Color  Accuracy
+0      0    Red  0.997015
+1      0   Blue  0.991018
+2      0  Green  0.971061
+3      1    Red  0.994695
+4      1   Blue  0.997222
+           Digit   Accuracy
+count  30.000000  30.000000
+mean    4.500000   0.952028
+std     2.921384   0.030703
+min     0.000000   0.855670
+25%     2.000000   0.936637
+50%     4.500000   0.956828
+75%     7.000000   0.970929
+max     9.000000   0.997222
+std_devs :  Digit
+0    0.013588
+1    0.007923
+2    0.016568
+3    0.021652
+4    0.019992
+5    0.038089
+6    0.031085
+7    0.022471
+8    0.010635
+9    0.007269
+Name: Accuracy, dtype: float64
+    Digit  Color  Accuracy
+0       0    Red  0.997015
+4       1   Blue  0.997222
+7       2   Blue  0.961652
+11      3  Green  0.971014
+13      4   Blue  0.973684
+16      5   Blue  0.928571
+20      6  Green  0.956989
+21      7    Red  0.965839
+26      8  Green  0.956667
+28      9   Blue  0.970674
+gen 7
+Mean: [0.04405352 0.04311765 0.04534344]
+Std: [0.18952053 0.18775864 0.19217412]
+results : 
+[{'Digit': 0, 'Color': 'Red', 'Accuracy': np.float64(0.9880597014925373)}, {'Digit': 0, 'Color': 'Blue', 'Accuracy': np.float64(0.9760479041916168)}, {'Digit': 0, 'Color': 'Green', 'Accuracy': np.float64(0.9614147909967846)}, {'Digit': 1, 'Color': 'Red', 'Accuracy': np.float64(0.9973474801061007)}, {'Digit': 1, 'Color': 'Blue', 'Accuracy': np.float64(0.9861111111111112)}, {'Digit': 1, 'Color': 'Green', 'Accuracy': np.float64(0.9849246231155779)}, {'Digit': 2, 'Color': 'Red', 'Accuracy': np.float64(0.962059620596206)}, {'Digit': 2, 'Color': 'Blue', 'Accuracy': np.float64(0.9557522123893806)}, {'Digit': 2, 'Color': 'Green', 'Accuracy': np.float64(0.9382716049382716)}, {'Digit': 3, 'Color': 'Red', 'Accuracy': np.float64(0.9761904761904762)}, {'Digit': 3, 'Color': 'Blue', 'Accuracy': np.float64(0.9331306990881459)}, {'Digit': 3, 'Color': 'Green', 'Accuracy': np.float64(0.9739130434782609)}, {'Digit': 4, 'Color': 'Red', 'Accuracy': np.float64(0.954983922829582)}, {'Digit': 4, 'Color': 'Blue', 'Accuracy': np.float64(0.9766081871345029)}, {'Digit': 4, 'Color': 'Green', 'Accuracy': np.float64(0.939209726443769)}, {'Digit': 5, 'Color': 'Red', 'Accuracy': np.float64(0.9522184300341296)}, {'Digit': 5, 'Color': 'Blue', 'Accuracy': np.float64(0.9642857142857143)}, {'Digit': 5, 'Color': 'Green', 'Accuracy': np.float64(0.9518900343642611)}, {'Digit': 6, 'Color': 'Red', 'Accuracy': np.float64(0.977491961414791)}, {'Digit': 6, 'Color': 'Blue', 'Accuracy': np.float64(0.9293478260869565)}, {'Digit': 6, 'Color': 'Green', 'Accuracy': np.float64(0.953405017921147)}, {'Digit': 7, 'Color': 'Red', 'Accuracy': np.float64(0.9627329192546584)}, {'Digit': 7, 'Color': 'Blue', 'Accuracy': np.float64(0.96398891966759)}, {'Digit': 7, 'Color': 'Green', 'Accuracy': np.float64(0.9652173913043478)}, {'Digit': 8, 'Color': 'Red', 'Accuracy': np.float64(0.973293768545994)}, {'Digit': 8, 'Color': 'Blue', 'Accuracy': np.float64(0.9614243323442137)}, {'Digit': 8, 'Color': 'Green', 'Accuracy': np.float64(0.97)}, {'Digit': 9, 'Color': 'Red', 'Accuracy': np.float64(0.9401197604790419)}, {'Digit': 9, 'Color': 'Blue', 'Accuracy': np.float64(0.9648093841642229)}, {'Digit': 9, 'Color': 'Green', 'Accuracy': np.float64(0.9580838323353293)}]
+   Digit  Color  Accuracy
+0      0    Red  0.988060
+1      0   Blue  0.976048
+2      0  Green  0.961415
+3      1    Red  0.997347
+4      1   Blue  0.986111
+           Digit   Accuracy
+count  30.000000  30.000000
+mean    4.500000   0.963078
+std     2.921384   0.016662
+min     0.000000   0.929348
+25%     2.000000   0.953800
+50%     4.500000   0.963361
+75%     7.000000   0.975514
+max     9.000000   0.997347
+std_devs :  Digit
+0    0.013344
+1    0.006856
+2    0.012324
+3    0.024230
+4    0.018775
+5    0.007064
+6    0.024072
+7    0.001242
+8    0.006127
+9    0.012764
+Name: Accuracy, dtype: float64
+    Digit  Color  Accuracy
+0       0    Red  0.988060
+3       1    Red  0.997347
+6       2    Red  0.962060
+9       3    Red  0.976190
+13      4   Blue  0.976608
+16      5   Blue  0.964286
+18      6    Red  0.977492
+23      7  Green  0.965217
+24      8    Red  0.973294
+28      9   Blue  0.964809
+gen 8
+Mean: [0.04405352 0.04311765 0.04534344]
+Std: [0.18952053 0.18775864 0.19217412]
+results : 
+[{'Digit': 0, 'Color': 'Red', 'Accuracy': np.float64(0.991044776119403)}, {'Digit': 0, 'Color': 'Blue', 'Accuracy': np.float64(0.9820359281437125)}, {'Digit': 0, 'Color': 'Green', 'Accuracy': np.float64(0.9807073954983923)}, {'Digit': 1, 'Color': 'Red', 'Accuracy': np.float64(0.9840848806366048)}, {'Digit': 1, 'Color': 'Blue', 'Accuracy': np.float64(0.9916666666666667)}, {'Digit': 1, 'Color': 'Green', 'Accuracy': np.float64(0.9773869346733668)}, {'Digit': 2, 'Color': 'Red', 'Accuracy': np.float64(0.9512195121951219)}, {'Digit': 2, 'Color': 'Blue', 'Accuracy': np.float64(0.967551622418879)}, {'Digit': 2, 'Color': 'Green', 'Accuracy': np.float64(0.9444444444444444)}, {'Digit': 3, 'Color': 'Red', 'Accuracy': np.float64(0.9642857142857143)}, {'Digit': 3, 'Color': 'Blue', 'Accuracy': np.float64(0.9483282674772037)}, {'Digit': 3, 'Color': 'Green', 'Accuracy': np.float64(0.9739130434782609)}, {'Digit': 4, 'Color': 'Red', 'Accuracy': np.float64(0.9807073954983923)}, {'Digit': 4, 'Color': 'Blue', 'Accuracy': np.float64(0.97953216374269)}, {'Digit': 4, 'Color': 'Green', 'Accuracy': np.float64(0.9665653495440729)}, {'Digit': 5, 'Color': 'Red', 'Accuracy': np.float64(0.9590443686006825)}, {'Digit': 5, 'Color': 'Blue', 'Accuracy': np.float64(0.9383116883116883)}, {'Digit': 5, 'Color': 'Green', 'Accuracy': np.float64(0.9553264604810997)}, {'Digit': 6, 'Color': 'Red', 'Accuracy': np.float64(0.9807073954983923)}, {'Digit': 6, 'Color': 'Blue', 'Accuracy': np.float64(0.9103260869565217)}, {'Digit': 6, 'Color': 'Green', 'Accuracy': np.float64(0.9605734767025089)}, {'Digit': 7, 'Color': 'Red', 'Accuracy': np.float64(0.9720496894409938)}, {'Digit': 7, 'Color': 'Blue', 'Accuracy': np.float64(0.9722991689750693)}, {'Digit': 7, 'Color': 'Green', 'Accuracy': np.float64(0.9652173913043478)}, {'Digit': 8, 'Color': 'Red', 'Accuracy': np.float64(0.9614243323442137)}, {'Digit': 8, 'Color': 'Blue', 'Accuracy': np.float64(0.9436201780415431)}, {'Digit': 8, 'Color': 'Green', 'Accuracy': np.float64(0.98)}, {'Digit': 9, 'Color': 'Red', 'Accuracy': np.float64(0.9431137724550899)}, {'Digit': 9, 'Color': 'Blue', 'Accuracy': np.float64(0.9296187683284457)}, {'Digit': 9, 'Color': 'Green', 'Accuracy': np.float64(0.9520958083832335)}]
+   Digit  Color  Accuracy
+0      0    Red  0.991045
+1      0   Blue  0.982036
+2      0  Green  0.980707
+3      1    Red  0.984085
+4      1   Blue  0.991667
+           Digit   Accuracy
+count  30.000000  30.000000
+mean    4.500000   0.963573
+std     2.921384   0.019130
+min     0.000000   0.910326
+25%     2.000000   0.951439
+50%     4.500000   0.965891
+75%     7.000000   0.979883
+max     9.000000   0.991667
+std_devs :  Digit
+0    0.005624
+1    0.007144
+2    0.011878
+3    0.012922
+4    0.007848
+5    0.011054
+6    0.036248
+7    0.004019
+8    0.018191
+9    0.011314
+Name: Accuracy, dtype: float64
+    Digit  Color  Accuracy
+0       0    Red  0.991045
+4       1   Blue  0.991667
+7       2   Blue  0.967552
+11      3  Green  0.973913
+12      4    Red  0.980707
+15      5    Red  0.959044
+18      6    Red  0.980707
+22      7   Blue  0.972299
+26      8  Green  0.980000
+29      9  Green  0.952096
+gen 9
+Mean: [0.04405352 0.04311765 0.04534344]
+Std: [0.18952053 0.18775864 0.19217412]
+results : 
+[{'Digit': 0, 'Color': 'Red', 'Accuracy': np.float64(0.982089552238806)}, {'Digit': 0, 'Color': 'Blue', 'Accuracy': np.float64(0.9850299401197605)}, {'Digit': 0, 'Color': 'Green', 'Accuracy': np.float64(0.977491961414791)}, {'Digit': 1, 'Color': 'Red', 'Accuracy': np.float64(0.9893899204244032)}, {'Digit': 1, 'Color': 'Blue', 'Accuracy': np.float64(0.9888888888888889)}, {'Digit': 1, 'Color': 'Green', 'Accuracy': np.float64(0.9698492462311558)}, {'Digit': 2, 'Color': 'Red', 'Accuracy': np.float64(0.9728997289972899)}, {'Digit': 2, 'Color': 'Blue', 'Accuracy': np.float64(0.9262536873156342)}, {'Digit': 2, 'Color': 'Green', 'Accuracy': np.float64(0.9382716049382716)}, {'Digit': 3, 'Color': 'Red', 'Accuracy': np.float64(0.9613095238095238)}, {'Digit': 3, 'Color': 'Blue', 'Accuracy': np.float64(0.9361702127659575)}, {'Digit': 3, 'Color': 'Green', 'Accuracy': np.float64(0.9507246376811594)}, {'Digit': 4, 'Color': 'Red', 'Accuracy': np.float64(0.9807073954983923)}, {'Digit': 4, 'Color': 'Blue', 'Accuracy': np.float64(0.9912280701754386)}, {'Digit': 4, 'Color': 'Green', 'Accuracy': np.float64(0.9878419452887538)}, {'Digit': 5, 'Color': 'Red', 'Accuracy': np.float64(0.962457337883959)}, {'Digit': 5, 'Color': 'Blue', 'Accuracy': np.float64(0.948051948051948)}, {'Digit': 5, 'Color': 'Green', 'Accuracy': np.float64(0.9415807560137457)}, {'Digit': 6, 'Color': 'Red', 'Accuracy': np.float64(0.9871382636655949)}, {'Digit': 6, 'Color': 'Blue', 'Accuracy': np.float64(0.9429347826086957)}, {'Digit': 6, 'Color': 'Green', 'Accuracy': np.float64(0.953405017921147)}, {'Digit': 7, 'Color': 'Red', 'Accuracy': np.float64(0.9472049689440993)}, {'Digit': 7, 'Color': 'Blue', 'Accuracy': np.float64(0.9501385041551247)}, {'Digit': 7, 'Color': 'Green', 'Accuracy': np.float64(0.9507246376811594)}, {'Digit': 8, 'Color': 'Red', 'Accuracy': np.float64(0.9436201780415431)}, {'Digit': 8, 'Color': 'Blue', 'Accuracy': np.float64(0.9762611275964391)}, {'Digit': 8, 'Color': 'Green', 'Accuracy': np.float64(0.9733333333333334)}, {'Digit': 9, 'Color': 'Red', 'Accuracy': np.float64(0.9491017964071856)}, {'Digit': 9, 'Color': 'Blue', 'Accuracy': np.float64(0.9149560117302052)}, {'Digit': 9, 'Color': 'Green', 'Accuracy': np.float64(0.9401197604790419)}]
+   Digit  Color  Accuracy
+0      0    Red  0.982090
+1      0   Blue  0.985030
+2      0  Green  0.977492
+3      1    Red  0.989390
+4      1   Blue  0.988889
+           Digit   Accuracy
+count  30.000000  30.000000
+mean    4.500000   0.960639
+std     2.921384   0.021152
+min     0.000000   0.914956
+25%     2.000000   0.944516
+50%     4.500000   0.957357
+75%     7.000000   0.979904
+max     9.000000   0.991228
+std_devs :  Digit
+0    0.003799
+1    0.011140
+2    0.024219
+3    0.012622
+4    0.005370
+5    0.010687
+6    0.023099
+7    0.001886
+8    0.018060
+9    0.017700
+Name: Accuracy, dtype: float64
+    Digit  Color  Accuracy
+1       0   Blue  0.985030
+3       1    Red  0.989390
+6       2    Red  0.972900
+9       3    Red  0.961310
+13      4   Blue  0.991228
+15      5    Red  0.962457
+18      6    Red  0.987138
+23      7  Green  0.950725
+25      8   Blue  0.976261
+27      9    Red  0.949102
+gen 10
+Mean: [0.04405352 0.04311765 0.04534344]
+Std: [0.18952053 0.18775864 0.19217412]
+results : 
+[{'Digit': 0, 'Color': 'Red', 'Accuracy': np.float64(0.9850746268656716)}, {'Digit': 0, 'Color': 'Blue', 'Accuracy': np.float64(0.9700598802395209)}, {'Digit': 0, 'Color': 'Green', 'Accuracy': np.float64(0.9839228295819936)}, {'Digit': 1, 'Color': 'Red', 'Accuracy': np.float64(0.9973474801061007)}, {'Digit': 1, 'Color': 'Blue', 'Accuracy': np.float64(0.9944444444444445)}, {'Digit': 1, 'Color': 'Green', 'Accuracy': np.float64(0.9874371859296482)}, {'Digit': 2, 'Color': 'Red', 'Accuracy': np.float64(0.9376693766937669)}, {'Digit': 2, 'Color': 'Blue', 'Accuracy': np.float64(0.9469026548672567)}, {'Digit': 2, 'Color': 'Green', 'Accuracy': np.float64(0.9166666666666666)}, {'Digit': 3, 'Color': 'Red', 'Accuracy': np.float64(0.9613095238095238)}, {'Digit': 3, 'Color': 'Blue', 'Accuracy': np.float64(0.9513677811550152)}, {'Digit': 3, 'Color': 'Green', 'Accuracy': np.float64(0.9594202898550724)}, {'Digit': 4, 'Color': 'Red', 'Accuracy': np.float64(0.9678456591639871)}, {'Digit': 4, 'Color': 'Blue', 'Accuracy': np.float64(0.9736842105263158)}, {'Digit': 4, 'Color': 'Green', 'Accuracy': np.float64(0.9756838905775076)}, {'Digit': 5, 'Color': 'Red', 'Accuracy': np.float64(0.9419795221843004)}, {'Digit': 5, 'Color': 'Blue', 'Accuracy': np.float64(0.974025974025974)}, {'Digit': 5, 'Color': 'Green', 'Accuracy': np.float64(0.9415807560137457)}, {'Digit': 6, 'Color': 'Red', 'Accuracy': np.float64(0.9839228295819936)}, {'Digit': 6, 'Color': 'Blue', 'Accuracy': np.float64(0.9809782608695652)}, {'Digit': 6, 'Color': 'Green', 'Accuracy': np.float64(0.953405017921147)}, {'Digit': 7, 'Color': 'Red', 'Accuracy': np.float64(0.906832298136646)}, {'Digit': 7, 'Color': 'Blue', 'Accuracy': np.float64(0.9722991689750693)}, {'Digit': 7, 'Color': 'Green', 'Accuracy': np.float64(0.9507246376811594)}, {'Digit': 8, 'Color': 'Red', 'Accuracy': np.float64(0.9643916913946587)}, {'Digit': 8, 'Color': 'Blue', 'Accuracy': np.float64(0.9643916913946587)}, {'Digit': 8, 'Color': 'Green', 'Accuracy': np.float64(0.9833333333333333)}, {'Digit': 9, 'Color': 'Red', 'Accuracy': np.float64(0.9550898203592815)}, {'Digit': 9, 'Color': 'Blue', 'Accuracy': np.float64(0.9560117302052786)}, {'Digit': 9, 'Color': 'Green', 'Accuracy': np.float64(0.9401197604790419)}]
+   Digit  Color  Accuracy
+0      0    Red  0.985075
+1      0   Blue  0.970060
+2      0  Green  0.983923
+3      1    Red  0.997347
+4      1   Blue  0.994444
+           Digit   Accuracy
+count  30.000000  30.000000
+mean    4.500000   0.962597
+std     2.921384   0.021618
+min     0.000000   0.906832
+25%     2.000000   0.950885
+50%     4.500000   0.964392
+75%     7.000000   0.979655
+max     9.000000   0.997347
+std_devs :  Digit
+0    0.008356
+1    0.005095
+2    0.015495
+3    0.005280
+4    0.004073
+5    0.018618
+6    0.016834
+7    0.033361
+8    0.010936
+9    0.008921
+Name: Accuracy, dtype: float64
+    Digit  Color  Accuracy
+0       0    Red  0.985075
+3       1    Red  0.997347
+7       2   Blue  0.946903
+9       3    Red  0.961310
+14      4  Green  0.975684
+16      5   Blue  0.974026
+18      6    Red  0.983923
+22      7   Blue  0.972299
+26      8  Green  0.983333
+28      9   Blue  0.956012

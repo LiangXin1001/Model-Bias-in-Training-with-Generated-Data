@@ -49,7 +49,7 @@ model_names = sorted(name for name in models.__dict__ if name.islower() and not 
 logger = logging.getLogger(__name__)
 logging.basicConfig(format="[ %(levelname)s ] %(message)s", level=logging.INFO)
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-model_dir = "weights_b160004"
+
 
 class CustomMNISTDataset(Dataset):
     def __init__(self, csv_file, img_dirs, transform=None):
@@ -194,11 +194,13 @@ def main_worker(ngpus_per_node, args):
         end = time.time()
         for i, (inputs, target) in enumerate(dataloader):
             # Move data to special device.
+            # print(inputs.shape, target.shape)
             inputs = inputs.cuda(device, non_blocking=True)
             target = target.cuda(device, non_blocking=True)
+            batch_size = inputs.size(0)
             # print("inputs.size(0) :  ", inputs.size(0) )
-            # batch_size = inputs.size(0)             
-            batch_size = args.batch_size
+                    
+            # batch_size = args.batch_size
             # The real sample label is 1, and the generated sample label is 0.
             real_label = torch.full((batch_size, 1), 1, dtype=inputs.dtype).cuda(device, non_blocking=True)
             fake_label = torch.full((batch_size, 1), 0, dtype=inputs.dtype).cuda(device, non_blocking=True)
@@ -219,7 +221,8 @@ def main_worker(ngpus_per_node, args):
 
             # Train with real.
             real_output = discriminator(inputs, target)
-            # print("real_output ",real_output)
+            # print("Real output size: ", real_output.size())
+            # print("Real label size: ", real_label.size())
             d_loss_real = adversarial_criterion(real_output, real_label)
             
             d_loss_real.backward()
@@ -290,17 +293,20 @@ def main_worker(ngpus_per_node, args):
             sr = generator(fixed_noise, fixed_conditional)
             vutils.save_image(sr.detach(), os.path.join("runs", f"GAN_epoch_{epoch}.png"), normalize=True)
         
-        os.makedirs(model_dir, exist_ok=True)
+        os.makedirs(args.model_dir, exist_ok=True)
         print("generator : ", generator)
         if not args.multiprocessing_distributed or (args.multiprocessing_distributed and args.rank % ngpus_per_node == 0):
-            torch.save(generator.state_dict(), os.path.join(model_dir, f"Generator_epoch{epoch}.pth"))
-            torch.save(discriminator.state_dict(), os.path.join(model_dir, f"Discriminator_epoch{epoch}.pth"))
+            torch.save(generator.state_dict(), os.path.join(args.model_dir, f"Generator_epoch{epoch}.pth"))
+            torch.save(discriminator.state_dict(), os.path.join(args.model_dir, f"Discriminator_epoch{epoch}.pth"))
 
-    torch.save(generator.state_dict(), os.path.join(model_dir, f"GAN-last.pth"))
+    torch.save(generator.state_dict(), os.path.join(args.model_dir, f"GAN-last.pth"))
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
+    # model_dir = "weights_gen4"
+
+    parser.add_argument('--model_dir', type=str, required=True)
     parser.add_argument('--train_csv', type=str, required=True)
     parser.add_argument('--image_dirs', type=str, required=True)
     parser.add_argument("--arch", default="cgan", type=str, choices=model_names,
@@ -352,7 +358,7 @@ if __name__ == "__main__":
     print("Run Training Engine.\n")
 
     create_folder("runs")
-    create_folder(model_dir)
+    create_folder(args.model_dir)
 
     logger.info("TrainingEngine:")
     print("\tAPI version .......... 0.2.0")
