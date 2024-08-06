@@ -129,7 +129,7 @@ def main_worker(ngpus_per_node, args):
     adversarial_criterion = nn.MSELoss().cuda()
 
     fixed_noise = torch.randn([args.batch_size, 100])
-    fixed_conditional = torch.randint(0, 1, (args.batch_size,))
+    fixed_conditional = torch.randint(0, 10, (args.batch_size,))
      
     fixed_noise = fixed_noise.cuda()
     fixed_conditional = fixed_conditional.cuda()
