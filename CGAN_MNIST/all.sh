@@ -11,7 +11,7 @@ source ~/.bashrc
  
 conda activate llava-med
 
-
+python augment/gen_test.py
 python augment/gen_train.py
 python augment/normalize_label_counts.py
 python augment/augment_images_with_rotation.py
