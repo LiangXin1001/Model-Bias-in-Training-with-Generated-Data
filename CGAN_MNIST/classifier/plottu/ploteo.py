@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import os
 import numpy as np
 # Define the base path
-base_path = '/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/classifier/results'
+base_path = 'results'
 
 # Define subdirectories
 subdirectories = ['gen{}'.format(i) for i in range(11)]
@@ -34,7 +34,7 @@ plt.title('EO Values for Different Digits Across Generations')
 plt.legend(title='Generation')
 plt.tight_layout()
 
-output_path = 'eo_values_bar_plot.png'
+output_path = 'plottu/eo_values_bar_plot.png'
 plt.savefig(output_path)
 plt.close()
 
@@ -61,14 +61,14 @@ plt.xticks(average_eo_per_gen.index)  # 确保x轴显示所有gen值
 plt.grid(True)
 
 # 保存图像
-output_path_curve = 'average_eo_values_curve.png'
+output_path_curve = 'plottu/average_eo_values_curve.png'
 plt.savefig(output_path_curve)
 plt.close()
 
 print(f'Average EO values curve plot saved as {output_path_curve}')
 
 
-er_gen.sort_index()
+average_eo_per_gen.sort_index()
 
 # 绘制散点图并添加线性回归直线
 x = average_eo_per_gen.index
@@ -90,7 +90,7 @@ plt.grid(True)
 plt.legend()
 
 # 保存图像
-output_path_scatter = 'average_eo_values_scatter_linear.png'
+output_path_scatter = 'plottu/average_eo_values_scatter_linear.png'
 plt.savefig(output_path_scatter)
 plt.close()
 

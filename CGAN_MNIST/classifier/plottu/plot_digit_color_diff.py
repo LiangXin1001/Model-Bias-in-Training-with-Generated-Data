@@ -37,7 +37,7 @@ plt.legend(title='Generation')
 plt.tight_layout()
 
 # 保存图表
-output_path = 'digitcolor_difference_values_bar_plot.png'
+output_path = 'plottu/digitcolor_difference_values_bar_plot.png'
 plt.savefig(output_path)
 plt.close()
  
@@ -61,7 +61,7 @@ plt.xticks(average_cd_per_gen.index)  # Ensure x-axis shows all gen values
 plt.grid(True)
 
 # Save the plot
-output_path_curve = 'average_color_difference_values_curve.png'
+output_path_curve = 'plottu/average_color_difference_values_curve.png'
 plt.savefig(output_path_curve)
 plt.close()
 
@@ -90,7 +90,7 @@ plt.grid(True)
 plt.legend()
 
 # 保存图表
-output_path_scatter = 'average_color_difference_values_scatter.png'
+output_path_scatter = 'plottu/average_color_difference_values_scatter.png'
 plt.savefig(output_path_scatter)
 plt.close()
 

@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import os
 import numpy as np
 # Define the base path
-base_path = '/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/classifier/results'
+base_path = 'results'
 subdirectories = ['gen{}'.format(i) for i in range(11)]
 
 # Function to read all images result files
@@ -41,7 +41,7 @@ plt.xticks(average_accuracy_per_gen.index)  # Ensure x-axis shows all gen values
 plt.grid(True)
 
 # Save the plot
-output_path_curve = 'average_accuracy_curve.png'
+output_path_curve = 'plottu/average_accuracy_curve.png'
 plt.savefig(output_path_curve)
 plt.close()
 
@@ -69,7 +69,7 @@ plt.grid(True)
 plt.legend()
 
 # 保存图像
-output_path_scatter = 'average_accuracy_scatter_linear.png'
+output_path_scatter = 'plottu/average_accuracy_scatter_linear.png'
 plt.savefig(output_path_scatter)
 plt.close()
 

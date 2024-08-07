@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import numpy as np
  
 # Define the base path
-base_path = '/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/classifier/results'
+base_path = 'results'
 subdirectories = ['gen{}'.format(i) for i in range(11)]
 
 # Function to read disparate impact files

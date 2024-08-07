@@ -7,7 +7,7 @@ import numpy as np
 
 
 # Define the base path
-base_path = '/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/classifier/results'
+base_path = 'results'
 subdirectories = ['gen{}'.format(i) for i in range(11)]
 
 # Function to read TPR and FPR files
@@ -36,7 +36,7 @@ plt.ylabel('TPR Value')
 plt.title('TPR Values for Different Digits Across Generations')
 plt.legend(title='Generation')
 plt.tight_layout()
-tpr_output_path = 'tpr_values_bar_plot.png'
+tpr_output_path = 'plottu/tpr_values_bar_plot.png'
 plt.savefig(tpr_output_path)
 plt.close()
 
@@ -48,7 +48,7 @@ plt.ylabel('FPR Value')
 plt.title('FPR Values for Different Digits Across Generations')
 plt.legend(title='Generation')
 plt.tight_layout()
-fpr_output_path = 'fpr_values_bar_plot.png'
+fpr_output_path = 'plottu/fpr_values_bar_plot.png'
 plt.savefig(fpr_output_path)
 plt.close()
 
@@ -78,7 +78,7 @@ plt.grid(True)
 plt.legend()
 
 # 保存TPR曲线图
-tpr_output_path_curve = 'average_tpr_values_curve.png'
+tpr_output_path_curve = 'plottu/average_tpr_values_curve.png'
 plt.savefig(tpr_output_path_curve)
 plt.close()
 
@@ -124,7 +124,7 @@ plt.grid(True)
 plt.legend()
 
 # 保存TPR散点图
-tpr_output_path_scatter = 'average_tpr_values_scatter_linear.png'
+tpr_output_path_scatter = 'plottu/average_tpr_values_scatter_linear.png'
 plt.savefig(tpr_output_path_scatter)
 plt.close()
 
@@ -148,7 +148,7 @@ plt.grid(True)
 plt.legend()
 
 # 保存FPR散点图
-fpr_output_path_scatter = 'average_fpr_values_scatter_linear.png'
+fpr_output_path_scatter = 'plottu/average_fpr_values_scatter_linear.png'
 plt.savefig(fpr_output_path_scatter)
 plt.close()
 

@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import os
 import numpy as np
 # Define the base path
-base_path = '/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/classifier/results'
+base_path = 'results'
 subdirectories = ['gen{}'.format(i) for i in range(11)]
 
 # Function to read digit difference files
@@ -46,7 +46,7 @@ plt.legend(title='Color Digit Difference')
 plt.grid(True)
 
 # Save the plot
-output_path_curve = 'average_digit_difference_curve.png'
+output_path_curve = 'plottu/average_digit_difference_curve.png'
 plt.savefig(output_path_curve)
 plt.close()
 
