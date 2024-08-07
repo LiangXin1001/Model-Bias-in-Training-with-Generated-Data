@@ -10,10 +10,9 @@ parser.add_argument('--new_csv_name', type=str, required=True)
 
 args = parser.parse_args()
 
-# 定义文件路径
-base_image_dir = '/local/scratch/hcui25/Project/xin/CS/GAN'
-train_csv_path = os.path.join(base_image_dir, 'CGAN-PyTorch/data',args.train_csv_filename)
-generated_csv_path = os.path.join(base_image_dir, 'CGAN-PyTorch',args.generated_csv_path)
+
+train_csv_path = args.train_csv_filename 
+generated_csv_path =  args.generated_csv_path 
 
 # 读取 CSV 文件
 train_df = pd.read_csv(train_csv_path)
@@ -64,7 +63,7 @@ if len(combined_df) > max_images:
             num_to_remove -= num_to_remove_gen
 
 # 保存新的 CSV 文件
-new_csv_path = os.path.join(base_image_dir, 'CGAN-PyTorch/data',  args.new_csv_name)
+new_csv_path =  args.new_csv_name 
 combined_df.to_csv(new_csv_path, index=False)
 
 print("新的 CSV 文件已生成并保存在:", new_csv_path)

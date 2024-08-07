@@ -4,10 +4,10 @@ import os
 from random import randint
 
 # 假设 CSV 文件路径和图片目录
-csv_path = '/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/augment/adjusted_train_dataset.csv'
+csv_path = 'augment/adjusted_train_dataset.csv'
 df = pd.read_csv(csv_path)
 df['color'] = df['color'].astype(int)
-base_image_dir = '/local/scratch/hcui25/Project/xin/CS/GAN/CGAN_v2/mnist_train'
+base_image_dir = 'MNIST/mnist_train'
  
 min_color_count = 2000
  
@@ -41,5 +41,5 @@ for index, row in label_color_counts.iterrows():
 additional_images_df = pd.DataFrame(new_images)
 combined_df = pd.concat([df, additional_images_df], ignore_index=True)
 
-new_csv_path = os.path.join('/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/augment', 'augmented_train_dataset.csv')
+new_csv_path = os.path.join('augment', 'augmented_train_dataset.csv')
 combined_df.to_csv(new_csv_path, index=False)

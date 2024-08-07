@@ -14,7 +14,7 @@ args = parser.parse_args()
  
 
 # Load the CSV file
-csv_path = os.path.join(args.base_image_dir, args.csv_filename)
+csv_path =  args.csv_filename 
 df = pd.read_csv(csv_path)
  
  

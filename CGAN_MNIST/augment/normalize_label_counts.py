@@ -2,9 +2,8 @@ import pandas as pd
 import numpy as np
 import os
 from random import randint
-
-base_image_dir = '/local/scratch/hcui25/Project/xin/CS/GAN'
-csv_path = "/local/scratch/hcui25/Project/xin/CS/GAN/CGAN_v2/train.csv"
+ 
+csv_path = "MNIST/train.csv"
 
 df = pd.read_csv(csv_path)
 
@@ -36,7 +35,7 @@ for label in adjusted_df['label'].unique():
         label_subset = label_subset.sample(n=target_count, random_state=42)
     final_df = pd.concat([final_df, label_subset], ignore_index=True)
 
-new_csv_path = os.path.join(base_image_dir, 'CGAN-PyTorch/augment', 'adjusted_train_dataset.csv')
+new_csv_path = os.path.join('augment', 'adjusted_train_dataset.csv')
 final_df.to_csv(new_csv_path, index=False)
 
 print(f"Adjusted dataset saved. Total records: {len(final_df)}.")
