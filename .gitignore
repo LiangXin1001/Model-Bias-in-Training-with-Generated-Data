@@ -1,7 +1,7 @@
 Dataset/Colored_MNIST_Bais
 CrossDatasetTraining/data
 CGAN/output.log
-
+CGAN_CIFAR/data
 # Ignore all image files
 *.jpg
  
