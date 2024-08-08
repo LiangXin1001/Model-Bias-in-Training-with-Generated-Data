@@ -17,6 +17,7 @@ import argparse
   
 import numpy as np
 import matplotlib.pyplot as plt
+ 
 
 import os
 import pandas as pd
@@ -60,7 +61,6 @@ def get_mean_std(csv_file, image_dir):
     print(f"Std: {std_rgb}")
     
     return mean_rgb, std_rgb
-
 
 
 # Set up command line arguments
