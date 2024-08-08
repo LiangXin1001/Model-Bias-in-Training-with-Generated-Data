@@ -61,6 +61,7 @@ class Trainer_acgan(object):
             self.build_tensorboard()
 
         self.build_model()
+        self.model_save_path = config.model_save_path
 
     def train(self):
         '''
@@ -145,6 +146,7 @@ class Trainer_acgan(object):
                 print("Elapsed [{}], G_step [{}/{}], D_step[{}/{}], d_loss: {:.4f}, g_loss: {:.4f}, Acc: {:.4f}"
                     .format(elapsed, epoch, self.epochs, epoch,
                             self.epochs, d_loss.item(), g_loss_fake.item(), d_acc))
+                self.save_model(epoch)
 
             # sample images 
             if (epoch) % self.sample_step == 0:
@@ -159,6 +161,7 @@ class Trainer_acgan(object):
                     
                 # sample sample one images
                 save_sample_one_image(self.sample_path, real_images, fake_images, epoch)
+        self.save_model("last")
 
 
     def build_model(self):
@@ -193,3 +196,7 @@ class Trainer_acgan(object):
 
             self.logger.add_image(text + str(step), img_grid, step)
             self.logger.close()
+    
+    def save_model(self, epoch):
+        torch.save(self.G.state_dict(), os.path.join(self.model_save_path, 'G_{}.pth'.format(epoch)))
+        torch.save(self.D.state_dict(), os.path.join(self.model_save_path, 'D_{}.pth'.format(epoch)))
