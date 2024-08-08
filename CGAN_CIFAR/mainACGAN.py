@@ -3,11 +3,13 @@ import torch.nn as nn
 from torchvision.utils import make_grid
 import torch.optim as optim
 import numpy as np
+import os
 import torchvision
 import torch.nn.functional as F
 import matplotlib.pyplot as plt
 import torchvision.transforms as transforms
-from cgan_pytorch.utils.datasets import SuperCIFAR100  ,CIFAR_100_CLASS_MAP
+from datasets import SuperCIFAR100  ,CIFAR_100_CLASS_MAP
+from model import Generator, Discriminator
 from torchvision.utils import save_image
 # torch.backends.cudnn.enabled = False
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -75,7 +77,12 @@ def showImage(images,epoch=-99, idx = -99):
     plt.imshow(np.transpose(images,axes = (1,2,0)))
     plt.axis('off')
     if epoch!=-99:
-        plt.savefig("e" + str(epoch) + "i" + str(idx) + ".png")
+        save_dir = "runs"
+        os.makedirs(save_dir, exist_ok=True)  # 如果目录不存在，则创建它
+        save_path = os.path.join(save_dir, f"e{epoch}i{idx}.png")  # 创建文件路径
+        plt.savefig(save_path)  # 保存文件到指定路径
+        plt.close() 
+        # plt.savefig("e" + str(epoch) + "i" + str(idx) + ".png")
 
 # dataiter = iter(trainloader)
 # images, mapped_labels, original_labels = next(dataiter)
@@ -86,95 +93,6 @@ def showImage(images,epoch=-99, idx = -99):
 # print("mapped_labels, original_labels")
 # print(mapped_labels, original_labels)
  
-class Generator(nn.Module):
-    
-    def __init__(self):
-        super(Generator,self).__init__()
-        
-        #input 100*1*1
-        self.layer1 = nn.Sequential(nn.ConvTranspose2d(100,512,4,1,0,bias = False),
-                                   nn.ReLU(True))
-
-        #input 512*4*4
-        self.layer2 = nn.Sequential(nn.ConvTranspose2d(512,256,4,2,1,bias = False),
-                                   nn.BatchNorm2d(256),
-                                   nn.ReLU(True))
-        #input 256*8*8
-        self.layer3 = nn.Sequential(nn.ConvTranspose2d(256,128,4,2,1,bias = False),
-                                   nn.BatchNorm2d(128),
-                                   nn.ReLU(True))
-        #input 128*16*16
-        self.layer4 = nn.Sequential(nn.ConvTranspose2d(128,64,4,2,1,bias = False),
-                                   nn.BatchNorm2d(64),
-                                   nn.ReLU(True))
-        #input 64*32*32
-        self.layer5 = nn.Sequential(nn.ConvTranspose2d(64,3,4,2,1,bias = False),
-                                   nn.Tanh())
-        #output 3*64*64
-      
-        self.embedding = nn.Embedding(20,100)
-        
-        
-    def forward(self,noise,label):
-        
-        label_embedding = self.embedding(label)
-        x = torch.mul(noise,label_embedding)
-        x = x.view(-1,100,1,1)
-        
-        x = self.layer1(x)
-        x = self.layer2(x)
-        x = self.layer3(x)
-        x = self.layer4(x)
-        x = self.layer5(x)
-        return x
-        
-
-class Discriminator(nn.Module):
-    
-    def __init__(self):
-        super(Discriminator,self).__init__()        
-        
-        #input 3*64*64
-        self.layer1 = nn.Sequential(nn.Conv2d(3,64,4,2,1,bias = False),
-                                    nn.BatchNorm2d(64),
-                                   nn.LeakyReLU(0.2,True),
-                                   nn.Dropout2d(0.5))
-        
-        #input 64*32*32
-        self.layer2 = nn.Sequential(nn.Conv2d(64,128,4,2,1,bias = False),
-                                    nn.BatchNorm2d(128),
-                                   nn.LeakyReLU(0.2,True),
-                                   nn.Dropout2d(0.5))
-        #input 128*16*16
-        self.layer3 = nn.Sequential(nn.Conv2d(128,256,4,2,1,bias = False),
-                                    nn.BatchNorm2d(256),
-                                   nn.LeakyReLU(0.2,True),
-                                   nn.Dropout2d(0.5))
-        #input 256*8*8
-        self.layer4 = nn.Sequential(nn.Conv2d(256,512,4,2,1,bias = False),
-                                    nn.BatchNorm2d(512),
-                                   nn.LeakyReLU(0.2,True))
-        #input 512*4*4
-        self.validity_layer = nn.Sequential(nn.Conv2d(512,1,4,1,0,bias = False),
-                                   nn.Sigmoid())
-        
-        self.label_layer = nn.Sequential(nn.Conv2d(512,21,4,1,0,bias = False),
-                                   nn.LogSoftmax(dim = 1))
-        
-    def forward(self,x):
-        
-        x = self.layer1(x)
-        x = self.layer2(x)
-        x = self.layer3(x)
-        x = self.layer4(x)
-        validity = self.validity_layer(x)
-        plabel = self.label_layer(x)
-        
-        validity = validity.view(-1)
-        plabel = plabel.view(-1,21)
-        
-        return validity,plabel
-
 
 # custom weights initialization called on netG and netD
 def weights_init(m):
@@ -197,14 +115,14 @@ print(len(paramsG))
 paramsD = list(disc.parameters())
 print(len(paramsD))        
         
-optimG = optim.Adam(gen.parameters(), 0.0002, betas = (0.5,0.999))
+optimG = optim.Adam(gen.parameters(), 0.0004, betas = (0.5,0.999))
 optimD = optim.Adam(disc.parameters(), 0.0002, betas = (0.5,0.999))
 
 validity_loss = nn.BCELoss()
 
 # real_labels = 0.7 + 0.5 * torch.rand(10, device = device)
 # fake_labels = 0.3 * torch.rand(10, device = device)
-epochs = 10
+epochs = 15
 
 for epoch in range(1,epochs+1):
     torch.cuda.empty_cache()

@@ -1,7 +1,7 @@
 
 import torch
 import torchvision
-
+import torch.nn as nn
 # 定义 CIFAR_100_CLASS_MAP 和 SuperCIFAR100 类
 CIFAR_100_CLASS_MAP = {
     'aquatic mammals': ['beaver', 'dolphin', 'otter', 'seal', 'whale'],
