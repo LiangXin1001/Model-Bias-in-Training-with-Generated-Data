@@ -14,7 +14,7 @@ class Generator(nn.Module):
     pure Generator structure
 
     '''    
-    def __init__(self, image_size=64, z_dim=100, conv_dim=64, channels = 1, n_classes=20):
+    def __init__(self, image_size=32, z_dim=100, conv_dim=64, channels = 1, n_classes=20):
         
         super(Generator, self).__init__()
         self.imsize = image_size
@@ -44,15 +44,11 @@ class Generator(nn.Module):
         )
         
         self.deconv4 = nn.Sequential(
-            nn.ConvTranspose2d(192, 64, 4, 2, 1, bias=False),
-            nn.BatchNorm2d(64),
-            nn.ReLU(True)
-        )
-
-        self.last = nn.Sequential(
-            nn.ConvTranspose2d(64, self.channels, 4, 2, 1, bias=False),
+            nn.ConvTranspose2d(192, self.channels, 4, 2, 1, bias=False),
             nn.Tanh()
         )
+
+        
 
     def forward(self, z, labels):
         label_emb = self.label_embedding(labels)
@@ -60,14 +56,13 @@ class Generator(nn.Module):
 
         out = self.linear(gen_input)
         out = out.view(-1, 768, 1, 1)
-
+        # import pdb;pdb.set_trace()
         out = self.deconv1(out)
         out = self.deconv2(out)
         out = self.deconv3(out)
         out = self.deconv4(out)
         
-        out = self.last(out) # (*, c, 64, 64)
-
+        
         return out
 
 # %%
@@ -131,12 +126,12 @@ class Discriminator(nn.Module):
         # (*, 512, 8, 8)
         # dis fc
         self.last_adv = nn.Sequential(
-            nn.Linear(8*8*512, 1),
+            nn.Linear(4*4*512, 1),
             # nn.Sigmoid()
             )
         # aux classifier fc 
         self.last_aux = nn.Sequential(
-            nn.Linear(8*8*512, self.n_classes),
+            nn.Linear(4*4*512, self.n_classes),
             nn.Softmax(dim=1)
         )
 
@@ -149,7 +144,7 @@ class Discriminator(nn.Module):
         out = self.conv6(out)
 
         flat = out.view(input.size(0), -1)
-
+        # import pdb; pdb.set_trace()
         fc_dis = self.last_adv(flat)
         fc_aux = self.last_aux(flat)
 
