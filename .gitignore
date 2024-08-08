@@ -24,3 +24,6 @@ __pycache__
 *.pkl
  
 *.log
+
+./CGAN_CIFAR/data
+./CGAN_CIFAR/ACGAN-PyTorch/samples
