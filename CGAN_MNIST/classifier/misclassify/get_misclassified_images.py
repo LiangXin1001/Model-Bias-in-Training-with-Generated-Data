@@ -52,7 +52,9 @@ def get_mean_std(csv_file, image_dir):
     mean_rgb = sum_rgb / image_count
 
     # 计算全局标准差
-    std_rgb = np.sqrt(sum_squares_rgb / image_count - mean_rgb**2)
+    # std_rgb = np.sqrt(sum_squares_rgb / image_count - mean_rgb**2)
+    # 在计算标准差之前增加小的正数
+    std_rgb = np.sqrt(sum_squares_rgb / image_count - mean_rgb**2 + 1e-8)
 
     print(f"Mean: {mean_rgb}")
     print(f"Std: {std_rgb}")
