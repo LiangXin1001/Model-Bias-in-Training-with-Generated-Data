@@ -93,7 +93,7 @@ def save_sample_one_image(sample_path, real_images, fake_images, epoch, number=0
 
     # saved image must more than 10000 sheet
     # the number of the generaed images must larger than 10000
-    while len(os.listdir(real_images_path)) <= 10000:
+    while len(os.listdir(real_images_path)) <= 100:
         for i in range(real_images.size(0)):
             # save real image
             one_real_image = real_images[i]

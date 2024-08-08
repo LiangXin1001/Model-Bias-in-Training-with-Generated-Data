@@ -25,5 +25,5 @@ __pycache__
  
 *.log
 
-./CGAN_CIFAR/data
-./CGAN_CIFAR/ACGAN-PyTorch/samples
+./CGAN_CIFAR/data/*
+./CGAN_CIFAR/ACGAN-PyTorch/samples/*
