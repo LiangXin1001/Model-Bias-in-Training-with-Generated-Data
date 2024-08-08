@@ -13,7 +13,7 @@ CGAN_CIFAR/data
 __pycache__
 *.zip
 *.gz
-
+*.pth
 # Ignore dataset files
 *.csv
 

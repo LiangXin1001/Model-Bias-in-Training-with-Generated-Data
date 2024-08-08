@@ -48,3 +48,40 @@ class SuperCIFAR100(torch.utils.data.Dataset):
         x, y = self.ds[idx]
         # print("x",x.shape," self.reverse_map[y] : ", self.reverse_map[y] , "  y : ",y)
         return x, self.reverse_map[y], y
+
+
+
+# import os
+# import torch
+# from torchvision.datasets import CIFAR100
+# from torchvision.transforms import ToPILImage
+# from tqdm import tqdm
+
+# # 定义数据集目录和类别目录
+# base_dir = 'CIFAR100_dataset'
+# os.makedirs(base_dir, exist_ok=True)
+# for super_class, sub_classes in CIFAR_100_CLASS_MAP.items():
+#     super_class_dir = os.path.join(base_dir, super_class)
+#     os.makedirs(super_class_dir, exist_ok=True)
+#     for sub_class in sub_classes:
+#         os.makedirs(os.path.join(super_class_dir, sub_class), exist_ok=True)
+
+# # 加载 CIFAR-100 训练数据集
+# dataset = CIFAR100(root='.', download=True, train=True)
+
+# # 准备图像保存函数
+# to_pil = ToPILImage()
+ 
+# for idx in tqdm(range(len(dataset))):
+#     image, label = dataset[idx]
+#     class_name = dataset.classes[label]
+
+#     for super_class, sub_classes in CIFAR_100_CLASS_MAP.items():
+#         if class_name in sub_classes:
+#             image_folder = os.path.join(base_dir, super_class, class_name)
+#             image_path = os.path.join(image_folder, f'{idx}.png')
+#             image.save(image_path)  # 直接保存，不需要转换
+#             break
+
+
+# print("图片保存完毕！")

@@ -116,13 +116,13 @@ paramsD = list(disc.parameters())
 print(len(paramsD))        
         
 optimG = optim.Adam(gen.parameters(), 0.0004, betas = (0.5,0.999))
-optimD = optim.Adam(disc.parameters(), 0.0002, betas = (0.5,0.999))
+optimD = optim.Adam(disc.parameters(), 0.0001, betas = (0.5,0.999))
 
 validity_loss = nn.BCELoss()
 
 # real_labels = 0.7 + 0.5 * torch.rand(10, device = device)
 # fake_labels = 0.3 * torch.rand(10, device = device)
-epochs = 15
+epochs = 25
 
 for epoch in range(1,epochs+1):
     torch.cuda.empty_cache()
