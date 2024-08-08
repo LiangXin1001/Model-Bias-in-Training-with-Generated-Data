@@ -108,7 +108,7 @@ python train.py  \
   --train_csv data/combined_train_gen1_gen2.csv  \
   --image_dirs MNIST/mnist_train,data/generated_images_gen1,data/generated_images_gen2  \
   --arch cgan \
-  --epochs 1 \
+  --epochs 50 \
   --start-epoch 0 \
   --b 16 \
   --lr 0.0004 \
