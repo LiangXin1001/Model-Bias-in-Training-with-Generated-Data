@@ -21,7 +21,7 @@
 import pandas as pd
 
 # 指定CSV文件的路径
-csv_path = '/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/augment/train.csv'
+csv_path = './augment/train.csv'
 
 # 从CSV文件加载数据
 df = pd.read_csv(csv_path)
@@ -42,4 +42,4 @@ df['color'] = df.apply(ensure_int_color, axis=1)
 print(df)
 
 # 可以选择保存修正后的DataFrame到新的CSV文件
-df.to_csv('/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/augment/train1.csv', index=False)
+df.to_csv('./augment/train1.csv', index=False)
