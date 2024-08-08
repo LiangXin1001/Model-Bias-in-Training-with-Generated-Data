@@ -1,0 +1,15 @@
+##################################################
+
+Run Training Engine.
+
+	API version .......... 0.2.0
+	Build ................ 2021.06.02
+##################################################
+
+Namespace(model_dir='model/weights_gen0', arch='cgan', workers=4, epochs=50, start_epoch=0, batch_size=64, lr=0.0004, image_size=32, channels=3, netD='', netG='', pretrained=False, world_size=-1, rank=-1, dist_url='tcp://59.110.31.55:12345', dist_backend='nccl', seed=None, gpu=None, multiprocessing_distributed=False)
+create model done
+Files already downloaded and verified
+Real output size:  torch.Size([64, 1])
+fake_output shape: torch.Size([64, 1])
+fake_images shape: torch.Size([64, 3, 32, 32])
+fake shape: torch.Size([64, 1])
