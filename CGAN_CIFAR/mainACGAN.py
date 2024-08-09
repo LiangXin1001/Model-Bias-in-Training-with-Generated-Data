@@ -32,23 +32,7 @@ def load_and_prepare_datasets(pkl_paths, transform):
     labels = []
 
     if pkl_paths:
-        for pkl_path in pkl_paths.split(','):
-            with open(pkl_path, 'rb') as f:
-                imgs, lbls = pickle.load(f)
-                images.extend(imgs)
-                labels.extend(lbls)
-
-        # 统计每个标签的图像数量
-        label_counts = defaultdict(int)
-        for label in labels:
-            label_counts[label] += 1
-
-        # 打印每个标签及其对应的图像数量
-        index_to_superclass = {i: k for i, k in enumerate(sorted(CIFAR_100_CLASS_MAP.keys()))}
-        for label, count in label_counts.items():
-            print(f"Label {label} ({index_to_superclass[label]}): {count} images")
-
-        generated_dataset = GeneratedDataset(images, labels)
+        generated_dataset = GeneratedDataset(pkl_paths, transform)
     else:
         generated_dataset = None
 
@@ -56,9 +40,12 @@ def load_and_prepare_datasets(pkl_paths, transform):
     trainset = SuperCIFAR100(root='./data', train=True, download=True, transform=transform)
     
     if generated_dataset:
+        print("Concatenated dataset")
         return torch.utils.data.ConcatDataset([trainset, generated_dataset])
     else:
+        print("Original dataset")
         return trainset
+
 
 
 def custom_collate_fn(batch):
