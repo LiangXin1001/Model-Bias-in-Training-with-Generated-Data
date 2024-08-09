@@ -4,30 +4,62 @@ from torchvision.utils import make_grid
 import torch.optim as optim
 import numpy as np
 import os
+import argparse
 import torchvision
 import torch.nn.functional as F
 import matplotlib.pyplot as plt
 import torchvision.transforms as transforms
-from datasets import SuperCIFAR100  ,CIFAR_100_CLASS_MAP
+from datasets import SuperCIFAR100 ,CIFAR_100_CLASS_MAP,tf,GeneratedDataset
 from model import Generator, Discriminator
 from torchvision.utils import save_image
 # torch.backends.cudnn.enabled = False
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(device)
-
-
-tf = transforms.Compose([transforms.Resize(64),
-                         transforms.ToTensor(),
-                         transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
-                        ])
-
  
+def parse_args():
+    parser = argparse.ArgumentParser(description="Save models with custom filenames")
+    parser.add_argument('--gennum', type=int, required=True, help='Generator number for filename customization')
+    parser.add_argument('--pkl_paths', type=str, default=None,
+                    help='Optional: Comma-separated list of paths to PKL files containing images and labels.')
+    return parser.parse_args()
+
+args = parse_args()
  
-# 修改这部分代码以使用你的 SuperCIFAR100 类
-trainset = SuperCIFAR100(root='./data', train=True, download=True, transform=tf)
-testset = SuperCIFAR100(root='./data', train=False, download=True, transform=tf)
- 
-dataset = torch.utils.data.ConcatDataset([trainset, testset])
+
+# prepare datasets
+def load_and_prepare_datasets(pkl_paths, transform):
+    images = []
+    labels = []
+
+    if pkl_paths:
+        for pkl_path in pkl_paths.split(','):
+            with open(pkl_path, 'rb') as f:
+                imgs, lbls = pickle.load(f)
+                images.extend(imgs)
+                labels.extend(lbls)
+
+        # 统计每个标签的图像数量
+        label_counts = defaultdict(int)
+        for label in labels:
+            label_counts[label] += 1
+
+        # 打印每个标签及其对应的图像数量
+        index_to_superclass = {i: k for i, k in enumerate(sorted(CIFAR_100_CLASS_MAP.keys()))}
+        for label, count in label_counts.items():
+            print(f"Label {label} ({index_to_superclass[label]}): {count} images")
+
+        generated_dataset = GeneratedDataset(images, labels)
+    else:
+        generated_dataset = None
+
+    # 加载训练数据集
+    trainset = SuperCIFAR100(root='./data', train=True, download=True, transform=transform)
+    
+    if generated_dataset:
+        return torch.utils.data.ConcatDataset([trainset, generated_dataset])
+    else:
+        return trainset
+
 
 def custom_collate_fn(batch):
     # 准备空列表来保存图像和标签
@@ -54,19 +86,11 @@ def custom_collate_fn(batch):
     return images, mapped_labels, original_labels
 
  
-trainloader = torch.utils.data.DataLoader(
-    dataset=dataset,  
-    batch_size=64,
-    shuffle=True,
-    num_workers=0 ,
-    collate_fn=custom_collate_fn   
-)
-
  
   
 
-print("len(dataset)",len(dataset))
-print("dataset[0][0].size() ",dataset[0][0].size())
+# print("len(dataset)",len(dataset))
+# print("dataset[0][0].size() ",dataset[0][0].size())
 classes = sorted(CIFAR_100_CLASS_MAP.keys()) + ['fake']
 
  
@@ -102,6 +126,16 @@ def weights_init(m):
     elif classname.find('BatchNorm') != -1:
         m.weight.data.normal_(1.0, 0.02)
         m.bias.data.fill_(0)
+
+dataset = load_and_prepare_datasets(args.pkl_paths, tf)
+
+trainloader = torch.utils.data.DataLoader(
+    dataset=dataset,  
+    batch_size=64,
+    shuffle=True,
+    num_workers=0 ,
+    collate_fn=custom_collate_fn   
+)
 
 gen = Generator().to(device)
 gen.apply(weights_init)
@@ -249,6 +283,15 @@ for epoch in range(1,epochs+1):
             
             showImage(make_grid(gen_images),epoch,idx)
        
-    
-torch.save(gen.state_dict(),'gen.pth')
-torch.save(disc.state_dict(),'disc.pth')
+     
+model_dir = 'models'
+os.makedirs(model_dir, exist_ok=True)
+
+ 
+gen_model_path = os.path.join(model_dir, f'gen_{args.gennum}.pth')
+torch.save(gen.state_dict(), gen_model_path)
+print(f"Generator model saved to {gen_model_path}")
+ 
+disc_model_path = os.path.join(model_dir, f'disc_{args.gennum}.pth')
+torch.save(disc.state_dict(), disc_model_path)
+print(f"Discriminator model saved to {disc_model_path}")

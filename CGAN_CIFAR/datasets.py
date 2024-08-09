@@ -2,6 +2,7 @@
 import torch
 import torchvision
 import torch.nn as nn
+import torchvision.transforms as transforms
 # 定义 CIFAR_100_CLASS_MAP 和 SuperCIFAR100 类
 CIFAR_100_CLASS_MAP = {
     'aquatic mammals': ['beaver', 'dolphin', 'otter', 'seal', 'whale'],
@@ -50,6 +51,24 @@ class SuperCIFAR100(torch.utils.data.Dataset):
         return x, self.reverse_map[y], y
 
 
+class GeneratedDataset(torch.utils.data.Dataset):
+    def __init__(self, images, labels):
+        self.images = images
+        self.labels = labels
+
+    def __len__(self):
+        return len(self.images)
+
+    def __getitem__(self, idx):
+        # 返回图像及其对应的大类标签
+        return self.images[idx], self.labels[idx], self.labels[idx]   # Adjusted to match the output of SuperCIFAR100
+
+
+tf = transforms.Compose([transforms.Resize(64),
+                         transforms.ToTensor(),
+                         transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
+                        ])
+
 
 # import os
 # import torch
@@ -85,3 +104,5 @@ class SuperCIFAR100(torch.utils.data.Dataset):
 
 
 # print("图片保存完毕！")
+
+
