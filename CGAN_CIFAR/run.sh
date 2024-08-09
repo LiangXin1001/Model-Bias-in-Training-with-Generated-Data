@@ -20,7 +20,7 @@ python gendata.py \
  
 python mainACGAN.py \
     --gennum 2 \
-    --pkl_paths  data/generated_data_${gennum}.pkl 
+    --pkl_paths  data/generated_images_${gennum}.pkl 
 
 
 gennum=2
