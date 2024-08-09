@@ -41,10 +41,8 @@ def main():
 
     # print("super_class_counts",super_class_counts)
     
-    for idx, count in super_class_counts.items():
-        print(f"{index_to_superclass[idx]}: {count} images")
 
-    output_dir = f'generated_images_{args.gennum}'
+    output_dir = f'data/generated_images_{args.gennum}'
     os.makedirs(output_dir, exist_ok=True)
     
     index_to_superclass = {i: super_class for i, super_class in enumerate(sorted(CIFAR_100_CLASS_MAP.keys()))}
@@ -61,23 +59,19 @@ def main():
         noise = torch.randn(num_images_to_generate, 100, device=device)
         labels = torch.full((num_images_to_generate,), idx, dtype=torch.long, device=device)
         with torch.no_grad():
-            generated_images = gen(noise, labels)
-        for i, image in enumerate(generated_images):
-            vutils.save_image(image, os.path.join(output_dir, f'class_{index_to_superclass[idx]}_image_{i:04d}_{args.gennum}.png'), normalize=True)
-            generated_images.append(image)
-            generated_labels.append(idx)
+            new_generated_images = gen(noise, labels)
+        # creat a new directory for each class
+        os.makedirs(os.path.join(output_dir, f'class_{idx}'), exist_ok=True)
 
+        for i, image in enumerate(new_generated_images):
+            save_path = os.path.join(output_dir, f'class_{idx}', f'image_{i:04d}_{args.gennum}.png')
+            # vutils.save_image(image, os.path.join(output_dir, f'class_{index_to_superclass[idx]}_image_{i:04d}_{args.gennum}.png'), normalize=True)
+            vutils.save_image(image, save_path, normalize=True)
 
     # Save the generated data to a specified directory with a custom file name
-    data_dir = 'data'
-    os.makedirs(data_dir, exist_ok=True)
-    data_filename = f'generated_data_{args.gennum}.pkl'
-    data_path = os.path.join(data_dir, data_filename)
+    
 
-    with open(data_path, 'wb') as f:
-        pickle.dump((generated_images, generated_labels), f)
-
-    print(f"Generated data saved to {data_path}")
+    print(f"Generated data saved to {output_dir}")
     print("All images have been generated and saved.")
     
 
