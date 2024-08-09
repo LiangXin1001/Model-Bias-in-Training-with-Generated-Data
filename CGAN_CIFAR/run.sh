@@ -23,4 +23,4 @@ python mainACGAN.py \
     --pkl_paths  data/generated_data_${gennum}.pkl 
 
 
-gennum=1
+gennum=2
