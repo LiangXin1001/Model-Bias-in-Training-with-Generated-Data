@@ -1,0 +1,26 @@
+在 /local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/dataold/generated_images_gen1 中总共找到 30000 个文件.
+源文件夹 /local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/dataold/generated_images_gen1 中的文件数量 (30000) 少于请求的数量 (60000).
+在 /local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/dataold/generated_images_gen2 中总共找到 0 个文件.
+源文件夹 /local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/dataold/generated_images_gen2 中的文件数量 (0) 少于请求的数量 (60000).
+在 /local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/dataold/generated_images_gen3 中总共找到 0 个文件.
+源文件夹 /local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/dataold/generated_images_gen3 中的文件数量 (0) 少于请求的数量 (60000).
+在 /local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/dataold/generated_images_gen4 中总共找到 0 个文件.
+源文件夹 /local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/dataold/generated_images_gen4 中的文件数量 (0) 少于请求的数量 (60000).
+在 /local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/dataold/generated_images_gen5 中总共找到 0 个文件.
+源文件夹 /local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/dataold/generated_images_gen5 中的文件数量 (0) 少于请求的数量 (60000).
+在 /local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/dataold/generated_images_gen6 中总共找到 0 个文件.
+源文件夹 /local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/dataold/generated_images_gen6 中的文件数量 (0) 少于请求的数量 (60000).
+在 /local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/dataold/generated_images_gen7 中总共找到 0 个文件.
+源文件夹 /local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/dataold/generated_images_gen7 中的文件数量 (0) 少于请求的数量 (60000).
+在 /local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/dataold/generated_images_gen8 中总共找到 0 个文件.
+源文件夹 /local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/dataold/generated_images_gen8 中的文件数量 (0) 少于请求的数量 (60000).
+在 /local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/dataold/generated_images_gen9 中总共找到 0 个文件.
+源文件夹 /local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/dataold/generated_images_gen9 中的文件数量 (0) 少于请求的数量 (60000).
+在 /local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/dataold/generated_images_gen10 中总共找到 0 个文件.
+源文件夹 /local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/dataold/generated_images_gen10 中的文件数量 (0) 少于请求的数量 (60000).
+Traceback (most recent call last):
+  File "/local/scratch/hcui25/Project/xin/CS/GAN/testQuality/fid.py", line 70, in <module>
+    real_images = load_images_from_folder(real_image_paths, max_images=1000)
+  File "/local/scratch/hcui25/Project/xin/CS/GAN/testQuality/fid.py", line 11, in load_images_from_folder
+    for filename in os.listdir(folder):
+FileNotFoundError: [Errno 2] No such file or directory: '/local/scratch/hcui25/Project/xin/CS/GAN/CGAN_v2/mnist_train'
