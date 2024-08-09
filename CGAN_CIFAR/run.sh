@@ -14,13 +14,15 @@ gennum=1
 python mainACGAN.py \
     --gennum $gennum 
 
-python gendata.py \
-    --gennum $gennum  \
-    --model_path  models 
- 
-python mainACGAN.py \
-    --gennum 2 \
-    --pkl_paths  data/generated_images_${gennum}.pkl 
 
 
-gennum=2
+for gennum in {1..10}
+do
+    python gendata.py \
+        --gennum $gennum  \
+        --model_path  models 
+
+    python mainACGAN.py \
+        --gennum ${gennum+1} \
+        --pkl_paths  data/generated_images_${gennum}.pkl 
+done
