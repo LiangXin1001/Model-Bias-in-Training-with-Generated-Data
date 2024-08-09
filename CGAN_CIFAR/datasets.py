@@ -3,6 +3,8 @@ import torch
 import torchvision
 import torch.nn as nn
 import torchvision.transforms as transforms
+import os
+from PIL import Image
 # 定义 CIFAR_100_CLASS_MAP 和 SuperCIFAR100 类
 CIFAR_100_CLASS_MAP = {
     'aquatic mammals': ['beaver', 'dolphin', 'otter', 'seal', 'whale'],
@@ -52,17 +54,27 @@ class SuperCIFAR100(torch.utils.data.Dataset):
 
 
 class GeneratedDataset(torch.utils.data.Dataset):
-    def __init__(self, images, labels):
-        self.images = images
-        self.labels = labels
+    def __init__(self, path, transform):
+        self.path = path
+        index_to_superclass = {i: super_class for i, super_class in enumerate(sorted(CIFAR_100_CLASS_MAP.keys()))}
+        self.image_path = []
+        self.labels = []
+        self.transform = transform
+        for idx, super_class in index_to_superclass.items():
+            folder_name = f'class_{idx}'
+            image_folder = os.path.join(path, folder_name)
+            for image_name in os.listdir(image_folder):
+                self.image_path.append(os.path.join(image_folder, image_name))
+                self.labels.append(idx)
+        
 
     def __len__(self):
-        return len(self.images)
+        return len(self.image_path)
 
     def __getitem__(self, idx):
         # 返回图像及其对应的大类标签
-        return self.images[idx], self.labels[idx], self.labels[idx]   # Adjusted to match the output of SuperCIFAR100
-
+        # return self.images[idx], self.labels[idx], self.labels[idx]   # Adjusted to match the output of SuperCIFAR100
+        return self.transform(Image.open(self.image_path[idx])), self.labels[idx], self.labels[idx]
 
 tf = transforms.Compose([transforms.Resize(64),
                          transforms.ToTensor(),
