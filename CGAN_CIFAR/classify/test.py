@@ -18,8 +18,6 @@ from torch.utils.data import ConcatDataset, DataLoader
 def parse_arguments():
     parser = argparse.ArgumentParser(description='Train a classifier with custom dataset')
     parser.add_argument('--gennum', type=int, required=True, help='Generator number for filename customization')
-    parser.add_argument('--data_root_paths', type=str, required=True, help='Directory path to save models')
- 
     parser.add_argument('--model_name', type=str, choices=['alexnet', 'vgg19', 'resnet50', 'mobilenetv3', 'inceptionv4'], required=True, help='Model to use for classification')
     parser.add_argument('--epochs', type=int, default=10, help='Number of epochs to train the model')
     parser.add_argument('--batch_size', type=int, default=256, help='Batch size for training and testing')
@@ -46,9 +44,7 @@ def get_model(model_name, num_classes, device):
     else:
         raise ValueError("Unsupported model name")
     return model.to(device)
-
-trainset = SuperCIFAR100(root='../data', train=True, download=False, transform=tf)
-    
+ 
 args = parse_arguments()
 
 # 加载模型
@@ -60,7 +56,7 @@ def load_model(model_path, model_name, num_classes, device):
 
 # 准备测试数据集
 def prepare_testset(transform):
-    testset = CIFAR100(root='../data', train=False, download=True, transform=transform)
+    testset = SuperCIFAR100(root='../data', train=False, download=True, transform=transform)
     test_loader = DataLoader(testset, batch_size=args.batch_size, shuffle=False, num_workers=4)
     return test_loader
 
@@ -75,8 +71,7 @@ def test_model(model, test_loader, device):
             for img, label, pred in zip(images, labels, predicted):
                 results.append((img, label.item(), pred.item()))
     return results
-
-# 写入结果到CSV
+ 
 def write_results_to_csv(results, model_name):
     results_dir = f'results/{model_name}'
     os.makedirs(results_dir, exist_ok=True)
