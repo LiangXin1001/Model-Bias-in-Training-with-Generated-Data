@@ -9,8 +9,7 @@ from torch.utils.data import ConcatDataset, DataLoader
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description='Train a classifier with custom dataset')
-    parser.add_argument('--pkl_paths', type=str, required=True,
-                        help='Comma-separated list of paths to PKL files containing images and labels.')
+ 
     parser.add_argument('--model_save_path', type=str, required=True, help='Directory path to save models')
     parser.add_argument('--result_save_path', type=str, required=True, help='Directory path to save results')
     parser.add_argument('--model_name', type=str, choices=['alexnet', 'vgg19', 'resnet50', 'mobilenetv3', 'inceptionv4'], required=True, help='Model to use for classification')
@@ -42,28 +41,13 @@ def get_model(model_name, num_classes, device):
 
 
 #prepare datasets
-
-with open('generated_data.pkl', 'rb') as f:
-    images, labels = pickle.load(f)
-
-# 统计每个标签的图像数量
-label_counts = defaultdict(int)
-for label in labels:
-    label_counts[label] += 1
-
-# 打印每个标签及其对应的图像数量
-for label, count in label_counts.items():
-    print(f"Label {label} ({index_to_superclass[label]}): {count} images")
-
-trainset = SuperCIFAR100(root='../data', train=True, download=False, transform=tf)
-generated_dataset = GeneratedDataset(images, labels)
-
-# 合并原始数据集和生成数据集
-train_combined_dataset = torch.utils.data.ConcatDataset([trainset, generated_dataset])
-
+ 
+ 
+testset = SuperCIFAR100(root='../data', train=False, download=False, transform=tf)
+ 
 # 为训练创建 DataLoader
-train_loader = torch.utils.data.DataLoader(
-    dataset=train_combined_dataset,
+test_loader = torch.utils.data.DataLoader(
+    dataset=testset,
     batch_size=64,
     shuffle=True,
     num_workers=4,  # 根据系统配置调整
@@ -71,10 +55,10 @@ train_loader = torch.utils.data.DataLoader(
 )
 
 
-def train_model(model, train_loader, epochs, device, optimizer, criterion):
+def train_model(model, test_loader, epochs, device, optimizer, criterion):
     model.train()
     for epoch in range(epochs):
-        for batch_idx, (data, target, _) in enumerate(train_loader):
+        for batch_idx, (data, target, _) in enumerate(test_loader):
             data, target = data.to(device), target.to(device)
             optimizer.zero_grad()
             output = model(data)
@@ -83,7 +67,7 @@ def train_model(model, train_loader, epochs, device, optimizer, criterion):
             optimizer.step()
 
             if batch_idx % 100 == 0:
-                print(f'Train Epoch: {epoch} [{batch_idx * len(data)}/{len(train_loader.dataset)} ({100. * batch_idx / len(train_loader):.0f}%)]\tLoss: {loss.item():.6f}')
+                print(f'Train Epoch: {epoch} [{batch_idx * len(data)}/{len(test_loader.dataset)} ({100. * batch_idx / len(test_loader):.0f}%)]\tLoss: {loss.item():.6f}')
 # 保存模型函数
 def save_model(model, model_name, epoch, path):
     os.makedirs(path, exist_ok=True)
@@ -97,7 +81,7 @@ optimizer = optim.Adam(model.parameters(), lr=args.learning_rate)
 criterion = nn.CrossEntropyLoss()
 
 # Train the model
-train_model(model, train_loader, args.epochs, device, optimizer, criterion)
+train_model(model, test_loader, args.epochs, device, optimizer, criterion)
 path = f"./models/{model_name}"
 os.makedirs(path, exist_ok=True)
 save_model(model, model_name, epoch, path)
