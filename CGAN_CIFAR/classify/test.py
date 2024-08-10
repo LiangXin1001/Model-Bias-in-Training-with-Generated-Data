@@ -10,7 +10,7 @@ import os
 import argparse
 import sys    
 from torchvision.models import alexnet, vgg19, resnet50, mobilenet_v3_large, inception_v3
-
+ 
 from datasets import SuperCIFAR100, GeneratedDataset, tf 
 from torch.utils.data import ConcatDataset, DataLoader 
 
@@ -80,9 +80,11 @@ def write_results_to_csv(results, model_name):
     csv_path = os.path.join(results_dir, f'test_results_{args.gennum}.csv')
     with open(csv_path, 'w', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow(['Image', 'True Label', 'Predicted Label'])
-        for img, label, pred in results:
-            writer.writerow([img, label, pred])
+        writer.writerow(['Image', 'True Superclass', 'True Subclass', 'Predicted Superclass', 'True Superclass Name', 'True Subclass Name'])
+        for img, true_superclass, true_subclass, pred_superclass in results:
+            true_superclass_name = CIFAR_100_CLASS_MAP.keys()[true_superclass]
+            true_subclass_name = CIFAR_100_CLASS_MAP[true_superclass_name][true_subclass]
+            writer.writerow([img, true_superclass, true_subclass, pred_superclass, true_superclass_name, true_subclass_name])
     print(f"Results saved to {csv_path}")
 
 # 主函数
