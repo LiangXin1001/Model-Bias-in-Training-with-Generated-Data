@@ -4,14 +4,16 @@ import torch.nn as nn
 import torch.optim as optim
 import torchvision.transforms as transforms
 from torchvision.models import alexnet, vgg19, resnet50, mobilenet_v3_large, inception_v3
-from datasets import SuperCIFAR100, GeneratedDataset
-from torch.utils.data import ConcatDataset, DataLoader
+sys.path.append('../')  # 将上一级目录添加到系统路径
+from datasets import SuperCIFAR100, GeneratedDataset, tf 
+from torch.utils.data import ConcatDataset, DataLoader 
 
+ 
 def parse_arguments():
     parser = argparse.ArgumentParser(description='Train a classifier with custom dataset')
+    parser.add_argument('--gennum', type=int, required=True, help='Generator number for filename customization')
+    parser.add_argument('--data_root_paths', type=str, required=True, help='Directory path to save models')
  
-    parser.add_argument('--model_save_path', type=str, required=True, help='Directory path to save models')
-    parser.add_argument('--result_save_path', type=str, required=True, help='Directory path to save results')
     parser.add_argument('--model_name', type=str, choices=['alexnet', 'vgg19', 'resnet50', 'mobilenetv3', 'inceptionv4'], required=True, help='Model to use for classification')
     parser.add_argument('--epochs', type=int, default=10, help='Number of epochs to train the model')
     parser.add_argument('--batch_size', type=int, default=256, help='Batch size for training and testing')
@@ -39,26 +41,34 @@ def get_model(model_name, num_classes, device):
         raise ValueError("Unsupported model name")
     return model.to(device)
 
-
+trainset = SuperCIFAR100(root='../data', train=True, download=False, transform=tf)
+    
 #prepare datasets
- 
- 
-testset = SuperCIFAR100(root='../data', train=False, download=False, transform=tf)
- 
-# 为训练创建 DataLoader
-test_loader = torch.utils.data.DataLoader(
-    dataset=testset,
+if args.data_root_paths:
+    generated_dataset = GeneratedDataset(root_dir=args.data_root_paths, transform=tf)
+
+    combined_dataset = ConcatDataset([generated_dataset, trainset])
+
+    # 为训练创建 DataLoader
+    dataloader = torch.utils.data.DataLoader(
+        dataset=combined_dataset,
+        batch_size=64,
+        shuffle=True,
+        num_workers=4 
+    )
+else:
+    dataloader = torch.utils.data.DataLoader(
+    dataset=trainset,
     batch_size=64,
     shuffle=True,
-    num_workers=4,  # 根据系统配置调整
-    collate_fn=custom_collate_fn
-)
+    num_workers=4 
+    )
 
 
-def train_model(model, test_loader, epochs, device, optimizer, criterion):
+def train_model(model, dataloader, epochs, device, optimizer, criterion):
     model.train()
     for epoch in range(epochs):
-        for batch_idx, (data, target, _) in enumerate(test_loader):
+        for batch_idx, (data, target, _) in enumerate(dataloader):
             data, target = data.to(device), target.to(device)
             optimizer.zero_grad()
             output = model(data)
@@ -67,11 +77,11 @@ def train_model(model, test_loader, epochs, device, optimizer, criterion):
             optimizer.step()
 
             if batch_idx % 100 == 0:
-                print(f'Train Epoch: {epoch} [{batch_idx * len(data)}/{len(test_loader.dataset)} ({100. * batch_idx / len(test_loader):.0f}%)]\tLoss: {loss.item():.6f}')
+                print(f'Train Epoch: {epoch} [{batch_idx * len(data)}/{len(dataloader.dataset)} ({100. * batch_idx / len(dataloader):.0f}%)]\tLoss: {loss.item():.6f}')
 # 保存模型函数
 def save_model(model, model_name, epoch, path):
     os.makedirs(path, exist_ok=True)
-    model_filename = f"{model_name}_epoch{epoch}.pth"
+    model_filename = f"{model_name}_gen{args.gennum}.pth"
     torch.save(model.state_dict(), os.path.join(path, model_filename))
     print(f"Model saved: {model_filename}")
 
@@ -81,7 +91,7 @@ optimizer = optim.Adam(model.parameters(), lr=args.learning_rate)
 criterion = nn.CrossEntropyLoss()
 
 # Train the model
-train_model(model, test_loader, args.epochs, device, optimizer, criterion)
+train_model(model, dataloader, args.epochs, device, optimizer, criterion)
 path = f"./models/{model_name}"
 os.makedirs(path, exist_ok=True)
 save_model(model, model_name, epoch, path)
