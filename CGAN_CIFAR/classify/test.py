@@ -2,19 +2,21 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from torchvision import models
-from torchvision.datasets import CIFAR100  # 假设使用CIFAR100作为测试数据集
+from torchvision.datasets import CIFAR100   
 import torchvision.transforms as transforms
 from torch.utils.data import DataLoader
 import csv
 import os
 import argparse
-   
+import sys    
 from torchvision.models import alexnet, vgg19, resnet50, mobilenet_v3_large, inception_v3
-sys.path.append('../')  # 将上一级目录添加到系统路径
+
 from datasets import SuperCIFAR100, GeneratedDataset, tf 
 from torch.utils.data import ConcatDataset, DataLoader 
 
- 
+current_dir = os.path.dirname(__file__)
+parent_dir = os.path.dirname(current_dir)
+sys.path.append(parent_dir)
 def parse_arguments():
     parser = argparse.ArgumentParser(description='Train a classifier with custom dataset')
     parser.add_argument('--gennum', type=int, required=True, help='Generator number for filename customization')
