@@ -2,20 +2,22 @@ import argparse
 import torch
 import torch.nn as nn
 import torch.optim as optim
+import sys
 import torchvision.transforms as transforms
 from torchvision.models import alexnet, vgg19, resnet50, mobilenet_v3_large, inception_v3
-sys.path.append('../')  # 将上一级目录添加到系统路径
-from datasets import SuperCIFAR100, GeneratedDataset, tf 
 from torch.utils.data import ConcatDataset, DataLoader 
-
+import os
  
+from datasets import SuperCIFAR100, GeneratedDataset, tf 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
 def parse_arguments():
     parser = argparse.ArgumentParser(description='Train a classifier with custom dataset')
     parser.add_argument('--gennum', type=int, required=True, help='Generator number for filename customization')
-    parser.add_argument('--data_root_paths', type=str, required=True, help='Directory path to save models')
+    parser.add_argument('--data_root_paths', type=str,  default= "",help='Directory path to save models')
     parser.add_argument('--model_name', type=str, choices=['alexnet', 'vgg19', 'resnet50', 'mobilenetv3', 'inceptionv4'], required=True, help='Model to use for classification')
     parser.add_argument('--epochs', type=int, default=10, help='Number of epochs to train the model')
-    parser.add_argument('--batch_size', type=int, default=256, help='Batch size for training and testing')
+    parser.add_argument('--batch_size', type=int, default=128, help='Batch size for training and testing')
     parser.add_argument('--learning_rate', type=float, default=0.0001, help='Learning rate for the optimizer')
     return parser.parse_args()
 
@@ -44,7 +46,8 @@ trainset = SuperCIFAR100(root='../data', train=True, download=False, transform=t
     
 #prepare datasets
 if args.data_root_paths:
-    generated_dataset = GeneratedDataset(root_dir=args.data_root_paths, transform=tf)
+    root_dirs = args.data_root_paths.split(',') 
+    generated_dataset = GeneratedDataset(root_dirs=root_dirs, transform=tf)
 
     combined_dataset = ConcatDataset([generated_dataset, trainset])
 
@@ -91,6 +94,6 @@ criterion = nn.CrossEntropyLoss()
 
 # Train the model
 train_model(model, dataloader, args.epochs, device, optimizer, criterion)
-path = f"./models/{model_name}"
+path = f"./models/{args.model_name}"
 os.makedirs(path, exist_ok=True)
-save_model(model, model_name, epoch, path)
+save_model(model,args.model_name, args.epochs, path)
