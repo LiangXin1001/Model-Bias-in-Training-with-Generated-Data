@@ -24,9 +24,10 @@ do
         --data_root_paths ../data/generated_images_{args.gennum} \
         --model_name $base_model_name
 
-    python test.py \
-        --gennum $gennum \
-        --model_name $base_model_name
+#TODO
+    # python test.py \
+    #     --gennum $gennum \
+    #     --model_name $base_model_name
 done
 
 echo "All runs completed."
