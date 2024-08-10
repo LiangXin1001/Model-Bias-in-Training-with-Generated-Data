@@ -13,7 +13,6 @@ def parse_arguments():
     parser = argparse.ArgumentParser(description='Train a classifier with custom dataset')
     parser.add_argument('--gennum', type=int, required=True, help='Generator number for filename customization')
     parser.add_argument('--data_root_paths', type=str, required=True, help='Directory path to save models')
- 
     parser.add_argument('--model_name', type=str, choices=['alexnet', 'vgg19', 'resnet50', 'mobilenetv3', 'inceptionv4'], required=True, help='Model to use for classification')
     parser.add_argument('--epochs', type=int, default=10, help='Number of epochs to train the model')
     parser.add_argument('--batch_size', type=int, default=256, help='Batch size for training and testing')
