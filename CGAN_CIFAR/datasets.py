@@ -5,6 +5,9 @@ import torch.nn as nn
 import torchvision.transforms as transforms
 import os
 from PIL import Image
+from torchvision.io import read_image
+from torchvision.transforms import Compose, Resize, ToTensor
+from torch.utils.data import Dataset
 # 定义 CIFAR_100_CLASS_MAP 和 SuperCIFAR100 类
 CIFAR_100_CLASS_MAP = {
     'aquatic mammals': ['beaver', 'dolphin', 'otter', 'seal', 'whale'],
@@ -53,32 +56,53 @@ class SuperCIFAR100(torch.utils.data.Dataset):
         return x, self.reverse_map[y], y
 
 
-class GeneratedDataset(torch.utils.data.Dataset):
-    def __init__(self, path, transform):
-        self.path = path
-        index_to_superclass = {i: super_class for i, super_class in enumerate(sorted(CIFAR_100_CLASS_MAP.keys()))}
-        self.image_path = []
-        self.labels = []
+
+class GeneratedDataset(Dataset):
+    def __init__(self, root_dirs, transform=None):
+        """
+        Args:
+            root_dirs (string): Directory with all the class folders.
+            transform (callable, optional): Optional transform to be applied on a sample.
+        """
+        self.root_dirs = root_dirs
         self.transform = transform
-        for idx, super_class in index_to_superclass.items():
-            folder_name = f'class_{idx}'
-            image_folder = os.path.join(path, folder_name)
-            for image_name in os.listdir(image_folder):
-                self.image_path.append(os.path.join(image_folder, image_name))
-                self.labels.append(idx)
-        
+        self.images = []
+        self.labels = []
+        self.load_dataset()
+
+    def load_dataset(self):
+        """Loads dataset from file system."""
+        for root_dir in self.root_dirs:
+            # 遍历每一个分类的文件夹
+            for label_id, class_dir in enumerate(sorted(os.listdir(root_dir))):
+                class_folder = os.path.join(root_dir, class_dir)
+                if os.path.isdir(class_folder):
+                    # 遍历每个分类文件夹中的图像文件
+                    for image_file in os.listdir(class_folder):
+                        image_path = os.path.join(class_folder, image_file)
+                        if os.path.isfile(image_path) and image_path.endswith('.png'):
+                            self.images.append(image_path)
+                            self.labels.append(label_id)
 
     def __len__(self):
-        return len(self.image_path)
+        return len(self.images)
 
     def __getitem__(self, idx):
-        # 返回图像及其对应的大类标签
-        # return self.images[idx], self.labels[idx], self.labels[idx]   # Adjusted to match the output of SuperCIFAR100
-        return self.transform(Image.open(self.image_path[idx])), self.labels[idx], self.labels[idx]
+        """Fetches a single data point from the dataset."""
+        image_path = self.images[idx]
+        image = Image.open(image_path)   
+        # image = read_image(image_path)
+        label = self.labels[idx]
+        image_path = self.images[idx]
+   
+        if self.transform:
+            image = self.transform(image)
+        return image, label, label  # 返回图像及其对应的两次大类标签
+ 
 
 tf = transforms.Compose([transforms.Resize(64),
-                         transforms.ToTensor(),
-                         transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
+                        transforms.ToTensor(), 
+                        transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
                         ])
 
 

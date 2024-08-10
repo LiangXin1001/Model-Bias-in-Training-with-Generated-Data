@@ -5,15 +5,14 @@ import pickle
 import os
 from model import Generator 
 from datasets import SuperCIFAR100 ,CIFAR_100_CLASS_MAP,tf,GeneratedDataset
- 
+from torch.utils.data import DataLoader, Dataset, ConcatDataset 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
  
 def parse_args():
     parser = argparse.ArgumentParser(description="Load and save model with custom configuration")
     parser.add_argument('--gennum', type=int, required=True, help='Generator number to customize filenames')
     parser.add_argument('--model_path', type=str, required=True, help='Path to the generator model file')
-    parser.add_argument('--pkl_paths', type=str, default=None,
-                help='Optional: Comma-separated list of paths to PKL files containing images and labels.')
+    
     return parser.parse_args()
 
 
@@ -36,19 +35,32 @@ def main():
 
     # 统计每个大类的图片数量
     super_class_counts = {i: 0 for i in range(len(CIFAR_100_CLASS_MAP))}  # 初始化所有大类的计数为0
-    for _, super_class_idx, _ in trainset:
-        super_class_counts[super_class_idx] += 1
+    # for _, super_class_idx, _ in trainset:
+    #     super_class_counts[super_class_idx] += 1
 
-    # print("super_class_counts",super_class_counts)
-    
+  
 
     output_dir = f'data/generated_images_{args.gennum}'
     os.makedirs(output_dir, exist_ok=True)
     
     index_to_superclass = {i: super_class for i, super_class in enumerate(sorted(CIFAR_100_CLASS_MAP.keys()))}
 
-    for idx, count in super_class_counts.items():
-        print(f"{index_to_superclass[idx]}: {count} images")
+    if args.gennum == 0:
+        for _, super_class_idx,_ in trainset:
+            super_class_counts[super_class_idx] += 1
+        print("super_class_counts",super_class_counts)
+    
+    else:
+        previous_gen_path = f'data/generated_images_{args.gennum - 1}'
+         
+        for class_folder in os.listdir(previous_gen_path):
+            class_idx = int(class_folder.split('_')[-1])
+            class_path = os.path.join(previous_gen_path, class_folder)
+            image_count = len([name for name in os.listdir(class_path) if os.path.isfile(os.path.join(class_path, name))])
+            super_class_counts[class_idx] += image_count
+
+    print("super_class_counts", super_class_counts)
+
 
     generated_images = []
     generated_labels = []

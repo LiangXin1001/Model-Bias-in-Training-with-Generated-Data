@@ -12,6 +12,7 @@ import torchvision.transforms as transforms
 from datasets import SuperCIFAR100 ,CIFAR_100_CLASS_MAP,tf,GeneratedDataset
 from model import Generator, Discriminator
 from torchvision.utils import save_image
+from torch.utils.data import DataLoader, Dataset, ConcatDataset
 # torch.backends.cudnn.enabled = False
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(device)
@@ -19,8 +20,7 @@ print(device)
 def parse_args():
     parser = argparse.ArgumentParser(description="Save models with custom filenames")
     parser.add_argument('--gennum', type=int, required=True, help='Generator number for filename customization')
-    parser.add_argument('--pkl_paths', type=str, default=None,
-                    help='Optional: Comma-separated list of paths to PKL files containing images and labels.')
+    parser.add_argument('--data_root_paths', type=str, required=True, help='Generator number for filename customization')
     return parser.parse_args()
 
 args = parse_args()
@@ -32,20 +32,33 @@ def load_and_prepare_datasets(pkl_paths, transform):
     labels = []
 
     if pkl_paths:
-        generated_dataset = GeneratedDataset(pkl_paths, transform)
+        for pkl_path in pkl_paths.split(','):
+            with open(pkl_path, 'rb') as f:
+                imgs, lbls = pickle.load(f)
+                images.extend(imgs)
+                labels.extend(lbls)
+
+        # 统计每个标签的图像数量
+        label_counts = defaultdict(int)
+        for label in labels:
+            label_counts[label] += 1
+
+        # 打印每个标签及其对应的图像数量
+        index_to_superclass = {i: k for i, k in enumerate(sorted(CIFAR_100_CLASS_MAP.keys()))}
+        for label, count in label_counts.items():
+            print(f"Label {label} ({index_to_superclass[label]}): {count} images")
+
+        generated_dataset = GeneratedDataset(images, labels)
     else:
         generated_dataset = None
 
     # 加载训练数据集
-    trainset = SuperCIFAR100(root='./data', train=True, download=True, transform=transform)
+    trainset = SuperCIFAR100(root='./data', train=True, download=True, transform=tf)
     
     if generated_dataset:
-        print("Concatenated dataset")
         return torch.utils.data.ConcatDataset([trainset, generated_dataset])
     else:
-        print("Original dataset")
         return trainset
-
 
 
 def custom_collate_fn(batch):
@@ -114,15 +127,36 @@ def weights_init(m):
         m.weight.data.normal_(1.0, 0.02)
         m.bias.data.fill_(0)
 
-dataset = load_and_prepare_datasets(args.pkl_paths, tf)
+# dataset = load_and_prepare_datasets(args.pkl_paths, tf)
 
-trainloader = torch.utils.data.DataLoader(
-    dataset=dataset,  
+# trainloader = torch.utils.data.DataLoader(
+#     dataset=dataset,  
+#     batch_size=64,
+#     shuffle=True,
+#     num_workers=2 ,
+#     collate_fn=custom_collate_fn   
+# )
+data_root_paths = args.data_root_paths.split(',') 
+trainset = SuperCIFAR100(root='./data', train=True, download=True, transform=tf)
+  
+if args.gennum:
+    generated_dataset = GeneratedDataset(root_dirs=data_root_paths, transform=tf)
+    combined_dataset = ConcatDataset([generated_dataset, trainset])
+
+    # 为训练创建 DataLoader
+    trainloader = torch.utils.data.DataLoader(
+        dataset=combined_dataset,
+        batch_size=64,
+        shuffle=True,
+        num_workers=2 
+    )
+else:
+    trainloader = torch.utils.data.DataLoader(
+    dataset=trainset,
     batch_size=64,
     shuffle=True,
-    num_workers=0 ,
-    collate_fn=custom_collate_fn   
-)
+    num_workers=2  
+    )
 
 gen = Generator().to(device)
 gen.apply(weights_init)
@@ -143,7 +177,7 @@ validity_loss = nn.BCELoss()
 
 # real_labels = 0.7 + 0.5 * torch.rand(10, device = device)
 # fake_labels = 0.3 * torch.rand(10, device = device)
-epochs = 25
+epochs = 40
 
 for epoch in range(1,epochs+1):
     torch.cuda.empty_cache()
