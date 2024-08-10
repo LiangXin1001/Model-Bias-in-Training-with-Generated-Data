@@ -55,8 +55,8 @@ def load_model(model_path, model_name, num_classes, device):
     return model
 
 # 准备测试数据集
-def prepare_testset(transform):
-    testset = SuperCIFAR100(root='../data', train=False, download=True, transform=transform)
+def prepare_testset():
+    testset = SuperCIFAR100(root='../data', train=False, download=True, transform=tf)
     test_loader = DataLoader(testset, batch_size=args.batch_size, shuffle=False, num_workers=4)
     return test_loader
 
@@ -75,7 +75,7 @@ def test_model(model, test_loader, device):
 def write_results_to_csv(results, model_name):
     results_dir = f'results/{model_name}'
     os.makedirs(results_dir, exist_ok=True)
-    csv_path = os.path.join(results_dir, 'test_results.csv')
+    csv_path = os.path.join(results_dir, f'test_results_{args.gennum}.csv')
     with open(csv_path, 'w', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(['Image', 'True Label', 'Predicted Label'])
@@ -88,15 +88,8 @@ def main():
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     model_path = f"./models/{args.model_name}_gen{args.gennum}.pth"
     model = load_model(model_path, args.model_name, 100, device)  # 假设模型预测100个类
-
-    tf = transforms.Compose([
-        transforms.Resize(256),
-        transforms.CenterCrop(224),
-        transforms.ToTensor(),
-        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
-    ])
-
-    test_loader = prepare_testset(tf)
+ 
+    test_loader = prepare_testset()
     results = test_model(model, test_loader, device)
     write_results_to_csv(results, args.model_name)
 
