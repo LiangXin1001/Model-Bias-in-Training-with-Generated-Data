@@ -18,11 +18,17 @@ base_model_name="resnet50"
  
 for gennum in {0..9}
 do
-  echo "Running with gennum = $gennum"
-  python $CLASSIFY_PY \
-    --gennum $gennum \
-    --data_root_paths ../data/generated_images_{args.gennum} \
-    --model_name $base_model_name
+    echo "Running with gennum = $gennum"
+    python $CLASSIFY_PY \
+        --gennum $gennum \
+        --data_root_paths ../data/generated_images_{args.gennum} \
+        --model_name $base_model_name
+
+    python test.py \
+        --gennum $gennum \
+        --model_name $base_model_name
 done
 
 echo "All runs completed."
+
+
