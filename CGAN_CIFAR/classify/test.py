@@ -11,7 +11,7 @@ import argparse
 import sys    
 from torchvision.models import alexnet, vgg19, resnet50, mobilenet_v3_large, inception_v3
  
-from datasets import SuperCIFAR100, GeneratedDataset, tf ,CIFAR_100_CLASS_MAP,generate_full_subclass_map
+from utils.datasets import SuperCIFAR100, GeneratedDataset, tf ,CIFAR_100_CLASS_MAP,generate_full_subclass_map
 from torch.utils.data import ConcatDataset, DataLoader 
 
 current_dir = os.path.dirname(__file__)

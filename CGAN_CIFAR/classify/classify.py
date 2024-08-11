@@ -8,7 +8,7 @@ from torchvision.models import alexnet, vgg19, resnet50, mobilenet_v3_large, inc
 from torch.utils.data import ConcatDataset, DataLoader 
 import os
  
-from datasets import SuperCIFAR100, GeneratedDataset, tf 
+from utils.datasets import SuperCIFAR100, GeneratedDataset, tf 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 def parse_arguments():

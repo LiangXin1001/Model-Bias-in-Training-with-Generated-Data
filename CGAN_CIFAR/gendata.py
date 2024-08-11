@@ -4,7 +4,7 @@ import argparse
 import pickle
 import os
 from model import Generator 
-from datasets import SuperCIFAR100 ,CIFAR_100_CLASS_MAP,tf,GeneratedDataset
+from  datasets import SuperCIFAR100 ,CIFAR_100_CLASS_MAP,tf,GeneratedDataset
 from torch.utils.data import DataLoader, Dataset, ConcatDataset 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
  

@@ -9,7 +9,7 @@ import torchvision
 import torch.nn.functional as F
 import matplotlib.pyplot as plt
 import torchvision.transforms as transforms
-from datasets import SuperCIFAR100 ,CIFAR_100_CLASS_MAP,tf,GeneratedDataset
+from  datasets import SuperCIFAR100 ,CIFAR_100_CLASS_MAP,tf,GeneratedDataset
 from model import Generator, Discriminator
 from torchvision.utils import save_image
 from torch.utils.data import DataLoader, Dataset, ConcatDataset

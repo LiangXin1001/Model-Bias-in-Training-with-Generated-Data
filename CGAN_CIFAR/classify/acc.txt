@@ -1,0 +1,121 @@
+Overall Accuracy: 45.49%
+Accuracy for subclasses in superclass aquatic mammals:
+beaver: 30.00%
+dolphin: 65.00%
+otter: 32.00%
+seal: 43.00%
+whale: 64.00%
+Accuracy for subclasses in superclass fish:
+aquarium_fish: 40.00%
+flatfish: 41.00%
+ray: 49.00%
+shark: 45.00%
+trout: 51.00%
+Accuracy for subclasses in superclass flowers:
+orchid: 44.00%
+poppy: 61.00%
+rose: 62.00%
+sunflower: 59.00%
+tulip: 49.00%
+Accuracy for subclasses in superclass food containers:
+bottle: 35.00%
+bowl: 24.00%
+can: 35.00%
+cup: 42.00%
+plate: 51.00%
+Accuracy for subclasses in superclass fruit and vegetables:
+apple: 73.00%
+mushroom: 26.00%
+orange: 66.00%
+pear: 44.00%
+sweet_pepper: 48.00%
+Accuracy for subclasses in superclass household electrical devices:
+clock: 32.00%
+keyboard: 49.00%
+lamp: 20.00%
+telephone: 50.00%
+television: 39.00%
+Accuracy for subclasses in superclass household furniture:
+bed: 57.00%
+chair: 75.00%
+couch: 44.00%
+table: 35.00%
+wardrobe: 67.00%
+Accuracy for subclasses in superclass insects:
+bee: 50.00%
+beetle: 49.00%
+butterfly: 33.00%
+caterpillar: 25.00%
+cockroach: 67.00%
+Accuracy for subclasses in superclass large carnivores:
+bear: 6.00%
+leopard: 39.00%
+lion: 43.00%
+tiger: 27.00%
+wolf: 30.00%
+Accuracy for subclasses in superclass large man-made outdoor things:
+bridge: 46.00%
+castle: 73.00%
+house: 45.00%
+road: 72.00%
+skyscraper: 68.00%
+Accuracy for subclasses in superclass large natural outdoor scenes:
+cloud: 63.00%
+forest: 31.00%
+mountain: 53.00%
+plain: 80.00%
+sea: 79.00%
+Accuracy for subclasses in superclass large omnivores and herbivores:
+camel: 37.00%
+cattle: 46.00%
+chimpanzee: 64.00%
+elephant: 44.00%
+kangaroo: 30.00%
+Accuracy for subclasses in superclass medium-sized mammals:
+fox: 25.00%
+porcupine: 26.00%
+possum: 23.00%
+raccoon: 27.00%
+skunk: 55.00%
+Accuracy for subclasses in superclass non-insect invertebrates:
+crab: 39.00%
+lobster: 22.00%
+snail: 20.00%
+spider: 36.00%
+worm: 34.00%
+Accuracy for subclasses in superclass people:
+baby: 52.00%
+boy: 56.00%
+girl: 54.00%
+man: 53.00%
+woman: 46.00%
+Accuracy for subclasses in superclass reptiles:
+crocodile: 39.00%
+dinosaur: 46.00%
+lizard: 36.00%
+snake: 34.00%
+turtle: 28.00%
+Accuracy for subclasses in superclass small mammals:
+hamster: 44.00%
+mouse: 40.00%
+rabbit: 28.00%
+shrew: 32.00%
+squirrel: 26.00%
+Accuracy for subclasses in superclass trees:
+maple_tree: 84.00%
+oak_tree: 98.00%
+palm_tree: 62.00%
+pine_tree: 67.00%
+willow_tree: 73.00%
+Accuracy for subclasses in superclass vehicles 1:
+bicycle: 39.00%
+bus: 18.00%
+motorcycle: 55.00%
+pickup_truck: 36.00%
+train: 18.00%
+Accuracy for subclasses in superclass vehicles 2:
+lawn_mower: 58.00%
+rocket: 34.00%
+streetcar: 40.00%
+tank: 57.00%
+tractor: 42.00%
