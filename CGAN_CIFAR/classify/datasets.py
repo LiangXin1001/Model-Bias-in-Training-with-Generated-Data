@@ -57,6 +57,12 @@ class SuperCIFAR100(torch.utils.data.Dataset):
 
 
 
+def generate_full_subclass_map():
+    # 加载 CIFAR-100 数据集来获取标准的类别顺序
+    dataset = torchvision.datasets.CIFAR100(root='./data', train=True, download=True)
+    # dataset.classes 就是按照 CIFAR-100 的索引顺序排列的类别名称列表
+    return dataset.classes
+
 class GeneratedDataset(Dataset):
     def __init__(self, root_dirs, transform=None):
         """

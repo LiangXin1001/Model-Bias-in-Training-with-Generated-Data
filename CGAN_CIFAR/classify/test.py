@@ -11,7 +11,7 @@ import argparse
 import sys    
 from torchvision.models import alexnet, vgg19, resnet50, mobilenet_v3_large, inception_v3
  
-from datasets import SuperCIFAR100, GeneratedDataset, tf 
+from datasets import SuperCIFAR100, GeneratedDataset, tf ,CIFAR_100_CLASS_MAP,generate_full_subclass_map
 from torch.utils.data import ConcatDataset, DataLoader 
 
 current_dir = os.path.dirname(__file__)
@@ -55,26 +55,26 @@ def load_model(model_path, model_name, num_classes, device):
     model.load_state_dict(torch.load(model_path))
     model.eval()
     return model
-
-# 准备测试数据集
+ 
 def prepare_testset():
     testset = SuperCIFAR100(root='../data', train=False, download=True, transform=tf)
     test_loader = DataLoader(testset, batch_size=args.batch_size, shuffle=False, num_workers=4)
     return test_loader
-
-# 测试模型并收集结果
+ 
 def test_model(model, test_loader, device):
     results = []
+    image_id = 0 
     with torch.no_grad():
-        for images, labels in test_loader:
-            images, labels = images.to(device), labels.to(device)
+        for images, superclass, subclass in test_loader:
+            images, superclass, subclass = images.to(device), superclass.to(device), subclass.to(device)
             outputs = model(images)
-            _, predicted = torch.max(outputs, 1)
-            for img, label, pred in zip(images, labels, predicted):
-                results.append((img, label.item(), pred.item()))
+            _, predicted_superclass = torch.max(outputs, 1)
+            for  sup_cls, sub_cls, pred_sup_cls in zip(  superclass, subclass, predicted_superclass):
+                results.append((image_id, sup_cls.item(), sub_cls.item(), pred_sup_cls.item()))
+                image_id += 1
     return results
  
-def write_results_to_csv(results, model_name):
+def write_results_to_csv(results, model_name,full_subclass_map):
     results_dir = f'results/{model_name}'
     os.makedirs(results_dir, exist_ok=True)
     csv_path = os.path.join(results_dir, f'test_results_{args.gennum}.csv')
@@ -82,20 +82,26 @@ def write_results_to_csv(results, model_name):
         writer = csv.writer(file)
         writer.writerow(['Image', 'True Superclass', 'True Subclass', 'Predicted Superclass', 'True Superclass Name', 'True Subclass Name'])
         for img, true_superclass, true_subclass, pred_superclass in results:
-            true_superclass_name = CIFAR_100_CLASS_MAP.keys()[true_superclass]
-            true_subclass_name = CIFAR_100_CLASS_MAP[true_superclass_name][true_subclass]
+            true_superclass_name = list(CIFAR_100_CLASS_MAP.keys())[true_superclass]
+            
+            true_subclass_name = full_subclass_map[true_subclass]
+            print(f"Superclass: {true_superclass_name},Subclass name {true_subclass_name}")
+            
             writer.writerow([img, true_superclass, true_subclass, pred_superclass, true_superclass_name, true_subclass_name])
     print(f"Results saved to {csv_path}")
 
 # 主函数
 def main():
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    model_path = f"./models/{args.model_name}_gen{args.gennum}.pth"
-    model = load_model(model_path, args.model_name, 100, device)  # 假设模型预测100个类
+    model_path = f"./models/{args.model_name}/{args.model_name}_gen{args.gennum}.pth"
+    model = load_model(model_path, args.model_name, 20, device)  
  
     test_loader = prepare_testset()
     results = test_model(model, test_loader, device)
-    write_results_to_csv(results, args.model_name)
+    full_subclass_map = generate_full_subclass_map()
+    print("full_subclass_map\n",full_subclass_map)
+    write_results_to_csv(results, args.model_name, full_subclass_map)
+    
 
 if __name__ == "__main__":
     main()
