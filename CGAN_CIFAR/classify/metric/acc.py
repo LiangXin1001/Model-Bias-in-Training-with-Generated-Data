@@ -34,22 +34,37 @@ subclass_accuracies = df.groupby('True Subclass').apply(
 # print("\nAccuracy per Subclass:")
 # print(subclass_accuracies)
 
+worst_accuracies = []
+second_worst_accuracies = []
+third_worst_accuracies = []
+fourth_worst_accuracies = []
+fifth_worst_accuracies = []
 # 计算每个超类的子类正确率
 for superclass, subclasses in CIFAR_100_CLASS_MAP.items():
     print(f"Accuracy for subclasses in superclass {superclass}:")
+    subclass_accuracies = []
     for subclass in subclasses:
         # 过滤出当前子类的所有数据
         subclass_data = df[df['True Subclass Name'] == subclass]
- 
         accuracy = accuracy_score(subclass_data['True Superclass'], subclass_data['Predicted Superclass'])
+        subclass_accuracies.append(accuracy)
         print(f"{subclass}: {accuracy:.2%}")
 
+    # 对子类准确率进行排序
+    sorted_accuracies = sorted(subclass_accuracies)
+
+    # 收集每个超类中最差到第五差的准确率
+    if len(sorted_accuracies) >= 5:
+        worst_accuracies.append(sorted_accuracies[0])
+        second_worst_accuracies.append(sorted_accuracies[1])
+        third_worst_accuracies.append(sorted_accuracies[2])
+        fourth_worst_accuracies.append(sorted_accuracies[3])
+        fifth_worst_accuracies.append(sorted_accuracies[4])
 
 
-
-# 生成并打印分类报告
-# print("\nClassification Report for Superclasses:")
-# print(classification_report(df['True Superclass'], df['Predicted Superclass']))
-
-# print("\nClassification Report for Subclasses:")
-# print(classification_report(df['True Subclass'], df['Predicted Superclass']))  # 注意这里可能需要调整
+print("Average of the worst subclass accuracies:", sum(worst_accuracies) / len(worst_accuracies))
+print("Average of the second worst subclass accuracies:", sum(second_worst_accuracies) / len(second_worst_accuracies))
+print("Average of the third worst subclass accuracies:", sum(third_worst_accuracies) / len(third_worst_accuracies))
+print("Average of the fourth worst subclass accuracies:", sum(fourth_worst_accuracies) / len(fourth_worst_accuracies))
+print("Average of the fifth worst subclass accuracies:", sum(fifth_worst_accuracies) / len(fifth_worst_accuracies))
+ 
