@@ -1,121 +1,1470 @@
-Overall Accuracy: 45.49%
+Overall Accuracy: 49.84%
 Accuracy for subclasses in superclass aquatic mammals:
-beaver: 30.00%
-dolphin: 65.00%
-otter: 32.00%
-seal: 43.00%
-whale: 64.00%
+beaver: 36.00%
+dolphin: 64.00%
+otter: 42.00%
+seal: 39.00%
+whale: 69.00%
 Accuracy for subclasses in superclass fish:
-aquarium_fish: 40.00%
-flatfish: 41.00%
-ray: 49.00%
-shark: 45.00%
-trout: 51.00%
+aquarium_fish: 53.00%
+flatfish: 39.00%
+ray: 42.00%
+shark: 50.00%
+trout: 61.00%
 Accuracy for subclasses in superclass flowers:
-orchid: 44.00%
-poppy: 61.00%
-rose: 62.00%
-sunflower: 59.00%
-tulip: 49.00%
+orchid: 65.00%
+poppy: 79.00%
+rose: 79.00%
+sunflower: 76.00%
+tulip: 69.00%
 Accuracy for subclasses in superclass food containers:
-bottle: 35.00%
-bowl: 24.00%
-can: 35.00%
-cup: 42.00%
-plate: 51.00%
+bottle: 45.00%
+bowl: 34.00%
+can: 40.00%
+cup: 55.00%
+plate: 56.00%
 Accuracy for subclasses in superclass fruit and vegetables:
-apple: 73.00%
-mushroom: 26.00%
-orange: 66.00%
-pear: 44.00%
+apple: 74.00%
+mushroom: 20.00%
+orange: 67.00%
+pear: 49.00%
 sweet_pepper: 48.00%
 Accuracy for subclasses in superclass household electrical devices:
-clock: 32.00%
-keyboard: 49.00%
-lamp: 20.00%
-telephone: 50.00%
-television: 39.00%
+clock: 35.00%
+keyboard: 39.00%
+lamp: 38.00%
+telephone: 57.00%
+television: 43.00%
 Accuracy for subclasses in superclass household furniture:
-bed: 57.00%
-chair: 75.00%
-couch: 44.00%
-table: 35.00%
-wardrobe: 67.00%
+bed: 55.00%
+chair: 69.00%
+couch: 41.00%
+table: 46.00%
+wardrobe: 60.00%
 Accuracy for subclasses in superclass insects:
-bee: 50.00%
-beetle: 49.00%
-butterfly: 33.00%
-caterpillar: 25.00%
-cockroach: 67.00%
+bee: 53.00%
+beetle: 58.00%
+butterfly: 43.00%
+caterpillar: 44.00%
+cockroach: 71.00%
 Accuracy for subclasses in superclass large carnivores:
-bear: 6.00%
-leopard: 39.00%
-lion: 43.00%
-tiger: 27.00%
-wolf: 30.00%
+bear: 11.00%
+leopard: 37.00%
+lion: 25.00%
+tiger: 33.00%
+wolf: 33.00%
 Accuracy for subclasses in superclass large man-made outdoor things:
-bridge: 46.00%
-castle: 73.00%
-house: 45.00%
-road: 72.00%
-skyscraper: 68.00%
+bridge: 59.00%
+castle: 75.00%
+house: 46.00%
+road: 82.00%
+skyscraper: 72.00%
 Accuracy for subclasses in superclass large natural outdoor scenes:
-cloud: 63.00%
-forest: 31.00%
-mountain: 53.00%
+cloud: 72.00%
+forest: 55.00%
+mountain: 52.00%
 plain: 80.00%
-sea: 79.00%
+sea: 74.00%
 Accuracy for subclasses in superclass large omnivores and herbivores:
-camel: 37.00%
-cattle: 46.00%
-chimpanzee: 64.00%
-elephant: 44.00%
-kangaroo: 30.00%
+camel: 32.00%
+cattle: 41.00%
+chimpanzee: 48.00%
+elephant: 41.00%
+kangaroo: 24.00%
 Accuracy for subclasses in superclass medium-sized mammals:
-fox: 25.00%
-porcupine: 26.00%
-possum: 23.00%
-raccoon: 27.00%
-skunk: 55.00%
+fox: 44.00%
+porcupine: 45.00%
+possum: 35.00%
+raccoon: 45.00%
+skunk: 66.00%
 Accuracy for subclasses in superclass non-insect invertebrates:
-crab: 39.00%
-lobster: 22.00%
-snail: 20.00%
-spider: 36.00%
-worm: 34.00%
+crab: 48.00%
+lobster: 27.00%
+snail: 16.00%
+spider: 42.00%
+worm: 47.00%
 Accuracy for subclasses in superclass people:
-baby: 52.00%
-boy: 56.00%
-girl: 54.00%
+baby: 63.00%
+boy: 68.00%
+girl: 66.00%
 man: 53.00%
-woman: 46.00%
+woman: 61.00%
 Accuracy for subclasses in superclass reptiles:
-crocodile: 39.00%
-dinosaur: 46.00%
-lizard: 36.00%
-snake: 34.00%
-turtle: 28.00%
+crocodile: 29.00%
+dinosaur: 41.00%
+lizard: 25.00%
+snake: 31.00%
+turtle: 27.00%
 Accuracy for subclasses in superclass small mammals:
-hamster: 44.00%
-mouse: 40.00%
-rabbit: 28.00%
-shrew: 32.00%
-squirrel: 26.00%
+hamster: 32.00%
+mouse: 25.00%
+rabbit: 29.00%
+shrew: 29.00%
+squirrel: 28.00%
 Accuracy for subclasses in superclass trees:
-maple_tree: 84.00%
-oak_tree: 98.00%
-palm_tree: 62.00%
-pine_tree: 67.00%
-willow_tree: 73.00%
+maple_tree: 83.00%
+oak_tree: 92.00%
+palm_tree: 65.00%
+pine_tree: 69.00%
+willow_tree: 56.00%
 Accuracy for subclasses in superclass vehicles 1:
-bicycle: 39.00%
-bus: 18.00%
-motorcycle: 55.00%
-pickup_truck: 36.00%
-train: 18.00%
+bicycle: 50.00%
+bus: 50.00%
+motorcycle: 74.00%
+pickup_truck: 64.00%
+train: 41.00%
 Accuracy for subclasses in superclass vehicles 2:
-lawn_mower: 58.00%
-rocket: 34.00%
-streetcar: 40.00%
-tank: 57.00%
-tractor: 42.00%
+lawn_mower: 60.00%
+rocket: 54.00%
+streetcar: 35.00%
+tank: 40.00%
+tractor: 34.00%
+Average of the worst subclass accuracies: 0.36550000000000005
+Average of the second worst subclass accuracies: 0.437
+Average of the third worst subclass accuracies: 0.497
+Average of the fourth worst subclass accuracies: 0.5605
+Average of the fifth worst subclass accuracies: 0.632
+EO Results for test_results_0.csv:
+Superclass 10 (large natural outdoor scenes), Subclass 49 (mountain): EO = 0.85
+Superclass 10 (large natural outdoor scenes), Subclass 33 (forest): EO = 0.85
+Superclass 10 (large natural outdoor scenes), Subclass 71 (sea): EO = 0.85
+Superclass 10 (large natural outdoor scenes), Subclass 23 (cloud): EO = 0.85
+Superclass 10 (large natural outdoor scenes), Subclass 60 (plain): EO = 0.85
+Superclass 0 (aquatic mammals), Subclass 72 (seal): EO = 0.8180000000000001
+Superclass 0 (aquatic mammals), Subclass 4 (beaver): EO = 0.8180000000000001
+Superclass 0 (aquatic mammals), Subclass 95 (whale): EO = 0.8180000000000001
+Superclass 0 (aquatic mammals), Subclass 30 (dolphin): EO = 0.8180000000000001
+Superclass 0 (aquatic mammals), Subclass 55 (otter): EO = 0.8180000000000001
+Superclass 4 (fruit and vegetables), Subclass 51 (mushroom): EO = 0.746
+Superclass 4 (fruit and vegetables), Subclass 0 (apple): EO = 0.746
+Superclass 4 (fruit and vegetables), Subclass 53 (orange): EO = 0.746
+Superclass 4 (fruit and vegetables), Subclass 57 (pear): EO = 0.746
+Superclass 4 (fruit and vegetables), Subclass 83 (sweet_pepper): EO = 0.746
+Superclass 2 (flowers), Subclass 92 (tulip): EO = 0.9239999999999999
+Superclass 2 (flowers), Subclass 70 (rose): EO = 0.9239999999999999
+Superclass 2 (flowers), Subclass 82 (sunflower): EO = 0.9239999999999999
+Superclass 2 (flowers), Subclass 54 (orchid): EO = 0.9239999999999999
+Superclass 2 (flowers), Subclass 62 (poppy): EO = 0.9239999999999999
+Superclass 11 (large omnivores and herbivores), Subclass 15 (camel): EO = 0.886
+Superclass 11 (large omnivores and herbivores), Subclass 21 (chimpanzee): EO = 0.886
+Superclass 11 (large omnivores and herbivores), Subclass 19 (cattle): EO = 0.886
+Superclass 11 (large omnivores and herbivores), Subclass 31 (elephant): EO = 0.886
+Superclass 11 (large omnivores and herbivores), Subclass 38 (kangaroo): EO = 0.886
+Superclass 7 (insects), Subclass 14 (butterfly): EO = 0.86
+Superclass 7 (insects), Subclass 24 (cockroach): EO = 0.86
+Superclass 7 (insects), Subclass 6 (bee): EO = 0.86
+Superclass 7 (insects), Subclass 7 (beetle): EO = 0.86
+Superclass 7 (insects), Subclass 18 (caterpillar): EO = 0.86
+Superclass 12 (medium-sized mammals), Subclass 75 (skunk): EO = 0.8739999999999999
+Superclass 12 (medium-sized mammals), Subclass 63 (porcupine): EO = 0.8739999999999999
+Superclass 12 (medium-sized mammals), Subclass 66 (raccoon): EO = 0.8739999999999999
+Superclass 12 (medium-sized mammals), Subclass 64 (possum): EO = 0.8739999999999999
+Superclass 12 (medium-sized mammals), Subclass 34 (fox): EO = 0.8739999999999999
+Superclass 19 (vehicles 2), Subclass 81 (streetcar): EO = 0.858
+Superclass 19 (vehicles 2), Subclass 69 (rocket): EO = 0.858
+Superclass 19 (vehicles 2), Subclass 41 (lawn_mower): EO = 0.858
+Superclass 19 (vehicles 2), Subclass 89 (tractor): EO = 0.858
+Superclass 19 (vehicles 2), Subclass 85 (tank): EO = 0.858
+Superclass 5 (household electrical devices), Subclass 40 (lamp): EO = 0.902
+Superclass 5 (household electrical devices), Subclass 39 (keyboard): EO = 0.902
+Superclass 5 (household electrical devices), Subclass 22 (clock): EO = 0.902
+Superclass 5 (household electrical devices), Subclass 87 (television): EO = 0.902
+Superclass 5 (household electrical devices), Subclass 86 (telephone): EO = 0.902
+Superclass 8 (large carnivores), Subclass 43 (lion): EO = 0.88
+Superclass 8 (large carnivores), Subclass 97 (wolf): EO = 0.88
+Superclass 8 (large carnivores), Subclass 42 (leopard): EO = 0.88
+Superclass 8 (large carnivores), Subclass 3 (bear): EO = 0.88
+Superclass 8 (large carnivores), Subclass 88 (tiger): EO = 0.88
+Superclass 15 (reptiles), Subclass 29 (dinosaur): EO = 0.928
+Superclass 15 (reptiles), Subclass 93 (turtle): EO = 0.928
+Superclass 15 (reptiles), Subclass 27 (crocodile): EO = 0.928
+Superclass 15 (reptiles), Subclass 78 (snake): EO = 0.928
+Superclass 15 (reptiles), Subclass 44 (lizard): EO = 0.928
+Superclass 3 (food containers), Subclass 16 (can): EO = 0.882
+Superclass 3 (food containers), Subclass 61 (plate): EO = 0.882
+Superclass 3 (food containers), Subclass 9 (bottle): EO = 0.882
+Superclass 3 (food containers), Subclass 10 (bowl): EO = 0.882
+Superclass 3 (food containers), Subclass 28 (cup): EO = 0.882
+Superclass 18 (vehicles 1), Subclass 8 (bicycle): EO = 0.84
+Superclass 18 (vehicles 1), Subclass 58 (pickup_truck): EO = 0.84
+Superclass 18 (vehicles 1), Subclass 90 (train): EO = 0.84
+Superclass 18 (vehicles 1), Subclass 13 (bus): EO = 0.84
+Superclass 18 (vehicles 1), Subclass 48 (motorcycle): EO = 0.84
+Superclass 6 (household furniture), Subclass 20 (chair): EO = 0.8600000000000001
+Superclass 6 (household furniture), Subclass 25 (couch): EO = 0.8600000000000001
+Superclass 6 (household furniture), Subclass 94 (wardrobe): EO = 0.8600000000000001
+Superclass 6 (household furniture), Subclass 84 (table): EO = 0.8600000000000001
+Superclass 6 (household furniture), Subclass 5 (bed): EO = 0.8600000000000001
+Superclass 17 (trees), Subclass 56 (palm_tree): EO = 0.8200000000000001
+Superclass 17 (trees), Subclass 52 (oak_tree): EO = 0.8200000000000001
+Superclass 17 (trees), Subclass 47 (maple_tree): EO = 0.8200000000000001
+Superclass 17 (trees), Subclass 59 (pine_tree): EO = 0.8200000000000001
+Superclass 17 (trees), Subclass 96 (willow_tree): EO = 0.8200000000000001
+Superclass 1 (fish), Subclass 73 (shark): EO = 0.89
+Superclass 1 (fish), Subclass 32 (flatfish): EO = 0.89
+Superclass 1 (fish), Subclass 67 (ray): EO = 0.89
+Superclass 1 (fish), Subclass 91 (trout): EO = 0.89
+Superclass 1 (fish), Subclass 1 (aquarium_fish): EO = 0.89
+Superclass 14 (people), Subclass 11 (boy): EO = 0.9299999999999999
+Superclass 14 (people), Subclass 2 (baby): EO = 0.9299999999999999
+Superclass 14 (people), Subclass 35 (girl): EO = 0.9299999999999999
+Superclass 14 (people), Subclass 46 (man): EO = 0.9299999999999999
+Superclass 14 (people), Subclass 98 (woman): EO = 0.9299999999999999
+Superclass 9 (large man-made outdoor things), Subclass 37 (house): EO = 0.8240000000000001
+Superclass 9 (large man-made outdoor things), Subclass 17 (castle): EO = 0.8240000000000001
+Superclass 9 (large man-made outdoor things), Subclass 76 (skyscraper): EO = 0.8240000000000001
+Superclass 9 (large man-made outdoor things), Subclass 12 (bridge): EO = 0.8240000000000001
+Superclass 9 (large man-made outdoor things), Subclass 68 (road): EO = 0.8240000000000001
+Superclass 13 (non-insect invertebrates), Subclass 77 (snail): EO = 0.8320000000000001
+Superclass 13 (non-insect invertebrates), Subclass 26 (crab): EO = 0.8320000000000001
+Superclass 13 (non-insect invertebrates), Subclass 45 (lobster): EO = 0.8320000000000001
+Superclass 13 (non-insect invertebrates), Subclass 99 (worm): EO = 0.8320000000000001
+Superclass 13 (non-insect invertebrates), Subclass 79 (spider): EO = 0.8320000000000001
+Superclass 16 (small mammals), Subclass 65 (rabbit): EO = 0.97
+Superclass 16 (small mammals), Subclass 50 (mouse): EO = 0.97
+Superclass 16 (small mammals), Subclass 74 (shrew): EO = 0.97
+Superclass 16 (small mammals), Subclass 36 (hamster): EO = 0.97
+Superclass 16 (small mammals), Subclass 80 (squirrel): EO = 0.97
+
+==================================================
+
+EO Results for test_results_1.csv:
+Superclass 10 (large natural outdoor scenes), Subclass 49 (mountain): EO = 0.774
+Superclass 10 (large natural outdoor scenes), Subclass 33 (forest): EO = 0.774
+Superclass 10 (large natural outdoor scenes), Subclass 71 (sea): EO = 0.774
+Superclass 10 (large natural outdoor scenes), Subclass 23 (cloud): EO = 0.774
+Superclass 10 (large natural outdoor scenes), Subclass 60 (plain): EO = 0.774
+Superclass 0 (aquatic mammals), Subclass 72 (seal): EO = 0.762
+Superclass 0 (aquatic mammals), Subclass 4 (beaver): EO = 0.762
+Superclass 0 (aquatic mammals), Subclass 95 (whale): EO = 0.762
+Superclass 0 (aquatic mammals), Subclass 30 (dolphin): EO = 0.762
+Superclass 0 (aquatic mammals), Subclass 55 (otter): EO = 0.762
+Superclass 4 (fruit and vegetables), Subclass 51 (mushroom): EO = 0.774
+Superclass 4 (fruit and vegetables), Subclass 0 (apple): EO = 0.774
+Superclass 4 (fruit and vegetables), Subclass 53 (orange): EO = 0.774
+Superclass 4 (fruit and vegetables), Subclass 57 (pear): EO = 0.774
+Superclass 4 (fruit and vegetables), Subclass 83 (sweet_pepper): EO = 0.774
+Superclass 2 (flowers), Subclass 92 (tulip): EO = 0.89
+Superclass 2 (flowers), Subclass 70 (rose): EO = 0.89
+Superclass 2 (flowers), Subclass 82 (sunflower): EO = 0.89
+Superclass 2 (flowers), Subclass 54 (orchid): EO = 0.89
+Superclass 2 (flowers), Subclass 62 (poppy): EO = 0.89
+Superclass 11 (large omnivores and herbivores), Subclass 15 (camel): EO = 0.86
+Superclass 11 (large omnivores and herbivores), Subclass 21 (chimpanzee): EO = 0.86
+Superclass 11 (large omnivores and herbivores), Subclass 19 (cattle): EO = 0.86
+Superclass 11 (large omnivores and herbivores), Subclass 31 (elephant): EO = 0.86
+Superclass 11 (large omnivores and herbivores), Subclass 38 (kangaroo): EO = 0.86
+Superclass 7 (insects), Subclass 14 (butterfly): EO = 0.8240000000000001
+Superclass 7 (insects), Subclass 24 (cockroach): EO = 0.8240000000000001
+Superclass 7 (insects), Subclass 6 (bee): EO = 0.8240000000000001
+Superclass 7 (insects), Subclass 7 (beetle): EO = 0.8240000000000001
+Superclass 7 (insects), Subclass 18 (caterpillar): EO = 0.8240000000000001
+Superclass 12 (medium-sized mammals), Subclass 75 (skunk): EO = 0.8059999999999999
+Superclass 12 (medium-sized mammals), Subclass 63 (porcupine): EO = 0.8059999999999999
+Superclass 12 (medium-sized mammals), Subclass 66 (raccoon): EO = 0.8059999999999999
+Superclass 12 (medium-sized mammals), Subclass 64 (possum): EO = 0.8059999999999999
+Superclass 12 (medium-sized mammals), Subclass 34 (fox): EO = 0.8059999999999999
+Superclass 19 (vehicles 2), Subclass 81 (streetcar): EO = 0.894
+Superclass 19 (vehicles 2), Subclass 69 (rocket): EO = 0.894
+Superclass 19 (vehicles 2), Subclass 41 (lawn_mower): EO = 0.894
+Superclass 19 (vehicles 2), Subclass 89 (tractor): EO = 0.894
+Superclass 19 (vehicles 2), Subclass 85 (tank): EO = 0.894
+Superclass 5 (household electrical devices), Subclass 40 (lamp): EO = 0.892
+Superclass 5 (household electrical devices), Subclass 39 (keyboard): EO = 0.892
+Superclass 5 (household electrical devices), Subclass 22 (clock): EO = 0.892
+Superclass 5 (household electrical devices), Subclass 87 (television): EO = 0.892
+Superclass 5 (household electrical devices), Subclass 86 (telephone): EO = 0.892
+Superclass 8 (large carnivores), Subclass 43 (lion): EO = 0.898
+Superclass 8 (large carnivores), Subclass 97 (wolf): EO = 0.898
+Superclass 8 (large carnivores), Subclass 42 (leopard): EO = 0.898
+Superclass 8 (large carnivores), Subclass 3 (bear): EO = 0.898
+Superclass 8 (large carnivores), Subclass 88 (tiger): EO = 0.898
+Superclass 15 (reptiles), Subclass 29 (dinosaur): EO = 0.936
+Superclass 15 (reptiles), Subclass 93 (turtle): EO = 0.936
+Superclass 15 (reptiles), Subclass 27 (crocodile): EO = 0.936
+Superclass 15 (reptiles), Subclass 78 (snake): EO = 0.936
+Superclass 15 (reptiles), Subclass 44 (lizard): EO = 0.936
+Superclass 3 (food containers), Subclass 16 (can): EO = 0.858
+Superclass 3 (food containers), Subclass 61 (plate): EO = 0.858
+Superclass 3 (food containers), Subclass 9 (bottle): EO = 0.858
+Superclass 3 (food containers), Subclass 10 (bowl): EO = 0.858
+Superclass 3 (food containers), Subclass 28 (cup): EO = 0.858
+Superclass 18 (vehicles 1), Subclass 8 (bicycle): EO = 0.86
+Superclass 18 (vehicles 1), Subclass 58 (pickup_truck): EO = 0.86
+Superclass 18 (vehicles 1), Subclass 90 (train): EO = 0.86
+Superclass 18 (vehicles 1), Subclass 13 (bus): EO = 0.86
+Superclass 18 (vehicles 1), Subclass 48 (motorcycle): EO = 0.86
+Superclass 6 (household furniture), Subclass 20 (chair): EO = 0.824
+Superclass 6 (household furniture), Subclass 25 (couch): EO = 0.824
+Superclass 6 (household furniture), Subclass 94 (wardrobe): EO = 0.824
+Superclass 6 (household furniture), Subclass 84 (table): EO = 0.824
+Superclass 6 (household furniture), Subclass 5 (bed): EO = 0.824
+Superclass 17 (trees), Subclass 56 (palm_tree): EO = 0.846
+Superclass 17 (trees), Subclass 52 (oak_tree): EO = 0.846
+Superclass 17 (trees), Subclass 47 (maple_tree): EO = 0.846
+Superclass 17 (trees), Subclass 59 (pine_tree): EO = 0.846
+Superclass 17 (trees), Subclass 96 (willow_tree): EO = 0.846
+Superclass 1 (fish), Subclass 73 (shark): EO = 0.918
+Superclass 1 (fish), Subclass 32 (flatfish): EO = 0.918
+Superclass 1 (fish), Subclass 67 (ray): EO = 0.918
+Superclass 1 (fish), Subclass 91 (trout): EO = 0.918
+Superclass 1 (fish), Subclass 1 (aquarium_fish): EO = 0.918
+Superclass 14 (people), Subclass 11 (boy): EO = 0.958
+Superclass 14 (people), Subclass 2 (baby): EO = 0.958
+Superclass 14 (people), Subclass 35 (girl): EO = 0.958
+Superclass 14 (people), Subclass 46 (man): EO = 0.958
+Superclass 14 (people), Subclass 98 (woman): EO = 0.958
+Superclass 9 (large man-made outdoor things), Subclass 37 (house): EO = 0.816
+Superclass 9 (large man-made outdoor things), Subclass 17 (castle): EO = 0.816
+Superclass 9 (large man-made outdoor things), Subclass 76 (skyscraper): EO = 0.816
+Superclass 9 (large man-made outdoor things), Subclass 12 (bridge): EO = 0.816
+Superclass 9 (large man-made outdoor things), Subclass 68 (road): EO = 0.816
+Superclass 13 (non-insect invertebrates), Subclass 77 (snail): EO = 0.9319999999999999
+Superclass 13 (non-insect invertebrates), Subclass 26 (crab): EO = 0.9319999999999999
+Superclass 13 (non-insect invertebrates), Subclass 45 (lobster): EO = 0.9319999999999999
+Superclass 13 (non-insect invertebrates), Subclass 99 (worm): EO = 0.9319999999999999
+Superclass 13 (non-insect invertebrates), Subclass 79 (spider): EO = 0.9319999999999999
+Superclass 16 (small mammals), Subclass 65 (rabbit): EO = 0.94
+Superclass 16 (small mammals), Subclass 50 (mouse): EO = 0.94
+Superclass 16 (small mammals), Subclass 74 (shrew): EO = 0.94
+Superclass 16 (small mammals), Subclass 36 (hamster): EO = 0.94
+Superclass 16 (small mammals), Subclass 80 (squirrel): EO = 0.94
+
+==================================================
+
+EO Results for test_results_2.csv:
+Superclass 10 (large natural outdoor scenes), Subclass 49 (mountain): EO = 0.756
+Superclass 10 (large natural outdoor scenes), Subclass 33 (forest): EO = 0.756
+Superclass 10 (large natural outdoor scenes), Subclass 71 (sea): EO = 0.756
+Superclass 10 (large natural outdoor scenes), Subclass 23 (cloud): EO = 0.756
+Superclass 10 (large natural outdoor scenes), Subclass 60 (plain): EO = 0.756
+Superclass 0 (aquatic mammals), Subclass 72 (seal): EO = 0.754
+Superclass 0 (aquatic mammals), Subclass 4 (beaver): EO = 0.754
+Superclass 0 (aquatic mammals), Subclass 95 (whale): EO = 0.754
+Superclass 0 (aquatic mammals), Subclass 30 (dolphin): EO = 0.754
+Superclass 0 (aquatic mammals), Subclass 55 (otter): EO = 0.754
+Superclass 4 (fruit and vegetables), Subclass 51 (mushroom): EO = 0.782
+Superclass 4 (fruit and vegetables), Subclass 0 (apple): EO = 0.782
+Superclass 4 (fruit and vegetables), Subclass 53 (orange): EO = 0.782
+Superclass 4 (fruit and vegetables), Subclass 57 (pear): EO = 0.782
+Superclass 4 (fruit and vegetables), Subclass 83 (sweet_pepper): EO = 0.782
+Superclass 2 (flowers), Subclass 92 (tulip): EO = 0.858
+Superclass 2 (flowers), Subclass 70 (rose): EO = 0.858
+Superclass 2 (flowers), Subclass 82 (sunflower): EO = 0.858
+Superclass 2 (flowers), Subclass 54 (orchid): EO = 0.858
+Superclass 2 (flowers), Subclass 62 (poppy): EO = 0.858
+Superclass 11 (large omnivores and herbivores), Subclass 15 (camel): EO = 0.92
+Superclass 11 (large omnivores and herbivores), Subclass 21 (chimpanzee): EO = 0.92
+Superclass 11 (large omnivores and herbivores), Subclass 19 (cattle): EO = 0.92
+Superclass 11 (large omnivores and herbivores), Subclass 31 (elephant): EO = 0.92
+Superclass 11 (large omnivores and herbivores), Subclass 38 (kangaroo): EO = 0.92
+Superclass 7 (insects), Subclass 14 (butterfly): EO = 0.87
+Superclass 7 (insects), Subclass 24 (cockroach): EO = 0.87
+Superclass 7 (insects), Subclass 6 (bee): EO = 0.87
+Superclass 7 (insects), Subclass 7 (beetle): EO = 0.87
+Superclass 7 (insects), Subclass 18 (caterpillar): EO = 0.87
+Superclass 12 (medium-sized mammals), Subclass 75 (skunk): EO = 0.8140000000000001
+Superclass 12 (medium-sized mammals), Subclass 63 (porcupine): EO = 0.8140000000000001
+Superclass 12 (medium-sized mammals), Subclass 66 (raccoon): EO = 0.8140000000000001
+Superclass 12 (medium-sized mammals), Subclass 64 (possum): EO = 0.8140000000000001
+Superclass 12 (medium-sized mammals), Subclass 34 (fox): EO = 0.8140000000000001
+Superclass 19 (vehicles 2), Subclass 81 (streetcar): EO = 0.9
+Superclass 19 (vehicles 2), Subclass 69 (rocket): EO = 0.9
+Superclass 19 (vehicles 2), Subclass 41 (lawn_mower): EO = 0.9
+Superclass 19 (vehicles 2), Subclass 89 (tractor): EO = 0.9
+Superclass 19 (vehicles 2), Subclass 85 (tank): EO = 0.9
+Superclass 5 (household electrical devices), Subclass 40 (lamp): EO = 0.8700000000000001
+Superclass 5 (household electrical devices), Subclass 39 (keyboard): EO = 0.8700000000000001
+Superclass 5 (household electrical devices), Subclass 22 (clock): EO = 0.8700000000000001
+Superclass 5 (household electrical devices), Subclass 87 (television): EO = 0.8700000000000001
+Superclass 5 (household electrical devices), Subclass 86 (telephone): EO = 0.8700000000000001
+Superclass 8 (large carnivores), Subclass 43 (lion): EO = 0.842
+Superclass 8 (large carnivores), Subclass 97 (wolf): EO = 0.842
+Superclass 8 (large carnivores), Subclass 42 (leopard): EO = 0.842
+Superclass 8 (large carnivores), Subclass 3 (bear): EO = 0.842
+Superclass 8 (large carnivores), Subclass 88 (tiger): EO = 0.842
+Superclass 15 (reptiles), Subclass 29 (dinosaur): EO = 0.9
+Superclass 15 (reptiles), Subclass 93 (turtle): EO = 0.9
+Superclass 15 (reptiles), Subclass 27 (crocodile): EO = 0.9
+Superclass 15 (reptiles), Subclass 78 (snake): EO = 0.9
+Superclass 15 (reptiles), Subclass 44 (lizard): EO = 0.9
+Superclass 3 (food containers), Subclass 16 (can): EO = 0.884
+Superclass 3 (food containers), Subclass 61 (plate): EO = 0.884
+Superclass 3 (food containers), Subclass 9 (bottle): EO = 0.884
+Superclass 3 (food containers), Subclass 10 (bowl): EO = 0.884
+Superclass 3 (food containers), Subclass 28 (cup): EO = 0.884
+Superclass 18 (vehicles 1), Subclass 8 (bicycle): EO = 0.85
+Superclass 18 (vehicles 1), Subclass 58 (pickup_truck): EO = 0.85
+Superclass 18 (vehicles 1), Subclass 90 (train): EO = 0.85
+Superclass 18 (vehicles 1), Subclass 13 (bus): EO = 0.85
+Superclass 18 (vehicles 1), Subclass 48 (motorcycle): EO = 0.85
+Superclass 6 (household furniture), Subclass 20 (chair): EO = 0.7859999999999999
+Superclass 6 (household furniture), Subclass 25 (couch): EO = 0.7859999999999999
+Superclass 6 (household furniture), Subclass 94 (wardrobe): EO = 0.7859999999999999
+Superclass 6 (household furniture), Subclass 84 (table): EO = 0.7859999999999999
+Superclass 6 (household furniture), Subclass 5 (bed): EO = 0.7859999999999999
+Superclass 17 (trees), Subclass 56 (palm_tree): EO = 0.816
+Superclass 17 (trees), Subclass 52 (oak_tree): EO = 0.816
+Superclass 17 (trees), Subclass 47 (maple_tree): EO = 0.816
+Superclass 17 (trees), Subclass 59 (pine_tree): EO = 0.816
+Superclass 17 (trees), Subclass 96 (willow_tree): EO = 0.816
+Superclass 1 (fish), Subclass 73 (shark): EO = 0.948
+Superclass 1 (fish), Subclass 32 (flatfish): EO = 0.948
+Superclass 1 (fish), Subclass 67 (ray): EO = 0.948
+Superclass 1 (fish), Subclass 91 (trout): EO = 0.948
+Superclass 1 (fish), Subclass 1 (aquarium_fish): EO = 0.948
+Superclass 14 (people), Subclass 11 (boy): EO = 0.904
+Superclass 14 (people), Subclass 2 (baby): EO = 0.904
+Superclass 14 (people), Subclass 35 (girl): EO = 0.904
+Superclass 14 (people), Subclass 46 (man): EO = 0.904
+Superclass 14 (people), Subclass 98 (woman): EO = 0.904
+Superclass 9 (large man-made outdoor things), Subclass 37 (house): EO = 0.8140000000000001
+Superclass 9 (large man-made outdoor things), Subclass 17 (castle): EO = 0.8140000000000001
+Superclass 9 (large man-made outdoor things), Subclass 76 (skyscraper): EO = 0.8140000000000001
+Superclass 9 (large man-made outdoor things), Subclass 12 (bridge): EO = 0.8140000000000001
+Superclass 9 (large man-made outdoor things), Subclass 68 (road): EO = 0.8140000000000001
+Superclass 13 (non-insect invertebrates), Subclass 77 (snail): EO = 0.912
+Superclass 13 (non-insect invertebrates), Subclass 26 (crab): EO = 0.912
+Superclass 13 (non-insect invertebrates), Subclass 45 (lobster): EO = 0.912
+Superclass 13 (non-insect invertebrates), Subclass 99 (worm): EO = 0.912
+Superclass 13 (non-insect invertebrates), Subclass 79 (spider): EO = 0.912
+Superclass 16 (small mammals), Subclass 65 (rabbit): EO = 0.9319999999999999
+Superclass 16 (small mammals), Subclass 50 (mouse): EO = 0.9319999999999999
+Superclass 16 (small mammals), Subclass 74 (shrew): EO = 0.9319999999999999
+Superclass 16 (small mammals), Subclass 36 (hamster): EO = 0.9319999999999999
+Superclass 16 (small mammals), Subclass 80 (squirrel): EO = 0.9319999999999999
+
+==================================================
+
+EO Results for test_results_3.csv:
+Superclass 10 (large natural outdoor scenes), Subclass 49 (mountain): EO = 0.76
+Superclass 10 (large natural outdoor scenes), Subclass 33 (forest): EO = 0.76
+Superclass 10 (large natural outdoor scenes), Subclass 71 (sea): EO = 0.76
+Superclass 10 (large natural outdoor scenes), Subclass 23 (cloud): EO = 0.76
+Superclass 10 (large natural outdoor scenes), Subclass 60 (plain): EO = 0.76
+Superclass 0 (aquatic mammals), Subclass 72 (seal): EO = 0.79
+Superclass 0 (aquatic mammals), Subclass 4 (beaver): EO = 0.79
+Superclass 0 (aquatic mammals), Subclass 95 (whale): EO = 0.79
+Superclass 0 (aquatic mammals), Subclass 30 (dolphin): EO = 0.79
+Superclass 0 (aquatic mammals), Subclass 55 (otter): EO = 0.79
+Superclass 4 (fruit and vegetables), Subclass 51 (mushroom): EO = 0.766
+Superclass 4 (fruit and vegetables), Subclass 0 (apple): EO = 0.766
+Superclass 4 (fruit and vegetables), Subclass 53 (orange): EO = 0.766
+Superclass 4 (fruit and vegetables), Subclass 57 (pear): EO = 0.766
+Superclass 4 (fruit and vegetables), Subclass 83 (sweet_pepper): EO = 0.766
+Superclass 2 (flowers), Subclass 92 (tulip): EO = 0.894
+Superclass 2 (flowers), Subclass 70 (rose): EO = 0.894
+Superclass 2 (flowers), Subclass 82 (sunflower): EO = 0.894
+Superclass 2 (flowers), Subclass 54 (orchid): EO = 0.894
+Superclass 2 (flowers), Subclass 62 (poppy): EO = 0.894
+Superclass 11 (large omnivores and herbivores), Subclass 15 (camel): EO = 0.918
+Superclass 11 (large omnivores and herbivores), Subclass 21 (chimpanzee): EO = 0.918
+Superclass 11 (large omnivores and herbivores), Subclass 19 (cattle): EO = 0.918
+Superclass 11 (large omnivores and herbivores), Subclass 31 (elephant): EO = 0.918
+Superclass 11 (large omnivores and herbivores), Subclass 38 (kangaroo): EO = 0.918
+Superclass 7 (insects), Subclass 14 (butterfly): EO = 0.826
+Superclass 7 (insects), Subclass 24 (cockroach): EO = 0.826
+Superclass 7 (insects), Subclass 6 (bee): EO = 0.826
+Superclass 7 (insects), Subclass 7 (beetle): EO = 0.826
+Superclass 7 (insects), Subclass 18 (caterpillar): EO = 0.826
+Superclass 12 (medium-sized mammals), Subclass 75 (skunk): EO = 0.8140000000000001
+Superclass 12 (medium-sized mammals), Subclass 63 (porcupine): EO = 0.8140000000000001
+Superclass 12 (medium-sized mammals), Subclass 66 (raccoon): EO = 0.8140000000000001
+Superclass 12 (medium-sized mammals), Subclass 64 (possum): EO = 0.8140000000000001
+Superclass 12 (medium-sized mammals), Subclass 34 (fox): EO = 0.8140000000000001
+Superclass 19 (vehicles 2), Subclass 81 (streetcar): EO = 0.864
+Superclass 19 (vehicles 2), Subclass 69 (rocket): EO = 0.864
+Superclass 19 (vehicles 2), Subclass 41 (lawn_mower): EO = 0.864
+Superclass 19 (vehicles 2), Subclass 89 (tractor): EO = 0.864
+Superclass 19 (vehicles 2), Subclass 85 (tank): EO = 0.864
+Superclass 5 (household electrical devices), Subclass 40 (lamp): EO = 0.9339999999999999
+Superclass 5 (household electrical devices), Subclass 39 (keyboard): EO = 0.9339999999999999
+Superclass 5 (household electrical devices), Subclass 22 (clock): EO = 0.9339999999999999
+Superclass 5 (household electrical devices), Subclass 87 (television): EO = 0.9339999999999999
+Superclass 5 (household electrical devices), Subclass 86 (telephone): EO = 0.9339999999999999
+Superclass 8 (large carnivores), Subclass 43 (lion): EO = 0.8160000000000001
+Superclass 8 (large carnivores), Subclass 97 (wolf): EO = 0.8160000000000001
+Superclass 8 (large carnivores), Subclass 42 (leopard): EO = 0.8160000000000001
+Superclass 8 (large carnivores), Subclass 3 (bear): EO = 0.8160000000000001
+Superclass 8 (large carnivores), Subclass 88 (tiger): EO = 0.8160000000000001
+Superclass 15 (reptiles), Subclass 29 (dinosaur): EO = 0.914
+Superclass 15 (reptiles), Subclass 93 (turtle): EO = 0.914
+Superclass 15 (reptiles), Subclass 27 (crocodile): EO = 0.914
+Superclass 15 (reptiles), Subclass 78 (snake): EO = 0.914
+Superclass 15 (reptiles), Subclass 44 (lizard): EO = 0.914
+Superclass 3 (food containers), Subclass 16 (can): EO = 0.8340000000000001
+Superclass 3 (food containers), Subclass 61 (plate): EO = 0.8340000000000001
+Superclass 3 (food containers), Subclass 9 (bottle): EO = 0.8340000000000001
+Superclass 3 (food containers), Subclass 10 (bowl): EO = 0.8340000000000001
+Superclass 3 (food containers), Subclass 28 (cup): EO = 0.8340000000000001
+Superclass 18 (vehicles 1), Subclass 8 (bicycle): EO = 0.886
+Superclass 18 (vehicles 1), Subclass 58 (pickup_truck): EO = 0.886
+Superclass 18 (vehicles 1), Subclass 90 (train): EO = 0.886
+Superclass 18 (vehicles 1), Subclass 13 (bus): EO = 0.886
+Superclass 18 (vehicles 1), Subclass 48 (motorcycle): EO = 0.886
+Superclass 6 (household furniture), Subclass 20 (chair): EO = 0.782
+Superclass 6 (household furniture), Subclass 25 (couch): EO = 0.782
+Superclass 6 (household furniture), Subclass 94 (wardrobe): EO = 0.782
+Superclass 6 (household furniture), Subclass 84 (table): EO = 0.782
+Superclass 6 (household furniture), Subclass 5 (bed): EO = 0.782
+Superclass 17 (trees), Subclass 56 (palm_tree): EO = 0.878
+Superclass 17 (trees), Subclass 52 (oak_tree): EO = 0.878
+Superclass 17 (trees), Subclass 47 (maple_tree): EO = 0.878
+Superclass 17 (trees), Subclass 59 (pine_tree): EO = 0.878
+Superclass 17 (trees), Subclass 96 (willow_tree): EO = 0.878
+Superclass 1 (fish), Subclass 73 (shark): EO = 0.9159999999999999
+Superclass 1 (fish), Subclass 32 (flatfish): EO = 0.9159999999999999
+Superclass 1 (fish), Subclass 67 (ray): EO = 0.9159999999999999
+Superclass 1 (fish), Subclass 91 (trout): EO = 0.9159999999999999
+Superclass 1 (fish), Subclass 1 (aquarium_fish): EO = 0.9159999999999999
+Superclass 14 (people), Subclass 11 (boy): EO = 0.952
+Superclass 14 (people), Subclass 2 (baby): EO = 0.952
+Superclass 14 (people), Subclass 35 (girl): EO = 0.952
+Superclass 14 (people), Subclass 46 (man): EO = 0.952
+Superclass 14 (people), Subclass 98 (woman): EO = 0.952
+Superclass 9 (large man-made outdoor things), Subclass 37 (house): EO = 0.834
+Superclass 9 (large man-made outdoor things), Subclass 17 (castle): EO = 0.834
+Superclass 9 (large man-made outdoor things), Subclass 76 (skyscraper): EO = 0.834
+Superclass 9 (large man-made outdoor things), Subclass 12 (bridge): EO = 0.834
+Superclass 9 (large man-made outdoor things), Subclass 68 (road): EO = 0.834
+Superclass 13 (non-insect invertebrates), Subclass 77 (snail): EO = 0.94
+Superclass 13 (non-insect invertebrates), Subclass 26 (crab): EO = 0.94
+Superclass 13 (non-insect invertebrates), Subclass 45 (lobster): EO = 0.94
+Superclass 13 (non-insect invertebrates), Subclass 99 (worm): EO = 0.94
+Superclass 13 (non-insect invertebrates), Subclass 79 (spider): EO = 0.94
+Superclass 16 (small mammals), Subclass 65 (rabbit): EO = 0.89
+Superclass 16 (small mammals), Subclass 50 (mouse): EO = 0.89
+Superclass 16 (small mammals), Subclass 74 (shrew): EO = 0.89
+Superclass 16 (small mammals), Subclass 36 (hamster): EO = 0.89
+Superclass 16 (small mammals), Subclass 80 (squirrel): EO = 0.89
+
+==================================================
+
+EO Results for test_results_4.csv:
+Superclass 10 (large natural outdoor scenes), Subclass 49 (mountain): EO = 0.792
+Superclass 10 (large natural outdoor scenes), Subclass 33 (forest): EO = 0.792
+Superclass 10 (large natural outdoor scenes), Subclass 71 (sea): EO = 0.792
+Superclass 10 (large natural outdoor scenes), Subclass 23 (cloud): EO = 0.792
+Superclass 10 (large natural outdoor scenes), Subclass 60 (plain): EO = 0.792
+Superclass 0 (aquatic mammals), Subclass 72 (seal): EO = 0.772
+Superclass 0 (aquatic mammals), Subclass 4 (beaver): EO = 0.772
+Superclass 0 (aquatic mammals), Subclass 95 (whale): EO = 0.772
+Superclass 0 (aquatic mammals), Subclass 30 (dolphin): EO = 0.772
+Superclass 0 (aquatic mammals), Subclass 55 (otter): EO = 0.772
+Superclass 4 (fruit and vegetables), Subclass 51 (mushroom): EO = 0.834
+Superclass 4 (fruit and vegetables), Subclass 0 (apple): EO = 0.834
+Superclass 4 (fruit and vegetables), Subclass 53 (orange): EO = 0.834
+Superclass 4 (fruit and vegetables), Subclass 57 (pear): EO = 0.834
+Superclass 4 (fruit and vegetables), Subclass 83 (sweet_pepper): EO = 0.834
+Superclass 2 (flowers), Subclass 92 (tulip): EO = 0.92
+Superclass 2 (flowers), Subclass 70 (rose): EO = 0.92
+Superclass 2 (flowers), Subclass 82 (sunflower): EO = 0.92
+Superclass 2 (flowers), Subclass 54 (orchid): EO = 0.92
+Superclass 2 (flowers), Subclass 62 (poppy): EO = 0.92
+Superclass 11 (large omnivores and herbivores), Subclass 15 (camel): EO = 0.904
+Superclass 11 (large omnivores and herbivores), Subclass 21 (chimpanzee): EO = 0.904
+Superclass 11 (large omnivores and herbivores), Subclass 19 (cattle): EO = 0.904
+Superclass 11 (large omnivores and herbivores), Subclass 31 (elephant): EO = 0.904
+Superclass 11 (large omnivores and herbivores), Subclass 38 (kangaroo): EO = 0.904
+Superclass 7 (insects), Subclass 14 (butterfly): EO = 0.8240000000000001
+Superclass 7 (insects), Subclass 24 (cockroach): EO = 0.8240000000000001
+Superclass 7 (insects), Subclass 6 (bee): EO = 0.8240000000000001
+Superclass 7 (insects), Subclass 7 (beetle): EO = 0.8240000000000001
+Superclass 7 (insects), Subclass 18 (caterpillar): EO = 0.8240000000000001
+Superclass 12 (medium-sized mammals), Subclass 75 (skunk): EO = 0.796
+Superclass 12 (medium-sized mammals), Subclass 63 (porcupine): EO = 0.796
+Superclass 12 (medium-sized mammals), Subclass 66 (raccoon): EO = 0.796
+Superclass 12 (medium-sized mammals), Subclass 64 (possum): EO = 0.796
+Superclass 12 (medium-sized mammals), Subclass 34 (fox): EO = 0.796
+Superclass 19 (vehicles 2), Subclass 81 (streetcar): EO = 0.832
+Superclass 19 (vehicles 2), Subclass 69 (rocket): EO = 0.832
+Superclass 19 (vehicles 2), Subclass 41 (lawn_mower): EO = 0.832
+Superclass 19 (vehicles 2), Subclass 89 (tractor): EO = 0.832
+Superclass 19 (vehicles 2), Subclass 85 (tank): EO = 0.832
+Superclass 5 (household electrical devices), Subclass 40 (lamp): EO = 0.8959999999999999
+Superclass 5 (household electrical devices), Subclass 39 (keyboard): EO = 0.8959999999999999
+Superclass 5 (household electrical devices), Subclass 22 (clock): EO = 0.8959999999999999
+Superclass 5 (household electrical devices), Subclass 87 (television): EO = 0.8959999999999999
+Superclass 5 (household electrical devices), Subclass 86 (telephone): EO = 0.8959999999999999
+Superclass 8 (large carnivores), Subclass 43 (lion): EO = 0.888
+Superclass 8 (large carnivores), Subclass 97 (wolf): EO = 0.888
+Superclass 8 (large carnivores), Subclass 42 (leopard): EO = 0.888
+Superclass 8 (large carnivores), Subclass 3 (bear): EO = 0.888
+Superclass 8 (large carnivores), Subclass 88 (tiger): EO = 0.888
+Superclass 15 (reptiles), Subclass 29 (dinosaur): EO = 0.898
+Superclass 15 (reptiles), Subclass 93 (turtle): EO = 0.898
+Superclass 15 (reptiles), Subclass 27 (crocodile): EO = 0.898
+Superclass 15 (reptiles), Subclass 78 (snake): EO = 0.898
+Superclass 15 (reptiles), Subclass 44 (lizard): EO = 0.898
+Superclass 3 (food containers), Subclass 16 (can): EO = 0.818
+Superclass 3 (food containers), Subclass 61 (plate): EO = 0.818
+Superclass 3 (food containers), Subclass 9 (bottle): EO = 0.818
+Superclass 3 (food containers), Subclass 10 (bowl): EO = 0.818
+Superclass 3 (food containers), Subclass 28 (cup): EO = 0.818
+Superclass 18 (vehicles 1), Subclass 8 (bicycle): EO = 0.834
+Superclass 18 (vehicles 1), Subclass 58 (pickup_truck): EO = 0.834
+Superclass 18 (vehicles 1), Subclass 90 (train): EO = 0.834
+Superclass 18 (vehicles 1), Subclass 13 (bus): EO = 0.834
+Superclass 18 (vehicles 1), Subclass 48 (motorcycle): EO = 0.834
+Superclass 6 (household furniture), Subclass 20 (chair): EO = 0.794
+Superclass 6 (household furniture), Subclass 25 (couch): EO = 0.794
+Superclass 6 (household furniture), Subclass 94 (wardrobe): EO = 0.794
+Superclass 6 (household furniture), Subclass 84 (table): EO = 0.794
+Superclass 6 (household furniture), Subclass 5 (bed): EO = 0.794
+Superclass 17 (trees), Subclass 56 (palm_tree): EO = 0.816
+Superclass 17 (trees), Subclass 52 (oak_tree): EO = 0.816
+Superclass 17 (trees), Subclass 47 (maple_tree): EO = 0.816
+Superclass 17 (trees), Subclass 59 (pine_tree): EO = 0.816
+Superclass 17 (trees), Subclass 96 (willow_tree): EO = 0.816
+Superclass 1 (fish), Subclass 73 (shark): EO = 0.866
+Superclass 1 (fish), Subclass 32 (flatfish): EO = 0.866
+Superclass 1 (fish), Subclass 67 (ray): EO = 0.866
+Superclass 1 (fish), Subclass 91 (trout): EO = 0.866
+Superclass 1 (fish), Subclass 1 (aquarium_fish): EO = 0.866
+Superclass 14 (people), Subclass 11 (boy): EO = 0.946
+Superclass 14 (people), Subclass 2 (baby): EO = 0.946
+Superclass 14 (people), Subclass 35 (girl): EO = 0.946
+Superclass 14 (people), Subclass 46 (man): EO = 0.946
+Superclass 14 (people), Subclass 98 (woman): EO = 0.946
+Superclass 9 (large man-made outdoor things), Subclass 37 (house): EO = 0.82
+Superclass 9 (large man-made outdoor things), Subclass 17 (castle): EO = 0.82
+Superclass 9 (large man-made outdoor things), Subclass 76 (skyscraper): EO = 0.82
+Superclass 9 (large man-made outdoor things), Subclass 12 (bridge): EO = 0.82
+Superclass 9 (large man-made outdoor things), Subclass 68 (road): EO = 0.82
+Superclass 13 (non-insect invertebrates), Subclass 77 (snail): EO = 0.894
+Superclass 13 (non-insect invertebrates), Subclass 26 (crab): EO = 0.894
+Superclass 13 (non-insect invertebrates), Subclass 45 (lobster): EO = 0.894
+Superclass 13 (non-insect invertebrates), Subclass 99 (worm): EO = 0.894
+Superclass 13 (non-insect invertebrates), Subclass 79 (spider): EO = 0.894
+Superclass 16 (small mammals), Subclass 65 (rabbit): EO = 0.918
+Superclass 16 (small mammals), Subclass 50 (mouse): EO = 0.918
+Superclass 16 (small mammals), Subclass 74 (shrew): EO = 0.918
+Superclass 16 (small mammals), Subclass 36 (hamster): EO = 0.918
+Superclass 16 (small mammals), Subclass 80 (squirrel): EO = 0.918
+
+==================================================
+
+EO Results for test_results_5.csv:
+Superclass 10 (large natural outdoor scenes), Subclass 49 (mountain): EO = 0.8160000000000001
+Superclass 10 (large natural outdoor scenes), Subclass 33 (forest): EO = 0.8160000000000001
+Superclass 10 (large natural outdoor scenes), Subclass 71 (sea): EO = 0.8160000000000001
+Superclass 10 (large natural outdoor scenes), Subclass 23 (cloud): EO = 0.8160000000000001
+Superclass 10 (large natural outdoor scenes), Subclass 60 (plain): EO = 0.8160000000000001
+Superclass 0 (aquatic mammals), Subclass 72 (seal): EO = 0.768
+Superclass 0 (aquatic mammals), Subclass 4 (beaver): EO = 0.768
+Superclass 0 (aquatic mammals), Subclass 95 (whale): EO = 0.768
+Superclass 0 (aquatic mammals), Subclass 30 (dolphin): EO = 0.768
+Superclass 0 (aquatic mammals), Subclass 55 (otter): EO = 0.768
+Superclass 4 (fruit and vegetables), Subclass 51 (mushroom): EO = 0.74
+Superclass 4 (fruit and vegetables), Subclass 0 (apple): EO = 0.74
+Superclass 4 (fruit and vegetables), Subclass 53 (orange): EO = 0.74
+Superclass 4 (fruit and vegetables), Subclass 57 (pear): EO = 0.74
+Superclass 4 (fruit and vegetables), Subclass 83 (sweet_pepper): EO = 0.74
+Superclass 2 (flowers), Subclass 92 (tulip): EO = 0.9299999999999999
+Superclass 2 (flowers), Subclass 70 (rose): EO = 0.9299999999999999
+Superclass 2 (flowers), Subclass 82 (sunflower): EO = 0.9299999999999999
+Superclass 2 (flowers), Subclass 54 (orchid): EO = 0.9299999999999999
+Superclass 2 (flowers), Subclass 62 (poppy): EO = 0.9299999999999999
+Superclass 11 (large omnivores and herbivores), Subclass 15 (camel): EO = 0.87
+Superclass 11 (large omnivores and herbivores), Subclass 21 (chimpanzee): EO = 0.87
+Superclass 11 (large omnivores and herbivores), Subclass 19 (cattle): EO = 0.87
+Superclass 11 (large omnivores and herbivores), Subclass 31 (elephant): EO = 0.87
+Superclass 11 (large omnivores and herbivores), Subclass 38 (kangaroo): EO = 0.87
+Superclass 7 (insects), Subclass 14 (butterfly): EO = 0.802
+Superclass 7 (insects), Subclass 24 (cockroach): EO = 0.802
+Superclass 7 (insects), Subclass 6 (bee): EO = 0.802
+Superclass 7 (insects), Subclass 7 (beetle): EO = 0.802
+Superclass 7 (insects), Subclass 18 (caterpillar): EO = 0.802
+Superclass 12 (medium-sized mammals), Subclass 75 (skunk): EO = 0.852
+Superclass 12 (medium-sized mammals), Subclass 63 (porcupine): EO = 0.852
+Superclass 12 (medium-sized mammals), Subclass 66 (raccoon): EO = 0.852
+Superclass 12 (medium-sized mammals), Subclass 64 (possum): EO = 0.852
+Superclass 12 (medium-sized mammals), Subclass 34 (fox): EO = 0.852
+Superclass 19 (vehicles 2), Subclass 81 (streetcar): EO = 0.8620000000000001
+Superclass 19 (vehicles 2), Subclass 69 (rocket): EO = 0.8620000000000001
+Superclass 19 (vehicles 2), Subclass 41 (lawn_mower): EO = 0.8620000000000001
+Superclass 19 (vehicles 2), Subclass 89 (tractor): EO = 0.8620000000000001
+Superclass 19 (vehicles 2), Subclass 85 (tank): EO = 0.8620000000000001
+Superclass 5 (household electrical devices), Subclass 40 (lamp): EO = 0.9199999999999999
+Superclass 5 (household electrical devices), Subclass 39 (keyboard): EO = 0.9199999999999999
+Superclass 5 (household electrical devices), Subclass 22 (clock): EO = 0.9199999999999999
+Superclass 5 (household electrical devices), Subclass 87 (television): EO = 0.9199999999999999
+Superclass 5 (household electrical devices), Subclass 86 (telephone): EO = 0.9199999999999999
+Superclass 8 (large carnivores), Subclass 43 (lion): EO = 0.858
+Superclass 8 (large carnivores), Subclass 97 (wolf): EO = 0.858
+Superclass 8 (large carnivores), Subclass 42 (leopard): EO = 0.858
+Superclass 8 (large carnivores), Subclass 3 (bear): EO = 0.858
+Superclass 8 (large carnivores), Subclass 88 (tiger): EO = 0.858
+Superclass 15 (reptiles), Subclass 29 (dinosaur): EO = 0.902
+Superclass 15 (reptiles), Subclass 93 (turtle): EO = 0.902
+Superclass 15 (reptiles), Subclass 27 (crocodile): EO = 0.902
+Superclass 15 (reptiles), Subclass 78 (snake): EO = 0.902
+Superclass 15 (reptiles), Subclass 44 (lizard): EO = 0.902
+Superclass 3 (food containers), Subclass 16 (can): EO = 0.866
+Superclass 3 (food containers), Subclass 61 (plate): EO = 0.866
+Superclass 3 (food containers), Subclass 9 (bottle): EO = 0.866
+Superclass 3 (food containers), Subclass 10 (bowl): EO = 0.866
+Superclass 3 (food containers), Subclass 28 (cup): EO = 0.866
+Superclass 18 (vehicles 1), Subclass 8 (bicycle): EO = 0.8380000000000001
+Superclass 18 (vehicles 1), Subclass 58 (pickup_truck): EO = 0.8380000000000001
+Superclass 18 (vehicles 1), Subclass 90 (train): EO = 0.8380000000000001
+Superclass 18 (vehicles 1), Subclass 13 (bus): EO = 0.8380000000000001
+Superclass 18 (vehicles 1), Subclass 48 (motorcycle): EO = 0.8380000000000001
+Superclass 6 (household furniture), Subclass 20 (chair): EO = 0.764
+Superclass 6 (household furniture), Subclass 25 (couch): EO = 0.764
+Superclass 6 (household furniture), Subclass 94 (wardrobe): EO = 0.764
+Superclass 6 (household furniture), Subclass 84 (table): EO = 0.764
+Superclass 6 (household furniture), Subclass 5 (bed): EO = 0.764
+Superclass 17 (trees), Subclass 56 (palm_tree): EO = 0.844
+Superclass 17 (trees), Subclass 52 (oak_tree): EO = 0.844
+Superclass 17 (trees), Subclass 47 (maple_tree): EO = 0.844
+Superclass 17 (trees), Subclass 59 (pine_tree): EO = 0.844
+Superclass 17 (trees), Subclass 96 (willow_tree): EO = 0.844
+Superclass 1 (fish), Subclass 73 (shark): EO = 0.914
+Superclass 1 (fish), Subclass 32 (flatfish): EO = 0.914
+Superclass 1 (fish), Subclass 67 (ray): EO = 0.914
+Superclass 1 (fish), Subclass 91 (trout): EO = 0.914
+Superclass 1 (fish), Subclass 1 (aquarium_fish): EO = 0.914
+Superclass 14 (people), Subclass 11 (boy): EO = 0.946
+Superclass 14 (people), Subclass 2 (baby): EO = 0.946
+Superclass 14 (people), Subclass 35 (girl): EO = 0.946
+Superclass 14 (people), Subclass 46 (man): EO = 0.946
+Superclass 14 (people), Subclass 98 (woman): EO = 0.946
+Superclass 9 (large man-made outdoor things), Subclass 37 (house): EO = 0.81
+Superclass 9 (large man-made outdoor things), Subclass 17 (castle): EO = 0.81
+Superclass 9 (large man-made outdoor things), Subclass 76 (skyscraper): EO = 0.81
+Superclass 9 (large man-made outdoor things), Subclass 12 (bridge): EO = 0.81
+Superclass 9 (large man-made outdoor things), Subclass 68 (road): EO = 0.81
+Superclass 13 (non-insect invertebrates), Subclass 77 (snail): EO = 0.904
+Superclass 13 (non-insect invertebrates), Subclass 26 (crab): EO = 0.904
+Superclass 13 (non-insect invertebrates), Subclass 45 (lobster): EO = 0.904
+Superclass 13 (non-insect invertebrates), Subclass 99 (worm): EO = 0.904
+Superclass 13 (non-insect invertebrates), Subclass 79 (spider): EO = 0.904
+Superclass 16 (small mammals), Subclass 65 (rabbit): EO = 0.858
+Superclass 16 (small mammals), Subclass 50 (mouse): EO = 0.858
+Superclass 16 (small mammals), Subclass 74 (shrew): EO = 0.858
+Superclass 16 (small mammals), Subclass 36 (hamster): EO = 0.858
+Superclass 16 (small mammals), Subclass 80 (squirrel): EO = 0.858
+
+==================================================
+
+EO Results for test_results_6.csv:
+Superclass 10 (large natural outdoor scenes), Subclass 49 (mountain): EO = 0.774
+Superclass 10 (large natural outdoor scenes), Subclass 33 (forest): EO = 0.774
+Superclass 10 (large natural outdoor scenes), Subclass 71 (sea): EO = 0.774
+Superclass 10 (large natural outdoor scenes), Subclass 23 (cloud): EO = 0.774
+Superclass 10 (large natural outdoor scenes), Subclass 60 (plain): EO = 0.774
+Superclass 0 (aquatic mammals), Subclass 72 (seal): EO = 0.7939999999999999
+Superclass 0 (aquatic mammals), Subclass 4 (beaver): EO = 0.7939999999999999
+Superclass 0 (aquatic mammals), Subclass 95 (whale): EO = 0.7939999999999999
+Superclass 0 (aquatic mammals), Subclass 30 (dolphin): EO = 0.7939999999999999
+Superclass 0 (aquatic mammals), Subclass 55 (otter): EO = 0.7939999999999999
+Superclass 4 (fruit and vegetables), Subclass 51 (mushroom): EO = 0.7160000000000001
+Superclass 4 (fruit and vegetables), Subclass 0 (apple): EO = 0.7160000000000001
+Superclass 4 (fruit and vegetables), Subclass 53 (orange): EO = 0.7160000000000001
+Superclass 4 (fruit and vegetables), Subclass 57 (pear): EO = 0.7160000000000001
+Superclass 4 (fruit and vegetables), Subclass 83 (sweet_pepper): EO = 0.7160000000000001
+Superclass 2 (flowers), Subclass 92 (tulip): EO = 0.896
+Superclass 2 (flowers), Subclass 70 (rose): EO = 0.896
+Superclass 2 (flowers), Subclass 82 (sunflower): EO = 0.896
+Superclass 2 (flowers), Subclass 54 (orchid): EO = 0.896
+Superclass 2 (flowers), Subclass 62 (poppy): EO = 0.896
+Superclass 11 (large omnivores and herbivores), Subclass 15 (camel): EO = 0.878
+Superclass 11 (large omnivores and herbivores), Subclass 21 (chimpanzee): EO = 0.878
+Superclass 11 (large omnivores and herbivores), Subclass 19 (cattle): EO = 0.878
+Superclass 11 (large omnivores and herbivores), Subclass 31 (elephant): EO = 0.878
+Superclass 11 (large omnivores and herbivores), Subclass 38 (kangaroo): EO = 0.878
+Superclass 7 (insects), Subclass 14 (butterfly): EO = 0.792
+Superclass 7 (insects), Subclass 24 (cockroach): EO = 0.792
+Superclass 7 (insects), Subclass 6 (bee): EO = 0.792
+Superclass 7 (insects), Subclass 7 (beetle): EO = 0.792
+Superclass 7 (insects), Subclass 18 (caterpillar): EO = 0.792
+Superclass 12 (medium-sized mammals), Subclass 75 (skunk): EO = 0.822
+Superclass 12 (medium-sized mammals), Subclass 63 (porcupine): EO = 0.822
+Superclass 12 (medium-sized mammals), Subclass 66 (raccoon): EO = 0.822
+Superclass 12 (medium-sized mammals), Subclass 64 (possum): EO = 0.822
+Superclass 12 (medium-sized mammals), Subclass 34 (fox): EO = 0.822
+Superclass 19 (vehicles 2), Subclass 81 (streetcar): EO = 0.8420000000000001
+Superclass 19 (vehicles 2), Subclass 69 (rocket): EO = 0.8420000000000001
+Superclass 19 (vehicles 2), Subclass 41 (lawn_mower): EO = 0.8420000000000001
+Superclass 19 (vehicles 2), Subclass 89 (tractor): EO = 0.8420000000000001
+Superclass 19 (vehicles 2), Subclass 85 (tank): EO = 0.8420000000000001
+Superclass 5 (household electrical devices), Subclass 40 (lamp): EO = 0.9359999999999999
+Superclass 5 (household electrical devices), Subclass 39 (keyboard): EO = 0.9359999999999999
+Superclass 5 (household electrical devices), Subclass 22 (clock): EO = 0.9359999999999999
+Superclass 5 (household electrical devices), Subclass 87 (television): EO = 0.9359999999999999
+Superclass 5 (household electrical devices), Subclass 86 (telephone): EO = 0.9359999999999999
+Superclass 8 (large carnivores), Subclass 43 (lion): EO = 0.832
+Superclass 8 (large carnivores), Subclass 97 (wolf): EO = 0.832
+Superclass 8 (large carnivores), Subclass 42 (leopard): EO = 0.832
+Superclass 8 (large carnivores), Subclass 3 (bear): EO = 0.832
+Superclass 8 (large carnivores), Subclass 88 (tiger): EO = 0.832
+Superclass 15 (reptiles), Subclass 29 (dinosaur): EO = 0.956
+Superclass 15 (reptiles), Subclass 93 (turtle): EO = 0.956
+Superclass 15 (reptiles), Subclass 27 (crocodile): EO = 0.956
+Superclass 15 (reptiles), Subclass 78 (snake): EO = 0.956
+Superclass 15 (reptiles), Subclass 44 (lizard): EO = 0.956
+Superclass 3 (food containers), Subclass 16 (can): EO = 0.878
+Superclass 3 (food containers), Subclass 61 (plate): EO = 0.878
+Superclass 3 (food containers), Subclass 9 (bottle): EO = 0.878
+Superclass 3 (food containers), Subclass 10 (bowl): EO = 0.878
+Superclass 3 (food containers), Subclass 28 (cup): EO = 0.878
+Superclass 18 (vehicles 1), Subclass 8 (bicycle): EO = 0.8520000000000001
+Superclass 18 (vehicles 1), Subclass 58 (pickup_truck): EO = 0.8520000000000001
+Superclass 18 (vehicles 1), Subclass 90 (train): EO = 0.8520000000000001
+Superclass 18 (vehicles 1), Subclass 13 (bus): EO = 0.8520000000000001
+Superclass 18 (vehicles 1), Subclass 48 (motorcycle): EO = 0.8520000000000001
+Superclass 6 (household furniture), Subclass 20 (chair): EO = 0.78
+Superclass 6 (household furniture), Subclass 25 (couch): EO = 0.78
+Superclass 6 (household furniture), Subclass 94 (wardrobe): EO = 0.78
+Superclass 6 (household furniture), Subclass 84 (table): EO = 0.78
+Superclass 6 (household furniture), Subclass 5 (bed): EO = 0.78
+Superclass 17 (trees), Subclass 56 (palm_tree): EO = 0.842
+Superclass 17 (trees), Subclass 52 (oak_tree): EO = 0.842
+Superclass 17 (trees), Subclass 47 (maple_tree): EO = 0.842
+Superclass 17 (trees), Subclass 59 (pine_tree): EO = 0.842
+Superclass 17 (trees), Subclass 96 (willow_tree): EO = 0.842
+Superclass 1 (fish), Subclass 73 (shark): EO = 0.918
+Superclass 1 (fish), Subclass 32 (flatfish): EO = 0.918
+Superclass 1 (fish), Subclass 67 (ray): EO = 0.918
+Superclass 1 (fish), Subclass 91 (trout): EO = 0.918
+Superclass 1 (fish), Subclass 1 (aquarium_fish): EO = 0.918
+Superclass 14 (people), Subclass 11 (boy): EO = 0.918
+Superclass 14 (people), Subclass 2 (baby): EO = 0.918
+Superclass 14 (people), Subclass 35 (girl): EO = 0.918
+Superclass 14 (people), Subclass 46 (man): EO = 0.918
+Superclass 14 (people), Subclass 98 (woman): EO = 0.918
+Superclass 9 (large man-made outdoor things), Subclass 37 (house): EO = 0.848
+Superclass 9 (large man-made outdoor things), Subclass 17 (castle): EO = 0.848
+Superclass 9 (large man-made outdoor things), Subclass 76 (skyscraper): EO = 0.848
+Superclass 9 (large man-made outdoor things), Subclass 12 (bridge): EO = 0.848
+Superclass 9 (large man-made outdoor things), Subclass 68 (road): EO = 0.848
+Superclass 13 (non-insect invertebrates), Subclass 77 (snail): EO = 0.862
+Superclass 13 (non-insect invertebrates), Subclass 26 (crab): EO = 0.862
+Superclass 13 (non-insect invertebrates), Subclass 45 (lobster): EO = 0.862
+Superclass 13 (non-insect invertebrates), Subclass 99 (worm): EO = 0.862
+Superclass 13 (non-insect invertebrates), Subclass 79 (spider): EO = 0.862
+Superclass 16 (small mammals), Subclass 65 (rabbit): EO = 0.896
+Superclass 16 (small mammals), Subclass 50 (mouse): EO = 0.896
+Superclass 16 (small mammals), Subclass 74 (shrew): EO = 0.896
+Superclass 16 (small mammals), Subclass 36 (hamster): EO = 0.896
+Superclass 16 (small mammals), Subclass 80 (squirrel): EO = 0.896
+
+==================================================
+
+EO Results for test_results_7.csv:
+Superclass 10 (large natural outdoor scenes), Subclass 49 (mountain): EO = 0.814
+Superclass 10 (large natural outdoor scenes), Subclass 33 (forest): EO = 0.814
+Superclass 10 (large natural outdoor scenes), Subclass 71 (sea): EO = 0.814
+Superclass 10 (large natural outdoor scenes), Subclass 23 (cloud): EO = 0.814
+Superclass 10 (large natural outdoor scenes), Subclass 60 (plain): EO = 0.814
+Superclass 0 (aquatic mammals), Subclass 72 (seal): EO = 0.758
+Superclass 0 (aquatic mammals), Subclass 4 (beaver): EO = 0.758
+Superclass 0 (aquatic mammals), Subclass 95 (whale): EO = 0.758
+Superclass 0 (aquatic mammals), Subclass 30 (dolphin): EO = 0.758
+Superclass 0 (aquatic mammals), Subclass 55 (otter): EO = 0.758
+Superclass 4 (fruit and vegetables), Subclass 51 (mushroom): EO = 0.736
+Superclass 4 (fruit and vegetables), Subclass 0 (apple): EO = 0.736
+Superclass 4 (fruit and vegetables), Subclass 53 (orange): EO = 0.736
+Superclass 4 (fruit and vegetables), Subclass 57 (pear): EO = 0.736
+Superclass 4 (fruit and vegetables), Subclass 83 (sweet_pepper): EO = 0.736
+Superclass 2 (flowers), Subclass 92 (tulip): EO = 0.85
+Superclass 2 (flowers), Subclass 70 (rose): EO = 0.85
+Superclass 2 (flowers), Subclass 82 (sunflower): EO = 0.85
+Superclass 2 (flowers), Subclass 54 (orchid): EO = 0.85
+Superclass 2 (flowers), Subclass 62 (poppy): EO = 0.85
+Superclass 11 (large omnivores and herbivores), Subclass 15 (camel): EO = 0.858
+Superclass 11 (large omnivores and herbivores), Subclass 21 (chimpanzee): EO = 0.858
+Superclass 11 (large omnivores and herbivores), Subclass 19 (cattle): EO = 0.858
+Superclass 11 (large omnivores and herbivores), Subclass 31 (elephant): EO = 0.858
+Superclass 11 (large omnivores and herbivores), Subclass 38 (kangaroo): EO = 0.858
+Superclass 7 (insects), Subclass 14 (butterfly): EO = 0.8180000000000001
+Superclass 7 (insects), Subclass 24 (cockroach): EO = 0.8180000000000001
+Superclass 7 (insects), Subclass 6 (bee): EO = 0.8180000000000001
+Superclass 7 (insects), Subclass 7 (beetle): EO = 0.8180000000000001
+Superclass 7 (insects), Subclass 18 (caterpillar): EO = 0.8180000000000001
+Superclass 12 (medium-sized mammals), Subclass 75 (skunk): EO = 0.838
+Superclass 12 (medium-sized mammals), Subclass 63 (porcupine): EO = 0.838
+Superclass 12 (medium-sized mammals), Subclass 66 (raccoon): EO = 0.838
+Superclass 12 (medium-sized mammals), Subclass 64 (possum): EO = 0.838
+Superclass 12 (medium-sized mammals), Subclass 34 (fox): EO = 0.838
+Superclass 19 (vehicles 2), Subclass 81 (streetcar): EO = 0.912
+Superclass 19 (vehicles 2), Subclass 69 (rocket): EO = 0.912
+Superclass 19 (vehicles 2), Subclass 41 (lawn_mower): EO = 0.912
+Superclass 19 (vehicles 2), Subclass 89 (tractor): EO = 0.912
+Superclass 19 (vehicles 2), Subclass 85 (tank): EO = 0.912
+Superclass 5 (household electrical devices), Subclass 40 (lamp): EO = 0.946
+Superclass 5 (household electrical devices), Subclass 39 (keyboard): EO = 0.946
+Superclass 5 (household electrical devices), Subclass 22 (clock): EO = 0.946
+Superclass 5 (household electrical devices), Subclass 87 (television): EO = 0.946
+Superclass 5 (household electrical devices), Subclass 86 (telephone): EO = 0.946
+Superclass 8 (large carnivores), Subclass 43 (lion): EO = 0.836
+Superclass 8 (large carnivores), Subclass 97 (wolf): EO = 0.836
+Superclass 8 (large carnivores), Subclass 42 (leopard): EO = 0.836
+Superclass 8 (large carnivores), Subclass 3 (bear): EO = 0.836
+Superclass 8 (large carnivores), Subclass 88 (tiger): EO = 0.836
+Superclass 15 (reptiles), Subclass 29 (dinosaur): EO = 0.9299999999999999
+Superclass 15 (reptiles), Subclass 93 (turtle): EO = 0.9299999999999999
+Superclass 15 (reptiles), Subclass 27 (crocodile): EO = 0.9299999999999999
+Superclass 15 (reptiles), Subclass 78 (snake): EO = 0.9299999999999999
+Superclass 15 (reptiles), Subclass 44 (lizard): EO = 0.9299999999999999
+Superclass 3 (food containers), Subclass 16 (can): EO = 0.862
+Superclass 3 (food containers), Subclass 61 (plate): EO = 0.862
+Superclass 3 (food containers), Subclass 9 (bottle): EO = 0.862
+Superclass 3 (food containers), Subclass 10 (bowl): EO = 0.862
+Superclass 3 (food containers), Subclass 28 (cup): EO = 0.862
+Superclass 18 (vehicles 1), Subclass 8 (bicycle): EO = 0.8480000000000001
+Superclass 18 (vehicles 1), Subclass 58 (pickup_truck): EO = 0.8480000000000001
+Superclass 18 (vehicles 1), Subclass 90 (train): EO = 0.8480000000000001
+Superclass 18 (vehicles 1), Subclass 13 (bus): EO = 0.8480000000000001
+Superclass 18 (vehicles 1), Subclass 48 (motorcycle): EO = 0.8480000000000001
+Superclass 6 (household furniture), Subclass 20 (chair): EO = 0.8460000000000001
+Superclass 6 (household furniture), Subclass 25 (couch): EO = 0.8460000000000001
+Superclass 6 (household furniture), Subclass 94 (wardrobe): EO = 0.8460000000000001
+Superclass 6 (household furniture), Subclass 84 (table): EO = 0.8460000000000001
+Superclass 6 (household furniture), Subclass 5 (bed): EO = 0.8460000000000001
+Superclass 17 (trees), Subclass 56 (palm_tree): EO = 0.822
+Superclass 17 (trees), Subclass 52 (oak_tree): EO = 0.822
+Superclass 17 (trees), Subclass 47 (maple_tree): EO = 0.822
+Superclass 17 (trees), Subclass 59 (pine_tree): EO = 0.822
+Superclass 17 (trees), Subclass 96 (willow_tree): EO = 0.822
+Superclass 1 (fish), Subclass 73 (shark): EO = 0.956
+Superclass 1 (fish), Subclass 32 (flatfish): EO = 0.956
+Superclass 1 (fish), Subclass 67 (ray): EO = 0.956
+Superclass 1 (fish), Subclass 91 (trout): EO = 0.956
+Superclass 1 (fish), Subclass 1 (aquarium_fish): EO = 0.956
+Superclass 14 (people), Subclass 11 (boy): EO = 0.914
+Superclass 14 (people), Subclass 2 (baby): EO = 0.914
+Superclass 14 (people), Subclass 35 (girl): EO = 0.914
+Superclass 14 (people), Subclass 46 (man): EO = 0.914
+Superclass 14 (people), Subclass 98 (woman): EO = 0.914
+Superclass 9 (large man-made outdoor things), Subclass 37 (house): EO = 0.81
+Superclass 9 (large man-made outdoor things), Subclass 17 (castle): EO = 0.81
+Superclass 9 (large man-made outdoor things), Subclass 76 (skyscraper): EO = 0.81
+Superclass 9 (large man-made outdoor things), Subclass 12 (bridge): EO = 0.81
+Superclass 9 (large man-made outdoor things), Subclass 68 (road): EO = 0.81
+Superclass 13 (non-insect invertebrates), Subclass 77 (snail): EO = 0.906
+Superclass 13 (non-insect invertebrates), Subclass 26 (crab): EO = 0.906
+Superclass 13 (non-insect invertebrates), Subclass 45 (lobster): EO = 0.906
+Superclass 13 (non-insect invertebrates), Subclass 99 (worm): EO = 0.906
+Superclass 13 (non-insect invertebrates), Subclass 79 (spider): EO = 0.906
+Superclass 16 (small mammals), Subclass 65 (rabbit): EO = 0.942
+Superclass 16 (small mammals), Subclass 50 (mouse): EO = 0.942
+Superclass 16 (small mammals), Subclass 74 (shrew): EO = 0.942
+Superclass 16 (small mammals), Subclass 36 (hamster): EO = 0.942
+Superclass 16 (small mammals), Subclass 80 (squirrel): EO = 0.942
+
+==================================================
+
+EO Results for test_results_8.csv:
+Superclass 10 (large natural outdoor scenes), Subclass 49 (mountain): EO = 0.842
+Superclass 10 (large natural outdoor scenes), Subclass 33 (forest): EO = 0.842
+Superclass 10 (large natural outdoor scenes), Subclass 71 (sea): EO = 0.842
+Superclass 10 (large natural outdoor scenes), Subclass 23 (cloud): EO = 0.842
+Superclass 10 (large natural outdoor scenes), Subclass 60 (plain): EO = 0.842
+Superclass 0 (aquatic mammals), Subclass 72 (seal): EO = 0.754
+Superclass 0 (aquatic mammals), Subclass 4 (beaver): EO = 0.754
+Superclass 0 (aquatic mammals), Subclass 95 (whale): EO = 0.754
+Superclass 0 (aquatic mammals), Subclass 30 (dolphin): EO = 0.754
+Superclass 0 (aquatic mammals), Subclass 55 (otter): EO = 0.754
+Superclass 4 (fruit and vegetables), Subclass 51 (mushroom): EO = 0.786
+Superclass 4 (fruit and vegetables), Subclass 0 (apple): EO = 0.786
+Superclass 4 (fruit and vegetables), Subclass 53 (orange): EO = 0.786
+Superclass 4 (fruit and vegetables), Subclass 57 (pear): EO = 0.786
+Superclass 4 (fruit and vegetables), Subclass 83 (sweet_pepper): EO = 0.786
+Superclass 2 (flowers), Subclass 92 (tulip): EO = 0.898
+Superclass 2 (flowers), Subclass 70 (rose): EO = 0.898
+Superclass 2 (flowers), Subclass 82 (sunflower): EO = 0.898
+Superclass 2 (flowers), Subclass 54 (orchid): EO = 0.898
+Superclass 2 (flowers), Subclass 62 (poppy): EO = 0.898
+Superclass 11 (large omnivores and herbivores), Subclass 15 (camel): EO = 0.85
+Superclass 11 (large omnivores and herbivores), Subclass 21 (chimpanzee): EO = 0.85
+Superclass 11 (large omnivores and herbivores), Subclass 19 (cattle): EO = 0.85
+Superclass 11 (large omnivores and herbivores), Subclass 31 (elephant): EO = 0.85
+Superclass 11 (large omnivores and herbivores), Subclass 38 (kangaroo): EO = 0.85
+Superclass 7 (insects), Subclass 14 (butterfly): EO = 0.842
+Superclass 7 (insects), Subclass 24 (cockroach): EO = 0.842
+Superclass 7 (insects), Subclass 6 (bee): EO = 0.842
+Superclass 7 (insects), Subclass 7 (beetle): EO = 0.842
+Superclass 7 (insects), Subclass 18 (caterpillar): EO = 0.842
+Superclass 12 (medium-sized mammals), Subclass 75 (skunk): EO = 0.864
+Superclass 12 (medium-sized mammals), Subclass 63 (porcupine): EO = 0.864
+Superclass 12 (medium-sized mammals), Subclass 66 (raccoon): EO = 0.864
+Superclass 12 (medium-sized mammals), Subclass 64 (possum): EO = 0.864
+Superclass 12 (medium-sized mammals), Subclass 34 (fox): EO = 0.864
+Superclass 19 (vehicles 2), Subclass 81 (streetcar): EO = 0.864
+Superclass 19 (vehicles 2), Subclass 69 (rocket): EO = 0.864
+Superclass 19 (vehicles 2), Subclass 41 (lawn_mower): EO = 0.864
+Superclass 19 (vehicles 2), Subclass 89 (tractor): EO = 0.864
+Superclass 19 (vehicles 2), Subclass 85 (tank): EO = 0.864
+Superclass 5 (household electrical devices), Subclass 40 (lamp): EO = 0.906
+Superclass 5 (household electrical devices), Subclass 39 (keyboard): EO = 0.906
+Superclass 5 (household electrical devices), Subclass 22 (clock): EO = 0.906
+Superclass 5 (household electrical devices), Subclass 87 (television): EO = 0.906
+Superclass 5 (household electrical devices), Subclass 86 (telephone): EO = 0.906
+Superclass 8 (large carnivores), Subclass 43 (lion): EO = 0.858
+Superclass 8 (large carnivores), Subclass 97 (wolf): EO = 0.858
+Superclass 8 (large carnivores), Subclass 42 (leopard): EO = 0.858
+Superclass 8 (large carnivores), Subclass 3 (bear): EO = 0.858
+Superclass 8 (large carnivores), Subclass 88 (tiger): EO = 0.858
+Superclass 15 (reptiles), Subclass 29 (dinosaur): EO = 0.91
+Superclass 15 (reptiles), Subclass 93 (turtle): EO = 0.91
+Superclass 15 (reptiles), Subclass 27 (crocodile): EO = 0.91
+Superclass 15 (reptiles), Subclass 78 (snake): EO = 0.91
+Superclass 15 (reptiles), Subclass 44 (lizard): EO = 0.91
+Superclass 3 (food containers), Subclass 16 (can): EO = 0.85
+Superclass 3 (food containers), Subclass 61 (plate): EO = 0.85
+Superclass 3 (food containers), Subclass 9 (bottle): EO = 0.85
+Superclass 3 (food containers), Subclass 10 (bowl): EO = 0.85
+Superclass 3 (food containers), Subclass 28 (cup): EO = 0.85
+Superclass 18 (vehicles 1), Subclass 8 (bicycle): EO = 0.846
+Superclass 18 (vehicles 1), Subclass 58 (pickup_truck): EO = 0.846
+Superclass 18 (vehicles 1), Subclass 90 (train): EO = 0.846
+Superclass 18 (vehicles 1), Subclass 13 (bus): EO = 0.846
+Superclass 18 (vehicles 1), Subclass 48 (motorcycle): EO = 0.846
+Superclass 6 (household furniture), Subclass 20 (chair): EO = 0.81
+Superclass 6 (household furniture), Subclass 25 (couch): EO = 0.81
+Superclass 6 (household furniture), Subclass 94 (wardrobe): EO = 0.81
+Superclass 6 (household furniture), Subclass 84 (table): EO = 0.81
+Superclass 6 (household furniture), Subclass 5 (bed): EO = 0.81
+Superclass 17 (trees), Subclass 56 (palm_tree): EO = 0.8079999999999999
+Superclass 17 (trees), Subclass 52 (oak_tree): EO = 0.8079999999999999
+Superclass 17 (trees), Subclass 47 (maple_tree): EO = 0.8079999999999999
+Superclass 17 (trees), Subclass 59 (pine_tree): EO = 0.8079999999999999
+Superclass 17 (trees), Subclass 96 (willow_tree): EO = 0.8079999999999999
+Superclass 1 (fish), Subclass 73 (shark): EO = 0.9319999999999999
+Superclass 1 (fish), Subclass 32 (flatfish): EO = 0.9319999999999999
+Superclass 1 (fish), Subclass 67 (ray): EO = 0.9319999999999999
+Superclass 1 (fish), Subclass 91 (trout): EO = 0.9319999999999999
+Superclass 1 (fish), Subclass 1 (aquarium_fish): EO = 0.9319999999999999
+Superclass 14 (people), Subclass 11 (boy): EO = 0.958
+Superclass 14 (people), Subclass 2 (baby): EO = 0.958
+Superclass 14 (people), Subclass 35 (girl): EO = 0.958
+Superclass 14 (people), Subclass 46 (man): EO = 0.958
+Superclass 14 (people), Subclass 98 (woman): EO = 0.958
+Superclass 9 (large man-made outdoor things), Subclass 37 (house): EO = 0.762
+Superclass 9 (large man-made outdoor things), Subclass 17 (castle): EO = 0.762
+Superclass 9 (large man-made outdoor things), Subclass 76 (skyscraper): EO = 0.762
+Superclass 9 (large man-made outdoor things), Subclass 12 (bridge): EO = 0.762
+Superclass 9 (large man-made outdoor things), Subclass 68 (road): EO = 0.762
+Superclass 13 (non-insect invertebrates), Subclass 77 (snail): EO = 0.9319999999999999
+Superclass 13 (non-insect invertebrates), Subclass 26 (crab): EO = 0.9319999999999999
+Superclass 13 (non-insect invertebrates), Subclass 45 (lobster): EO = 0.9319999999999999
+Superclass 13 (non-insect invertebrates), Subclass 99 (worm): EO = 0.9319999999999999
+Superclass 13 (non-insect invertebrates), Subclass 79 (spider): EO = 0.9319999999999999
+Superclass 16 (small mammals), Subclass 65 (rabbit): EO = 0.922
+Superclass 16 (small mammals), Subclass 50 (mouse): EO = 0.922
+Superclass 16 (small mammals), Subclass 74 (shrew): EO = 0.922
+Superclass 16 (small mammals), Subclass 36 (hamster): EO = 0.922
+Superclass 16 (small mammals), Subclass 80 (squirrel): EO = 0.922
+
+==================================================
+
+EO Results for test_results_9.csv:
+Superclass 10 (large natural outdoor scenes), Subclass 49 (mountain): EO = 0.778
+Superclass 10 (large natural outdoor scenes), Subclass 33 (forest): EO = 0.778
+Superclass 10 (large natural outdoor scenes), Subclass 71 (sea): EO = 0.778
+Superclass 10 (large natural outdoor scenes), Subclass 23 (cloud): EO = 0.778
+Superclass 10 (large natural outdoor scenes), Subclass 60 (plain): EO = 0.778
+Superclass 0 (aquatic mammals), Subclass 72 (seal): EO = 0.77
+Superclass 0 (aquatic mammals), Subclass 4 (beaver): EO = 0.77
+Superclass 0 (aquatic mammals), Subclass 95 (whale): EO = 0.77
+Superclass 0 (aquatic mammals), Subclass 30 (dolphin): EO = 0.77
+Superclass 0 (aquatic mammals), Subclass 55 (otter): EO = 0.77
+Superclass 4 (fruit and vegetables), Subclass 51 (mushroom): EO = 0.77
+Superclass 4 (fruit and vegetables), Subclass 0 (apple): EO = 0.77
+Superclass 4 (fruit and vegetables), Subclass 53 (orange): EO = 0.77
+Superclass 4 (fruit and vegetables), Subclass 57 (pear): EO = 0.77
+Superclass 4 (fruit and vegetables), Subclass 83 (sweet_pepper): EO = 0.77
+Superclass 2 (flowers), Subclass 92 (tulip): EO = 0.9420000000000001
+Superclass 2 (flowers), Subclass 70 (rose): EO = 0.9420000000000001
+Superclass 2 (flowers), Subclass 82 (sunflower): EO = 0.9420000000000001
+Superclass 2 (flowers), Subclass 54 (orchid): EO = 0.9420000000000001
+Superclass 2 (flowers), Subclass 62 (poppy): EO = 0.9420000000000001
+Superclass 11 (large omnivores and herbivores), Subclass 15 (camel): EO = 0.866
+Superclass 11 (large omnivores and herbivores), Subclass 21 (chimpanzee): EO = 0.866
+Superclass 11 (large omnivores and herbivores), Subclass 19 (cattle): EO = 0.866
+Superclass 11 (large omnivores and herbivores), Subclass 31 (elephant): EO = 0.866
+Superclass 11 (large omnivores and herbivores), Subclass 38 (kangaroo): EO = 0.866
+Superclass 7 (insects), Subclass 14 (butterfly): EO = 0.8260000000000001
+Superclass 7 (insects), Subclass 24 (cockroach): EO = 0.8260000000000001
+Superclass 7 (insects), Subclass 6 (bee): EO = 0.8260000000000001
+Superclass 7 (insects), Subclass 7 (beetle): EO = 0.8260000000000001
+Superclass 7 (insects), Subclass 18 (caterpillar): EO = 0.8260000000000001
+Superclass 12 (medium-sized mammals), Subclass 75 (skunk): EO = 0.862
+Superclass 12 (medium-sized mammals), Subclass 63 (porcupine): EO = 0.862
+Superclass 12 (medium-sized mammals), Subclass 66 (raccoon): EO = 0.862
+Superclass 12 (medium-sized mammals), Subclass 64 (possum): EO = 0.862
+Superclass 12 (medium-sized mammals), Subclass 34 (fox): EO = 0.862
+Superclass 19 (vehicles 2), Subclass 81 (streetcar): EO = 0.872
+Superclass 19 (vehicles 2), Subclass 69 (rocket): EO = 0.872
+Superclass 19 (vehicles 2), Subclass 41 (lawn_mower): EO = 0.872
+Superclass 19 (vehicles 2), Subclass 89 (tractor): EO = 0.872
+Superclass 19 (vehicles 2), Subclass 85 (tank): EO = 0.872
+Superclass 5 (household electrical devices), Subclass 40 (lamp): EO = 0.9219999999999999
+Superclass 5 (household electrical devices), Subclass 39 (keyboard): EO = 0.9219999999999999
+Superclass 5 (household electrical devices), Subclass 22 (clock): EO = 0.9219999999999999
+Superclass 5 (household electrical devices), Subclass 87 (television): EO = 0.9219999999999999
+Superclass 5 (household electrical devices), Subclass 86 (telephone): EO = 0.9219999999999999
+Superclass 8 (large carnivores), Subclass 43 (lion): EO = 0.882
+Superclass 8 (large carnivores), Subclass 97 (wolf): EO = 0.882
+Superclass 8 (large carnivores), Subclass 42 (leopard): EO = 0.882
+Superclass 8 (large carnivores), Subclass 3 (bear): EO = 0.882
+Superclass 8 (large carnivores), Subclass 88 (tiger): EO = 0.882
+Superclass 15 (reptiles), Subclass 29 (dinosaur): EO = 0.88
+Superclass 15 (reptiles), Subclass 93 (turtle): EO = 0.88
+Superclass 15 (reptiles), Subclass 27 (crocodile): EO = 0.88
+Superclass 15 (reptiles), Subclass 78 (snake): EO = 0.88
+Superclass 15 (reptiles), Subclass 44 (lizard): EO = 0.88
+Superclass 3 (food containers), Subclass 16 (can): EO = 0.888
+Superclass 3 (food containers), Subclass 61 (plate): EO = 0.888
+Superclass 3 (food containers), Subclass 9 (bottle): EO = 0.888
+Superclass 3 (food containers), Subclass 10 (bowl): EO = 0.888
+Superclass 3 (food containers), Subclass 28 (cup): EO = 0.888
+Superclass 18 (vehicles 1), Subclass 8 (bicycle): EO = 0.84
+Superclass 18 (vehicles 1), Subclass 58 (pickup_truck): EO = 0.84
+Superclass 18 (vehicles 1), Subclass 90 (train): EO = 0.84
+Superclass 18 (vehicles 1), Subclass 13 (bus): EO = 0.84
+Superclass 18 (vehicles 1), Subclass 48 (motorcycle): EO = 0.84
+Superclass 6 (household furniture), Subclass 20 (chair): EO = 0.774
+Superclass 6 (household furniture), Subclass 25 (couch): EO = 0.774
+Superclass 6 (household furniture), Subclass 94 (wardrobe): EO = 0.774
+Superclass 6 (household furniture), Subclass 84 (table): EO = 0.774
+Superclass 6 (household furniture), Subclass 5 (bed): EO = 0.774
+Superclass 17 (trees), Subclass 56 (palm_tree): EO = 0.8680000000000001
+Superclass 17 (trees), Subclass 52 (oak_tree): EO = 0.8680000000000001
+Superclass 17 (trees), Subclass 47 (maple_tree): EO = 0.8680000000000001
+Superclass 17 (trees), Subclass 59 (pine_tree): EO = 0.8680000000000001
+Superclass 17 (trees), Subclass 96 (willow_tree): EO = 0.8680000000000001
+Superclass 1 (fish), Subclass 73 (shark): EO = 0.94
+Superclass 1 (fish), Subclass 32 (flatfish): EO = 0.94
+Superclass 1 (fish), Subclass 67 (ray): EO = 0.94
+Superclass 1 (fish), Subclass 91 (trout): EO = 0.94
+Superclass 1 (fish), Subclass 1 (aquarium_fish): EO = 0.94
+Superclass 14 (people), Subclass 11 (boy): EO = 0.978
+Superclass 14 (people), Subclass 2 (baby): EO = 0.978
+Superclass 14 (people), Subclass 35 (girl): EO = 0.978
+Superclass 14 (people), Subclass 46 (man): EO = 0.978
+Superclass 14 (people), Subclass 98 (woman): EO = 0.978
+Superclass 9 (large man-made outdoor things), Subclass 37 (house): EO = 0.8320000000000001
+Superclass 9 (large man-made outdoor things), Subclass 17 (castle): EO = 0.8320000000000001
+Superclass 9 (large man-made outdoor things), Subclass 76 (skyscraper): EO = 0.8320000000000001
+Superclass 9 (large man-made outdoor things), Subclass 12 (bridge): EO = 0.8320000000000001
+Superclass 9 (large man-made outdoor things), Subclass 68 (road): EO = 0.8320000000000001
+Superclass 13 (non-insect invertebrates), Subclass 77 (snail): EO = 0.892
+Superclass 13 (non-insect invertebrates), Subclass 26 (crab): EO = 0.892
+Superclass 13 (non-insect invertebrates), Subclass 45 (lobster): EO = 0.892
+Superclass 13 (non-insect invertebrates), Subclass 99 (worm): EO = 0.892
+Superclass 13 (non-insect invertebrates), Subclass 79 (spider): EO = 0.892
+Superclass 16 (small mammals), Subclass 65 (rabbit): EO = 0.95
+Superclass 16 (small mammals), Subclass 50 (mouse): EO = 0.95
+Superclass 16 (small mammals), Subclass 74 (shrew): EO = 0.95
+Superclass 16 (small mammals), Subclass 36 (hamster): EO = 0.95
+Superclass 16 (small mammals), Subclass 80 (squirrel): EO = 0.95
+
+==================================================
+
+EO Results for test_results_10.csv:
+Superclass 10 (large natural outdoor scenes), Subclass 49 (mountain): EO = 0.76
+Superclass 10 (large natural outdoor scenes), Subclass 33 (forest): EO = 0.76
+Superclass 10 (large natural outdoor scenes), Subclass 71 (sea): EO = 0.76
+Superclass 10 (large natural outdoor scenes), Subclass 23 (cloud): EO = 0.76
+Superclass 10 (large natural outdoor scenes), Subclass 60 (plain): EO = 0.76
+Superclass 0 (aquatic mammals), Subclass 72 (seal): EO = 0.81
+Superclass 0 (aquatic mammals), Subclass 4 (beaver): EO = 0.81
+Superclass 0 (aquatic mammals), Subclass 95 (whale): EO = 0.81
+Superclass 0 (aquatic mammals), Subclass 30 (dolphin): EO = 0.81
+Superclass 0 (aquatic mammals), Subclass 55 (otter): EO = 0.81
+Superclass 4 (fruit and vegetables), Subclass 51 (mushroom): EO = 0.774
+Superclass 4 (fruit and vegetables), Subclass 0 (apple): EO = 0.774
+Superclass 4 (fruit and vegetables), Subclass 53 (orange): EO = 0.774
+Superclass 4 (fruit and vegetables), Subclass 57 (pear): EO = 0.774
+Superclass 4 (fruit and vegetables), Subclass 83 (sweet_pepper): EO = 0.774
+Superclass 2 (flowers), Subclass 92 (tulip): EO = 0.896
+Superclass 2 (flowers), Subclass 70 (rose): EO = 0.896
+Superclass 2 (flowers), Subclass 82 (sunflower): EO = 0.896
+Superclass 2 (flowers), Subclass 54 (orchid): EO = 0.896
+Superclass 2 (flowers), Subclass 62 (poppy): EO = 0.896
+Superclass 11 (large omnivores and herbivores), Subclass 15 (camel): EO = 0.872
+Superclass 11 (large omnivores and herbivores), Subclass 21 (chimpanzee): EO = 0.872
+Superclass 11 (large omnivores and herbivores), Subclass 19 (cattle): EO = 0.872
+Superclass 11 (large omnivores and herbivores), Subclass 31 (elephant): EO = 0.872
+Superclass 11 (large omnivores and herbivores), Subclass 38 (kangaroo): EO = 0.872
+Superclass 7 (insects), Subclass 14 (butterfly): EO = 0.8340000000000001
+Superclass 7 (insects), Subclass 24 (cockroach): EO = 0.8340000000000001
+Superclass 7 (insects), Subclass 6 (bee): EO = 0.8340000000000001
+Superclass 7 (insects), Subclass 7 (beetle): EO = 0.8340000000000001
+Superclass 7 (insects), Subclass 18 (caterpillar): EO = 0.8340000000000001
+Superclass 12 (medium-sized mammals), Subclass 75 (skunk): EO = 0.87
+Superclass 12 (medium-sized mammals), Subclass 63 (porcupine): EO = 0.87
+Superclass 12 (medium-sized mammals), Subclass 66 (raccoon): EO = 0.87
+Superclass 12 (medium-sized mammals), Subclass 64 (possum): EO = 0.87
+Superclass 12 (medium-sized mammals), Subclass 34 (fox): EO = 0.87
+Superclass 19 (vehicles 2), Subclass 81 (streetcar): EO = 0.924
+Superclass 19 (vehicles 2), Subclass 69 (rocket): EO = 0.924
+Superclass 19 (vehicles 2), Subclass 41 (lawn_mower): EO = 0.924
+Superclass 19 (vehicles 2), Subclass 89 (tractor): EO = 0.924
+Superclass 19 (vehicles 2), Subclass 85 (tank): EO = 0.924
+Superclass 5 (household electrical devices), Subclass 40 (lamp): EO = 0.916
+Superclass 5 (household electrical devices), Subclass 39 (keyboard): EO = 0.916
+Superclass 5 (household electrical devices), Subclass 22 (clock): EO = 0.916
+Superclass 5 (household electrical devices), Subclass 87 (television): EO = 0.916
+Superclass 5 (household electrical devices), Subclass 86 (telephone): EO = 0.916
+Superclass 8 (large carnivores), Subclass 43 (lion): EO = 0.864
+Superclass 8 (large carnivores), Subclass 97 (wolf): EO = 0.864
+Superclass 8 (large carnivores), Subclass 42 (leopard): EO = 0.864
+Superclass 8 (large carnivores), Subclass 3 (bear): EO = 0.864
+Superclass 8 (large carnivores), Subclass 88 (tiger): EO = 0.864
+Superclass 15 (reptiles), Subclass 29 (dinosaur): EO = 0.904
+Superclass 15 (reptiles), Subclass 93 (turtle): EO = 0.904
+Superclass 15 (reptiles), Subclass 27 (crocodile): EO = 0.904
+Superclass 15 (reptiles), Subclass 78 (snake): EO = 0.904
+Superclass 15 (reptiles), Subclass 44 (lizard): EO = 0.904
+Superclass 3 (food containers), Subclass 16 (can): EO = 0.896
+Superclass 3 (food containers), Subclass 61 (plate): EO = 0.896
+Superclass 3 (food containers), Subclass 9 (bottle): EO = 0.896
+Superclass 3 (food containers), Subclass 10 (bowl): EO = 0.896
+Superclass 3 (food containers), Subclass 28 (cup): EO = 0.896
+Superclass 18 (vehicles 1), Subclass 8 (bicycle): EO = 0.8420000000000001
+Superclass 18 (vehicles 1), Subclass 58 (pickup_truck): EO = 0.8420000000000001
+Superclass 18 (vehicles 1), Subclass 90 (train): EO = 0.8420000000000001
+Superclass 18 (vehicles 1), Subclass 13 (bus): EO = 0.8420000000000001
+Superclass 18 (vehicles 1), Subclass 48 (motorcycle): EO = 0.8420000000000001
+Superclass 6 (household furniture), Subclass 20 (chair): EO = 0.8240000000000001
+Superclass 6 (household furniture), Subclass 25 (couch): EO = 0.8240000000000001
+Superclass 6 (household furniture), Subclass 94 (wardrobe): EO = 0.8240000000000001
+Superclass 6 (household furniture), Subclass 84 (table): EO = 0.8240000000000001
+Superclass 6 (household furniture), Subclass 5 (bed): EO = 0.8240000000000001
+Superclass 17 (trees), Subclass 56 (palm_tree): EO = 0.858
+Superclass 17 (trees), Subclass 52 (oak_tree): EO = 0.858
+Superclass 17 (trees), Subclass 47 (maple_tree): EO = 0.858
+Superclass 17 (trees), Subclass 59 (pine_tree): EO = 0.858
+Superclass 17 (trees), Subclass 96 (willow_tree): EO = 0.858
+Superclass 1 (fish), Subclass 73 (shark): EO = 0.904
+Superclass 1 (fish), Subclass 32 (flatfish): EO = 0.904
+Superclass 1 (fish), Subclass 67 (ray): EO = 0.904
+Superclass 1 (fish), Subclass 91 (trout): EO = 0.904
+Superclass 1 (fish), Subclass 1 (aquarium_fish): EO = 0.904
+Superclass 14 (people), Subclass 11 (boy): EO = 0.936
+Superclass 14 (people), Subclass 2 (baby): EO = 0.936
+Superclass 14 (people), Subclass 35 (girl): EO = 0.936
+Superclass 14 (people), Subclass 46 (man): EO = 0.936
+Superclass 14 (people), Subclass 98 (woman): EO = 0.936
+Superclass 9 (large man-made outdoor things), Subclass 37 (house): EO = 0.78
+Superclass 9 (large man-made outdoor things), Subclass 17 (castle): EO = 0.78
+Superclass 9 (large man-made outdoor things), Subclass 76 (skyscraper): EO = 0.78
+Superclass 9 (large man-made outdoor things), Subclass 12 (bridge): EO = 0.78
+Superclass 9 (large man-made outdoor things), Subclass 68 (road): EO = 0.78
+Superclass 13 (non-insect invertebrates), Subclass 77 (snail): EO = 0.896
+Superclass 13 (non-insect invertebrates), Subclass 26 (crab): EO = 0.896
+Superclass 13 (non-insect invertebrates), Subclass 45 (lobster): EO = 0.896
+Superclass 13 (non-insect invertebrates), Subclass 99 (worm): EO = 0.896
+Superclass 13 (non-insect invertebrates), Subclass 79 (spider): EO = 0.896
+Superclass 16 (small mammals), Subclass 65 (rabbit): EO = 0.96
+Superclass 16 (small mammals), Subclass 50 (mouse): EO = 0.96
+Superclass 16 (small mammals), Subclass 74 (shrew): EO = 0.96
+Superclass 16 (small mammals), Subclass 36 (hamster): EO = 0.96
+Superclass 16 (small mammals), Subclass 80 (squirrel): EO = 0.96
+
+==================================================
+
+All EO results have been saved to metric_results/resnet50
+Disparate Impact Results for test_results_0.csv:
+    Superclass  Subclass  ...          True Superclass Name True Subclass Name
+0           10        49  ...  large natural outdoor scenes           mountain
+1           10        33  ...  large natural outdoor scenes             forest
+2           10        71  ...  large natural outdoor scenes                sea
+3           10        23  ...  large natural outdoor scenes              cloud
+4           10        60  ...  large natural outdoor scenes              plain
+..         ...       ...  ...                           ...                ...
+95          16        65  ...                 small mammals             rabbit
+96          16        50  ...                 small mammals              mouse
+97          16        74  ...                 small mammals              shrew
+98          16        36  ...                 small mammals            hamster
+99          16        80  ...                 small mammals           squirrel
+
+[100 rows x 5 columns]
+
+==================================================
+
+Disparate Impact Results for test_results_1.csv:
+    Superclass  Subclass  ...          True Superclass Name True Subclass Name
+0           10        49  ...  large natural outdoor scenes           mountain
+1           10        33  ...  large natural outdoor scenes             forest
+2           10        71  ...  large natural outdoor scenes                sea
+3           10        23  ...  large natural outdoor scenes              cloud
+4           10        60  ...  large natural outdoor scenes              plain
+..         ...       ...  ...                           ...                ...
+95          16        65  ...                 small mammals             rabbit
+96          16        50  ...                 small mammals              mouse
+97          16        74  ...                 small mammals              shrew
+98          16        36  ...                 small mammals            hamster
+99          16        80  ...                 small mammals           squirrel
+
+[100 rows x 5 columns]
+
+==================================================
+
+Disparate Impact Results for test_results_2.csv:
+    Superclass  Subclass  ...          True Superclass Name True Subclass Name
+0           10        49  ...  large natural outdoor scenes           mountain
+1           10        33  ...  large natural outdoor scenes             forest
+2           10        71  ...  large natural outdoor scenes                sea
+3           10        23  ...  large natural outdoor scenes              cloud
+4           10        60  ...  large natural outdoor scenes              plain
+..         ...       ...  ...                           ...                ...
+95          16        65  ...                 small mammals             rabbit
+96          16        50  ...                 small mammals              mouse
+97          16        74  ...                 small mammals              shrew
+98          16        36  ...                 small mammals            hamster
+99          16        80  ...                 small mammals           squirrel
+
+[100 rows x 5 columns]
+
+==================================================
+
+Disparate Impact Results for test_results_3.csv:
+    Superclass  Subclass  ...          True Superclass Name True Subclass Name
+0           10        49  ...  large natural outdoor scenes           mountain
+1           10        33  ...  large natural outdoor scenes             forest
+2           10        71  ...  large natural outdoor scenes                sea
+3           10        23  ...  large natural outdoor scenes              cloud
+4           10        60  ...  large natural outdoor scenes              plain
+..         ...       ...  ...                           ...                ...
+95          16        65  ...                 small mammals             rabbit
+96          16        50  ...                 small mammals              mouse
+97          16        74  ...                 small mammals              shrew
+98          16        36  ...                 small mammals            hamster
+99          16        80  ...                 small mammals           squirrel
+
+[100 rows x 5 columns]
+
+==================================================
+
+Disparate Impact Results for test_results_4.csv:
+    Superclass  Subclass  ...          True Superclass Name True Subclass Name
+0           10        49  ...  large natural outdoor scenes           mountain
+1           10        33  ...  large natural outdoor scenes             forest
+2           10        71  ...  large natural outdoor scenes                sea
+3           10        23  ...  large natural outdoor scenes              cloud
+4           10        60  ...  large natural outdoor scenes              plain
+..         ...       ...  ...                           ...                ...
+95          16        65  ...                 small mammals             rabbit
+96          16        50  ...                 small mammals              mouse
+97          16        74  ...                 small mammals              shrew
+98          16        36  ...                 small mammals            hamster
+99          16        80  ...                 small mammals           squirrel
+
+[100 rows x 5 columns]
+
+==================================================
+
+Disparate Impact Results for test_results_5.csv:
+    Superclass  Subclass  ...          True Superclass Name True Subclass Name
+0           10        49  ...  large natural outdoor scenes           mountain
+1           10        33  ...  large natural outdoor scenes             forest
+2           10        71  ...  large natural outdoor scenes                sea
+3           10        23  ...  large natural outdoor scenes              cloud
+4           10        60  ...  large natural outdoor scenes              plain
+..         ...       ...  ...                           ...                ...
+95          16        65  ...                 small mammals             rabbit
+96          16        50  ...                 small mammals              mouse
+97          16        74  ...                 small mammals              shrew
+98          16        36  ...                 small mammals            hamster
+99          16        80  ...                 small mammals           squirrel
+
+[100 rows x 5 columns]
+
+==================================================
+
+Disparate Impact Results for test_results_6.csv:
+    Superclass  Subclass  ...          True Superclass Name True Subclass Name
+0           10        49  ...  large natural outdoor scenes           mountain
+1           10        33  ...  large natural outdoor scenes             forest
+2           10        71  ...  large natural outdoor scenes                sea
+3           10        23  ...  large natural outdoor scenes              cloud
+4           10        60  ...  large natural outdoor scenes              plain
+..         ...       ...  ...                           ...                ...
+95          16        65  ...                 small mammals             rabbit
+96          16        50  ...                 small mammals              mouse
+97          16        74  ...                 small mammals              shrew
+98          16        36  ...                 small mammals            hamster
+99          16        80  ...                 small mammals           squirrel
+
+[100 rows x 5 columns]
+
+==================================================
+
+Disparate Impact Results for test_results_7.csv:
+    Superclass  Subclass  ...          True Superclass Name True Subclass Name
+0           10        49  ...  large natural outdoor scenes           mountain
+1           10        33  ...  large natural outdoor scenes             forest
+2           10        71  ...  large natural outdoor scenes                sea
+3           10        23  ...  large natural outdoor scenes              cloud
+4           10        60  ...  large natural outdoor scenes              plain
+..         ...       ...  ...                           ...                ...
+95          16        65  ...                 small mammals             rabbit
+96          16        50  ...                 small mammals              mouse
+97          16        74  ...                 small mammals              shrew
+98          16        36  ...                 small mammals            hamster
+99          16        80  ...                 small mammals           squirrel
+
+[100 rows x 5 columns]
+
+==================================================
+
+Disparate Impact Results for test_results_8.csv:
+    Superclass  Subclass  ...          True Superclass Name True Subclass Name
+0           10        49  ...  large natural outdoor scenes           mountain
+1           10        33  ...  large natural outdoor scenes             forest
+2           10        71  ...  large natural outdoor scenes                sea
+3           10        23  ...  large natural outdoor scenes              cloud
+4           10        60  ...  large natural outdoor scenes              plain
+..         ...       ...  ...                           ...                ...
+95          16        65  ...                 small mammals             rabbit
+96          16        50  ...                 small mammals              mouse
+97          16        74  ...                 small mammals              shrew
+98          16        36  ...                 small mammals            hamster
+99          16        80  ...                 small mammals           squirrel
+
+[100 rows x 5 columns]
+
+==================================================
+
+Disparate Impact Results for test_results_9.csv:
+    Superclass  Subclass  ...          True Superclass Name True Subclass Name
+0           10        49  ...  large natural outdoor scenes           mountain
+1           10        33  ...  large natural outdoor scenes             forest
+2           10        71  ...  large natural outdoor scenes                sea
+3           10        23  ...  large natural outdoor scenes              cloud
+4           10        60  ...  large natural outdoor scenes              plain
+..         ...       ...  ...                           ...                ...
+95          16        65  ...                 small mammals             rabbit
+96          16        50  ...                 small mammals              mouse
+97          16        74  ...                 small mammals              shrew
+98          16        36  ...                 small mammals            hamster
+99          16        80  ...                 small mammals           squirrel
+
+[100 rows x 5 columns]
+
+==================================================
+
+Disparate Impact Results for test_results_10.csv:
+    Superclass  Subclass  ...          True Superclass Name True Subclass Name
+0           10        49  ...  large natural outdoor scenes           mountain
+1           10        33  ...  large natural outdoor scenes             forest
+2           10        71  ...  large natural outdoor scenes                sea
+3           10        23  ...  large natural outdoor scenes              cloud
+4           10        60  ...  large natural outdoor scenes              plain
+..         ...       ...  ...                           ...                ...
+95          16        65  ...                 small mammals             rabbit
+96          16        50  ...                 small mammals              mouse
+97          16        74  ...                 small mammals              shrew
+98          16        36  ...                 small mammals            hamster
+99          16        80  ...                 small mammals           squirrel
+
+[100 rows x 5 columns]
+
+==================================================
+
+All Disparate Impact results have been saved to metric_results/resnet50

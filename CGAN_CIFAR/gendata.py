@@ -4,7 +4,7 @@ import argparse
 import pickle
 import os
 from model import Generator 
-from  datasets import SuperCIFAR100 ,CIFAR_100_CLASS_MAP,tf,GeneratedDataset
+from datasets import SuperCIFAR100 ,CIFAR_100_CLASS_MAP,tf,GeneratedDataset
 from torch.utils.data import DataLoader, Dataset, ConcatDataset 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
  
@@ -29,7 +29,7 @@ def main():
     model_dir = args.model_path
     gen_model_path = os.path.join(model_dir, f'gen_{args.gennum}.pth')
   
-    gen = load_model(gen_model_path)
+    generator  = load_model(gen_model_path)
   
     trainset = SuperCIFAR100(root='./data', train=True, download=False, transform=tf)
 
@@ -51,27 +51,28 @@ def main():
         print("super_class_counts",super_class_counts)
     
     else:
-        previous_gen_path = f'data/generated_images_{args.gennum - 1}'
-         
-        for class_folder in os.listdir(previous_gen_path):
-            class_idx = int(class_folder.split('_')[-1])
-            class_path = os.path.join(previous_gen_path, class_folder)
-            image_count = len([name for name in os.listdir(class_path) if os.path.isfile(os.path.join(class_path, name))])
-            super_class_counts[class_idx] += image_count
-
-    print("super_class_counts", super_class_counts)
+        for gen in range(args.gennum):
+            previous_gen_path = f'data/generated_images_{gen}'
+            for class_folder in os.listdir(previous_gen_path):
+                class_idx = int(class_folder.split('_')[-1])
+                class_path = os.path.join(previous_gen_path, class_folder)
+                image_count = len([name for name in os.listdir(class_path) if os.path.isfile(os.path.join(class_path, name))])
+                super_class_counts[class_idx] += image_count
+        print("super_class_counts", super_class_counts)
 
 
     generated_images = []
     generated_labels = []
     for idx, total_images in super_class_counts.items():
-        num_images_to_generate = int(total_images * 0.3)   
-        print("idx: ",idx,"num_images_to_generate: ",num_images_to_generate)
-    
+        if args.gennum > 6:
+            num_images_to_generate = 3000
+        else:
+            num_images_to_generate = int(total_images * 0.3)
+
         noise = torch.randn(num_images_to_generate, 100, device=device)
         labels = torch.full((num_images_to_generate,), idx, dtype=torch.long, device=device)
         with torch.no_grad():
-            new_generated_images = gen(noise, labels)
+            new_generated_images = generator(noise, labels)
         # creat a new directory for each class
         os.makedirs(os.path.join(output_dir, f'class_{idx}'), exist_ok=True)
 

@@ -9,7 +9,7 @@ import torchvision
 import torch.nn.functional as F
 import matplotlib.pyplot as plt
 import torchvision.transforms as transforms
-from  datasets import SuperCIFAR100 ,CIFAR_100_CLASS_MAP,tf,GeneratedDataset
+from datasets import SuperCIFAR100 ,CIFAR_100_CLASS_MAP,tf,GeneratedDataset
 from model import Generator, Discriminator
 from torchvision.utils import save_image
 from torch.utils.data import DataLoader, Dataset, ConcatDataset
@@ -178,7 +178,6 @@ validity_loss = nn.BCELoss()
 # real_labels = 0.7 + 0.5 * torch.rand(10, device = device)
 # fake_labels = 0.3 * torch.rand(10, device = device)
 epochs = 40
-
 for epoch in range(1,epochs+1):
     torch.cuda.empty_cache()
     for idx, (images,labels,_) in enumerate(trainloader,0):

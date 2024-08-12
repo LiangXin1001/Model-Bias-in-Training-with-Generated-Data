@@ -85,7 +85,7 @@ def write_results_to_csv(results, model_name,full_subclass_map):
             true_superclass_name = list(CIFAR_100_CLASS_MAP.keys())[true_superclass]
             
             true_subclass_name = full_subclass_map[true_subclass]
-            print(f"Superclass: {true_superclass_name},Subclass name {true_subclass_name}")
+            # print(f"Superclass: {true_superclass_name},Subclass name {true_subclass_name}")
             
             writer.writerow([img, true_superclass, true_subclass, pred_superclass, true_superclass_name, true_subclass_name])
     print(f"Results saved to {csv_path}")

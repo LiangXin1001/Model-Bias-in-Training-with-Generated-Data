@@ -12,7 +12,7 @@ sys.path.append(parent_directory)
 from utils.datasets import SuperCIFAR100, GeneratedDataset, tf ,CIFAR_100_CLASS_MAP,generate_full_subclass_map
  
 
-csv_file_path = 'results/resnet50/test_results_0.csv'  # 替换为你的 CSV 文件路径
+csv_file_path = 'results/resnet50/test_results_0.csv'   
 
 # 读取 CSV 文件
 df = pd.read_csv(csv_file_path)
@@ -67,4 +67,10 @@ print("Average of the second worst subclass accuracies:", sum(second_worst_accur
 print("Average of the third worst subclass accuracies:", sum(third_worst_accuracies) / len(third_worst_accuracies))
 print("Average of the fourth worst subclass accuracies:", sum(fourth_worst_accuracies) / len(fourth_worst_accuracies))
 print("Average of the fifth worst subclass accuracies:", sum(fifth_worst_accuracies) / len(fifth_worst_accuracies))
+
+
+# 生成并打印分类报告
+# print("\nClassification Report for Superclasses:")
+# print(classification_report(df['True Superclass'], df['Predicted Superclass']))
+
  
