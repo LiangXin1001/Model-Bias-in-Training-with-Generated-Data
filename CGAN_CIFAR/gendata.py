@@ -77,7 +77,7 @@ def main():
         os.makedirs(os.path.join(output_dir, f'class_{idx}'), exist_ok=True)
 
         for i, image in enumerate(new_generated_images):
-            save_path = os.path.join(output_dir, f'class_{idx}', f'image_{i:04d}_{args.gennum}.png')
+            save_path = os.path.join(output_dir, f'class_{idx}', f'class_{idx}_{i:04d}_{args.gennum}.png')
             # vutils.save_image(image, os.path.join(output_dir, f'class_{index_to_superclass[idx]}_image_{i:04d}_{args.gennum}.png'), normalize=True)
             vutils.save_image(image, save_path, normalize=True)
 
