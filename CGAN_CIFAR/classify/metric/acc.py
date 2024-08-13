@@ -152,3 +152,35 @@ plt.savefig(output_plot_path)
 plt.show()
 
 print(f"Plot saved as {output_plot_path}")
+
+
+csv_file_indices = np.arange(len(csv_files))
+
+plt.figure(figsize=(12, 8))
+labels = ['Worst', '2nd Worst', '3rd Worst', '4th Worst', '5th Worst']
+colors = ['blue', 'green', 'red', 'purple', 'orange']
+
+for i in range(5):
+    # 计算线性回归参数
+    slope, intercept = np.polyfit(csv_file_indices, worst_accuracies_all[i], 1)
+    # 生成拟合直线
+    fit_line = slope * csv_file_indices + intercept
+
+    # 绘制数据点和拟合直线
+    plt.scatter(csv_file_indices, worst_accuracies_all[i], color=colors[i], label=f'{labels[i]} Accuracy')
+    plt.plot(csv_file_indices, fit_line, color=colors[i], label=f'{labels[i]} Fit (y={slope:.4f}x + {intercept:.4f})')
+
+plt.xlabel('CSV File Index')
+plt.ylabel('Accuracy')
+plt.title('Trend of Worst to Fifth Worst Accuracies Across CSV Files with Linear Regression')
+plt.xticks(csv_file_indices, [f'File {i}' for i in range(len(csv_files))], rotation=45)
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+
+# 保存图像
+output_plot_path = 'images/accuracy_trends_regression.png'
+plt.savefig(output_plot_path)
+plt.close()
+
+print(f"Plot saved as {output_plot_path}")

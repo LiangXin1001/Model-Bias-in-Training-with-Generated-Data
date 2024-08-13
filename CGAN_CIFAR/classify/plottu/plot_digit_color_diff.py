@@ -3,21 +3,25 @@ import matplotlib.pyplot as plt
 import os
 from scipy.stats import linregress
 import numpy as np
+import argparse
 
-base_path = '/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/classifier/results'
-
+# 设置命令行参数解析
+parser = argparse.ArgumentParser(description='Process test results for different models.')
+parser.add_argument('--model_name', type=str, required=True, help='The name of the model to process results for')
+args = parser.parse_args()
+base_path = 'metric_results'
  
-subdirectories = ['gen{}'.format(i) for i in range(11)]
+subdirectories = [str(i) for i in range(11)]
  
 def read_color_diff_files(base_path, subdirectories):
     dfs = []
     for subdir in subdirectories:
-        filepath = os.path.join(base_path, subdir, 'color_difference_results.csv')
+        filepath = os.path.join(base_path, args.model_name, f'subclass_difference_results_{subdir}.csv')
         df = pd.read_csv(filepath)
-        df.columns = ['Description', 'Color Difference']  # 手动设置列名
-        df['Digit'] = df['Description'].str.extract(r'(\d+)').astype(int)  # 从描述中提取数字
+        df.columns = ['Description', 'Subclass Difference']  # 手动设置列名
+        df['True Superclass Name'] = df['Description'].str.extract(r'(\d+)').astype(int)  # 从描述中提取数字
         df['Gen'] = subdir  # 添加生成代列
-        dfs.append(df[['Digit', 'Color Difference', 'Gen']])
+        dfs.append(df[['True Superclass Name', 'Subclass Difference', 'Gen']])
     combined_df = pd.concat(dfs)
     return combined_df
 
@@ -25,47 +29,47 @@ def read_color_diff_files(base_path, subdirectories):
 combined_df = read_color_diff_files(base_path, subdirectories)
 
 # 数据透视
-pivot_df = combined_df.pivot(index='Digit', columns='Gen', values='Color Difference')
+pivot_df = combined_df.pivot(index='True Superclass Name', columns='Gen', values='Subclass Difference')
 
 # 绘图
 plt.figure(figsize=(15, 6))
 pivot_df.plot(kind='bar')
-plt.xlabel('Digit')
-plt.ylabel('Color Difference Value')
-plt.title('Color Difference Values for Different Digits Across Generations')
+plt.xlabel('True Superclass Name')
+plt.ylabel('Subclass Difference Value')
+plt.title('Subclass Difference Values for Different True Superclass Names Across Generations')
 plt.legend(title='Generation')
 plt.tight_layout()
 
 # 保存图表
-output_path = 'plottu/digitcolor_difference_values_bar_plot.png'
+output_path = 'images/Superclass_subclass_difference_values_bar_plot.png'
 plt.savefig(output_path)
 plt.close()
  
 
 
-# Calculate the average Color Difference for each gen
-average_cd_per_gen = combined_df.groupby('Gen')['Color Difference'].mean()
+# Calculate the average Subclass Difference for each gen
+average_cd_per_gen = combined_df.groupby('Gen')['Subclass Difference'].mean()
 
 # Ensure the Gen column is numeric and sort by it
 average_cd_per_gen.index = average_cd_per_gen.index.str.extract('(\d+)').astype(int).squeeze()
 average_cd_per_gen = average_cd_per_gen.sort_index()
 
-# Plot the average Color Difference values across generations
+# Plot the average Subclass Difference values across generations
 plt.figure(figsize=(10, 6))
-plt.ylim(0, 0.1)
+plt.ylim(0, 1)
 plt.plot(average_cd_per_gen.index, average_cd_per_gen.values, marker='o')
 plt.xlabel('Generation')
-plt.ylabel('Average Color Difference Value')
-plt.title('Average Color Difference Values Across Generations')
+plt.ylabel('Average Subclass Difference Value')
+plt.title('Average Subclass Difference Values Across Generations')
 plt.xticks(average_cd_per_gen.index)  # Ensure x-axis shows all gen values
 plt.grid(True)
 
 # Save the plot
-output_path_curve = 'plottu/average_color_difference_values_curve.png'
+output_path_curve = 'images/average_subclass_difference_values_curve.png'
 plt.savefig(output_path_curve)
 plt.close()
 
-print(f'Average Color Difference values curve plot saved as {output_path_curve}')
+print(f'Average Subclass Difference values curve plot saved as {output_path_curve}')
 
 
 
@@ -79,22 +83,22 @@ slope, intercept, r_value, p_value, std_err = linregress(x, y)
 regression_line = slope * x + intercept
 
 plt.figure(figsize=(10, 6))
-plt.ylim(0, 0.1)
-plt.scatter(x, y, color='blue', label='Average Color Difference')
+plt.ylim(0,  1)
+plt.scatter(x, y, color='blue', label='Average Subclass Difference')
 plt.plot(x, regression_line, color='red', label=f'Linear Regression\n(y={slope:.4f}x + {intercept:.4f})')
 plt.xlabel('Generation')
-plt.ylabel('Average Color Difference Value')
-plt.title('Average Color Difference Values Across Generations')
+plt.ylabel('Average Subclass Difference Value')
+plt.title('Average Subclass Difference Values Across Generations')
 plt.xticks(x)  # 确保 x 轴显示所有代值
 plt.grid(True)
 plt.legend()
 
 # 保存图表
-output_path_scatter = 'plottu/average_color_difference_values_scatter.png'
+output_path_scatter = 'images/average_subclass_difference_values_scatter.png'
 plt.savefig(output_path_scatter)
 plt.close()
 
-print(f'Average Color Difference values scatter plot with linear regression saved as {output_path_scatter}')
+print(f'Average Subclass Difference values scatter plot with linear regression saved as {output_path_scatter}')
 
 
 
@@ -110,18 +114,18 @@ print(f'Average Color Difference values scatter plot with linear regression save
 
 # plt.figure(figsize=(10, 6))
 # plt.ylim(0, 0.1)
-# plt.scatter(x, y, color='blue', label='Average Color Difference')
+# plt.scatter(x, y, color='blue', label='Average Subclass Difference')
 # plt.plot(x, regression_line, color='red', label=f'Quadratic Regression\n(y={coefficients[0]:.4f}x^2 + {coefficients[1]:.4f}x + {coefficients[2]:.4f})')
 # plt.xlabel('Generation')
-# plt.ylabel('Average Color Difference Value')
-# plt.title('Average Color Difference Values Across Generations')
+# plt.ylabel('Average Subclass Difference Value')
+# plt.title('Average Subclass Difference Values Across Generations')
 # plt.xticks(x)  # 确保 x 轴显示所有代值
 # plt.grid(True)
 # plt.legend()
 
 # # 保存图表
-# output_path_scatter = 'average_color_difference_values_scatter_quadratic.png'
+# output_path_scatter = 'average_subclass_difference_values_scatter_quadratic.png'
 # plt.savefig(output_path_scatter)
 # plt.close()
 
-# print(f'Average Color Difference values scatter plot with quadratic regression saved as {output_path_scatter}')
+# print(f'Average Subclass Difference values scatter plot with quadratic regression saved as {output_path_scatter}')

@@ -2,19 +2,22 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os
 import numpy as np
-# Define the base path
-base_path = 'results'
+import argparse
 
-# Define subdirectories
-subdirectories = ['gen{}'.format(i) for i in range(11)]
+# 设置命令行参数解析
+parser = argparse.ArgumentParser(description='Process test results for different models.')
+parser.add_argument('--model_name', type=str, required=True, help='The name of the model to process results for')
+args = parser.parse_args()
+base_path = 'metric_results'
 
- 
+subdirectories = [str(i) for i in range(11)]
+
 def read_eo_files(base_path, subdirectories):
     dfs = []
     for subdir in subdirectories:
-        filepath = os.path.join(base_path, subdir, 'eo_results.csv')
+        filepath = os.path.join(base_path, args.model_name, f'eo_results_{subdir}.csv')
         df = pd.read_csv(filepath)
-        df['Gen'] = subdir
+        df['Gen'] = f'gen{subdir}'  # Label generation with 'gen' prefix for clarity in plots
         dfs.append(df)
     combined_df = pd.concat(dfs)
     return combined_df
@@ -22,51 +25,44 @@ def read_eo_files(base_path, subdirectories):
 # Read and combine data
 combined_df = read_eo_files(base_path, subdirectories)
 
-# Pivot the DataFrame for plotting
-pivot_df = combined_df.pivot(index='Digit', columns='Gen', values='EO')
+# Pivot the DataFrame for easier plotting
+pivot_df = combined_df.pivot_table(index='True Superclass Name', columns='Gen', values='EO', aggfunc='mean')
 
-# Plotting
+# Plotting bar graph
 pivot_df.plot(kind='bar', figsize=(15, 6))
-plt.ylim(0.98, 1.0)
-plt.xlabel('Digit')
+plt.ylim(0 , 1.0)  # Adjust the y-axis limit to enhance visualization of EO values
+plt.xlabel('Superclass')
 plt.ylabel('EO Value')
-plt.title('EO Values for Different Digits Across Generations')
-plt.legend(title='Generation')
+plt.title('EO Values for Different Superclasses Across Generations')
+plt.legend(title='Generation', loc='upper left')
 plt.tight_layout()
 
-output_path = 'plottu/eo_values_bar_plot.png'
+output_path = 'images/eo_values_bar_plot.png'
 plt.savefig(output_path)
 plt.close()
+print(f'EO values bar plot saved as {output_path}')
 
-
-# calculate average EO
-
-# 计算每个gen中十个数字的EO平均值
+# Calculate average EO per generation
 average_eo_per_gen = combined_df.groupby('Gen')['EO'].mean()
 
-# 将Gen列转换为数字类型以确保正确排序
-average_eo_per_gen.index = average_eo_per_gen.index.str.extract('(\d+)').astype(int).squeeze()
+# Ensure the 'Gen' index is sorted numerically
+average_eo_per_gen.index = average_eo_per_gen.index.str.extract('(\d+)')[0].astype(int).sort_index()
 
-# 按Gen排序
-average_eo_per_gen = average_eo_per_gen.sort_index()
-
-# 绘制平均值随gen变化的曲线图
+# Plot the average EO values across generations
 plt.figure(figsize=(10, 6))
-plt.ylim(0.9, 1)
+plt.ylim(0 , 1.0)
 plt.plot(average_eo_per_gen.index, average_eo_per_gen.values, marker='o')
 plt.xlabel('Generation')
 plt.ylabel('Average EO Value')
 plt.title('Average EO Values Across Generations')
-plt.xticks(average_eo_per_gen.index)  # 确保x轴显示所有gen值
+plt.xticks(average_eo_per_gen.index)  # Ensure x-axis displays all generation numbers
 plt.grid(True)
 
-# 保存图像
-output_path_curve = 'plottu/average_eo_values_curve.png'
+output_path_curve = 'images/average_eo_values_curve.png'
 plt.savefig(output_path_curve)
 plt.close()
-
 print(f'Average EO values curve plot saved as {output_path_curve}')
-
+ 
 
 average_eo_per_gen.sort_index()
 
@@ -79,7 +75,7 @@ slope, intercept = np.polyfit(x, y, 1)
 regression_line = slope * x + intercept
 
 plt.figure(figsize=(10, 6))
-plt.ylim(0.9, 1)
+plt.ylim(0 , 1)
 plt.scatter(x, y, color='blue', label='Average EO Value')
 plt.plot(x, regression_line, color='red', label=f'Linear Regression\n(y={slope:.4f}x + {intercept:.4f})')
 plt.xlabel('Generation')
@@ -90,7 +86,7 @@ plt.grid(True)
 plt.legend()
 
 # 保存图像
-output_path_scatter = 'plottu/average_eo_values_scatter_linear.png'
+output_path_scatter = 'images/average_eo_values_scatter_linear.png'
 plt.savefig(output_path_scatter)
 plt.close()
 

@@ -117,7 +117,7 @@ plt.xlabel('Generation')
 plt.ylabel('Average TPR Value')
 plt.title('Average TPR Values Across Generations')
 plt.xticks(x_tpr)  # 确保x轴显示所有gen值
-plt.ylim(0.9, 1)  # 设置y轴范围
+plt.ylim(0 , 1)  # 设置y轴范围
 plt.grid(True)
 plt.legend()
 
