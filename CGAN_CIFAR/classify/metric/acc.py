@@ -10,7 +10,15 @@ current_directory = os.path.dirname(__file__)
 parent_directory = os.path.dirname(current_directory)  
 sys.path.append(parent_directory)
 from utils.datasets import SuperCIFAR100, GeneratedDataset, tf ,CIFAR_100_CLASS_MAP,generate_full_subclass_map
- 
+import argparse
+
+# 设置命令行参数
+parser = argparse.ArgumentParser(description='Calculate Disparate Impact (DI) for each Superclass and Subclass combination')
+parser.add_argument('--result_dir', type=str, required=True, help='Directory containing result CSV files')
+parser.add_argument('--model_name', type=str, required=True, help='Model name used for saving results')
+
+args = parser.parse_args()
+
 
 csv_file_path = 'results/resnet50/test_results_0.csv'   
 
@@ -84,7 +92,7 @@ sys.path.append(parent_directory)
 from utils.datasets import CIFAR_100_CLASS_MAP  # 确保这个import路径正确
 
 # 定义CSV文件路径
-base_dir = 'results/resnet50'
+base_dir = args.result_dir
 csv_files = [f'test_results_{i}.csv' for i in range(11)]  # 从0到10的文件名列表
 worst_accuracies_all = np.zeros((5, len(csv_files)))  # 5行（每个级别的准确率），11列（每个文件）
 
@@ -147,7 +155,7 @@ plt.grid(True)
 plt.tight_layout()
 
 # 保存图像
-output_plot_path = 'images/accuracy_trends.png'
+output_plot_path = f'images/{args.model_name}/accuracy_trends.png'
 plt.savefig(output_plot_path)
 plt.show()
 
@@ -179,7 +187,7 @@ plt.grid(True)
 plt.tight_layout()
 
 # 保存图像
-output_plot_path = 'images/accuracy_trends_regression.png'
+output_plot_path = f'images/{args.model_name}/accuracy_trends_regression.png'
 plt.savefig(output_plot_path)
 plt.close()
 

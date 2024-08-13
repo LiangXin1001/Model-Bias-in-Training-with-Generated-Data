@@ -36,3 +36,5 @@ python plottu/plot_digit_color_diff.py --model_name $model_name
 echo "all figures"
 
 python plottu/acc_for_multiplemodals.py --model_names "vgg19" "resnet50" "alexnet"
+  
+python plottu/ploteo_for_multiplemodels.py --model_names "vgg19" "resnet50"  "alexnet"
