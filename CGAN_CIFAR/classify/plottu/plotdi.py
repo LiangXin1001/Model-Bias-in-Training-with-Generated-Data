@@ -40,7 +40,7 @@ plt.title('Disparate Impact Values for Different True Superclass Names Across Ge
 plt.legend(title='Generation')
 plt.tight_layout()
 
-output_path = 'images/disparate_impact_values_bar_plot.png'
+output_path = f'images/{args.model_name}/disparate_impact_values_bar_plot.png'
 plt.savefig(output_path)
 plt.close()
  
@@ -64,7 +64,7 @@ plt.ylim(0 , 1)  # 设置y轴范围
 plt.grid(True)
 
 # 保存图像
-output_path_curve = 'images/average_disparate_impact_values_curve.png'
+output_path_curve = f'images/{args.model_name}/average_disparate_impact_values_curve.png'
 plt.savefig(output_path_curve)
 plt.close()
 
@@ -94,7 +94,7 @@ plt.grid(True)
 plt.legend()
 
 # 保存图表
-output_path_scatter = 'images/average_disparate_impact_values_scatter_linear.png'
+output_path_scatter = f'images/{args.model_name}/average_disparate_impact_values_scatter_linear.png'
 plt.savefig(output_path_scatter)
 plt.close()
 

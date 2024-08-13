@@ -11,7 +11,6 @@ args = parser.parse_args()
 
 # Define the base path
 base_path = 'metric_results'
-os.makedirs(base_path, exist_ok=True)
 subdirectories = [str(i) for i in range(11)]
 
 # Function to read TPR and FPR files
@@ -41,7 +40,7 @@ plt.ylabel('TPR Value')
 plt.title('TPR Values for Different Superclasses Across Generations')
 plt.legend(title='Generation')
 plt.tight_layout()
-tpr_output_path = 'images/tpr_values_bar_plot.png'
+tpr_output_path = f'images/{args.model_name}/tpr_values_bar_plot.png'
 plt.savefig(tpr_output_path)
 plt.close()
 
@@ -54,7 +53,7 @@ plt.ylabel('FPR Value')
 plt.title('FPR Values for Different Superclasses Across Generations')
 plt.legend(title='Generation')
 plt.tight_layout()
-fpr_output_path = 'images/fpr_values_bar_plot.png'
+fpr_output_path = f'images/{args.model_name}/fpr_values_bar_plot.png'
 plt.savefig(fpr_output_path)
 plt.close()
 
@@ -80,7 +79,7 @@ plt.xticks(average_tpr_per_gen.index)
 plt.ylim(0, 1)
 plt.grid(True)
 plt.legend()
-tpr_output_path_curve = 'images/average_tpr_values_curve.png'
+tpr_output_path_curve = f'images/{args.model_name}/average_tpr_values_curve.png'
 plt.savefig(tpr_output_path_curve)
 plt.close()
 
@@ -94,7 +93,7 @@ plt.xticks(average_fpr_per_gen.index)
 plt.ylim(0, 0.1)
 plt.grid(True)
 plt.legend()
-fpr_output_path_curve = 'images/average_fpr_values_curve.png'
+fpr_output_path_curve = f'images/{args.model_name}/average_fpr_values_curve.png'
 plt.savefig(fpr_output_path_curve)
 plt.close()
 
@@ -123,7 +122,7 @@ plt.grid(True)
 plt.legend()
 
 # 保存TPR散点图
-tpr_output_path_scatter = 'images/average_tpr_values_scatter_linear.png'
+tpr_output_path_scatter = f'images/{args.model_name}/average_tpr_values_scatter_linear.png'
 plt.savefig(tpr_output_path_scatter)
 plt.close()
 
@@ -147,7 +146,7 @@ plt.grid(True)
 plt.legend()
 
 # 保存FPR散点图
-fpr_output_path_scatter = 'images/average_fpr_values_scatter_linear.png'
+fpr_output_path_scatter = f'images/{args.model_name}/average_fpr_values_scatter_linear.png'
 plt.savefig(fpr_output_path_scatter)
 plt.close()
 
