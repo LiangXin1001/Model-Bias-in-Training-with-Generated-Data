@@ -10,6 +10,8 @@ parser.add_argument('--model_name', type=str, required=True, help='The name of t
 args = parser.parse_args()
 # Define the base path
 base_path = 'results'
+os.makedirs(base_path, exist_ok=True)
+
 subdirectories = [f'{i}' for i in range(11)]
 model_name =  args.model_name
 

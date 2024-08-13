@@ -10,6 +10,7 @@ parser.add_argument('--model_name', type=str, required=True, help='The name of t
 args = parser.parse_args()
 # Define the base path
 base_path = 'metric_results'
+os.makedirs(base_path, exist_ok=True)
 subdirectories = ['{}'.format(i) for i in range(11)]
 
 # Function to read digit difference files

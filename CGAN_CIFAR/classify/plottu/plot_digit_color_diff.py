@@ -10,7 +10,7 @@ parser = argparse.ArgumentParser(description='Process test results for different
 parser.add_argument('--model_name', type=str, required=True, help='The name of the model to process results for')
 args = parser.parse_args()
 base_path = 'metric_results'
- 
+os.makedirs(base_path, exist_ok=True) 
 subdirectories = [str(i) for i in range(11)]
  
 def read_color_diff_files(base_path, subdirectories):

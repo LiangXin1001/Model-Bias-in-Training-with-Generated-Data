@@ -11,6 +11,7 @@ args = parser.parse_args()
 
 # Define the base path
 base_path = 'metric_results'
+os.makedirs(base_path, exist_ok=True)
 subdirectories = [str(i) for i in range(11)]
 
 # Function to read TPR and FPR files

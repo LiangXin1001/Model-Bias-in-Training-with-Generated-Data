@@ -9,7 +9,7 @@ parser = argparse.ArgumentParser(description='Process test results for different
 parser.add_argument('--model_name', type=str, required=True, help='The name of the model to process results for')
 args = parser.parse_args()
 base_path = 'metric_results'
-
+os.makedirs(base_path, exist_ok=True)
 subdirectories = [str(i) for i in range(11)]
 
 def read_eo_files(base_path, subdirectories):
@@ -37,7 +37,7 @@ plt.title('EO Values for Different Superclasses Across Generations')
 plt.legend(title='Generation', loc='upper left')
 plt.tight_layout()
 
-output_path = 'images/eo_values_bar_plot.png'
+output_path = f'images/{args.model_name}/eo_values_bar_plot.png'
 plt.savefig(output_path)
 plt.close()
 print(f'EO values bar plot saved as {output_path}')
@@ -58,7 +58,7 @@ plt.title('Average EO Values Across Generations')
 plt.xticks(average_eo_per_gen.index)  # Ensure x-axis displays all generation numbers
 plt.grid(True)
 
-output_path_curve = 'images/average_eo_values_curve.png'
+output_path_curve = f'images/{args.model_name}/average_eo_values_curve.png'
 plt.savefig(output_path_curve)
 plt.close()
 print(f'Average EO values curve plot saved as {output_path_curve}')
@@ -86,7 +86,7 @@ plt.grid(True)
 plt.legend()
 
 # 保存图像
-output_path_scatter = 'images/average_eo_values_scatter_linear.png'
+output_path_scatter = f'images/{args.model_name}/average_eo_values_scatter_linear.png'
 plt.savefig(output_path_scatter)
 plt.close()
 
