@@ -51,7 +51,7 @@ for model_name in args.model_names:
 plt.ylim(0 , 1.0)
 plt.xlabel('Generation')
 plt.ylabel('Average Accuracy')
-plt.title('Average Accuracy Across Generations  for Multiple Models')
+plt.title('Average Accuracy Across Generations for Multiple Models')
 plt.xticks(average_accuracy_per_gen.index)  # Ensure x-axis shows all gen values
 plt.grid(True)
 

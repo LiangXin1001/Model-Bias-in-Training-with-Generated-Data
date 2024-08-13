@@ -15,7 +15,7 @@ subdirectories = [str(i) for i in range(11)]
 def read_eo_files(base_path, subdirectories, model_name):
     dfs = []
     for subdir in subdirectories:
-        filepath = os.path.join(base_path, args.model_name, f'eo_results_{subdir}.csv')
+        filepath = os.path.join(base_path, model_name, f'eo_results_{subdir}.csv')
         df = pd.read_csv(filepath)
         df['Gen'] = f'gen{subdir}'  # Label generation with 'gen' prefix for clarity in plots
         dfs.append(df)
