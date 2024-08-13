@@ -14,7 +14,7 @@ python metric/acc.py
 
 python metric/tprfpr.py --result_dir results/${model_name} --model_name ${model_name}
  
-# python metric/calculate_eo.py --result_dir  results/${model_name} --model_name ${model_name}
+python metric/calculate_eo.py --result_dir  results/${model_name} --model_name ${model_name}
 
 
-# python metric/calculate_di.py --result_dir  results/${model_name} --model_name ${model_name}
+python metric/calculate_di.py --result_dir  results/${model_name} --model_name ${model_name}
