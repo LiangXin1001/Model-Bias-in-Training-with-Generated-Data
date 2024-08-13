@@ -20,7 +20,7 @@ print(device)
 def parse_args():
     parser = argparse.ArgumentParser(description="Save models with custom filenames")
     parser.add_argument('--gennum', type=int, required=True, help='Generator number for filename customization')
-    parser.add_argument('--data_root_paths', type=str, required=True, help='Generator number for filename customization')
+    parser.add_argument('--data_root_paths', type=str,  help='Generator number for filename customization')
     return parser.parse_args()
 
 args = parse_args()
@@ -177,7 +177,7 @@ validity_loss = nn.BCELoss()
 
 # real_labels = 0.7 + 0.5 * torch.rand(10, device = device)
 # fake_labels = 0.3 * torch.rand(10, device = device)
-epochs = 40
+epochs = 10
 for epoch in range(1,epochs+1):
     torch.cuda.empty_cache()
     for idx, (images,labels,_) in enumerate(trainloader,0):
@@ -188,13 +188,15 @@ for epoch in range(1,epochs+1):
         images = images.to(device)
         real_labels = 0.7 + 0.3 * torch.rand(batch_size, device=device)  # 现在产生的值介于 0.7 和 1.0 之间
         fake_labels = 0.3 * torch.rand(batch_size, device=device)        # 保持在 0 和 0.3 之间
+        
+        # 计算应该使用的索引
+        real_label_index = idx % 10 if (idx % 10) < batch_size else batch_size - 1
+        fake_label_index = idx % 10 if (idx % 10) < batch_size else batch_size - 1
 
-       
-        real_label = real_labels[idx % 10]
-        fake_label = fake_labels[idx % 10]
-        
-        
-        
+        # 使用计算出的索引获取标签，如果索引超界，则使用最后一个值
+        real_label = real_labels[real_label_index]
+        fake_label = fake_labels[fake_label_index]
+         
         fake_class_labels = 20 *torch.ones((batch_size,),dtype = torch.long,device = device)
         if not (labels.max() < 21 and labels.min() >= 0):
             print("Invalid labels found:", labels[labels >= 21], labels[labels < 0])
