@@ -20,66 +20,57 @@ parser.add_argument('--model_name', type=str, required=True, help='Model name us
 args = parser.parse_args()
 
 
-csv_file_path = 'results/resnet50/test_results_0.csv'   
+# csv_file_path = 'results/resnet50/test_results_0.csv'   
 
-# 读取 CSV 文件
-df = pd.read_csv(csv_file_path)
+# # 读取 CSV 文件
+# df = pd.read_csv(csv_file_path)
 
-overall_accuracy = accuracy_score(df['True Superclass'], df['Predicted Superclass'])
-print(f"Overall Accuracy: {overall_accuracy:.2%}")
+# overall_accuracy = accuracy_score(df['True Superclass'], df['Predicted Superclass'])
+# print(f"Overall Accuracy: {overall_accuracy:.2%}")
 
-# 计算每个大类的正确率
-superclass_accuracies = df.groupby('True Superclass').apply(
-    lambda x: accuracy_score(x['True Superclass'], x['Predicted Superclass'])
-)
+# # 计算每个大类的正确率
+# df['Correct Superclass Prediction'] = df['True Superclass'] == df['Predicted Superclass']
+
+# superclass_accuracies =  df.groupby('True Superclass')['Correct Superclass Prediction'].mean()
 # print("\nAccuracy per Superclass:")
 # print(superclass_accuracies)
 
-# 计算每个子类的正确率
-subclass_accuracies = df.groupby('True Subclass').apply(
-    lambda x: accuracy_score(x['True Superclass'], x['Predicted Superclass'])   
-)
+# # 计算每个子类的正确率
+# df['Correct Subclass Prediction'] = (df['True Superclass'] == df['Predicted Superclass']) & (df['True Subclass'] == df['Predicted Subclass'])
+# subclass_accuracies = df.groupby('True Subclass')['Correct Subclass Prediction'].mean()
 # print("\nAccuracy per Subclass:")
 # print(subclass_accuracies)
 
-worst_accuracies = []
-second_worst_accuracies = []
-third_worst_accuracies = []
-fourth_worst_accuracies = []
-fifth_worst_accuracies = []
-# 计算每个超类的子类正确率
-for superclass, subclasses in CIFAR_100_CLASS_MAP.items():
-    print(f"Accuracy for subclasses in superclass {superclass}:")
-    subclass_accuracies = []
-    for subclass in subclasses:
-        # 过滤出当前子类的所有数据
-        subclass_data = df[df['True Subclass Name'] == subclass]
-        accuracy = accuracy_score(subclass_data['True Superclass'], subclass_data['Predicted Superclass'])
-        subclass_accuracies.append(accuracy)
-        print(f"{subclass}: {accuracy:.2%}")
+# # 计算每个超类的子类正确率
+# for superclass, subclasses in CIFAR_100_CLASS_MAP.items():
+#     print(f"Accuracy for subclasses in superclass {superclass}:")
+#     subclass_accuracies = []
+#     for subclass in subclasses:
+#         # 过滤出当前子类的所有数据
+#         subclass_data = df[df['True Subclass Name'] == subclass]
+#         accuracy = accuracy_score(subclass_data['True Superclass'], subclass_data['Predicted Superclass'])
+#         subclass_accuracies.append(accuracy)
+#         print(f"{subclass}: {accuracy:.2%}")
 
-    # 对子类准确率进行排序
-    sorted_accuracies = sorted(subclass_accuracies)
+#     # 对子类准确率进行排序
+#     sorted_accuracies = sorted(subclass_accuracies)
 
-    # 收集每个超类中最差到第五差的准确率
-    if len(sorted_accuracies) >= 5:
-        worst_accuracies.append(sorted_accuracies[0])
-        second_worst_accuracies.append(sorted_accuracies[1])
-        third_worst_accuracies.append(sorted_accuracies[2])
-        fourth_worst_accuracies.append(sorted_accuracies[3])
-        fifth_worst_accuracies.append(sorted_accuracies[4])
+#     # 收集每个超类中最差到第五差的准确率
+#     if len(sorted_accuracies) >= 5:
+#         worst_accuracies.append(sorted_accuracies[0])
+#         second_worst_accuracies.append(sorted_accuracies[1])
+#         third_worst_accuracies.append(sorted_accuracies[2])
+#         fourth_worst_accuracies.append(sorted_accuracies[3])
+#         fifth_worst_accuracies.append(sorted_accuracies[4])
 
 
-print("Average of the worst subclass accuracies:", sum(worst_accuracies) / len(worst_accuracies))
-print("Average of the second worst subclass accuracies:", sum(second_worst_accuracies) / len(second_worst_accuracies))
-print("Average of the third worst subclass accuracies:", sum(third_worst_accuracies) / len(third_worst_accuracies))
-print("Average of the fourth worst subclass accuracies:", sum(fourth_worst_accuracies) / len(fourth_worst_accuracies))
-print("Average of the fifth worst subclass accuracies:", sum(fifth_worst_accuracies) / len(fifth_worst_accuracies))
+# print("Average of the worst subclass accuracies:", sum(worst_accuracies) / len(worst_accuracies))
+# print("Average of the second worst subclass accuracies:", sum(second_worst_accuracies) / len(second_worst_accuracies))
+# print("Average of the third worst subclass accuracies:", sum(third_worst_accuracies) / len(third_worst_accuracies))
+# print("Average of the fourth worst subclass accuracies:", sum(fourth_worst_accuracies) / len(fourth_worst_accuracies))
+# print("Average of the fifth worst subclass accuracies:", sum(fifth_worst_accuracies) / len(fifth_worst_accuracies))
 
-
-# 生成并打印分类报告
-# print("\nClassification Report for Superclasses:")
-# print(classification_report(df['True Superclass'], df['Predicted Superclass']))
+ 
 import pandas as pd
 import numpy as np
 from sklearn.metrics import accuracy_score
@@ -96,6 +87,11 @@ base_dir = args.result_dir
 csv_files = [f'test_results_{i}.csv' for i in range(11)]  # 从0到10的文件名列表
 worst_accuracies_all = np.zeros((5, len(csv_files)))  # 5行（每个级别的准确率），11列（每个文件）
 
+worst_accuracies = []
+second_worst_accuracies = []
+third_worst_accuracies = []
+fourth_worst_accuracies = []
+fifth_worst_accuracies = []
 # 遍历每个文件并计算准确率
 for file_index, csv_file in enumerate(csv_files):
     csv_file_path = os.path.join(base_dir, csv_file)
@@ -154,6 +150,7 @@ plt.legend()
 plt.grid(True)
 plt.tight_layout()
 
+os.makedirs(f'images/{args.model_name}', exist_ok=True)
 # 保存图像
 output_plot_path = f'images/{args.model_name}/accuracy_trends.png'
 plt.savefig(output_plot_path)

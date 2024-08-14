@@ -20,13 +20,15 @@ def read_color_diff_files(base_path, subdirectories,model_name):
     for subdir in subdirectories:
         filepath = os.path.join(base_path, model_name, f'subclass_difference_results_{subdir}.csv')
         df = pd.read_csv(filepath)
-        df.columns = ['Description', 'Subclass Difference']  # 手动设置列名
-        df['True Superclass Name'] = df['Description'].str.extract(r'(\d+)').astype(int)  # 从描述中提取数字
+        # df.columns = ['Index', 'Superclass', 'Subclass with Max Accuracy', 'Subclass with Min Accuracy', 'Max Difference'] # 手动设置列名
+        # df['True Superclass Name'] = df['Description'].str.extract(r'(\d+)').astype(int)  # 从描述中提取数字
         df['Gen'] = subdir  # 添加生成代列
-        dfs.append(df[['True Superclass Name', 'Subclass Difference', 'Gen']])
+        dfs.append(df[['True Superclass Name', 'Max Difference', 'Gen']])
     combined_df = pd.concat(dfs)
     return combined_df
 
+colors = ['blue', 'green', 'red', 'purple', 'orange']   
+color_index = 0
 
 # 绘制每个模型的数据
 plt.figure(figsize=(10, 6))
@@ -34,12 +36,15 @@ for model_name in args.model_names:
     combined_df = read_color_diff_files(base_path, subdirectories, model_name)
 
     # Calculate the average Subclass Difference for each gen
-    average_cd_per_gen = combined_df.groupby('Gen')['Subclass Difference'].mean()
+    average_cd_per_gen = combined_df.groupby('Gen')['Max Difference'].mean()
     average_cd_per_gen.index = average_cd_per_gen.index.astype(int)
     average_cd_per_gen = average_cd_per_gen.sort_index()
-
     # Plot the average Subclass Difference values across generations
-    plt.plot(average_cd_per_gen.index, average_cd_per_gen.values, marker='o', label=f'{model_name}')
+    plt.plot(average_cd_per_gen.index, average_cd_per_gen.values, color=colors[color_index],marker='o', label=f'{model_name}')
+    color_index = color_index +1
+
+ 
+
 plt.ylim(0, 1)
 plt.xlabel('Generation')
 plt.ylabel('Average Subclass Difference Value')
@@ -51,12 +56,13 @@ plt.savefig(output_path_curve)
 plt.close()
 print(f'Average Subclass Difference values curve plot for  all model saved  ')
 
+color_index = 0
 plt.figure(figsize=(10, 6))
 for model_name in args.model_names:
     combined_df = read_color_diff_files(base_path, subdirectories, model_name)
 
     # Calculate the average Subclass Difference for each gen
-    average_cd_per_gen = combined_df.groupby('Gen')['Subclass Difference'].mean()
+    average_cd_per_gen = combined_df.groupby('Gen')['Max Difference'].mean()
     average_cd_per_gen.index = average_cd_per_gen.index.astype(int)
     average_cd_per_gen = average_cd_per_gen.sort_index()
  
@@ -66,7 +72,8 @@ for model_name in args.model_names:
     slope, intercept, r_value, p_value, std_err = linregress(x, y)
     regression_line = slope * x + intercept
     plt.scatter(x, y, color='blue', label='Average Subclass Difference')
-    plt.plot(x, regression_line, color='red' , label=f'{model_name} Regression (y={slope:.4f}x + {intercept:.4f})' )
+    plt.plot(x, regression_line, color=colors[color_index], label=f'{model_name} Regression (y={slope:.4f}x + {intercept:.4f})' )
+    color_index = color_index +1
 
 plt.ylim(0, 1)
 

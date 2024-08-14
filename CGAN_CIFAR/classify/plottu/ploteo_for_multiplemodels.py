@@ -17,7 +17,7 @@ def read_eo_files(base_path, subdirectories, model_name):
     for subdir in subdirectories:
         filepath = os.path.join(base_path, model_name, f'eo_results_{subdir}.csv')
         df = pd.read_csv(filepath)
-        df['Gen'] = f'gen{subdir}'  # Label generation with 'gen' prefix for clarity in plots
+        df['Gen'] = subdir  # Label generation with 'gen' prefix for clarity in plots
         dfs.append(df)
     combined_df = pd.concat(dfs)
     return combined_df
@@ -27,28 +27,31 @@ images_dir = "images/all"
 os.makedirs(images_dir, exist_ok=True)
 
 # Bar plot for EO values across different superclasses and generations
-plt.figure(figsize=(15, 6))
-for model_name in args.model_names:
-    combined_df = read_eo_files(base_path, subdirectories, model_name)
-    pivot_df = combined_df.pivot_table(index='True Superclass Name', columns='Gen', values='EO', aggfunc='mean')
-    pivot_df.plot(kind='bar', ax=plt.gca(), alpha=0.7, title='EO Values Across Generations for Multiple Models')
+# plt.figure(figsize=(15, 6))
+# for model_name in args.model_names:
+#     combined_df = read_eo_files(base_path, subdirectories, model_name)
+#     pivot_df = combined_df.pivot_table(index='True Superclass Name', columns='Gen', values='EO', aggfunc='mean')
+#     pivot_df.plot(kind='bar', ax=plt.gca(), alpha=0.7, title='EO Values Across Generations for Multiple Models')
 
-plt.ylim(0, 1.0)
-plt.xlabel('Superclass')
-plt.ylabel('EO Value')
-plt.legend(title='Generation', loc='upper left')
-plt.tight_layout()
-output_path = f'{images_dir}/eo_values_bar_plot.png'
-plt.savefig(output_path)
-plt.close()
+# plt.ylim(0, 1.0)
+# plt.xlabel('Superclass')
+# plt.ylabel('EO Value')
+# plt.legend(title='Generation', loc='upper left')
+# plt.tight_layout()
+# output_path = f'{images_dir}/eo_values_bar_plot.png'
+# plt.savefig(output_path)
+# plt.close()
+
+colors = ['blue', 'green', 'red', 'purple', 'orange']   
+color_index = 0
 
 # Average EO values across generations
 plt.figure(figsize=(10, 6))
 for model_name in args.model_names:
     combined_df = read_eo_files(base_path, subdirectories, model_name)
     average_eo_per_gen = combined_df.groupby('Gen')['EO'].mean()
-    plt.plot(average_eo_per_gen.index, average_eo_per_gen.values, marker='o', label=model_name)
-
+    plt.plot(average_eo_per_gen.index, average_eo_per_gen.values,color=colors[color_index], marker='o', label=model_name)
+    color_index = color_index + 1
 plt.ylim(0, 1.0)
 plt.xlabel('Generation')
 plt.ylabel('Average EO Value')
@@ -59,7 +62,7 @@ plt.legend()
 output_path_curve = f'{images_dir}/average_eo_values_curve.png'
 plt.savefig(output_path_curve)
 plt.close()
-
+color_index =0
 # Scatter plot with linear regression
 plt.figure(figsize=(10, 6))
 for model_name in args.model_names:
@@ -67,10 +70,12 @@ for model_name in args.model_names:
     average_eo_per_gen = combined_df.groupby('Gen')['EO'].mean()
     x = average_eo_per_gen.index
     y = average_eo_per_gen.values
+    x = np.asarray(x, dtype=float)
     slope, intercept = np.polyfit(x, y, 1)
     regression_line = slope * x + intercept
-    plt.scatter(x, y, label=f'{model_name} Average EO Value')
-    plt.plot(x, regression_line, label=f'{model_name} Linear Regression (y={slope:.4f}x + {intercept:.4f})')
+    plt.scatter(x, y,color=colors[color_index], label=f'{model_name} Average EO Value')
+    plt.plot(x, regression_line, color=colors[color_index],label=f'{model_name} Linear Regression (y={slope:.4f}x + {intercept:.4f})')
+    color_index = color_index + 1
 
 plt.ylim(0, 1)
 plt.xlabel('Generation')

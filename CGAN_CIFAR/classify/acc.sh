@@ -7,14 +7,39 @@
 # 激活环境
 source ~/.bashrc
 conda activate llava-med
-
-
+ 
 model_name="resnet50"
-python metric/acc.py
+python metric/acc.py  --result_dir results/${model_name} --model_name ${model_name}
 
 python metric/tprfpr.py --result_dir results/${model_name} --model_name ${model_name}
  
 python metric/calculate_eo.py --result_dir  results/${model_name} --model_name ${model_name}
+python metric/twoclass_eo.py --result_dir  results/${model_name} --model_name ${model_name}
 
 
+python metric/calculate_di.py --result_dir  results/${model_name} --model_name ${model_name}
+
+
+
+model_name="vgg19"
+python metric/acc.py  --result_dir results/${model_name} --model_name ${model_name}
+
+python metric/tprfpr.py --result_dir results/${model_name} --model_name ${model_name}
+ 
+python metric/calculate_eo.py --result_dir  results/${model_name} --model_name ${model_name}
+python metric/twoclass_eo.py --result_dir  results/${model_name} --model_name ${model_name}
+
+
+python metric/calculate_di.py --result_dir  results/${model_name} --model_name ${model_name}
+
+
+
+model_name="alexnet"
+python metric/acc.py  --result_dir results/${model_name} --model_name ${model_name}
+
+python metric/tprfpr.py --result_dir results/${model_name} --model_name ${model_name}
+ python metric/twoclass_eo.py --result_dir  results/${model_name} --model_name ${model_name}
+
+python metric/calculate_eo.py --result_dir  results/${model_name} --model_name ${model_name}
+ 
 python metric/calculate_di.py --result_dir  results/${model_name} --model_name ${model_name}

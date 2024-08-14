@@ -62,7 +62,7 @@ for i in range(11):
         eo_list = [{'Superclass': superclass, 
                     'Subclass': subclass,
                     'EO': eo_info['EO'],
-                     'True Superclass Name': eo_info['True Superclass Name'],
+                    'True Superclass Name': eo_info['True Superclass Name'],
                     'True Subclass Name': eo_info['True Subclass Name']
                     } for (superclass, subclass), eo_info in eo_values.items()]
         

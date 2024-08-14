@@ -12,7 +12,7 @@ args = parser.parse_args()
 base_path = 'metric_results'
 os.makedirs(base_path, exist_ok=True) 
 subdirectories = [str(i) for i in range(11)]
-
+os.makedirs(f'images/{args.model_name}', exist_ok=True) 
 # Function to read disparate impact files
 def read_di_files(base_path, subdirectories):
     dfs = []

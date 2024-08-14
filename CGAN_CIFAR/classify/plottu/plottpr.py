@@ -8,7 +8,7 @@ import argparse
 parser = argparse.ArgumentParser(description='Process test results for different models.')
 parser.add_argument('--model_name', type=str, required=True, help='The name of the model to process results for')
 args = parser.parse_args()
-
+os.makedirs(f'images/{args.model_name}', exist_ok=True) 
 # Define the base path
 base_path = 'metric_results'
 subdirectories = [str(i) for i in range(11)]

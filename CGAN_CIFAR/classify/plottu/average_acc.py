@@ -49,6 +49,7 @@ plt.xticks(average_accuracy_per_gen.index)  # Ensure x-axis shows all gen values
 plt.grid(True)
 
 # Save the plot
+os.makedirs(f'images/{args.model_name}', exist_ok=True) 
 output_path_curve = f'images/{args.model_name}/average_accuracy_curve.png'
 plt.savefig(output_path_curve)
 plt.close()

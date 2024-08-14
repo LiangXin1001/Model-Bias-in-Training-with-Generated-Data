@@ -9,7 +9,7 @@ parser = argparse.ArgumentParser(description='Process test results for different
 parser.add_argument('--model_name', type=str, required=True, help='The name of the model to process results for')
 args = parser.parse_args()
 base_path = 'metric_results'
-
+os.makedirs(f'images/{args.model_name}', exist_ok=True) 
 subdirectories = [str(i) for i in range(11)]
 
 def read_eo_files(base_path, subdirectories):
@@ -17,7 +17,7 @@ def read_eo_files(base_path, subdirectories):
     for subdir in subdirectories:
         filepath = os.path.join(base_path, args.model_name, f'eo_results_{subdir}.csv')
         df = pd.read_csv(filepath)
-        df['Gen'] = f'gen{subdir}'  # Label generation with 'gen' prefix for clarity in plots
+        df['Gen'] = subdir # Label generation with 'gen' prefix for clarity in plots
         dfs.append(df)
     combined_df = pd.concat(dfs)
     return combined_df

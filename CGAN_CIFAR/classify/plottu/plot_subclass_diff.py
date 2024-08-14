@@ -18,10 +18,10 @@ def read_color_diff_files(base_path, subdirectories):
     for subdir in subdirectories:
         filepath = os.path.join(base_path, args.model_name, f'subclass_difference_results_{subdir}.csv')
         df = pd.read_csv(filepath)
-        df.columns = ['Description', 'Subclass Difference']  # 手动设置列名
-        df['True Superclass Name'] = df['Description'].str.extract(r'(\d+)').astype(int)  # 从描述中提取数字
+        # df.columns = ['Index', 'Superclass', 'Subclass with Max Accuracy', 'Subclass with Min Accuracy', 'Max Difference'] # 手动设置列名
+        # df['True Superclass Name'] = df['Description'].str.extract(r'(\d+)').astype(int)  # 从描述中提取数字
         df['Gen'] = subdir  # 添加生成代列
-        dfs.append(df[['True Superclass Name', 'Subclass Difference', 'Gen']])
+        dfs.append(df[['True Superclass Name', 'Max Difference', 'Gen']])
     combined_df = pd.concat(dfs)
     return combined_df
 
@@ -29,7 +29,7 @@ def read_color_diff_files(base_path, subdirectories):
 combined_df = read_color_diff_files(base_path, subdirectories)
 
 # 数据透视
-pivot_df = combined_df.pivot(index='True Superclass Name', columns='Gen', values='Subclass Difference')
+pivot_df = combined_df.pivot(index='True Superclass Name', columns='Gen', values='Max Difference')
 
 # 绘图
 plt.figure(figsize=(15, 6))
@@ -41,14 +41,14 @@ plt.legend(title='Generation')
 plt.tight_layout()
 
 # 保存图表
-output_path = 'images/Superclass_subclass_difference_values_bar_plot.png'
+output_path = f'images/{args.model_name}/Superclass_subclass_difference_values_bar_plot.png'
 plt.savefig(output_path)
 plt.close()
  
 
 
 # Calculate the average Subclass Difference for each gen
-average_cd_per_gen = combined_df.groupby('Gen')['Subclass Difference'].mean()
+average_cd_per_gen = combined_df.groupby('Gen')['Max Difference'].mean()
 
 # Ensure the Gen column is numeric and sort by it
 average_cd_per_gen.index = average_cd_per_gen.index.str.extract('(\d+)').astype(int).squeeze()
@@ -65,7 +65,7 @@ plt.xticks(average_cd_per_gen.index)  # Ensure x-axis shows all gen values
 plt.grid(True)
 
 # Save the plot
-output_path_curve = 'images/average_subclass_difference_values_curve.png'
+output_path_curve = f'images/{args.model_name}/average_subclass_difference_values_curve.png'
 plt.savefig(output_path_curve)
 plt.close()
 
@@ -94,7 +94,7 @@ plt.grid(True)
 plt.legend()
 
 # 保存图表
-output_path_scatter = 'images/average_subclass_difference_values_scatter.png'
+output_path_scatter = f'images/{args.model_name}/average_subclass_difference_values_scatter.png'
 plt.savefig(output_path_scatter)
 plt.close()
 

@@ -59,27 +59,44 @@ def calculate_tpr_fpr(df):
     return results
 def difference_in_means_by_subclass(df):
     results = []
-    
     superclasses = df['True Superclass'].unique()
     
     for superclass in superclasses:
-        subclass_accuracies = []
         subclasses = df[df['True Superclass'] == superclass]['True Subclass'].unique()
+
+        # Separate storage for accuracies and subclass names
+        subclass_accuracies = {}
+        subclass_names = {}
+        superclass_name = df[df['True Superclass'] == superclass]['True Superclass Name'].iloc[0]
         
         for subclass in subclasses:
             subset = df[(df['True Subclass'] == subclass)]
             accuracy = (subset['True Superclass'] == subset['Predicted Superclass']).mean()
-            subclass_accuracies.append(accuracy)
-        
+            subclass_accuracies[subclass] = accuracy
+            subclass_names[subclass] = subset['True Subclass Name'].iloc[0]
+
         if len(subclass_accuracies) > 1:
-            max_diff = max(subclass_accuracies) - min(subclass_accuracies)
+            max_accuracy = max(subclass_accuracies.values())
+            min_accuracy = min(subclass_accuracies.values())
+            max_diff = max_accuracy - min_accuracy
+
+            subclass_with_max_accuracy = [sub for sub, acc in subclass_accuracies.items() if acc == max_accuracy]
+            subclass_with_min_accuracy = [sub for sub, acc in subclass_accuracies.items() if acc == min_accuracy]
+
             results.append({
                 'Superclass': superclass,
-                'Subclass': subclass,
-                'Max Difference': max_diff
+                'Max Difference': max_diff,
+                'Subclass with Max Accuracy': subclass_with_max_accuracy,
+                'Subclass with Min Accuracy': subclass_with_min_accuracy,
+                'Subclass with Max Accuracy Name': [subclass_names[sub] for sub in subclass_with_max_accuracy],
+                'Subclass with Min Accuracy Name': [subclass_names[sub] for sub in subclass_with_min_accuracy],
+                'True Superclass Name': superclass_name
             })
     
     return results
+
+
+
 
 # 处理每个CSV文件
 for i in range(11):
@@ -96,14 +113,18 @@ for i in range(11):
         tpr_fpr_df.to_csv(os.path.join(save_path, f'tpr_fpr_results_{i}.csv'), index=False)
         
         # 保存子类差异结果到 CSV 文件
-        subclass_diff_df = pd.DataFrame.from_dict(subclass_difference_results, orient='index')
-        subclass_diff_df.to_csv(os.path.join(save_path, f'subclass_difference_results_{i}.csv'))
+        subclass_diff_df = pd.DataFrame.from_dict(subclass_difference_results )
+        subclass_diff_df.to_csv(os.path.join(save_path, f'subclass_difference_results_{i}.csv'), index=False)
 
         # 打印 Difference in Means
         print(f"Difference in Means for test_results_{i}:")
-        for key, value in subclass_difference_results.items():
-            print(f"{key}: {value}")
-        
+        # for key, value in subclass_difference_results.items():
+        #     print(f"{key}: {value}")
+        for result in subclass_difference_results:
+            print(f"Superclass {result['Superclass']}:")
+            print(f"  Subclass with Max Accuracy: {result['Subclass with Max Accuracy']} - Max Accuracy: {result['Max Difference']}")
+            print(f"  Subclass with Min Accuracy: {result['Subclass with Min Accuracy']} - Min Accuracy: {result['Max Difference']}")
+
         # 打印 TPR 和 FPR
         print(f"\nTPR and FPR for test_results_{i}:")
         for index, row in tpr_fpr_df.iterrows():
