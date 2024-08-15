@@ -8,14 +8,13 @@ from PIL import Image
 import sys
 from torchvision import transforms
 from torch.utils.data import DataLoader, Dataset
+from torchvision.models import alexnet, vgg19, resnet50, mobilenet_v3_large, inception_v3
  
 from torchvision import transforms
 from torch.utils.data import DataLoader
 import seaborn as sns
 import argparse
-
-  
-import numpy as np
+ 
 import matplotlib.pyplot as plt
  
 
@@ -72,6 +71,7 @@ parser.add_argument('--model_save_path', type=str, required=True, help='Director
 parser.add_argument('--result_save_path', type=str, required=True, help='Directory path to save results')
 parser.add_argument('--model_name', type=str, required=True, help='name  models')
 parser.add_argument('--epochs', type=int, default=10, help='Number of epochs to train the model')
+parser.add_argument('--gennum', type=int, required=True,  help='Number of epochs to train the model')
 parser.add_argument('--batch_size', type=int, default=16, help='Batch size for training and testing')
 parser.add_argument('--learning_rate', type=float, default=0.001, help='Learning rate for the optimizer')
 
@@ -99,21 +99,31 @@ class CustomDataset(Dataset):
             image = self.transform(image)
         return image, label, color, img_path   
 
-def load_model(model_path):
-    # 创建一个与训练相同的模型实例，这里使用 ResNet50
-    model = resnet50(pretrained=False)
-    num_features = model.fc.in_features
-    # 如果模型的最后一层在训练中被修改了，确保这里也要做相应的修改
-    model.fc = nn.Linear(num_features, 10)  #  模型最后有10个输出
+def get_model(model_name, num_classes, device):
+    if model_name.lower() == 'alexnet':
+        model = alexnet(pretrained=False)
+        model.classifier[6] = nn.Linear(model.classifier[6].in_features, num_classes)
+    elif model_name.lower() == 'vgg19':
+        model = vgg19(pretrained=False)
+        model.classifier[6] = nn.Linear(model.classifier[6].in_features, num_classes)
+    elif model_name.lower() == 'resnet50':
+        model = resnet50(pretrained=False)
+        model.fc = nn.Linear(model.fc.in_features, num_classes)
+    
+    elif model_name.lower() == 'mobilenetv3':
+        model = mobilenet_v3_large(pretrained=False)
+        model.classifier[3] = nn.Linear(model.classifier[3].in_features, num_classes)
+    
+    elif model_name.lower() == 'inceptionv4':
+        # 使用 InceptionV3 作为 InceptionV4 的替代
+        model = inception_v3(pretrained=False, aux_logits=False)
+        model.fc = nn.Linear(model.fc.in_features, num_classes)
+    
+    else:
+        raise ValueError("Unsupported model name")
+    
+    return model.to(device)
 
-    # 加载保存的权重
-    model.load_state_dict(torch.load(model_path))
-
-    # 将模型设置为评估模式
-    model.eval()
-
-    return model
- 
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
  
@@ -152,13 +162,14 @@ def test(model, test_loader, misclassified_dir):
 
 def main():
     model_path = os.path.join(args.model_save_path, f"{args.model_name}_epoch{args.epochs}.pth")
-    model = load_model(model_path)
-    model = model.to(device)
-  
+    model = get_model(args.model_name, 10, device)
     mean_rgb , std_rgb =  get_mean_std(args.test_csv, args.test_images_dir)
     transform = transforms.Compose([
+        transforms.Resize(64),
+        transforms.RandomHorizontalFlip(),  # 随机水平翻转
+        transforms.RandomRotation(10),  # 随机旋转
         transforms.ToTensor(),
-        transforms.Normalize(mean=mean_rgb, std=std_rgb)
+        transforms.Normalize(mean = mean_rgb, std = std_rgb)  
     ])
     test_dataset = CustomDataset(csv_file=args.test_csv, root_dir=args.test_images_dir, transform=transform)
     test_loader = DataLoader(test_dataset, batch_size=args.batch_size, shuffle=False)

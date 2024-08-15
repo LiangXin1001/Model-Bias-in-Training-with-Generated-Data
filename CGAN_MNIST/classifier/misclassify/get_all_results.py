@@ -6,7 +6,7 @@ parser = argparse.ArgumentParser(description='Train a model with configurable da
 parser.add_argument('--misclassified_csv_path', type=str, required=True, help='CSV file path for testing dataset')
 parser.add_argument('--images_directory', type=str, required=True, help='Directory path for testing images')
 parser.add_argument('--output_csv_path', type=str, required=True, help='Directory path to save models')
- 
+parser.add_argument('--gennum', type=int, required=True,  help='Number of epochs to train the model')
 args = parser.parse_args()
 
  
