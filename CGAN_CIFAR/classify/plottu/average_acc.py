@@ -38,6 +38,8 @@ average_accuracy_per_gen = combined_df.groupby('Gen')['Correct'].mean()
 average_accuracy_per_gen.index = average_accuracy_per_gen.index.astype(int)
 average_accuracy_per_gen = average_accuracy_per_gen.sort_index()
 
+print("acc : ",average_accuracy_per_gen)
+
 # Plot the average accuracy values across generations
 plt.figure(figsize=(10, 6))
 plt.plot(average_accuracy_per_gen.index, average_accuracy_per_gen.values, marker='o')
