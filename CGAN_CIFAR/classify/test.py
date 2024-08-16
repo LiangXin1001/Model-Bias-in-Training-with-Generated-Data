@@ -11,7 +11,7 @@ import argparse
 import sys    
 from torchvision.models import alexnet, vgg19, resnet50, mobilenet_v3_large, inception_v3
  
-from utils.datasets import SuperCIFAR100, GeneratedDataset, tf ,CIFAR_100_CLASS_MAP,generate_full_subclass_map
+from utils.datasets import SuperCIFAR100, GeneratedDataset,  CIFAR_100_CLASS_MAP,generate_full_subclass_map
 from torch.utils.data import ConcatDataset, DataLoader 
 
 current_dir = os.path.dirname(__file__)
@@ -22,11 +22,18 @@ def parse_arguments():
     parser.add_argument('--gennum', type=int, required=True, help='Generator number for filename customization')
     parser.add_argument('--model_name', type=str, choices=['alexnet', 'vgg19', 'resnet50', 'mobilenetv3', 'inceptionv4'], required=True, help='Model to use for classification')
     parser.add_argument('--epochs', type=int, default=10, help='Number of epochs to train the model')
-    parser.add_argument('--batch_size', type=int, default=256, help='Batch size for training and testing')
+    parser.add_argument('--batch_size', type=int, default=128, help='Batch size for training and testing')
     parser.add_argument('--learning_rate', type=float, default=0.0001, help='Learning rate for the optimizer')
     return parser.parse_args()
 
 args = parse_arguments()
+
+
+tf = transforms.Compose([
+    transforms.Resize(64),
+    transforms.ToTensor() 
+])
+
 def get_model(model_name, num_classes, device):
     if model_name.lower() == 'alexnet':
         model = alexnet(pretrained=False)
@@ -51,9 +58,16 @@ args = parse_arguments()
 
 # 加载模型
 def load_model(model_path, model_name, num_classes, device):
+ 
     model = get_model(model_name, num_classes, device)
-    model.load_state_dict(torch.load(model_path))
-    model.eval()
+    checkpoint = torch.load(model_path)
+     
+    if 'model_state_dict' in checkpoint:
+        model.load_state_dict(checkpoint['model_state_dict'])
+    else:
+        model.load_state_dict(checkpoint)
+    
+    model.to(device)
     return model
  
 def prepare_testset():
@@ -93,7 +107,9 @@ def write_results_to_csv(results, model_name,full_subclass_map):
 # 主函数
 def main():
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    model_path = f"./models/{args.model_name}/{args.model_name}_gen{args.gennum}.pth"
+   
+    # model_path = f"./modelsres/{args.model_name}/{args.model_name}_gen{args.gennum}.pth"
+    model_path = f"./models/{args.model_name}/gen{args.gennum}/{args.model_name}_epoch_{args.epochs}.pth"
     model = load_model(model_path, args.model_name, 20, device)  
  
     test_loader = prepare_testset()

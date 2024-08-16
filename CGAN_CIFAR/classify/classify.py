@@ -16,8 +16,9 @@ def parse_arguments():
     parser.add_argument('--gennum', type=int, required=True, help='Generator number for filename customization')
     parser.add_argument('--data_root_paths', type=str,  default= "",help='Directory path to save models')
     parser.add_argument('--model_name', type=str, choices=['alexnet', 'vgg19', 'resnet50', 'mobilenetv3', 'inceptionv4'], required=True, help='Model to use for classification')
-    parser.add_argument('--epochs', type=int, default=40, help='Number of epochs to train the model')
-    parser.add_argument('--batch_size', type=int, default=128, help='Batch size for training and testing')
+    parser.add_argument('--epochs', type=int, default=1, help='Number of epochs to train the model')
+    parser.add_argument('--start_train_epoch', type=int, default=0, help='Number of epochs to train the model')
+    parser.add_argument('--batch_size', type=int, default=256, help='Batch size for training and testing')
     parser.add_argument('--learning_rate', type=float, default=0.0001, help='Learning rate for the optimizer')
     return parser.parse_args()
 
@@ -42,6 +43,7 @@ def get_model(model_name, num_classes, device):
         raise ValueError("Unsupported model name")
     return model.to(device)
 
+  
 trainset = SuperCIFAR100(root='../data', train=True, download=False, transform=tf)
     
 #prepare datasets
@@ -59,6 +61,7 @@ if args.data_root_paths:
         num_workers=4 
     )
 else:
+    print("gen 0 , use SuperCIFAR100 trainset")
     dataloader = torch.utils.data.DataLoader(
     dataset=trainset,
     batch_size=64,
@@ -67,9 +70,9 @@ else:
     )
 
 
-def train_model(model, dataloader, epochs, device, optimizer, criterion):
+def train_model(model, dataloader, start_epoch, epochs, device, optimizer, criterion, model_name):
     model.train()
-    for epoch in range(epochs):
+    for epoch in range(start_epoch, epochs + 1):
         for batch_idx, (data, target, _) in enumerate(dataloader):
             data, target = data.to(device), target.to(device)
             optimizer.zero_grad()
@@ -80,20 +83,42 @@ def train_model(model, dataloader, epochs, device, optimizer, criterion):
 
             if batch_idx % 100 == 0:
                 print(f'Train Epoch: {epoch} [{batch_idx * len(data)}/{len(dataloader.dataset)} ({100. * batch_idx / len(dataloader):.0f}%)]\tLoss: {loss.item():.6f}')
-# 保存模型函数
-def save_model(model, model_name, epoch, path):
-    os.makedirs(path, exist_ok=True)
-    model_filename = f"{model_name}_gen{args.gennum}.pth"
-    torch.save(model.state_dict(), os.path.join(path, model_filename))
-    print(f"Model saved: {model_filename}")
+        
+        save_path = f"./models/{args.model_name}/gen{args.gennum}" 
+        if epoch % 5 == 0:  # 每5个epoch保存一次
+
+            save_model(model, optimizer, model_name, epoch,save_path) 
+
+def load_model(model, optimizer, load_path):
+    checkpoint = torch.load(load_path)
+    model.load_state_dict(checkpoint['model_state_dict'])
+    optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+    print(f"Loaded model and optimizer from {load_path}")
+
+def save_model(model, optimizer, model_name, epoch, save_path):
+    os.makedirs(save_path, exist_ok=True)
+    model_path = os.path.join(save_path, f"{model_name}_epoch_{epoch}.pth")
+    torch.save({
+        'model_state_dict': model.state_dict(),
+        'optimizer_state_dict': optimizer.state_dict()
+    }, model_path)
+    print(f"Model and optimizer states saved to {model_path}")
+
+
 
 # Instantiate and configure the model
-model = get_model(args.model_name, 20, device)  # Adjust num_classes based on your needs
+model = get_model(args.model_name, 20, device)   
 optimizer = optim.Adam(model.parameters(), lr=args.learning_rate)
 criterion = nn.CrossEntropyLoss()
 
-# Train the model
-train_model(model, dataloader, args.epochs, device, optimizer, criterion)
-path = f"./models/{args.model_name}"
+if args.start_train_epoch > 1:
+    load_path = f"./models/{args.model_name}/gen{args.gennum}/{args.model_name}_epoch_{args.start_train_epoch - 1}.pth"
+    load_model(model, optimizer, load_path)
+
+# Train the model starting from the specified epoch
+train_model(model, dataloader, args.start_train_epoch, args.epochs, device, optimizer, criterion, args.model_name)
+ 
+path = f"./models/{args.model_name}/gen{args.gennum}"
 os.makedirs(path, exist_ok=True)
-save_model(model,args.model_name, args.epochs, path)
+save_model(model,optimizer,args.model_name, args.epochs, path)
+ 
