@@ -96,10 +96,38 @@ def calculate_accuracy(csv_path):
     accuracy = correct_predictions / total_predictions
     
     return accuracy
-
-# 假设 CSV 文件路径
-csv_file_path = 'results/resnet50/test_results_2.csv'  # 更换为实际的文件路径
-
-# 计算并打印正确率
+ 
+csv_file_path = 'results/resnet50/test_results_0.csv'   
 accuracy = calculate_accuracy(csv_file_path)
 print(f"Accuracy: {accuracy:.2%}")
+csv_file_path = 'results/resnet50/test_results_1.csv'   
+accuracy = calculate_accuracy(csv_file_path)
+print(f"Accuracy: {accuracy:.2%}")
+csv_file_path = 'results/resnet50/test_results_2.csv'   
+accuracy = calculate_accuracy(csv_file_path)
+print(f"Accuracy: {accuracy:.2%}")
+csv_file_path = 'results/resnet50/test_results_3.csv'   
+accuracy = calculate_accuracy(csv_file_path)
+print(f"Accuracy: {accuracy:.2%}")
+csv_file_path = 'results/resnet50/test_results_4.csv'   
+accuracy = calculate_accuracy(csv_file_path)
+print(f"Accuracy: {accuracy:.2%}")
+csv_file_path = 'results/resnet50/test_results_5.csv'   
+accuracy = calculate_accuracy(csv_file_path)
+print(f"Accuracy: {accuracy:.2%}")
+csv_file_path = 'results/resnet50/test_results_6.csv'   
+accuracy = calculate_accuracy(csv_file_path)
+print(f"Accuracy: {accuracy:.2%}")
+csv_file_path = 'results/resnet50/test_results_7.csv'   
+accuracy = calculate_accuracy(csv_file_path)
+print(f"Accuracy: {accuracy:.2%}")
+csv_file_path = 'results/resnet50/test_results_8.csv'   
+accuracy = calculate_accuracy(csv_file_path)
+print(f"Accuracy: {accuracy:.2%}")
+csv_file_path = 'results/resnet50/test_results_9.csv'   
+accuracy = calculate_accuracy(csv_file_path)
+print(f"Accuracy: {accuracy:.2%}")
+csv_file_path = 'results/resnet50/test_results_10.csv'   
+accuracy = calculate_accuracy(csv_file_path)
+print(f"Accuracy: {accuracy:.2%}")
+ 
