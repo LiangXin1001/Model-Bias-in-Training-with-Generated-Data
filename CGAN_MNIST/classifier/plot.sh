@@ -9,15 +9,53 @@ source ~/.bashrc
 conda activate llava-med
  
 SCRIPTS_DIR="./plottu/"
+  
+echo "all figures"
+python plottu/plotedi_for_multiplemodels.py --model_names "vgg19" "resnet50"  "alexnet"
+python plottu/acc_for_multiplemodels.py --model_names "vgg19" "resnet50"  "alexnet"
+python plottu/ploteo_for_multiplemodels.py --model_names "vgg19" "resnet50" "alexnet"
+python plottu/plottpr_for_multiplemodels.py --model_names "vgg19" "resnet50" "alexnet"
+python plottu/plot_subclass_diff_for_multiplemodels.py --model_names "vgg19" "resnet50" "alexnet"
+ 
+base_model_name="alexnet"
+
+python ${SCRIPTS_DIR}color_accuracies.py --model_name ${base_model_name}
+python ${SCRIPTS_DIR}average_acc.py --model_name ${base_model_name}
+python ${SCRIPTS_DIR}ploteo.py --model_name ${base_model_name}
+
+python ${SCRIPTS_DIR}plot_digit_color_diff.py --model_name ${base_model_name}
+
+python ${SCRIPTS_DIR}plotdi.py --model_name ${base_model_name}
+
+python ${SCRIPTS_DIR}plottpr.py --model_name ${base_model_name}
+
+python ${SCRIPTS_DIR}digit_difference.py --model_name ${base_model_name}
 
 
-python ${SCRIPTS_DIR}average_acc.py
-python ${SCRIPTS_DIR}ploteo.py
+base_model_name="resnet50"
 
-python ${SCRIPTS_DIR}plot_digit_color_diff.py
+python ${SCRIPTS_DIR}average_acc.py --model_name ${base_model_name}
+python ${SCRIPTS_DIR}ploteo.py --model_name ${base_model_name}
 
-python ${SCRIPTS_DIR}plotdi.py
+python ${SCRIPTS_DIR}plot_digit_color_diff.py --model_name ${base_model_name}
 
-python ${SCRIPTS_DIR}plottpr.py
+python ${SCRIPTS_DIR}plotdi.py --model_name ${base_model_name}
 
-python ${SCRIPTS_DIR}digit_difference.py
+python ${SCRIPTS_DIR}plottpr.py --model_name ${base_model_name}
+
+python ${SCRIPTS_DIR}digit_difference.py --model_name ${base_model_name}
+
+
+
+base_model_name="vgg19"
+
+python ${SCRIPTS_DIR}average_acc.py --model_name ${base_model_name}
+python ${SCRIPTS_DIR}ploteo.py --model_name ${base_model_name}
+
+python ${SCRIPTS_DIR}plot_digit_color_diff.py --model_name ${base_model_name}
+
+python ${SCRIPTS_DIR}plotdi.py --model_name ${base_model_name}
+
+python ${SCRIPTS_DIR}plottpr.py --model_name ${base_model_name}
+
+python ${SCRIPTS_DIR}digit_difference.py --model_name ${base_model_name}
