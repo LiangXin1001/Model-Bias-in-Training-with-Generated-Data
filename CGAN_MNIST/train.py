@@ -169,10 +169,7 @@ def main_worker(ngpus_per_node, args):
         discriminator.load_state_dict(torch.load(args.netD))
     if args.netG != "":
         generator.load_state_dict(torch.load(args.netG))
-
-    # Create a SummaryWriter at the beginning of training.
-    # writer = SummaryWriter(f"runs/{args.arch}_logs")
-
+ 
     for epoch in range(args.start_epoch, args.epochs):
     
         batch_time = AverageMeter("Time", ":6.4f")

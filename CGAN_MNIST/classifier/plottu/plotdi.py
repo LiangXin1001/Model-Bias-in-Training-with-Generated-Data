@@ -50,7 +50,7 @@ plt.close()
 average_di_per_gen = combined_df.groupby('Gen')['Disparate Impact'].mean()
 
 # Ensure the Gen column is numeric and sort by it
-average_di_per_gen.index = average_di_per_gen.index.str.extract('(\d+)').astype(int).squeeze()
+average_di_per_gen.index = average_di_per_gen.index.str.extract(r'(\d+)').astype(int).squeeze()
 average_di_per_gen = average_di_per_gen.sort_index()
 
 # Plot the average Disparate Impact values across generations

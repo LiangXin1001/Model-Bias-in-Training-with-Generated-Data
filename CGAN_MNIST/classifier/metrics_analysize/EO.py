@@ -1,7 +1,8 @@
 import pandas as pd
 import argparse
 import os
- 
+import sys
+sys.path.insert(0, os.path.abspath('..'))  
 # Set up command line arguments
 parser = argparse.ArgumentParser(description='Train a model with configurable datasets')
 parser.add_argument('--result_csv', type=str, required=True, help='CSV file path for testing dataset')

@@ -34,7 +34,7 @@ def plot_accuracy(base_path, model_name, generations):
     average_accuracy_per_gen = combined_df.groupby('Gen')['Correct'].mean()
     
     # Ensure the Gen column is numeric and sort by it
-    average_accuracy_per_gen.index = average_accuracy_per_gen.index.str.extract('(\d+)').astype(int).squeeze()
+    average_accuracy_per_gen.index = average_accuracy_per_gen.index.str.extract(r'(\d+)').astype(int).squeeze()
     average_accuracy_per_gen = average_accuracy_per_gen.sort_index()
     
     # Plot the average accuracy values across generations

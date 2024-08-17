@@ -51,7 +51,7 @@ plt.close()
 average_cd_per_gen = combined_df.groupby('Gen')['Max Difference'].mean()
 
 # Ensure the Gen column is numeric and sort by it
-average_cd_per_gen.index = average_cd_per_gen.index.str.extract('(\d+)').astype(int).squeeze()
+average_cd_per_gen.index = average_cd_per_gen.index.str.extract(r'(\d+)').astype(int).squeeze()
 average_cd_per_gen = average_cd_per_gen.sort_index()
 
 # Plot the average Subclass Difference values across generations

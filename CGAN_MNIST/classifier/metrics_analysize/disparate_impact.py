@@ -13,10 +13,7 @@ from torchvision import transforms
 from torch.utils.data import DataLoader
 import seaborn as sns
 import argparse
-
-sys.path.append(os.path.abspath( "/local/scratch/hcui25/Project/xin/CS/GAN/classify"))
-
-from utils import utils
+sys.path.insert(0, os.path.abspath('..'))  
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd

@@ -1,6 +1,7 @@
 import os
 import pandas as pd
-
+import sys
+sys.path.insert(0, os.path.abspath('..'))  
  
 csv_file_path = '/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/data/test.csv'
 images_folder_path = '/local/scratch/hcui25/Project/xin/CS/GAN/CGAN/generation0/mnist_test'

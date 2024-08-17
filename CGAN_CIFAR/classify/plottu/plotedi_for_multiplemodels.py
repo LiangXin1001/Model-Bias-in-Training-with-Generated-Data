@@ -35,7 +35,7 @@ for model_name in args.model_names:
     # 计算每个gen中十个数字的Disparate Impact平均值
     average_di_per_gen = combined_df.groupby('Gen')['Disparate Impact'].mean()
     # 将Gen列转换为数字类型以确保正确排序
-    average_di_per_gen.index = average_di_per_gen.index.str.extract('(\d+)').astype(int).squeeze()
+    average_di_per_gen.index = average_di_per_gen.index.str.extract(r'(\d+)').astype(int).squeeze()
     # 按Gen排序
     average_di_per_gen = average_di_per_gen.sort_index()
     plt.plot(average_di_per_gen.index, average_di_per_gen.values,color=colors[color_index], marker='o', label=model_name)
@@ -66,7 +66,7 @@ for model_name in args.model_names:
     # 计算每个gen中十个数字的Disparate Impact平均值
     average_di_per_gen = combined_df.groupby('Gen')['Disparate Impact'].mean()
     # 将Gen列转换为数字类型以确保正确排序
-    average_di_per_gen.index = average_di_per_gen.index.str.extract('(\d+)').astype(int).squeeze()
+    average_di_per_gen.index = average_di_per_gen.index.str.extract(r'(\d+)').astype(int).squeeze()
     # 按Gen排序
     average_di_per_gen = average_di_per_gen.sort_index()
     # 绘制散点图并添加线性回归直线

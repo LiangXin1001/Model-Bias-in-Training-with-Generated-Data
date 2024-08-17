@@ -46,7 +46,7 @@ print(f'EO values bar plot saved as {output_path}')
 average_eo_per_gen = combined_df.groupby('Gen')['EO'].mean()
 
 # Ensure the 'Gen' index is sorted numerically
-average_eo_per_gen.index = average_eo_per_gen.index.str.extract('(\d+)')[0].astype(int).sort_index()
+average_eo_per_gen.index = average_eo_per_gen.index.str.extract(r'(\d+)')[0].astype(int).sort_index()
 
 # Plot the average EO values across generations
 plt.figure(figsize=(10, 6))

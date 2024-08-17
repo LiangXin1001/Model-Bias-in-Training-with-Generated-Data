@@ -24,7 +24,7 @@ __pycache__
 *.pkl
  
 *.log
-
+*.txt
 CGAN_CIFAR/data/*
 CGAN_CIFAR/ACGAN-PyTorch/samples/*
 CGAN_CIFAR/ACGAN-PyTorch/weights/*

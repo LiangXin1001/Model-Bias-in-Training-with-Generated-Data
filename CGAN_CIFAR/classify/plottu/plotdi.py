@@ -48,7 +48,7 @@ plt.close()
 average_di_per_gen = combined_df.groupby('Gen')['Disparate Impact'].mean()
 
 # 将Gen列转换为数字类型以确保正确排序
-average_di_per_gen.index = average_di_per_gen.index.str.extract('(\d+)').astype(int).squeeze()
+average_di_per_gen.index = average_di_per_gen.index.str.extract(r'(\d+)').astype(int).squeeze()
 
 # 按Gen排序
 average_di_per_gen = average_di_per_gen.sort_index()

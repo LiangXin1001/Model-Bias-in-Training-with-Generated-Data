@@ -51,7 +51,7 @@ plt.close()
 average_eo_per_gen = combined_df.groupby('Gen')['EO'].mean()
 
 # Convert Gen column to numeric for proper sorting
-average_eo_per_gen.index = average_eo_per_gen.index.str.extract('(\d+)').astype(int).squeeze()
+average_eo_per_gen.index = average_eo_per_gen.index.str.extract(r'(\d+)').astype(int).squeeze()
 
 # Sort by Gen
 average_eo_per_gen = average_eo_per_gen.sort_index()

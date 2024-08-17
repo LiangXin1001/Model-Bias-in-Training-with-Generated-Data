@@ -37,7 +37,9 @@ def digit_difference(base_path, model_name):
     pivot_df = combined_df.pivot_table(index='Gen', columns='Color Digit Difference', values='Value', aggfunc='mean')
 
     # Ensure the Gen column is numeric and sort by it
-    pivot_df.index = pivot_df.index.str.extract('(\d+)').astype(int).squeeze()
+    pivot_df.index = pivot_df.index.str.extract(r'(\d+)').astype(int).squeeze()
+
+    # pivot_df.index = pivot_df.index.str.extract('(\d+)').astype(int).squeeze()
     pivot_df = pivot_df.sort_index()
 
     # Plotting the average digit differences across generations

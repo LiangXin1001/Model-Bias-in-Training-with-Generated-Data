@@ -59,8 +59,8 @@ def plot_tpr_fpr(base_path, model_name, generations):
     average_fpr_per_gen = combined_df.groupby('Gen')['FPR'].mean()
 
     # Convert Gen column to numeric for proper sorting
-    average_tpr_per_gen.index = average_tpr_per_gen.index.str.extract('(\d+)').astype(int).squeeze()
-    average_fpr_per_gen.index = average_fpr_per_gen.index.str.extract('(\d+)').astype(int).squeeze()
+    average_tpr_per_gen.index = average_tpr_per_gen.index.str.extract(r'(\d+)').astype(int).squeeze()
+    average_fpr_per_gen.index = average_fpr_per_gen.index.str.extract(r'(\d+)').astype(int).squeeze()
 
     # Sort by Gen
     average_tpr_per_gen = average_tpr_per_gen.sort_index()

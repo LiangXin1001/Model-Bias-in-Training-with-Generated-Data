@@ -52,7 +52,7 @@ plt.close()
 average_cd_per_gen = combined_df.groupby('Gen')['Color Difference'].mean()
 
 # 确保Gen列为数值类型并排序
-average_cd_per_gen.index = average_cd_per_gen.index.str.extract('(\d+)').astype(int).squeeze()
+average_cd_per_gen.index = average_cd_per_gen.index.str.extract(r'(\d+)').astype(int).squeeze()
 average_cd_per_gen = average_cd_per_gen.sort_index()
 
 # 绘制每代平均颜色差异的曲线图

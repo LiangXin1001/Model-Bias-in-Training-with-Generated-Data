@@ -136,13 +136,13 @@ def weights_init(m):
 #     num_workers=2 ,
 #     collate_fn=custom_collate_fn   
 # )
-data_root_paths = args.data_root_paths.split(',') 
+
 trainset = SuperCIFAR100(root='./data', train=True, download=True, transform=tf)
   
 if args.gennum:
     generated_dataset = GeneratedDataset(root_dirs=data_root_paths, transform=tf)
     combined_dataset = ConcatDataset([generated_dataset, trainset])
-
+    data_root_paths = args.data_root_paths.split(',') 
     # 为训练创建 DataLoader
     trainloader = torch.utils.data.DataLoader(
         dataset=combined_dataset,

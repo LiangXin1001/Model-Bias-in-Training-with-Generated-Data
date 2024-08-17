@@ -9,7 +9,7 @@ import argparse
 parser = argparse.ArgumentParser(description='Process test results for different models.')
 parser.add_argument('--model_names', type=str, nargs='+', required=True, help='The names of the models to process results for')
 args = parser.parse_args()
-base_path = '/local/scratch/hcui25/Project/xin/CS/GAN/CGAN-PyTorch/classifier/results'
+base_path = 'results'
 os.makedirs(base_path, exist_ok=True) 
 subdirectories = [str(i) for i in range(11)]
 output_dir = "images/all"
