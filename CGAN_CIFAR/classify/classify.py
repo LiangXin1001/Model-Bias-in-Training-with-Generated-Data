@@ -23,6 +23,38 @@ def parse_arguments():
     return parser.parse_args()
 
 args = parse_arguments()
+
+class SimpleCNN(nn.Module):
+    def __init__(self, num_classes):
+        super(SimpleCNN, self).__init__()
+        self.layer1 = nn.Sequential(
+            nn.Conv2d(3, 16, kernel_size=5, stride=1, padding=2),
+            nn.BatchNorm2d(16),
+            nn.ReLU(),
+            nn.MaxPool2d(kernel_size=2, stride=2))
+        self.layer2 = nn.Sequential(
+            nn.Conv2d(16, 32, kernel_size=5, stride=1, padding=2),
+            nn.BatchNorm2d(32),
+            nn.ReLU(),
+            nn.MaxPool2d(kernel_size=2, stride=2))
+        self.layer3 = nn.Sequential(
+            nn.Conv2d(32, 64, kernel_size=5, stride=1, padding=2),
+            nn.BatchNorm2d(64),
+            nn.ReLU(),
+            nn.MaxPool2d(kernel_size=2, stride=2))
+        self.drop_out = nn.Dropout()
+        self.fc1 = nn.Linear(8 * 8 * 64, 1000)
+        self.fc2 = nn.Linear(1000, num_classes)
+        
+    def forward(self, x):
+        out = self.layer1(x)
+        out = self.layer2(out)
+        out = self.layer3(out)
+        out = out.view(out.size(0), -1)
+        out = self.drop_out(out)
+        out = self.fc1(out)
+        out = self.fc2(out)
+        return out
 def get_model(model_name, num_classes, device):
     if model_name.lower() == 'alexnet':
         model = alexnet(pretrained=False)
@@ -33,6 +65,8 @@ def get_model(model_name, num_classes, device):
     elif model_name.lower() == 'resnet50':
         model = resnet50(pretrained=False)
         model.fc = nn.Linear(model.fc.in_features, num_classes)
+    elif model_name.lower() == 'simplecnn':
+        model = SimpleCNN(num_classes)
     elif model_name.lower() == 'mobilenetv3':
         model = mobilenet_v3_large(pretrained=False)
         model.classifier[3] = nn.Linear(model.classifier[3].in_features, num_classes)
