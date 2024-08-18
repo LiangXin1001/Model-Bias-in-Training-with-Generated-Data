@@ -1,23 +1,12 @@
 #!/bin/bash
-#SBATCH --gres=gpu:1
-#SBATCH --job-name=class
-#SBATCH --output=class.txt  
-#SBATCH --error=class.err     
-# 设置基本路径变量，向上返回到 CGAN-PyTorch 目录
-BASE_DIR="/local/scratch/hcui25/Project/xin/CS/GAN/CGAN_CIFAR/"
-
-# 激活环境
-source ~/.bashrc
-conda activate llava-med
-
-# python retrain.py
-
-
-# 定义 classify.py 和 test_model.py 的相对路径
+ 
+BASE_DIR="../"
+ 
+ 
 CLASSIFY_PY="classify.py"
  
 # 定义基本模型名
-base_model_name="alexnet"
+base_model_name="mobilenetv3 "
  
 python $CLASSIFY_PY \
     --gennum 0 \
