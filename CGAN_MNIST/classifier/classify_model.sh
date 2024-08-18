@@ -1,21 +1,12 @@
 #!/bin/bash
-#SBATCH --gres=gpu:1
-#SBATCH --job-name=mnist
-#SBATCH --output=mnist.txt  
-#SBATCH --error=mnist.err
-
-# 设置基本路径变量，向上返回到 CGAN-PyTorch 目录
-BASE_DIR="../"
-
-# 激活环境
-source ~/.bashrc
-conda activate llava-med
+ 
+ 
 
 # 定义 classify.py 和 test_model.py 的相对路径
 CLASSIFY_PY="classify_model.py"
 TEST_MODEL_PY="test_model.py"
  
-base_model_name="mobilenetv3"
+base_model_name="simplecnn"
 
 # 循环执行分类和测试任务
 for gen in {0..10}
