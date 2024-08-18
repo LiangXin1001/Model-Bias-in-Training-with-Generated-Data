@@ -18,7 +18,8 @@ def parse_args():
 
 def load_model(model_path):
  
-    model = Generator().to(device)  # 替换为你的实际模型类
+    model = Generator().to(device)   
+    model = torch.nn.DataParallel(model)  # 使用 DataParallel 包装模型
     model.load_state_dict(torch.load(model_path, map_location=device))
     print(f"Loaded generator model from {model_path}")
     model.eval()  # 将模型设置为评估模式

@@ -15,7 +15,7 @@ conda activate llava-med
 CLASSIFY_PY="classify_model.py"
 TEST_MODEL_PY="test_model.py"
  
-base_model_name="resnet50"
+base_model_name="mobilenetv3"
 
 # 循环执行分类和测试任务
 for gen in {0..10}

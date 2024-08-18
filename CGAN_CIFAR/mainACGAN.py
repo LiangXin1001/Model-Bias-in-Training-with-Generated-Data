@@ -108,16 +108,7 @@ def showImage(images,epoch=-99, idx = -99):
         plt.close() 
         # plt.savefig("e" + str(epoch) + "i" + str(idx) + ".png")
 
-# dataiter = iter(trainloader)
-# images, mapped_labels, original_labels = next(dataiter)
  
-# save_image(make_grid(images, nrow=8), 'batch_images.png')  # nrow 表示每行显示的图像数量
- 
-# print("images.size()",images.size())
-# print("mapped_labels, original_labels")
-# print(mapped_labels, original_labels)
- 
-
 # custom weights initialization called on netG and netD
 def weights_init(m):
     classname = m.__class__.__name__
@@ -127,15 +118,7 @@ def weights_init(m):
         m.weight.data.normal_(1.0, 0.02)
         m.bias.data.fill_(0)
 
-# dataset = load_and_prepare_datasets(args.pkl_paths, tf)
-
-# trainloader = torch.utils.data.DataLoader(
-#     dataset=dataset,  
-#     batch_size=64,
-#     shuffle=True,
-#     num_workers=2 ,
-#     collate_fn=custom_collate_fn   
-# )
+ 
 
 trainset = SuperCIFAR100(root='./data', train=True, download=True, transform=tf)
   
@@ -175,9 +158,8 @@ optimD = optim.Adam(disc.parameters(), 0.0001, betas = (0.5,0.999))
 
 validity_loss = nn.BCELoss()
 
-# real_labels = 0.7 + 0.5 * torch.rand(10, device = device)
-# fake_labels = 0.3 * torch.rand(10, device = device)
-epochs = 10
+ 
+epochs = 30
 for epoch in range(1,epochs+1):
     torch.cuda.empty_cache()
     for idx, (images,labels,_) in enumerate(trainloader,0):
@@ -275,22 +257,7 @@ for epoch in range(1,epochs+1):
         D_G_z2 = pvalidity.mean().item()
         
         optimG.step()
-        # # 在训练循环中添加检查点
-        # print("Batch labels shape:", labels.shape)
-        # print("Predicted labels shape:", plabels.shape)
-        # print("Label values:", labels.unique())
-        # print("Predicted validity shape:", pvalidity.shape,pvalidity)
-        # print("Real validity label shape:", validity_label.shape,validity_label)
-        # print("pvalidity range:", pvalidity.min().item(), pvalidity.max().item())
-        # print("validity_label range:", validity_label.min().item(), validity_label.max().item())
-        # print("pvalidity device:", pvalidity.device)
-        # print("validity_label device:", validity_label.device)
-
-        # # 检查数据类型和设备
-        # print("Labels device and dtype:", labels.device, labels.dtype)
-        # print("Plabels device and dtype:", plabels.device, plabels.dtype)
-
-        
+ 
         print("[{}/{}] [{}/{}] D_x: [{:.4f}] D_G: [{:.4f}/{:.4f}] G_loss: [{:.4f}] D_loss: [{:.4f}] D_label: [{:.4f}] "
               .format(epoch,epochs, idx, len(trainloader),D_x, D_G_z1,D_G_z2,errG,errD,
                       errD_real_label + errD_fake_label + errG_label))
@@ -303,7 +270,7 @@ for epoch in range(1,epochs+1):
             
             gen_images = gen(noise,labels).detach()
             
-            showImage(make_grid(gen_images),epoch,idx)
+            # showImage(make_grid(gen_images),epoch,idx)
        
      
 model_dir = 'models'
